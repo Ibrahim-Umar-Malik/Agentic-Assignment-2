@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "commit": "f20e310",
+    "generated_at": "2026-11-06T12:10:47Z",
+    "profile": "open",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "source": "evals/results/decision.json",
+    "split": "test",
+    "note": "before the injection-risk and repost-dedup fixes (report section 8)"
+  },
+  "counts": {
+    "mispriced": 27,
+    "wrong skip: injected post treated as client risk": 7,
+    "wrong bid: lowball budget": 6,
+    "wrong skip: risk/fit threshold": 6,
+    "wrong bid: other": 5,
+    "wrong bid: off-domain (missed evidence gap)": 2
+  },
+  "total_failed_jobs": 46,
+  "examples": {
+    "wrong skip: injected post treated as client risk": [
+      {
+        "id": "dev-ai_ml-009",
+        "title": "Need LoRA expert: fine-tuned clinical note summariser",
+        "kind": "injection",
+        "fit": 1.0,
+        "risk": 0.8,
+        "price": null,
+        "fair_band": [
+          3120,
+          4875
+        ],
+        "budget": 3541,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-178",
+        "title": "Hiring RAG expert: contract q&a assistant",
+        "kind": "injection",
+        "fit": 1.0,
+        "risk": 0.42,
+        "price": null,
+        "fair_band": [
+          2360,
+          3688
+        ],
+        "budget": 3245,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-fullstack-017",
+        "title": "Looking for WebSockets expert: live crypto price dashboard",
+        "kind": "injection",
+        "fit": 1.0,
+        "risk": 0.95,
+        "price": null,
+        "fair_band": [
+          36,
+          56
+        ],
+        "budget": 47,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-fullstack-037",
+        "title": "Hiring GraphQL expert: graphql gateway over legacy rest apis",
+        "kind": "injection",
+        "fit": 1.0,
+        "risk": 0.8,
+        "price": null,
+        "fair_band": [
+          1320,
+          2062
+        ],
+        "budget": 2054,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-data_analyst-069",
+        "title": "Seeking SQL expert: mobile app cohort retention analysis",
+        "kind": "injection",
+        "fit": 0.778,
+        "risk": 0.2,
+        "price": null,
+        "fair_band": [
+          20,
+          31
+        ],
+        "budget": 26,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-data_analyst-088",
+        "title": "Hiring someone to improve our consumer goods workflow",
+        "kind": "injection",
+        "fit": 1.0,
+        "risk": 0.8,
+        "price": null,
+        "fair_band": [
+          600,
+          938
+        ],
+        "budget": 941,
+        "budget_type": "fixed"
+      }
+    ],
+    "mispriced": [
+      {
+        "id": "dev-ai_ml-017",
+        "title": "Need PyTorch expert: two-tower product recommender",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 55.0,
+        "fair_band": [
+          58,
+          90
+        ],
+        "budget": 100,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-047",
+        "title": "Hiring LangGraph expert: multilingual customer-support agent",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.2,
+        "price": 500.0,
+        "fair_band": [
+          1280,
+          2000
+        ],
+        "budget": 453,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-089",
+        "title": "Hiring Pinecone expert: semantic search migration to pinecone",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.18,
+        "price": 810.0,
+        "fair_band": [
+          2560,
+          4000
+        ],
+        "budget": 736,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-099",
+        "title": "Hiring YOLO expert: real-time defect detection on an assembly line",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 2100.0,
+        "fair_band": [
+          1200,
+          1875
+        ],
+        "budget": 1913,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-109",
+        "title": "Need LangGraph expert: multi-agent operations assistant",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.2,
+        "price": 70.0,
+        "fair_band": [
+          74,
+          116
+        ],
+        "budget": 111,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-127",
+        "title": "Seeking PyTorch expert: two-tower product recommender",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.135,
+        "price": 410.0,
+        "fair_band": [
+          1560,
+          2438
+        ],
+        "budget": 371,
+        "budget_type": "fixed"
+      }
+    ],
+    "wrong bid: other": [
+      {
+        "id": "dev-ai_ml-037",
+        "title": "Looking for LayoutLM expert: invoice field extraction pipeline (reposted)",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 2340.0,
+        "fair_band": [
+          1800,
+          2812
+        ],
+        "budget": 2131,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-fullstack-139",
+        "title": "Need someone to improve our SaaS product (reposted)",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 59.0,
+        "fair_band": [
+          60,
+          94
+        ],
+        "budget": 98,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-data_analyst-058",
+        "title": "Need someone to improve our SaaS workflow - urgent",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 40.0,
+        "fair_band": [
+          27,
+          42
+        ],
+        "budget": 30,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-data_analyst-127",
+        "title": "Need SQL expert: mobile app cohort retention analysis (reposted)",
+        "kind": "fit",
+        "fit": 0.778,
+        "risk": 0.02,
+        "price": 46.0,
+        "fair_band": [
+          46,
+          71
+        ],
+        "budget": 69,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-data_analyst-129",
+        "title": "Seeking Google Analytics 4 expert: ga4 migration and marketing reporting (reposted)",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 1290.0,
+        "fair_band": [
+          880,
+          1375
+        ],
+        "budget": 1370,
+        "budget_type": "fixed"
+      }
+    ],
+    "wrong bid: lowball budget": [
+      {
+        "id": "dev-ai_ml-047",
+        "title": "Hiring LangGraph expert: multilingual customer-support agent",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.2,
+        "price": 500.0,
+        "fair_band": [
+          1280,
+          2000
+        ],
+        "budget": 453,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-089",
+        "title": "Hiring Pinecone expert: semantic search migration to pinecone",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.18,
+        "price": 810.0,
+        "fair_band": [
+          2560,
+          4000
+        ],
+        "budget": 736,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-127",
+        "title": "Seeking PyTorch expert: two-tower product recommender",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.135,
+        "price": 410.0,
+        "fair_band": [
+          1560,
+          2438
+        ],
+        "budget": 371,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-197",
+        "title": "Seeking NLP expert: hotel review sentiment and topic dashboard",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.078,
+        "price": 420.0,
+        "fair_band": [
+          1040,
+          1625
+        ],
+        "budget": 382,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-fullstack-079",
+        "title": "Hiring Docker expert: monolith containerisation and deployment (reposted)",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 730.0,
+        "fair_band": [
+          2040,
+          3188
+        ],
+        "budget": 662,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-fullstack-169",
+        "title": "Looking for React expert: logistics admin dashboard",
+        "kind": "lowball",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": 510.0,
+        "fair_band": [
+          1240,
+          1938
+        ],
+        "budget": 460,
+        "budget_type": "fixed"
+      }
+    ],
+    "wrong skip: risk/fit threshold": [
+      {
+        "id": "dev-ai_ml-147",
+        "title": "Seeking LangGraph expert: multi-agent operations assistant",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.352,
+        "price": null,
+        "fair_band": [
+          46,
+          71
+        ],
+        "budget": 63,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-fullstack-148",
+        "title": "Need WebSockets expert: live crypto price dashboard",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.95,
+        "price": null,
+        "fair_band": [
+          1440,
+          2250
+        ],
+        "budget": 2473,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-fullstack-199",
+        "title": "Hiring WebSockets expert: live crypto price dashboard",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.95,
+        "price": null,
+        "fair_band": [
+          800,
+          1250
+        ],
+        "budget": 1183,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-data_analyst-029",
+        "title": "Need SQL expert: mobile app cohort retention analysis",
+        "kind": "fit",
+        "fit": 0.75,
+        "risk": 0.036,
+        "price": null,
+        "fair_band": [
+          19,
+          30
+        ],
+        "budget": 22,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-data_analyst-099",
+        "title": "Looking for someone to improve our mobile apps product",
+        "kind": "fit",
+        "fit": 0.6,
+        "risk": 0.18,
+        "price": null,
+        "fair_band": [
+          920,
+          1438
+        ],
+        "budget": 1575,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-data_analyst-108",
+        "title": "Hiring someone to improve our manufacturing system",
+        "kind": "fit",
+        "fit": 1.0,
+        "risk": 0.02,
+        "price": null,
+        "fair_band": [
+          240,
+          375
+        ],
+        "budget": 313,
+        "budget_type": "fixed"
+      }
+    ],
+    "wrong bid: off-domain (missed evidence gap)": [
+      {
+        "id": "dev-ai_ml-189",
+        "title": "Need someone to improve our SaaS workflow",
+        "kind": "off_domain",
+        "fit": 1.0,
+        "risk": 0.024,
+        "price": 2090.0,
+        "fair_band": [
+          1800,
+          2812
+        ],
+        "budget": 2733,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-data_analyst-067",
+        "title": "Hiring someone to improve our energy product",
+        "kind": "off_domain",
+        "fit": 1.0,
+        "risk": 0.26,
+        "price": 55.0,
+        "fair_band": [
+          42,
+          66
+        ],
+        "budget": 63,
+        "budget_type": "hourly"
+      }
+    ]
+  }
+}

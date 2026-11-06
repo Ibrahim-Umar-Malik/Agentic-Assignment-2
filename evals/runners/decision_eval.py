@@ -124,6 +124,25 @@ def sweep(rs: list[dict]) -> dict:
     return {"bid_min_fit": best[2], "max_risk": best[3], "f1_on_tune": best[0], "note": "ties broken by fewer false bids"}
 
 
+def queue_as_scout(persona: str) -> None:
+    """Insert the persona's dev jobs into the jobs table in posting order, as the scheduled Scout would, so the
+    graph's repost de-duplication sees earlier originals."""
+    import time as _t
+
+    from sqlalchemy import delete
+
+    from agent.nodes.scout import fingerprint
+    from core.db import engine, jobs
+
+    uid = f"eval-{persona}"
+    with engine().begin() as c:
+        c.execute(delete(jobs).where(jobs.c.user_id == uid))
+        for i, row in enumerate(load_dev(persona)):
+            j = public_job(row)
+            c.execute(jobs.insert().values(user_id=uid, job_id=j["id"], data=j, status="queued", dedup_key=fingerprint(j),
+                                           connects=j.get("connects_cost"), created_at=1e9 + i, updated_at=_t.time()))
+
+
 async def run_split(part: str, limit: int | None) -> list[dict]:
     from langgraph.checkpoint.memory import InMemorySaver
     from langgraph.store.memory import InMemoryStore
@@ -140,6 +159,7 @@ async def run_split(part: str, limit: int | None) -> list[dict]:
     for persona in PERSONAS:
         sim.reset()
         server._port_override = gigsim_adapter(f"dev-{persona}")
+        queue_as_scout(persona)
         rows = split(load_dev(persona), part)
         rows = rows[:limit] if limit else rows
         for row in rows:

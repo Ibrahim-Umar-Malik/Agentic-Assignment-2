@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "a5c27b7",
-    "generated_at": "2026-11-06T11:55:15Z",
+    "commit": "f20e310",
+    "generated_at": "2026-11-06T12:09:17Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -44,7 +44,7 @@
       "scam_bids": 17
     }
   },
-  "ab_opening": {
+  "ab_experiment": {
     "n_jobs": 105,
     "reply_prob_statement": 0.2458,
     "reply_prob_question": 0.3371,

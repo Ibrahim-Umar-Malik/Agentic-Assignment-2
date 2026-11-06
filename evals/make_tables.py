@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "evals" / "results"
-TARGETS = [ROOT / "README.md", ROOT / "docs" / "report" / "report.md", ROOT / "docs" / "writeup.md"]
+TARGETS = [ROOT / "README.md", ROOT / "docs" / "report" / "report.md", ROOT / "docs" / "writeup.md", ROOT / "docs" / "EXTENSION.md"]
 
 
 def load(name: str) -> dict:
@@ -94,7 +94,7 @@ def t_ab() -> str:
     return md(["X2 experiment: ask one clarifying question vs close with a next step", "Value"],
               [["Jobs (paired, both arms written)", d["n_jobs"]],
                ["Reply probability: statement / question", f"{f(d['reply_prob_statement'], pct=True)} / {f(d['reply_prob_question'], pct=True)}"],
-               ["Paired lift (question − statement)", f"{f(d['paired_diff_question_minus_statement'], pct=True)} (95% CI {[round(100 * x, 1) for x in d['paired_diff_ci95']]})"],
+               ["Paired lift (question − statement)", f"{100 * d['paired_diff_question_minus_statement']:+.1f} points (95% CI {[round(100 * x, 1) for x in d['paired_diff_ci95']]})"],
                ["Chance the live z-test calls it at 30 / 120 / 500 proposals per arm", f"{f(pw['30'], pct=True)} / {f(pw['120'], pct=True)} / {f(pw['500'], pct=True)}"]])
 
 

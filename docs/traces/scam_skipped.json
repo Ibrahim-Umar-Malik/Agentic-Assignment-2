@@ -1,0 +1,206 @@
+{
+ "title": "Scam post skipped before any writing",
+ "trace_id": "trace-scam-skipped",
+ "profile": "offline",
+ "job": {
+  "id": "j-ai_ml-046",
+  "title": "Need LoRA expert: fine-tuned clinical note summariser",
+  "budget": 82,
+  "budget_type": "hourly",
+  "connects_cost": 8
+ },
+ "outcome": {
+  "status": "skipped",
+  "reason": "risk too high (0.85): Likely scam: free_work",
+  "decision": "skip",
+  "submission": null,
+  "critiques": 0
+ },
+ "node_path": [
+  "scout",
+  "analyst",
+  "risk",
+  "matcher",
+  "decide"
+ ],
+ "spans": [
+  {
+   "name": "node.scout",
+   "kind": "node",
+   "t_start_s": 0.0,
+   "duration_s": 0.0038,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "meta",
+     "status"
+    ]
+   }
+  },
+  {
+   "name": "node.analyst",
+   "kind": "node",
+   "t_start_s": 0.0717,
+   "duration_s": 0.0023,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "spec"
+    ]
+   }
+  },
+  {
+   "name": "node.risk",
+   "kind": "node",
+   "t_start_s": 0.0753,
+   "duration_s": 0.1933,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "client",
+     "risk"
+    ]
+   }
+  },
+  {
+   "name": "node.matcher",
+   "kind": "node",
+   "t_start_s": 0.0843,
+   "duration_s": 0.2231,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "evidence",
+     "fit"
+    ]
+   }
+  },
+  {
+   "name": "mcp.marketplace.get_client_history",
+   "kind": "tool",
+   "t_start_s": 0.1098,
+   "duration_s": 0.1267,
+   "attrs": {
+    "args": {
+     "client_id": "c0008"
+    },
+    "user": "u-demo",
+    "result_size": 809
+   }
+  },
+  {
+   "name": "tool.portfolio.list_skills",
+   "kind": "tool",
+   "t_start_s": 0.2176,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.133,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.2621,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "fine-tuning",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.039,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.marketplace.get_client_history",
+   "kind": "tool",
+   "t_start_s": 0.2647,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "risk",
+    "args": {
+     "client_id": "c0008"
+    },
+    "latency_s": 0.189,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.2875,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "LoRA",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.025,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.3067,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "HuggingFace Transformers",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.018,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.decide",
+   "kind": "node",
+   "t_start_s": 0.309,
+   "duration_s": 0.0,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "decision",
+     "status",
+     "status_reason"
+    ]
+   }
+  }
+ ]
+}

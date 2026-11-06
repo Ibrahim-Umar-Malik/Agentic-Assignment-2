@@ -1,0 +1,660 @@
+{
+ "title": "Crash after approval: resumed from the checkpoint, submitted exactly once",
+ "trace_id": "trace-crash-resume",
+ "profile": "offline",
+ "job": {
+  "id": "j-ai_ml-057",
+  "title": "Hiring LayoutLM expert: invoice field extraction pipeline",
+  "budget": 1608,
+  "budget_type": "fixed",
+  "connects_cost": 16
+ },
+ "outcome": {
+  "status": "submitted",
+  "reason": "fit 1.00 >= 0.7",
+  "decision": "bid",
+  "submission": {
+   "status": "ok",
+   "proposal_id": "p-378fa18361",
+   "marketplace_status": "submitted",
+   "connects_spent": 16,
+   "duplicate": false,
+   "replay_after_crash": {
+    "status": "duplicate",
+    "proposal_id": "p-378fa18361",
+    "marketplace_status": "submitted",
+    "connects_spent": 16,
+    "duplicate": true
+   }
+  },
+  "critiques": 1
+ },
+ "node_path": [
+  "scout",
+  "analyst",
+  "risk",
+  "matcher",
+  "decide",
+  "pricing",
+  "writer",
+  "verifier",
+  "critic",
+  "compliance",
+  "preview",
+  "approval",
+  "submit"
+ ],
+ "spans": [
+  {
+   "name": "node.scout",
+   "kind": "node",
+   "t_start_s": 0.0,
+   "duration_s": 0.0004,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "meta",
+     "status"
+    ]
+   }
+  },
+  {
+   "name": "node.analyst",
+   "kind": "node",
+   "t_start_s": 0.0025,
+   "duration_s": 0.0004,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "spec"
+    ]
+   }
+  },
+  {
+   "name": "node.risk",
+   "kind": "node",
+   "t_start_s": 0.0035,
+   "duration_s": 0.0449,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "client",
+     "risk"
+    ]
+   }
+  },
+  {
+   "name": "node.matcher",
+   "kind": "node",
+   "t_start_s": 0.0043,
+   "duration_s": 0.1085,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "evidence",
+     "fit"
+    ]
+   }
+  },
+  {
+   "name": "mcp.marketplace.get_client_history",
+   "kind": "tool",
+   "t_start_s": 0.0064,
+   "duration_s": 0.0192,
+   "attrs": {
+    "args": {
+     "client_id": "c0203"
+    },
+    "user": "u-demo",
+    "result_size": 520
+   }
+  },
+  {
+   "name": "tool.portfolio.list_skills",
+   "kind": "tool",
+   "t_start_s": 0.0135,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.009,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.0394,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "LayoutLM",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.024,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.marketplace.get_client_history",
+   "kind": "tool",
+   "t_start_s": 0.0478,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "risk",
+    "args": {
+     "client_id": "c0203"
+    },
+    "latency_s": 0.044,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.0644,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "OCR",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.024,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.0805,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "FastAPI",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.016,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.0962,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "PyTorch",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1122,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "HuggingFace Transformers",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.decide",
+   "kind": "node",
+   "t_start_s": 0.1142,
+   "duration_s": 0.0001,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "decision",
+     "meta",
+     "status",
+     "status_reason"
+    ]
+   }
+  },
+  {
+   "name": "node.pricing",
+   "kind": "node",
+   "t_start_s": 0.1162,
+   "duration_s": 0.0212,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "meta",
+     "price"
+    ]
+   }
+  },
+  {
+   "name": "mcp.marketplace.get_market_stats",
+   "kind": "tool",
+   "t_start_s": 0.1179,
+   "duration_s": 0.0023,
+   "attrs": {
+    "args": {
+     "category": "computer_vision",
+     "budget_type": "fixed"
+    },
+    "user": "u-demo",
+    "result_size": 106
+   }
+  },
+  {
+   "name": "tool.marketplace.get_market_stats",
+   "kind": "tool",
+   "t_start_s": 0.1298,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "pricing",
+    "args": {
+     "category": "computer_vision",
+     "budget_type": "fixed"
+    },
+    "latency_s": 0.014,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "mcp.marketplace.get_policy",
+   "kind": "tool",
+   "t_start_s": 0.1322,
+   "duration_s": 0.0015,
+   "attrs": {
+    "args": {},
+    "user": "u-demo",
+    "result_size": 116
+   }
+  },
+  {
+   "name": "tool.marketplace.get_policy",
+   "kind": "tool",
+   "t_start_s": 0.1367,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "pricing",
+    "args": {},
+    "latency_s": 0.006,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.writer",
+   "kind": "node",
+   "t_start_s": 0.1397,
+   "duration_s": 0.0001,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "revision_request",
+     "revisions"
+    ]
+   }
+  },
+  {
+   "name": "node.verifier",
+   "kind": "node",
+   "t_start_s": 0.1414,
+   "duration_s": 0.0423,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "verification"
+    ]
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.1547,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:invoice-ocr",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.013,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.1678,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:rec-engine",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.012,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.list_skills",
+   "kind": "tool",
+   "t_start_s": 0.1789,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.01,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.critic",
+   "kind": "node",
+   "t_start_s": 0.1855,
+   "duration_s": 0.0001,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "critiques"
+    ]
+   }
+  },
+  {
+   "name": "node.compliance",
+   "kind": "node",
+   "t_start_s": 0.1879,
+   "duration_s": 0.0002,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "compliance",
+     "draft"
+    ]
+   }
+  },
+  {
+   "name": "node.preview",
+   "kind": "node",
+   "t_start_s": 0.1897,
+   "duration_s": 0.0351,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "preview",
+     "status"
+    ]
+   }
+  },
+  {
+   "name": "tool.marketplace.create_proposal_draft",
+   "kind": "tool",
+   "t_start_s": 0.2049,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "job_id": "j-ai_ml-057",
+     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
+     "bid_amount": 1770.0,
+     "answers": [
+      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+     ],
+     "idempotency_key": "trace-crash-resume:draft:v1:e0",
+     "dry_run": true
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.marketplace.submit_proposal",
+   "kind": "tool",
+   "t_start_s": 0.2242,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "draft_id": "pending",
+     "job_id": "j-ai_ml-057",
+     "idempotency_key": "trace-crash-resume:submit:preview",
+     "dry_run": true
+    },
+    "latency_s": 0.019,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.approval",
+   "kind": "node",
+   "t_start_s": 0.2262,
+   "duration_s": 0.0002,
+   "attrs": {
+    "model": null,
+    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-057', 'title': 'Hiring LayoutLM expert: invoice field extraction pipeline', 'budget': 1608, 'budget_type': 'fixed', 'category': 'computer_vision'}, 'draft': {'cover_letter': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'screening_answers': [{'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'claims': [{'text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:proposal:011', 'ai_ml:proposal:041', 'ai_ml:proposal:042'], 'score': 0.8}, {'text': 'For FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:rec-engine'], 'score': 1.0}], 'version': 1, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:invoice-ocr', 'ai_ml:case:rec-engine']}, 'evidence': [{'id': 'ai_ml:proposal:011', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for media company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:proposal:041', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'ignored', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for edtech company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:proposal:042', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'ignored', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for nonprofit company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:case:invoice-ocr', 'type': 'case_study', 'source': 'case_studies/invoice-ocr.md', 'date': '[PHONE]', 'outcome': None, 'project': 'invoice-ocr', 'title': 'Invoice field extraction pipeline', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch', 'FastAPI', 'Docker', 'OCR'], 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time down 70%.\\n\\n## Stack\\nLayoutLM, HuggingFace Transformers, PyTorch, FastAPI, Docker, OCR', 'score': 1.0, 'requirement': 'OCR'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, LightGBM, LoRA, MCP, MLOps, MLflow, NLP, Neo4j, OCR, ONNX, OpenAI API, OpenCV, Pinecone, PostgreSQL, Prophet, PyTorch, PyTorch Geometric, Python, RAG, RAGAS, Redis, Streamlit, Whisper, XGBoost, YOLO, edg', 'score': 1.0, 'requirement': 'OCR'}, {'id': 'ai_ml:case:rec-engine', 'type': 'case_study', 'source': 'case_studies/rec-engine.md', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'Two-tower product recommender', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': '# Two-tower product recommender\\n\\n## The problem\\nA fashion store showed the same best-sellers to everyone.\\n\\n## What I did\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Result\\nClick-through up 18% and average order value up 6% in an A/B test.\\n\\n## Stack\\nPyTorch, recommender systems, Faiss, FastAPI, embeddings', 'score': 1.0, 'requirement': 'FastAPI'}, {'id': 'ai_ml:repo:rec-engine', 'type': 'repo_code', 'source': 'repos/rec-engine/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'rec-engine', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 1.0, 'requirement': 'FastAPI'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 1.0, 'requirement': 'PyTorch'}, {'id': 'ai_ml:case:review-sentiment', 'type': 'case_study', 'source': 'case_studies/review-sentiment.md', 'date': '[PHONE]', 'outcome': None, 'project': 'review-sentiment', 'title': 'Hotel review sentiment and topic dashboard', 'skills': ['NLP', 'spaCy', 'HuggingFace Transformers', 'Streamlit', 'topic modelling'], 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\n## Stack\\nNLP, spaCy, HuggingFace Transformers, Streamlit, topic modelling', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}, {'id': 'ai_ml:case:lora-clinical', 'type': 'case_study', 'source': 'case_studies/lora-clinical.md', 'date': '[PHONE]', 'outcome': None, 'project': 'lora-clinical', 'title': 'Fine-tuned clinical note summariser', 'skills': ['LoRA', 'fine-tuning', 'HuggingFace Transformers', 'PyTorch', 'AWS SageMaker'], 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model.\\n\\n## Stack\\nLoRA, fine-tuning, HuggingFace Transformers, PyTorch, AWS SageMaker', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}], 'fit': {'fit_score': 1.0, 'matrix': [{'requirement': 'LayoutLM', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:011', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for media company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'replied'}, {'item_id': 'ai_ml:proposal:041', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for edtech company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'ignored'}, {'item_id': 'ai_ml:proposal:042', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for nonprofit company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'ignored'}]}, {'requirement': 'OCR', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': 'CV\\n## Selected work\\n- **Contract Q&A assistant for a mid-size law firm** (legal): Cut clause review time by 41% across 9 associates; answers cite the exact page.\\n- **Multilingual customer-support agent** (e-commerce): Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third.\\n', 'score': 1.0, 'outcome': None}]}, {'requirement': 'FastAPI', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:rec-engine', 'project': 'rec-engine', 'type': 'case_study', 'title': 'Two-tower product recommender', 'snippet': '# Two-tower product recommender\\n\\n## The problem\\nA fashion store showed the same best-sellers to everyone.\\n\\n## What I did\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Result\\nClick-through up 18% and average order value up 6% in an A/B test.\\n\\n## Stack\\nPyT', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_code', 'title': 'rec-engine', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}]}, {'requirement': 'PyTorch', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_readme', 'title': 'rec-engine', 'snippet': '# rec-engine\\n\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with PyTorch, recommender systems, Faiss.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}]}, {'requirement': 'HuggingFace Transformers', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:review-sentiment', 'project': 'review-sentiment', 'type': 'case_study', 'title': 'Hotel review sentiment and topic dashboard', 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; it', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:lora-clinical', 'project': 'lora-clinical', 'type': 'case_study', 'title': 'Fine-tuned clinical note summariser', 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 ov', 'score': 1.0, 'outcome': None}]}], 'reasons': ['5/5 requirements fully evidenced', '100% of requirements are skills in the portfolio'], 'unsupported_requirements': [], 'top_projects': ['invoice-ocr', 'rec-engine', 'fraud-gnn']}, 'risk': {'risk_score': 0.044, 'client_quality': 0.89, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.89; 0 flag(s).'}, 'price': {'amount': 1770.0, 'budget_type': 'fixed', 'rationale': \"market [PHONE] (p25-p75, n=81), fit tier high -> p70; kept within 10% of the client's budget ($1608)\", 'market': {'category': 'computer_vision', 'n': 81, 'budget_type': 'fixed', 'p25': 1640.0, 'median': 2390.0, 'p75': 3280.0, 'source': None}, 'floor': 40.0, 'connects_cost': 16, 'connects_usd': 2.4, 'expected_value_usd': 61.95, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-057', 'cover_letter': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'bid_amount': 1770.0, 'answers': ['Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.']}, 'connects_cost': 16, 'connects_balance_after': 100, 'marketplace': 'gigsim'}, 'critiques': [{'score': 0.8, 'approve': True, 'issues': [{'kind': 'personalisation', 'detail': \"mentions 1/5 of the client's requirements\", 'paragraph': None}], 'revision_instructions': \"personalisation: mentions 1/5 of the client's requirements\", 'version': 1}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'cleaned_answers': [{'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.', 'label': 'supported', 'score': 0.8, 'evidence_ids': ['ai_ml:proposal:011', 'ai_ml:proposal:041', 'ai_ml:proposal:042'], 'reasons': []}, {'text': 'For FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:rec-engine'], 'reasons': []}], 'n_claims': 2, 'unsupported_before': 0, 'unsupported_rate_before': 0.0, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='5defde10586dfa9f8171d5c96481aea9', response_schema=None),)"
+   }
+  },
+  {
+   "name": "node.approval",
+   "kind": "node",
+   "t_start_s": 0.2598,
+   "duration_s": 0.0001,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "approval",
+     "status"
+    ]
+   }
+  },
+  {
+   "name": "node.submit",
+   "kind": "node",
+   "t_start_s": 0.262,
+   "duration_s": 0.0352,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "status",
+     "submission"
+    ]
+   }
+  },
+  {
+   "name": "mcp.marketplace.create_proposal_draft",
+   "kind": "tool",
+   "t_start_s": 0.2648,
+   "duration_s": 0.0031,
+   "attrs": {
+    "args": {
+     "job_id": "j-ai_ml-057",
+     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
+     "bid_amount": 1770.0,
+     "answers": [
+      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+     ],
+     "idempotency_key": "trace-crash-resume:draft:v1e0",
+     "dry_run": false
+    },
+    "user": "u-demo"
+   }
+  },
+  {
+   "name": "tool.marketplace.create_proposal_draft",
+   "kind": "tool",
+   "t_start_s": 0.2793,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "job_id": "j-ai_ml-057",
+     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
+     "bid_amount": 1770.0,
+     "answers": [
+      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+     ],
+     "idempotency_key": "trace-crash-resume:draft:v1e0"
+    },
+    "latency_s": 0.017,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "mcp.marketplace.submit_proposal",
+   "kind": "tool",
+   "t_start_s": 0.2835,
+   "duration_s": 0.0019,
+   "attrs": {
+    "args": {
+     "draft_id": "d-8b725939b9",
+     "job_id": "j-ai_ml-057",
+     "idempotency_key": "trace-crash-resume:submit:v1e0",
+     "dry_run": false
+    },
+    "user": "u-demo"
+   }
+  },
+  {
+   "name": "tool.marketplace.submit_proposal",
+   "kind": "tool",
+   "t_start_s": 0.2961,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "draft_id": "d-8b725939b9",
+     "job_id": "j-ai_ml-057",
+     "idempotency_key": "trace-crash-resume:submit:v1e0"
+    },
+    "latency_s": 0.016,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.submit",
+   "kind": "node",
+   "t_start_s": 0.3076,
+   "duration_s": 0.0274,
+   "attrs": {
+    "model": null,
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "status",
+     "submission"
+    ]
+   }
+  },
+  {
+   "name": "tool.marketplace.create_proposal_draft",
+   "kind": "tool",
+   "t_start_s": 0.3202,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "job_id": "j-ai_ml-057",
+     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
+     "bid_amount": 1770.0,
+     "answers": [
+      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+     ],
+     "idempotency_key": "trace-crash-resume:draft:v1e0"
+    },
+    "latency_s": 0.013,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.marketplace.submit_proposal",
+   "kind": "tool",
+   "t_start_s": 0.334,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "executor",
+    "args": {
+     "draft_id": "d-8b725939b9",
+     "job_id": "j-ai_ml-057",
+     "idempotency_key": "trace-crash-resume:submit:v1e0"
+    },
+    "latency_s": 0.013,
+    "attempt": 0
+   }
+  }
+ ]
+}

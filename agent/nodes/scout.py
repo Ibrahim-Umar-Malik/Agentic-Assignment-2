@@ -21,10 +21,15 @@ def fingerprint(job: dict) -> str:
 
 
 def find_duplicate(user_id: str, job: dict) -> str | None:
+    """An earlier-queued job with the same fingerprint (a repost). Only earlier ones count, so the original is
+    never marked as a duplicate of its own repost."""
     fp = fingerprint(job)
     with engine().begin() as c:
-        row = c.execute(select(jobs.c.job_id).where(jobs.c.user_id == user_id, jobs.c.dedup_key == fp,
-                                                    jobs.c.job_id != job["id"])).first()
+        own = c.execute(select(jobs.c.created_at).where(jobs.c.user_id == user_id, jobs.c.job_id == job["id"])).first()
+        q = select(jobs.c.job_id).where(jobs.c.user_id == user_id, jobs.c.dedup_key == fp, jobs.c.job_id != job["id"])
+        if own and own[0] is not None:
+            q = q.where(jobs.c.created_at < own[0])
+        row = c.execute(q).first()
     return row[0] if row else None
 
 

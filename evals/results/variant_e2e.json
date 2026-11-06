@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "80eb777",
-    "generated_at": "2026-11-06T12:05:25Z",
+    "commit": "f20e310",
+    "generated_at": "2026-11-06T12:10:20Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -18,7 +18,7 @@
       "unsupported_claims_per_proposal": 0.0,
       "judge_score": 3.6095,
       "gigsim_reply_rate": 0.2695,
-      "p95_latency_s": 0.239,
+      "p95_latency_s": 0.243,
       "usd_per_proposal": 0.0,
       "by_job_kind": {
         "fit": {
@@ -49,7 +49,7 @@
       "unsupported_claims_per_proposal": 0.0,
       "judge_score": 3.9619,
       "gigsim_reply_rate": 0.3386,
-      "p95_latency_s": 0.269,
+      "p95_latency_s": 0.277,
       "usd_per_proposal": 0.0,
       "by_job_kind": {
         "fit": {

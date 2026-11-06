@@ -28,9 +28,15 @@ def quote(job: dict, fit: float, stats: dict, floor: float, connects_cost: int, 
         amount = min_amount
         notes.append(f"raised to your floor (${min_amount:.0f})")
     budget = float(job.get("budget") or 0)
-    if budget and amount > budget * 1.15:
-        amount = max(min_amount, budget * 1.1)
-        notes.append(f"kept within 10% of the client's budget (${budget:.0f})")
+    # Anchor to the client's stated budget (report section 8, "mispriced"): never above it, and for strong fits
+    # not far below it. The floor still wins: a budget under your floor is a skip, not a discount.
+    anchor = p.get("budget_anchor", {"max_ratio": 1.0, "min_ratio_high_fit": 0.85})
+    if budget and amount > budget * anchor["max_ratio"]:
+        amount = max(min_amount, budget * anchor["max_ratio"])
+        notes.append(f"capped at the client's budget (${budget:.0f})")
+    elif budget and tier == "high" and amount < budget * anchor["min_ratio_high_fit"]:
+        amount = budget * anchor["min_ratio_high_fit"]
+        notes.append(f"strong fit: raised to {int(anchor['min_ratio_high_fit'] * 100)}% of the client's budget")
     amount = round(amount, 0) if bt == "hourly" else round(amount / 10) * 10
     p_win = max(0.02, min(0.35, 0.05 + 0.3 * fit))
     value = amount * (20 if bt == "hourly" else 1)  # expected engagement value

@@ -9,7 +9,7 @@ from core import llm
 
 from ..handoffs import RiskFlag, RiskReport
 from ..mcp_client import ToolGateway
-from .common import injection_spans, load_prompt, node, risk_patterns, wrap
+from .common import injection_spans, load_prompt, node, risk_patterns, sanitize_untrusted, wrap
 
 
 def client_quality(c: dict) -> tuple[float, list[RiskFlag]]:
@@ -38,20 +38,25 @@ def client_quality(c: dict) -> tuple[float, list[RiskFlag]]:
 
 def assess(job: dict, client: dict) -> RiskReport:
     text = f"{job.get('title', '')}. {job.get('description', '')}"
+    # Scam patterns run on the post with injected instructions removed: an attacker's "include your email" line
+    # is an injection (neutralised), not evidence that the client harvests contacts (report section 8).
+    clean, _ = sanitize_untrusted(text)
     flags: list[RiskFlag] = []
     for p in risk_patterns()["scam"]:
-        m = re.search(p["pattern"], text)
+        m = re.search(p["pattern"], clean)
         if m:
-            flags.append(RiskFlag(kind=p["kind"], severity=p["severity"], evidence=text[max(0, m.start() - 40): m.end() + 40]))
+            flags.append(RiskFlag(kind=p["kind"], severity=p["severity"], evidence=clean[max(0, m.start() - 40): m.end() + 40]))
     inj = injection_spans(text)
     if inj:
         flags.append(RiskFlag(kind="injection", severity=0.3, evidence="; ".join(inj)[:200]))
     q, cflags = client_quality(client or {})
     flags += cflags
     scam = any(f.kind in ("scam", "advance_fee", "off_platform", "free_work", "contact_harvest") and f.severity >= 0.75 for f in flags)
-    risk = max([f.severity for f in flags] + [0.0])
+    # Injection is flagged and neutralised (sanitise + delimit + compliance) but does not make the client risky:
+    # counting it skipped 7 legitimate test-split jobs (evals/results/failures.json, report section 8).
+    risk = max([f.severity for f in flags if f.kind != "injection"] + [0.0])
     if not scam:
-        risk = min(1.0, risk * 0.6 + (1 - q) * 0.4) if flags else (1 - q) * 0.4
+        risk = min(1.0, risk * 0.6 + (1 - q) * 0.4) if any(f.kind != "injection" for f in flags) else (1 - q) * 0.4
     return RiskReport(risk_score=round(risk, 3), client_quality=round(q, 3), flags=flags, injection_detected=bool(inj), scam=scam,
                       summary=("Likely scam: " + ", ".join(sorted({f.kind for f in flags if f.severity >= 0.75}))) if scam else
                       f"Client quality {q:.2f}; {len(flags)} flag(s).")

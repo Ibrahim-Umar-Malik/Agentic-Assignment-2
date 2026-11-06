@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "a5c27b7",
-    "generated_at": "2026-11-06T11:57:32Z",
+    "commit": "f20e310",
+    "generated_at": "2026-11-06T12:10:31Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -19,8 +19,8 @@
       "mean_tool_calls": 9.34,
       "mean_tokens": 0.0,
       "usd_per_job": 0.0,
-      "p50_latency_s": 0.16978813099967738,
-      "p95_latency_s": 0.2951669369999763
+      "p50_latency_s": 0.18856397700074012,
+      "p95_latency_s": 0.32198424600028375
     },
     "react": {
       "status": "not_run",
