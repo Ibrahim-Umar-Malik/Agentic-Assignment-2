@@ -1,0 +1,34 @@
+# Machine-readable policy pack. Loaded by agent/nodes/compliance.py and agent/nodes/risk.py.
+# version is bumped by every policy update; the change request is absorbed by editing this file and agent/config.yaml.
+version: 1
+rules:
+  - id: P1
+    name: no_off_platform_contact
+    action: redact
+    patterns:
+      - '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+      - '\+?\d[\d\s().-]{7,}\d'
+      - '(?i)\b(telegram|whatsapp|skype|discord|signal)\b'
+      - '(?i)(zoom\.us|meet\.google\.com|calendly\.com)/\S+'
+  - id: P2
+    name: no_off_platform_payment
+    action: block
+    patterns:
+      - '(?i)\b(pay|payment|paid)\b[^.]{0,40}\b(crypto|bitcoin|usdt|paypal|bank transfer|western union|outside)\b'
+  - id: P4
+    name: no_guarantees
+    action: rewrite
+    patterns:
+      - '(?i)\bguarantee[sd]?\b'
+      - '(?i)\b100\s?%\s?(results|success|satisfaction|accuracy)'
+      - '(?i)\b(rank|ranking) #?1\b'
+  - id: P6
+    name: no_free_work
+    action: block
+    patterns:
+      - '(?i)\b(i will|happy to|can) (do|complete|build) (a |the )?(free|unpaid)\b'
+  - id: P7
+    name: length
+    action: block
+    max_cover_letter_chars: 5000
+    max_screening_answer_chars: 1500

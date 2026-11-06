@@ -1,0 +1,6402 @@
+[
+ {
+  "id": "c0000",
+  "name": "Client 0000",
+  "country": "Australia",
+  "industry": "media",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 17,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.44,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0001",
+  "name": "Client 0001",
+  "country": "Singapore",
+  "industry": "retail",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 20,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.37,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0002",
+  "name": "Client 0002",
+  "country": "UAE",
+  "industry": "logistics",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 40,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.38,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0003",
+  "name": "Client 0003",
+  "country": "Singapore",
+  "industry": "insurance",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 34,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.93,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0004",
+  "name": "Client 0004",
+  "country": "United States",
+  "industry": "SaaS",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 11,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.99,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.66,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0005",
+  "name": "Client 0005",
+  "country": "United Kingdom",
+  "industry": "media",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 26,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.98,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.87,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0006",
+  "name": "Client 0006",
+  "country": "Germany",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 10,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.94,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0007",
+  "name": "Client 0007",
+  "country": "Singapore",
+  "industry": "media",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 16,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.32,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0008",
+  "name": "Client 0008",
+  "country": "Singapore",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 22,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.11,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.46,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0009",
+  "name": "Client 0009",
+  "country": "United Kingdom",
+  "industry": "manufacturing",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 32,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.63,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0010",
+  "name": "Client 0010",
+  "country": "Germany",
+  "industry": "legal",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 17,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.62,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0011",
+  "name": "Client 0011",
+  "country": "United States",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 16,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.38,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.93,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0012",
+  "name": "Client 0012",
+  "country": "Canada",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 18,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.67,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0013",
+  "name": "Client 0013",
+  "country": "Netherlands",
+  "industry": "real estate",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 25,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.32,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0014",
+  "name": "Client 0014",
+  "country": "United Kingdom",
+  "industry": "real estate",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 5,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.53,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0015",
+  "name": "Client 0015",
+  "country": "United Kingdom",
+  "industry": "real estate",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 39,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.73,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0016",
+  "name": "Client 0016",
+  "country": "Netherlands",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 19,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.34,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0017",
+  "name": "Client 0017",
+  "country": "UAE",
+  "industry": "insurance",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 21,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.49,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0018",
+  "name": "Client 0018",
+  "country": "Unknown",
+  "industry": "fintech",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 34,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.79,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0019",
+  "name": "Client 0019",
+  "country": "UAE",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 21,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.88,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0020",
+  "name": "Client 0020",
+  "country": "Canada",
+  "industry": "SaaS",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 14,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.56,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0021",
+  "name": "Client 0021",
+  "country": "Unknown",
+  "industry": "legal",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 37,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.45,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0022",
+  "name": "Client 0022",
+  "country": "Unknown",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 15,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.37,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0023",
+  "name": "Client 0023",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 21,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.85,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0024",
+  "name": "Client 0024",
+  "country": "United Kingdom",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 9,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.67,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0025",
+  "name": "Client 0025",
+  "country": "Australia",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 27,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.21,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.56,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0026",
+  "name": "Client 0026",
+  "country": "Netherlands",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 32,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.57,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0027",
+  "name": "Client 0027",
+  "country": "Unknown",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 20,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.76,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0028",
+  "name": "Client 0028",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 33,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.8,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0029",
+  "name": "Client 0029",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 1,
+  "jobs_posted": 21,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.77,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0030",
+  "name": "Client 0030",
+  "country": "United States",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 29,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.77,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0031",
+  "name": "Client 0031",
+  "country": "Australia",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 14,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.34,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.46,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0032",
+  "name": "Client 0032",
+  "country": "Netherlands",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 26,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.52,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0033",
+  "name": "Client 0033",
+  "country": "Australia",
+  "industry": "retail",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 39,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.65,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0034",
+  "name": "Client 0034",
+  "country": "Germany",
+  "industry": "insurance",
+  "payment_verified": false,
+  "total_spent": 50,
+  "hires": 0,
+  "jobs_posted": 6,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.96,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.56,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0035",
+  "name": "Client 0035",
+  "country": "UAE",
+  "industry": "healthcare",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 6,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.2,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.79,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0036",
+  "name": "Client 0036",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 33,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.82,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0037",
+  "name": "Client 0037",
+  "country": "United States",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 37,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.9,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0038",
+  "name": "Client 0038",
+  "country": "Germany",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 0,
+  "hires": 1,
+  "jobs_posted": 34,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.48,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0039",
+  "name": "Client 0039",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 0,
+  "hires": 0,
+  "jobs_posted": 10,
+  "avg_rating": null,
+  "member_since": "2026-09-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.9,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.56,
+   "scam": true
+  }
+ },
+ {
+  "id": "c0040",
+  "name": "Client 0040",
+  "country": "United Kingdom",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 48687.0,
+  "hires": 57,
+  "jobs_posted": 77,
+  "avg_rating": 4.6,
+  "member_since": "2023-11-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.31,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.64,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0041",
+  "name": "Client 0041",
+  "country": "Germany",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 78665.0,
+  "hires": 40,
+  "jobs_posted": 45,
+  "avg_rating": 4.8,
+  "member_since": "2016-11-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.4,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0042",
+  "name": "Client 0042",
+  "country": "United Kingdom",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 87569.0,
+  "hires": 53,
+  "jobs_posted": 71,
+  "avg_rating": 3.7,
+  "member_since": "2022-02-17",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.66,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0043",
+  "name": "Client 0043",
+  "country": "Singapore",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 54338.0,
+  "hires": 16,
+  "jobs_posted": 18,
+  "avg_rating": 3.7,
+  "member_since": "2019-12-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.32,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.78,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0044",
+  "name": "Client 0044",
+  "country": "United Kingdom",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 89457.0,
+  "hires": 30,
+  "jobs_posted": 32,
+  "avg_rating": 4.6,
+  "member_since": "2019-12-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0045",
+  "name": "Client 0045",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 193660.0,
+  "hires": 54,
+  "jobs_posted": 61,
+  "avg_rating": 4.1,
+  "member_since": "2020-09-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0046",
+  "name": "Client 0046",
+  "country": "Australia",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 151458.0,
+  "hires": 52,
+  "jobs_posted": 66,
+  "avg_rating": 4.1,
+  "member_since": "2016-07-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.32,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0047",
+  "name": "Client 0047",
+  "country": "United Kingdom",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 106238.0,
+  "hires": 51,
+  "jobs_posted": 71,
+  "avg_rating": 4.6,
+  "member_since": "2025-02-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.35,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0048",
+  "name": "Client 0048",
+  "country": "Canada",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 31180.0,
+  "hires": 9,
+  "jobs_posted": 10,
+  "avg_rating": 4.6,
+  "member_since": "2017-03-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.44,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0049",
+  "name": "Client 0049",
+  "country": "United Kingdom",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 89618.0,
+  "hires": 54,
+  "jobs_posted": 60,
+  "avg_rating": 3.7,
+  "member_since": "2023-06-27",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.34,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0050",
+  "name": "Client 0050",
+  "country": "UAE",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 5507.0,
+  "hires": 14,
+  "jobs_posted": 19,
+  "avg_rating": 3.9,
+  "member_since": "2017-09-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.21,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0051",
+  "name": "Client 0051",
+  "country": "United Kingdom",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 69024.0,
+  "hires": 19,
+  "jobs_posted": 32,
+  "avg_rating": 3.9,
+  "member_since": "2016-11-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.34,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0052",
+  "name": "Client 0052",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 22104.0,
+  "hires": 41,
+  "jobs_posted": 54,
+  "avg_rating": 4.7,
+  "member_since": "2018-04-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0053",
+  "name": "Client 0053",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 158557.0,
+  "hires": 46,
+  "jobs_posted": 50,
+  "avg_rating": 3.8,
+  "member_since": "2021-07-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.33,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0054",
+  "name": "Client 0054",
+  "country": "Netherlands",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 44787.0,
+  "hires": 30,
+  "jobs_posted": 50,
+  "avg_rating": 3.9,
+  "member_since": "2022-10-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.94,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0055",
+  "name": "Client 0055",
+  "country": "Singapore",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 128663.0,
+  "hires": 59,
+  "jobs_posted": 73,
+  "avg_rating": 3.8,
+  "member_since": "2020-08-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0056",
+  "name": "Client 0056",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 21551.0,
+  "hires": 9,
+  "jobs_posted": 14,
+  "avg_rating": 4.1,
+  "member_since": "2016-01-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.13,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0057",
+  "name": "Client 0057",
+  "country": "Singapore",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 38573.0,
+  "hires": 30,
+  "jobs_posted": 46,
+  "avg_rating": 4.6,
+  "member_since": "2020-01-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.83,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0058",
+  "name": "Client 0058",
+  "country": "Singapore",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 55330.0,
+  "hires": 17,
+  "jobs_posted": 36,
+  "avg_rating": 4.3,
+  "member_since": "2018-01-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.77,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0059",
+  "name": "Client 0059",
+  "country": "Singapore",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 52037.0,
+  "hires": 44,
+  "jobs_posted": 62,
+  "avg_rating": 4.1,
+  "member_since": "2024-07-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.57,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0060",
+  "name": "Client 0060",
+  "country": "United States",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 46371.0,
+  "hires": 53,
+  "jobs_posted": 60,
+  "avg_rating": 3.6,
+  "member_since": "2016-11-15",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.6,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0061",
+  "name": "Client 0061",
+  "country": "United States",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 25495.0,
+  "hires": 13,
+  "jobs_posted": 17,
+  "avg_rating": 4.5,
+  "member_since": "2019-06-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.4,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0062",
+  "name": "Client 0062",
+  "country": "United Kingdom",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 13009.0,
+  "hires": 26,
+  "jobs_posted": 42,
+  "avg_rating": 4.1,
+  "member_since": "2023-02-21",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0063",
+  "name": "Client 0063",
+  "country": "United Kingdom",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 169801.0,
+  "hires": 57,
+  "jobs_posted": 76,
+  "avg_rating": 4.7,
+  "member_since": "2024-12-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0064",
+  "name": "Client 0064",
+  "country": "Australia",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 12211.0,
+  "hires": 12,
+  "jobs_posted": 25,
+  "avg_rating": 4.1,
+  "member_since": "2020-09-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0065",
+  "name": "Client 0065",
+  "country": "UAE",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 46956.0,
+  "hires": 40,
+  "jobs_posted": 58,
+  "avg_rating": 3.7,
+  "member_since": "2019-10-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.94,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0066",
+  "name": "Client 0066",
+  "country": "Canada",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 112978.0,
+  "hires": 40,
+  "jobs_posted": 42,
+  "avg_rating": 4.8,
+  "member_since": "2017-08-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.85,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0067",
+  "name": "Client 0067",
+  "country": "UAE",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 66108.0,
+  "hires": 43,
+  "jobs_posted": 58,
+  "avg_rating": 3.8,
+  "member_since": "2020-06-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.46,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0068",
+  "name": "Client 0068",
+  "country": "Singapore",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 42031.0,
+  "hires": 45,
+  "jobs_posted": 57,
+  "avg_rating": 4.5,
+  "member_since": "2021-06-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.69,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0069",
+  "name": "Client 0069",
+  "country": "United Kingdom",
+  "industry": "media",
+  "payment_verified": false,
+  "total_spent": 37008.0,
+  "hires": 23,
+  "jobs_posted": 31,
+  "avg_rating": 4.2,
+  "member_since": "2016-08-12",
+  "_hidden": {
+   "budget_ceiling_mult": 0.96,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.65,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0070",
+  "name": "Client 0070",
+  "country": "United Kingdom",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 10262.0,
+  "hires": 18,
+  "jobs_posted": 25,
+  "avg_rating": 4.0,
+  "member_since": "2017-09-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.92,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0071",
+  "name": "Client 0071",
+  "country": "UAE",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 35526.0,
+  "hires": 55,
+  "jobs_posted": 68,
+  "avg_rating": 4.8,
+  "member_since": "2016-01-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.49,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0072",
+  "name": "Client 0072",
+  "country": "Canada",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 67125.0,
+  "hires": 31,
+  "jobs_posted": 41,
+  "avg_rating": 3.9,
+  "member_since": "2023-03-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.9,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0073",
+  "name": "Client 0073",
+  "country": "Canada",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 76646.0,
+  "hires": 39,
+  "jobs_posted": 49,
+  "avg_rating": 4.6,
+  "member_since": "2016-10-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.87,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0074",
+  "name": "Client 0074",
+  "country": "Netherlands",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 59691.0,
+  "hires": 57,
+  "jobs_posted": 67,
+  "avg_rating": 4.9,
+  "member_since": "2021-11-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.36,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0075",
+  "name": "Client 0075",
+  "country": "Canada",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 57418.0,
+  "hires": 15,
+  "jobs_posted": 33,
+  "avg_rating": 4.9,
+  "member_since": "2021-02-15",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.5,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0076",
+  "name": "Client 0076",
+  "country": "UAE",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 25806.0,
+  "hires": 14,
+  "jobs_posted": 14,
+  "avg_rating": 3.7,
+  "member_since": "2024-07-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0077",
+  "name": "Client 0077",
+  "country": "Australia",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 22093.0,
+  "hires": 15,
+  "jobs_posted": 26,
+  "avg_rating": 4.0,
+  "member_since": "2025-02-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0078",
+  "name": "Client 0078",
+  "country": "United Kingdom",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 55144.0,
+  "hires": 17,
+  "jobs_posted": 24,
+  "avg_rating": 4.7,
+  "member_since": "2019-08-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.59,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0079",
+  "name": "Client 0079",
+  "country": "Singapore",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 20950.0,
+  "hires": 22,
+  "jobs_posted": 33,
+  "avg_rating": 4.5,
+  "member_since": "2023-08-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0080",
+  "name": "Client 0080",
+  "country": "Singapore",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 48036.0,
+  "hires": 59,
+  "jobs_posted": 62,
+  "avg_rating": 4.1,
+  "member_since": "2018-03-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.77,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0081",
+  "name": "Client 0081",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 7181.0,
+  "hires": 2,
+  "jobs_posted": 8,
+  "avg_rating": 4.2,
+  "member_since": "2021-06-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.89,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0082",
+  "name": "Client 0082",
+  "country": "Australia",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 65119.0,
+  "hires": 40,
+  "jobs_posted": 45,
+  "avg_rating": 3.9,
+  "member_since": "2021-12-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0083",
+  "name": "Client 0083",
+  "country": "Singapore",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 49106.0,
+  "hires": 33,
+  "jobs_posted": 42,
+  "avg_rating": 4.6,
+  "member_since": "2021-09-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.13,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0084",
+  "name": "Client 0084",
+  "country": "Netherlands",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 137323.0,
+  "hires": 59,
+  "jobs_posted": 63,
+  "avg_rating": 4.0,
+  "member_since": "2024-06-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0085",
+  "name": "Client 0085",
+  "country": "Germany",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 32591.0,
+  "hires": 12,
+  "jobs_posted": 13,
+  "avg_rating": 3.8,
+  "member_since": "2020-04-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0086",
+  "name": "Client 0086",
+  "country": "Netherlands",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 22425.0,
+  "hires": 8,
+  "jobs_posted": 27,
+  "avg_rating": 4.7,
+  "member_since": "2021-05-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.04,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.62,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0087",
+  "name": "Client 0087",
+  "country": "Singapore",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 174851.0,
+  "hires": 49,
+  "jobs_posted": 64,
+  "avg_rating": 3.9,
+  "member_since": "2022-08-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.49,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0088",
+  "name": "Client 0088",
+  "country": "United States",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 6148.0,
+  "hires": 10,
+  "jobs_posted": 17,
+  "avg_rating": 4.8,
+  "member_since": "2019-09-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.95,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0089",
+  "name": "Client 0089",
+  "country": "United States",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 7649.0,
+  "hires": 19,
+  "jobs_posted": 35,
+  "avg_rating": 4.6,
+  "member_since": "2022-12-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0090",
+  "name": "Client 0090",
+  "country": "Canada",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 34343.0,
+  "hires": 44,
+  "jobs_posted": 62,
+  "avg_rating": 3.7,
+  "member_since": "2017-04-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0091",
+  "name": "Client 0091",
+  "country": "Singapore",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 144186.0,
+  "hires": 37,
+  "jobs_posted": 43,
+  "avg_rating": 3.7,
+  "member_since": "2020-07-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.59,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0092",
+  "name": "Client 0092",
+  "country": "Australia",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 84880.0,
+  "hires": 39,
+  "jobs_posted": 49,
+  "avg_rating": 3.8,
+  "member_since": "2023-03-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0093",
+  "name": "Client 0093",
+  "country": "Canada",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 3553.0,
+  "hires": 4,
+  "jobs_posted": 12,
+  "avg_rating": 3.6,
+  "member_since": "2023-09-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0094",
+  "name": "Client 0094",
+  "country": "Germany",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 5416.0,
+  "hires": 9,
+  "jobs_posted": 26,
+  "avg_rating": 4.5,
+  "member_since": "2021-12-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0095",
+  "name": "Client 0095",
+  "country": "UAE",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 73795.0,
+  "hires": 56,
+  "jobs_posted": 73,
+  "avg_rating": 4.1,
+  "member_since": "2023-02-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.22,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.41,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0096",
+  "name": "Client 0096",
+  "country": "United Kingdom",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 94410.0,
+  "hires": 30,
+  "jobs_posted": 46,
+  "avg_rating": 3.8,
+  "member_since": "2021-09-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0097",
+  "name": "Client 0097",
+  "country": "Canada",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 17793.0,
+  "hires": 19,
+  "jobs_posted": 36,
+  "avg_rating": 4.1,
+  "member_since": "2023-05-06",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0098",
+  "name": "Client 0098",
+  "country": "UAE",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 24493.0,
+  "hires": 15,
+  "jobs_posted": 26,
+  "avg_rating": 4.0,
+  "member_since": "2018-03-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.39,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0099",
+  "name": "Client 0099",
+  "country": "United States",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 24652.0,
+  "hires": 10,
+  "jobs_posted": 18,
+  "avg_rating": 4.9,
+  "member_since": "2020-07-28",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.51,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0100",
+  "name": "Client 0100",
+  "country": "Germany",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 41824.0,
+  "hires": 36,
+  "jobs_posted": 43,
+  "avg_rating": 4.6,
+  "member_since": "2017-08-31",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0101",
+  "name": "Client 0101",
+  "country": "Netherlands",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 76021.0,
+  "hires": 59,
+  "jobs_posted": 64,
+  "avg_rating": 4.0,
+  "member_since": "2016-05-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0102",
+  "name": "Client 0102",
+  "country": "Canada",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 100143.0,
+  "hires": 36,
+  "jobs_posted": 40,
+  "avg_rating": 4.3,
+  "member_since": "2020-04-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0103",
+  "name": "Client 0103",
+  "country": "United States",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 12297.0,
+  "hires": 12,
+  "jobs_posted": 14,
+  "avg_rating": 4.8,
+  "member_since": "2016-06-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.2,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.68,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0104",
+  "name": "Client 0104",
+  "country": "Germany",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 73395.0,
+  "hires": 45,
+  "jobs_posted": 54,
+  "avg_rating": 4.0,
+  "member_since": "2016-08-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.33,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.89,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0105",
+  "name": "Client 0105",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 12124.0,
+  "hires": 30,
+  "jobs_posted": 39,
+  "avg_rating": 4.8,
+  "member_since": "2022-07-30",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.85,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0106",
+  "name": "Client 0106",
+  "country": "Germany",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 30059.0,
+  "hires": 8,
+  "jobs_posted": 9,
+  "avg_rating": 4.3,
+  "member_since": "2020-03-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.38,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0107",
+  "name": "Client 0107",
+  "country": "UAE",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 36297.0,
+  "hires": 32,
+  "jobs_posted": 45,
+  "avg_rating": 4.2,
+  "member_since": "2019-01-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.21,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0108",
+  "name": "Client 0108",
+  "country": "Canada",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 23342.0,
+  "hires": 19,
+  "jobs_posted": 32,
+  "avg_rating": 5.0,
+  "member_since": "2017-09-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.04,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0109",
+  "name": "Client 0109",
+  "country": "United Kingdom",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 44914.0,
+  "hires": 39,
+  "jobs_posted": 56,
+  "avg_rating": 4.5,
+  "member_since": "2020-02-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.87,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0110",
+  "name": "Client 0110",
+  "country": "Netherlands",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 201922.0,
+  "hires": 52,
+  "jobs_posted": 57,
+  "avg_rating": 4.1,
+  "member_since": "2023-08-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0111",
+  "name": "Client 0111",
+  "country": "United Kingdom",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 232633.0,
+  "hires": 59,
+  "jobs_posted": 68,
+  "avg_rating": 3.8,
+  "member_since": "2016-02-16",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0112",
+  "name": "Client 0112",
+  "country": "Australia",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 170643.0,
+  "hires": 46,
+  "jobs_posted": 55,
+  "avg_rating": 4.3,
+  "member_since": "2024-05-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0113",
+  "name": "Client 0113",
+  "country": "Singapore",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 126064.0,
+  "hires": 59,
+  "jobs_posted": 76,
+  "avg_rating": 4.7,
+  "member_since": "2023-07-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.04,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0114",
+  "name": "Client 0114",
+  "country": "United States",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 33796.0,
+  "hires": 54,
+  "jobs_posted": 64,
+  "avg_rating": 4.6,
+  "member_since": "2017-12-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.34,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0115",
+  "name": "Client 0115",
+  "country": "Netherlands",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 106681.0,
+  "hires": 47,
+  "jobs_posted": 62,
+  "avg_rating": 3.8,
+  "member_since": "2019-11-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0116",
+  "name": "Client 0116",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 14277.0,
+  "hires": 9,
+  "jobs_posted": 25,
+  "avg_rating": 4.1,
+  "member_since": "2020-01-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.9,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0117",
+  "name": "Client 0117",
+  "country": "United Kingdom",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 138087.0,
+  "hires": 37,
+  "jobs_posted": 51,
+  "avg_rating": 4.5,
+  "member_since": "2022-02-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0118",
+  "name": "Client 0118",
+  "country": "UAE",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 108718.0,
+  "hires": 55,
+  "jobs_posted": 57,
+  "avg_rating": 4.5,
+  "member_since": "2021-07-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.62,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0119",
+  "name": "Client 0119",
+  "country": "Australia",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 7159.0,
+  "hires": 2,
+  "jobs_posted": 20,
+  "avg_rating": 4.4,
+  "member_since": "2024-09-17",
+  "_hidden": {
+   "budget_ceiling_mult": 1.1,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.91,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0120",
+  "name": "Client 0120",
+  "country": "Singapore",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 16064.0,
+  "hires": 14,
+  "jobs_posted": 15,
+  "avg_rating": 4.2,
+  "member_since": "2024-10-30",
+  "_hidden": {
+   "budget_ceiling_mult": 1.4,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.77,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0121",
+  "name": "Client 0121",
+  "country": "United States",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 171859.0,
+  "hires": 54,
+  "jobs_posted": 61,
+  "avg_rating": 3.9,
+  "member_since": "2017-02-23",
+  "_hidden": {
+   "budget_ceiling_mult": 0.99,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.57,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0122",
+  "name": "Client 0122",
+  "country": "United States",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 66016.0,
+  "hires": 49,
+  "jobs_posted": 54,
+  "avg_rating": 3.9,
+  "member_since": "2025-02-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.57,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0123",
+  "name": "Client 0123",
+  "country": "Germany",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 71364.0,
+  "hires": 34,
+  "jobs_posted": 53,
+  "avg_rating": 4.1,
+  "member_since": "2017-12-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.31,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0124",
+  "name": "Client 0124",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 74858.0,
+  "hires": 52,
+  "jobs_posted": 58,
+  "avg_rating": 4.0,
+  "member_since": "2024-09-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.92,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0125",
+  "name": "Client 0125",
+  "country": "United Kingdom",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 159030.0,
+  "hires": 43,
+  "jobs_posted": 44,
+  "avg_rating": 3.7,
+  "member_since": "2021-09-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.73,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0126",
+  "name": "Client 0126",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 84055.0,
+  "hires": 30,
+  "jobs_posted": 44,
+  "avg_rating": 4.5,
+  "member_since": "2016-06-27",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.38,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0127",
+  "name": "Client 0127",
+  "country": "Australia",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 1738.0,
+  "hires": 1,
+  "jobs_posted": 9,
+  "avg_rating": 4.2,
+  "member_since": "2022-06-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.33,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0128",
+  "name": "Client 0128",
+  "country": "UAE",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 163628.0,
+  "hires": 45,
+  "jobs_posted": 53,
+  "avg_rating": 4.8,
+  "member_since": "2020-04-06",
+  "_hidden": {
+   "budget_ceiling_mult": 1.01,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.41,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0129",
+  "name": "Client 0129",
+  "country": "Singapore",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 133428.0,
+  "hires": 46,
+  "jobs_posted": 55,
+  "avg_rating": 3.9,
+  "member_since": "2018-12-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.68,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0130",
+  "name": "Client 0130",
+  "country": "Canada",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 160244.0,
+  "hires": 41,
+  "jobs_posted": 48,
+  "avg_rating": 4.6,
+  "member_since": "2018-12-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.21,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0131",
+  "name": "Client 0131",
+  "country": "Canada",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 24898.0,
+  "hires": 14,
+  "jobs_posted": 18,
+  "avg_rating": 5.0,
+  "member_since": "2017-06-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0132",
+  "name": "Client 0132",
+  "country": "Singapore",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 103804.0,
+  "hires": 29,
+  "jobs_posted": 31,
+  "avg_rating": 4.3,
+  "member_since": "2022-10-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0133",
+  "name": "Client 0133",
+  "country": "United States",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 22666.0,
+  "hires": 22,
+  "jobs_posted": 26,
+  "avg_rating": 4.4,
+  "member_since": "2016-11-18",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0134",
+  "name": "Client 0134",
+  "country": "UAE",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 92771.0,
+  "hires": 56,
+  "jobs_posted": 64,
+  "avg_rating": 4.3,
+  "member_since": "2021-11-21",
+  "_hidden": {
+   "budget_ceiling_mult": 0.95,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0135",
+  "name": "Client 0135",
+  "country": "United Kingdom",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 93451.0,
+  "hires": 39,
+  "jobs_posted": 58,
+  "avg_rating": 3.9,
+  "member_since": "2020-10-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.3,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.44,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0136",
+  "name": "Client 0136",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 142754.0,
+  "hires": 38,
+  "jobs_posted": 39,
+  "avg_rating": 3.7,
+  "member_since": "2025-04-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.19,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.57,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0137",
+  "name": "Client 0137",
+  "country": "UAE",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 28820.0,
+  "hires": 33,
+  "jobs_posted": 44,
+  "avg_rating": 3.6,
+  "member_since": "2018-10-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.41,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0138",
+  "name": "Client 0138",
+  "country": "United Kingdom",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 84046.0,
+  "hires": 33,
+  "jobs_posted": 39,
+  "avg_rating": 4.5,
+  "member_since": "2019-02-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0139",
+  "name": "Client 0139",
+  "country": "United States",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 6757.0,
+  "hires": 8,
+  "jobs_posted": 27,
+  "avg_rating": 4.3,
+  "member_since": "2019-08-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0140",
+  "name": "Client 0140",
+  "country": "United Kingdom",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 34967.0,
+  "hires": 18,
+  "jobs_posted": 36,
+  "avg_rating": 4.9,
+  "member_since": "2019-07-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.64,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0141",
+  "name": "Client 0141",
+  "country": "Canada",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 2462.0,
+  "hires": 8,
+  "jobs_posted": 19,
+  "avg_rating": 4.6,
+  "member_since": "2023-08-21",
+  "_hidden": {
+   "budget_ceiling_mult": 1.1,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.35,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0142",
+  "name": "Client 0142",
+  "country": "Canada",
+  "industry": "real estate",
+  "payment_verified": false,
+  "total_spent": 20698.0,
+  "hires": 30,
+  "jobs_posted": 46,
+  "avg_rating": 4.7,
+  "member_since": "2018-08-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0143",
+  "name": "Client 0143",
+  "country": "Germany",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 43033.0,
+  "hires": 15,
+  "jobs_posted": 34,
+  "avg_rating": 3.8,
+  "member_since": "2020-08-30",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.56,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0144",
+  "name": "Client 0144",
+  "country": "United Kingdom",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 67502.0,
+  "hires": 20,
+  "jobs_posted": 26,
+  "avg_rating": 4.1,
+  "member_since": "2017-09-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.33,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0145",
+  "name": "Client 0145",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 8737.0,
+  "hires": 13,
+  "jobs_posted": 21,
+  "avg_rating": 4.1,
+  "member_since": "2023-07-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.72,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0146",
+  "name": "Client 0146",
+  "country": "United States",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 45415.0,
+  "hires": 30,
+  "jobs_posted": 30,
+  "avg_rating": 3.6,
+  "member_since": "2019-04-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.84,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0147",
+  "name": "Client 0147",
+  "country": "Netherlands",
+  "industry": "media",
+  "payment_verified": false,
+  "total_spent": 31789.0,
+  "hires": 11,
+  "jobs_posted": 20,
+  "avg_rating": 4.5,
+  "member_since": "2021-03-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0148",
+  "name": "Client 0148",
+  "country": "Germany",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 3373.0,
+  "hires": 2,
+  "jobs_posted": 12,
+  "avg_rating": 3.8,
+  "member_since": "2020-10-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.55,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0149",
+  "name": "Client 0149",
+  "country": "United States",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 86199.0,
+  "hires": 34,
+  "jobs_posted": 52,
+  "avg_rating": 4.0,
+  "member_since": "2017-05-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.36,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0150",
+  "name": "Client 0150",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 3181.0,
+  "hires": 1,
+  "jobs_posted": 11,
+  "avg_rating": 4.9,
+  "member_since": "2023-11-06",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.66,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0151",
+  "name": "Client 0151",
+  "country": "Germany",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 2665.0,
+  "hires": 1,
+  "jobs_posted": 4,
+  "avg_rating": 3.9,
+  "member_since": "2021-08-16",
+  "_hidden": {
+   "budget_ceiling_mult": 0.99,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.45,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0152",
+  "name": "Client 0152",
+  "country": "UAE",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 21605.0,
+  "hires": 31,
+  "jobs_posted": 51,
+  "avg_rating": 4.3,
+  "member_since": "2024-06-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0153",
+  "name": "Client 0153",
+  "country": "Australia",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 179492.0,
+  "hires": 49,
+  "jobs_posted": 49,
+  "avg_rating": 3.8,
+  "member_since": "2019-11-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.38,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0154",
+  "name": "Client 0154",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 3004.0,
+  "hires": 6,
+  "jobs_posted": 17,
+  "avg_rating": 4.7,
+  "member_since": "2019-10-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0155",
+  "name": "Client 0155",
+  "country": "United Kingdom",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 52893.0,
+  "hires": 39,
+  "jobs_posted": 50,
+  "avg_rating": 3.9,
+  "member_since": "2021-11-04",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.72,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0156",
+  "name": "Client 0156",
+  "country": "Canada",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 70833.0,
+  "hires": 45,
+  "jobs_posted": 50,
+  "avg_rating": 4.8,
+  "member_since": "2024-05-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.34,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.75,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0157",
+  "name": "Client 0157",
+  "country": "Singapore",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 156140.0,
+  "hires": 60,
+  "jobs_posted": 76,
+  "avg_rating": 4.9,
+  "member_since": "2022-02-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.78,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0158",
+  "name": "Client 0158",
+  "country": "Netherlands",
+  "industry": "hospitality",
+  "payment_verified": false,
+  "total_spent": 84695.0,
+  "hires": 54,
+  "jobs_posted": 71,
+  "avg_rating": 4.4,
+  "member_since": "2020-12-11",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0159",
+  "name": "Client 0159",
+  "country": "United States",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 98557.0,
+  "hires": 27,
+  "jobs_posted": 38,
+  "avg_rating": 3.9,
+  "member_since": "2019-07-20",
+  "_hidden": {
+   "budget_ceiling_mult": 0.99,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0160",
+  "name": "Client 0160",
+  "country": "Netherlands",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 2556.0,
+  "hires": 2,
+  "jobs_posted": 15,
+  "avg_rating": 4.1,
+  "member_since": "2016-04-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0161",
+  "name": "Client 0161",
+  "country": "United Kingdom",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 3218.0,
+  "hires": 3,
+  "jobs_posted": 12,
+  "avg_rating": 4.5,
+  "member_since": "2016-03-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.6,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0162",
+  "name": "Client 0162",
+  "country": "UAE",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 68176.0,
+  "hires": 27,
+  "jobs_posted": 32,
+  "avg_rating": 4.0,
+  "member_since": "2020-08-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.11,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.46,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0163",
+  "name": "Client 0163",
+  "country": "UAE",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 28448.0,
+  "hires": 10,
+  "jobs_posted": 25,
+  "avg_rating": 3.6,
+  "member_since": "2024-04-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.56,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0164",
+  "name": "Client 0164",
+  "country": "UAE",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 39196.0,
+  "hires": 37,
+  "jobs_posted": 53,
+  "avg_rating": 4.8,
+  "member_since": "2019-07-25",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.89,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0165",
+  "name": "Client 0165",
+  "country": "United Kingdom",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 38805.0,
+  "hires": 42,
+  "jobs_posted": 43,
+  "avg_rating": 4.9,
+  "member_since": "2020-09-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.56,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0166",
+  "name": "Client 0166",
+  "country": "Germany",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 39504.0,
+  "hires": 41,
+  "jobs_posted": 43,
+  "avg_rating": 4.9,
+  "member_since": "2021-07-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.78,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0167",
+  "name": "Client 0167",
+  "country": "Singapore",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 9466.0,
+  "hires": 15,
+  "jobs_posted": 17,
+  "avg_rating": 4.9,
+  "member_since": "2017-03-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.61,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0168",
+  "name": "Client 0168",
+  "country": "UAE",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 119120.0,
+  "hires": 30,
+  "jobs_posted": 46,
+  "avg_rating": 4.8,
+  "member_since": "2018-01-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.35,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0169",
+  "name": "Client 0169",
+  "country": "United States",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 48504.0,
+  "hires": 36,
+  "jobs_posted": 37,
+  "avg_rating": 3.9,
+  "member_since": "2025-03-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0170",
+  "name": "Client 0170",
+  "country": "Canada",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 76023.0,
+  "hires": 46,
+  "jobs_posted": 61,
+  "avg_rating": 4.2,
+  "member_since": "2023-11-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.74,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0171",
+  "name": "Client 0171",
+  "country": "Singapore",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 6162.0,
+  "hires": 7,
+  "jobs_posted": 16,
+  "avg_rating": 4.2,
+  "member_since": "2022-11-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.31,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0172",
+  "name": "Client 0172",
+  "country": "Australia",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 2491.0,
+  "hires": 1,
+  "jobs_posted": 5,
+  "avg_rating": 4.2,
+  "member_since": "2023-01-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.11,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.94,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0173",
+  "name": "Client 0173",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 124684.0,
+  "hires": 45,
+  "jobs_posted": 51,
+  "avg_rating": 4.8,
+  "member_since": "2019-08-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.39,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0174",
+  "name": "Client 0174",
+  "country": "United States",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 31570.0,
+  "hires": 53,
+  "jobs_posted": 67,
+  "avg_rating": 4.2,
+  "member_since": "2019-07-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.22,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.35,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0175",
+  "name": "Client 0175",
+  "country": "UAE",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 32019.0,
+  "hires": 29,
+  "jobs_posted": 41,
+  "avg_rating": 3.9,
+  "member_since": "2023-10-13",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.46,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0176",
+  "name": "Client 0176",
+  "country": "Singapore",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 24401.0,
+  "hires": 7,
+  "jobs_posted": 25,
+  "avg_rating": 4.6,
+  "member_since": "2022-11-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.82,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0177",
+  "name": "Client 0177",
+  "country": "United States",
+  "industry": "healthcare",
+  "payment_verified": false,
+  "total_spent": 6516.0,
+  "hires": 20,
+  "jobs_posted": 37,
+  "avg_rating": 4.2,
+  "member_since": "2020-12-23",
+  "_hidden": {
+   "budget_ceiling_mult": 0.95,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.56,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0178",
+  "name": "Client 0178",
+  "country": "Australia",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 116525.0,
+  "hires": 45,
+  "jobs_posted": 49,
+  "avg_rating": 4.7,
+  "member_since": "2025-04-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.74,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0179",
+  "name": "Client 0179",
+  "country": "United Kingdom",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 44707.0,
+  "hires": 33,
+  "jobs_posted": 51,
+  "avg_rating": 3.8,
+  "member_since": "2016-05-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.22,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0180",
+  "name": "Client 0180",
+  "country": "Germany",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 78548.0,
+  "hires": 38,
+  "jobs_posted": 48,
+  "avg_rating": 4.4,
+  "member_since": "2020-11-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0181",
+  "name": "Client 0181",
+  "country": "Germany",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 36887.0,
+  "hires": 51,
+  "jobs_posted": 68,
+  "avg_rating": 4.6,
+  "member_since": "2022-02-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0182",
+  "name": "Client 0182",
+  "country": "Australia",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 165041.0,
+  "hires": 59,
+  "jobs_posted": 75,
+  "avg_rating": 4.8,
+  "member_since": "2019-04-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.89,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0183",
+  "name": "Client 0183",
+  "country": "Singapore",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 26914.0,
+  "hires": 52,
+  "jobs_posted": 55,
+  "avg_rating": 4.1,
+  "member_since": "2023-12-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.76,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0184",
+  "name": "Client 0184",
+  "country": "United Kingdom",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 6133.0,
+  "hires": 3,
+  "jobs_posted": 4,
+  "avg_rating": 4.8,
+  "member_since": "2025-01-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0185",
+  "name": "Client 0185",
+  "country": "United Kingdom",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 9281.0,
+  "hires": 3,
+  "jobs_posted": 11,
+  "avg_rating": 4.1,
+  "member_since": "2018-07-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.5,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0186",
+  "name": "Client 0186",
+  "country": "Singapore",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 148031.0,
+  "hires": 53,
+  "jobs_posted": 67,
+  "avg_rating": 3.9,
+  "member_since": "2023-06-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.39,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0187",
+  "name": "Client 0187",
+  "country": "Singapore",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 33275.0,
+  "hires": 46,
+  "jobs_posted": 62,
+  "avg_rating": 4.9,
+  "member_since": "2024-03-21",
+  "_hidden": {
+   "budget_ceiling_mult": 1.2,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.46,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0188",
+  "name": "Client 0188",
+  "country": "Netherlands",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 121227.0,
+  "hires": 41,
+  "jobs_posted": 60,
+  "avg_rating": 4.9,
+  "member_since": "2025-01-16",
+  "_hidden": {
+   "budget_ceiling_mult": 0.98,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.51,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0189",
+  "name": "Client 0189",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 49435.0,
+  "hires": 22,
+  "jobs_posted": 36,
+  "avg_rating": 3.9,
+  "member_since": "2021-12-20",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.92,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0190",
+  "name": "Client 0190",
+  "country": "Singapore",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 17176.0,
+  "hires": 7,
+  "jobs_posted": 27,
+  "avg_rating": 4.4,
+  "member_since": "2023-11-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0191",
+  "name": "Client 0191",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 6315.0,
+  "hires": 5,
+  "jobs_posted": 9,
+  "avg_rating": 3.7,
+  "member_since": "2021-08-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.67,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0192",
+  "name": "Client 0192",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 38853.0,
+  "hires": 50,
+  "jobs_posted": 70,
+  "avg_rating": 4.3,
+  "member_since": "2024-02-24",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.48,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0193",
+  "name": "Client 0193",
+  "country": "Germany",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 41214.0,
+  "hires": 11,
+  "jobs_posted": 15,
+  "avg_rating": 4.3,
+  "member_since": "2017-04-21",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.62,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0194",
+  "name": "Client 0194",
+  "country": "United Kingdom",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 111259.0,
+  "hires": 37,
+  "jobs_posted": 51,
+  "avg_rating": 4.2,
+  "member_since": "2016-06-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.59,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0195",
+  "name": "Client 0195",
+  "country": "United States",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 51398.0,
+  "hires": 40,
+  "jobs_posted": 52,
+  "avg_rating": 4.4,
+  "member_since": "2023-08-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0196",
+  "name": "Client 0196",
+  "country": "Netherlands",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 16164.0,
+  "hires": 10,
+  "jobs_posted": 17,
+  "avg_rating": 3.9,
+  "member_since": "2020-06-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0197",
+  "name": "Client 0197",
+  "country": "Australia",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 149663.0,
+  "hires": 43,
+  "jobs_posted": 58,
+  "avg_rating": 4.7,
+  "member_since": "2023-11-23",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0198",
+  "name": "Client 0198",
+  "country": "Singapore",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 23451.0,
+  "hires": 31,
+  "jobs_posted": 45,
+  "avg_rating": 3.9,
+  "member_since": "2022-10-18",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0199",
+  "name": "Client 0199",
+  "country": "United Kingdom",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 14049.0,
+  "hires": 5,
+  "jobs_posted": 18,
+  "avg_rating": 4.3,
+  "member_since": "2016-10-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.01,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.77,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0200",
+  "name": "Client 0200",
+  "country": "Netherlands",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 39866.0,
+  "hires": 48,
+  "jobs_posted": 62,
+  "avg_rating": 4.0,
+  "member_since": "2023-09-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.3,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0201",
+  "name": "Client 0201",
+  "country": "UAE",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 24069.0,
+  "hires": 16,
+  "jobs_posted": 18,
+  "avg_rating": 4.4,
+  "member_since": "2020-05-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.22,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.48,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0202",
+  "name": "Client 0202",
+  "country": "UAE",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 38983.0,
+  "hires": 16,
+  "jobs_posted": 24,
+  "avg_rating": 4.1,
+  "member_since": "2024-01-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0203",
+  "name": "Client 0203",
+  "country": "Netherlands",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 28618.0,
+  "hires": 9,
+  "jobs_posted": 26,
+  "avg_rating": 4.5,
+  "member_since": "2023-06-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.31,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.4,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0204",
+  "name": "Client 0204",
+  "country": "Netherlands",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 54643.0,
+  "hires": 28,
+  "jobs_posted": 42,
+  "avg_rating": 4.2,
+  "member_since": "2025-04-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0205",
+  "name": "Client 0205",
+  "country": "Canada",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 33777.0,
+  "hires": 20,
+  "jobs_posted": 34,
+  "avg_rating": 4.1,
+  "member_since": "2018-04-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.8,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0206",
+  "name": "Client 0206",
+  "country": "United States",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 108133.0,
+  "hires": 29,
+  "jobs_posted": 40,
+  "avg_rating": 4.8,
+  "member_since": "2017-11-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.67,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0207",
+  "name": "Client 0207",
+  "country": "Singapore",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 15849.0,
+  "hires": 13,
+  "jobs_posted": 18,
+  "avg_rating": 5.0,
+  "member_since": "2024-11-01",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.36,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0208",
+  "name": "Client 0208",
+  "country": "UAE",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 1721.0,
+  "hires": 2,
+  "jobs_posted": 6,
+  "avg_rating": 3.7,
+  "member_since": "2017-09-07",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.69,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0209",
+  "name": "Client 0209",
+  "country": "United Kingdom",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 46162.0,
+  "hires": 26,
+  "jobs_posted": 46,
+  "avg_rating": 4.5,
+  "member_since": "2024-08-27",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0210",
+  "name": "Client 0210",
+  "country": "Netherlands",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 35878.0,
+  "hires": 59,
+  "jobs_posted": 59,
+  "avg_rating": 3.8,
+  "member_since": "2019-04-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.84,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0211",
+  "name": "Client 0211",
+  "country": "United States",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 168597.0,
+  "hires": 46,
+  "jobs_posted": 64,
+  "avg_rating": 3.8,
+  "member_since": "2021-11-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.79,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0212",
+  "name": "Client 0212",
+  "country": "United States",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 57001.0,
+  "hires": 44,
+  "jobs_posted": 47,
+  "avg_rating": 3.9,
+  "member_since": "2017-05-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.3,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.6,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0213",
+  "name": "Client 0213",
+  "country": "Australia",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 134287.0,
+  "hires": 40,
+  "jobs_posted": 57,
+  "avg_rating": 3.7,
+  "member_since": "2023-12-28",
+  "_hidden": {
+   "budget_ceiling_mult": 0.98,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0214",
+  "name": "Client 0214",
+  "country": "Germany",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 0.0,
+  "hires": 0,
+  "jobs_posted": 3,
+  "avg_rating": null,
+  "member_since": "2024-03-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.04,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.38,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0215",
+  "name": "Client 0215",
+  "country": "Canada",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 92435.0,
+  "hires": 44,
+  "jobs_posted": 55,
+  "avg_rating": 4.8,
+  "member_since": "2019-02-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.1,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.82,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0216",
+  "name": "Client 0216",
+  "country": "Canada",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 8534.0,
+  "hires": 16,
+  "jobs_posted": 28,
+  "avg_rating": 4.1,
+  "member_since": "2016-02-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.33,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.8,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0217",
+  "name": "Client 0217",
+  "country": "United States",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 142959.0,
+  "hires": 41,
+  "jobs_posted": 61,
+  "avg_rating": 4.8,
+  "member_since": "2024-06-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0218",
+  "name": "Client 0218",
+  "country": "United Kingdom",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 15366.0,
+  "hires": 9,
+  "jobs_posted": 29,
+  "avg_rating": 4.1,
+  "member_since": "2016-02-17",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.73,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0219",
+  "name": "Client 0219",
+  "country": "Singapore",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 164561.0,
+  "hires": 46,
+  "jobs_posted": 61,
+  "avg_rating": 4.7,
+  "member_since": "2023-06-02",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.39,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0220",
+  "name": "Client 0220",
+  "country": "United States",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 3385.0,
+  "hires": 4,
+  "jobs_posted": 21,
+  "avg_rating": 4.7,
+  "member_since": "2018-11-03",
+  "_hidden": {
+   "budget_ceiling_mult": 0.96,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.36,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0221",
+  "name": "Client 0221",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 26670.0,
+  "hires": 9,
+  "jobs_posted": 14,
+  "avg_rating": 4.7,
+  "member_since": "2023-11-06",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0222",
+  "name": "Client 0222",
+  "country": "Germany",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 5380.0,
+  "hires": 5,
+  "jobs_posted": 14,
+  "avg_rating": 4.9,
+  "member_since": "2023-12-21",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0223",
+  "name": "Client 0223",
+  "country": "Singapore",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 20436.0,
+  "hires": 34,
+  "jobs_posted": 52,
+  "avg_rating": 4.4,
+  "member_since": "2024-11-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.1,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.38,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0224",
+  "name": "Client 0224",
+  "country": "Canada",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 33963.0,
+  "hires": 13,
+  "jobs_posted": 26,
+  "avg_rating": 4.9,
+  "member_since": "2017-07-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.69,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0225",
+  "name": "Client 0225",
+  "country": "UAE",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 27115.0,
+  "hires": 38,
+  "jobs_posted": 47,
+  "avg_rating": 4.2,
+  "member_since": "2019-04-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0226",
+  "name": "Client 0226",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 102238.0,
+  "hires": 27,
+  "jobs_posted": 36,
+  "avg_rating": 4.0,
+  "member_since": "2021-02-10",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0227",
+  "name": "Client 0227",
+  "country": "Australia",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 33840.0,
+  "hires": 25,
+  "jobs_posted": 41,
+  "avg_rating": 4.8,
+  "member_since": "2021-10-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.9,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0228",
+  "name": "Client 0228",
+  "country": "United Kingdom",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 63872.0,
+  "hires": 32,
+  "jobs_posted": 34,
+  "avg_rating": 4.0,
+  "member_since": "2019-06-17",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.48,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0229",
+  "name": "Client 0229",
+  "country": "Canada",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 156100.0,
+  "hires": 45,
+  "jobs_posted": 49,
+  "avg_rating": 3.9,
+  "member_since": "2025-01-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0230",
+  "name": "Client 0230",
+  "country": "UAE",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 29124.0,
+  "hires": 19,
+  "jobs_posted": 29,
+  "avg_rating": 4.1,
+  "member_since": "2021-07-01",
+  "_hidden": {
+   "budget_ceiling_mult": 0.94,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.75,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0231",
+  "name": "Client 0231",
+  "country": "Singapore",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 37003.0,
+  "hires": 16,
+  "jobs_posted": 28,
+  "avg_rating": 4.2,
+  "member_since": "2020-10-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.34,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.68,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0232",
+  "name": "Client 0232",
+  "country": "Canada",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 22544.0,
+  "hires": 17,
+  "jobs_posted": 32,
+  "avg_rating": 4.3,
+  "member_since": "2016-02-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.47,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0233",
+  "name": "Client 0233",
+  "country": "United States",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 131651.0,
+  "hires": 45,
+  "jobs_posted": 48,
+  "avg_rating": 4.3,
+  "member_since": "2022-06-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.34,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0234",
+  "name": "Client 0234",
+  "country": "United States",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 16577.0,
+  "hires": 6,
+  "jobs_posted": 15,
+  "avg_rating": 3.7,
+  "member_since": "2018-08-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.4,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0235",
+  "name": "Client 0235",
+  "country": "Australia",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 13049.0,
+  "hires": 6,
+  "jobs_posted": 15,
+  "avg_rating": 3.8,
+  "member_since": "2018-04-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.79,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0236",
+  "name": "Client 0236",
+  "country": "United Kingdom",
+  "industry": "manufacturing",
+  "payment_verified": false,
+  "total_spent": 44182.0,
+  "hires": 15,
+  "jobs_posted": 28,
+  "avg_rating": 3.8,
+  "member_since": "2018-05-03",
+  "_hidden": {
+   "budget_ceiling_mult": 0.95,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.62,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0237",
+  "name": "Client 0237",
+  "country": "UAE",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 154621.0,
+  "hires": 54,
+  "jobs_posted": 56,
+  "avg_rating": 4.6,
+  "member_since": "2016-08-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0238",
+  "name": "Client 0238",
+  "country": "United Kingdom",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 37207.0,
+  "hires": 55,
+  "jobs_posted": 63,
+  "avg_rating": 4.6,
+  "member_since": "2016-08-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0239",
+  "name": "Client 0239",
+  "country": "Australia",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 97274.0,
+  "hires": 32,
+  "jobs_posted": 41,
+  "avg_rating": 4.7,
+  "member_since": "2022-11-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.32,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0240",
+  "name": "Client 0240",
+  "country": "United Kingdom",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 70358.0,
+  "hires": 52,
+  "jobs_posted": 61,
+  "avg_rating": 4.4,
+  "member_since": "2017-08-15",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0241",
+  "name": "Client 0241",
+  "country": "Germany",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 19981.0,
+  "hires": 5,
+  "jobs_posted": 21,
+  "avg_rating": 4.6,
+  "member_since": "2024-11-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.35,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0242",
+  "name": "Client 0242",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 16632.0,
+  "hires": 6,
+  "jobs_posted": 15,
+  "avg_rating": 4.1,
+  "member_since": "2020-08-13",
+  "_hidden": {
+   "budget_ceiling_mult": 0.9,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.65,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0243",
+  "name": "Client 0243",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 98259.0,
+  "hires": 43,
+  "jobs_posted": 50,
+  "avg_rating": 4.6,
+  "member_since": "2021-07-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.14,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0244",
+  "name": "Client 0244",
+  "country": "UAE",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 41916.0,
+  "hires": 11,
+  "jobs_posted": 28,
+  "avg_rating": 4.6,
+  "member_since": "2025-02-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.02,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0245",
+  "name": "Client 0245",
+  "country": "UAE",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 59759.0,
+  "hires": 29,
+  "jobs_posted": 35,
+  "avg_rating": 3.7,
+  "member_since": "2018-08-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.15,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0246",
+  "name": "Client 0246",
+  "country": "Canada",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 86690.0,
+  "hires": 33,
+  "jobs_posted": 33,
+  "avg_rating": 4.9,
+  "member_since": "2016-10-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.79,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0247",
+  "name": "Client 0247",
+  "country": "United Kingdom",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 11400.0,
+  "hires": 3,
+  "jobs_posted": 21,
+  "avg_rating": 4.6,
+  "member_since": "2017-10-09",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.69,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0248",
+  "name": "Client 0248",
+  "country": "Singapore",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 20538.0,
+  "hires": 14,
+  "jobs_posted": 14,
+  "avg_rating": 4.1,
+  "member_since": "2021-07-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0249",
+  "name": "Client 0249",
+  "country": "Australia",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 142425.0,
+  "hires": 53,
+  "jobs_posted": 60,
+  "avg_rating": 3.7,
+  "member_since": "2024-12-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.68,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0250",
+  "name": "Client 0250",
+  "country": "Germany",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 12566.0,
+  "hires": 11,
+  "jobs_posted": 14,
+  "avg_rating": 4.8,
+  "member_since": "2021-12-09",
+  "_hidden": {
+   "budget_ceiling_mult": 1.33,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.68,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0251",
+  "name": "Client 0251",
+  "country": "Singapore",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 29696.0,
+  "hires": 21,
+  "jobs_posted": 40,
+  "avg_rating": 4.4,
+  "member_since": "2024-05-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.31,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0252",
+  "name": "Client 0252",
+  "country": "Canada",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 202204.0,
+  "hires": 59,
+  "jobs_posted": 74,
+  "avg_rating": 4.8,
+  "member_since": "2018-11-15",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0253",
+  "name": "Client 0253",
+  "country": "Germany",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 17330.0,
+  "hires": 27,
+  "jobs_posted": 37,
+  "avg_rating": 4.9,
+  "member_since": "2016-04-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.34,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.6,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0254",
+  "name": "Client 0254",
+  "country": "Australia",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 30772.0,
+  "hires": 26,
+  "jobs_posted": 41,
+  "avg_rating": 4.0,
+  "member_since": "2019-05-27",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.49,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0255",
+  "name": "Client 0255",
+  "country": "United States",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 194999.0,
+  "hires": 56,
+  "jobs_posted": 67,
+  "avg_rating": 5.0,
+  "member_since": "2019-05-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0256",
+  "name": "Client 0256",
+  "country": "Australia",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 106256.0,
+  "hires": 34,
+  "jobs_posted": 42,
+  "avg_rating": 4.7,
+  "member_since": "2025-02-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.2,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.61,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0257",
+  "name": "Client 0257",
+  "country": "Singapore",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 86983.0,
+  "hires": 28,
+  "jobs_posted": 39,
+  "avg_rating": 3.7,
+  "member_since": "2024-10-05",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0258",
+  "name": "Client 0258",
+  "country": "Germany",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 95885.0,
+  "hires": 53,
+  "jobs_posted": 67,
+  "avg_rating": 4.7,
+  "member_since": "2019-01-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.5,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0259",
+  "name": "Client 0259",
+  "country": "Singapore",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 14950.0,
+  "hires": 6,
+  "jobs_posted": 12,
+  "avg_rating": 4.6,
+  "member_since": "2024-03-10",
+  "_hidden": {
+   "budget_ceiling_mult": 1.17,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.58,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0260",
+  "name": "Client 0260",
+  "country": "Netherlands",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 71305.0,
+  "hires": 23,
+  "jobs_posted": 37,
+  "avg_rating": 3.6,
+  "member_since": "2019-04-06",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.65,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0261",
+  "name": "Client 0261",
+  "country": "United States",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 52858.0,
+  "hires": 29,
+  "jobs_posted": 39,
+  "avg_rating": 4.2,
+  "member_since": "2017-08-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.75,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0262",
+  "name": "Client 0262",
+  "country": "Singapore",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 81726.0,
+  "hires": 41,
+  "jobs_posted": 56,
+  "avg_rating": 4.0,
+  "member_since": "2023-03-08",
+  "_hidden": {
+   "budget_ceiling_mult": 0.92,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.91,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0263",
+  "name": "Client 0263",
+  "country": "Netherlands",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 122432.0,
+  "hires": 38,
+  "jobs_posted": 47,
+  "avg_rating": 4.5,
+  "member_since": "2019-07-05",
+  "_hidden": {
+   "budget_ceiling_mult": 0.91,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.62,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0264",
+  "name": "Client 0264",
+  "country": "United States",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 0.0,
+  "hires": 0,
+  "jobs_posted": 18,
+  "avg_rating": null,
+  "member_since": "2016-01-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.87,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0265",
+  "name": "Client 0265",
+  "country": "United Kingdom",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 86049.0,
+  "hires": 35,
+  "jobs_posted": 42,
+  "avg_rating": 4.4,
+  "member_since": "2024-11-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.39,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0266",
+  "name": "Client 0266",
+  "country": "Canada",
+  "industry": "nonprofit",
+  "payment_verified": false,
+  "total_spent": 0.0,
+  "hires": 0,
+  "jobs_posted": 12,
+  "avg_rating": null,
+  "member_since": "2017-07-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.31,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0267",
+  "name": "Client 0267",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 13781.0,
+  "hires": 45,
+  "jobs_posted": 62,
+  "avg_rating": 4.3,
+  "member_since": "2017-07-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.27,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.64,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0268",
+  "name": "Client 0268",
+  "country": "United States",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 143850.0,
+  "hires": 60,
+  "jobs_posted": 69,
+  "avg_rating": 5.0,
+  "member_since": "2016-05-03",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.66,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0269",
+  "name": "Client 0269",
+  "country": "Canada",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 69865.0,
+  "hires": 35,
+  "jobs_posted": 50,
+  "avg_rating": 4.6,
+  "member_since": "2022-09-11",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.6,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0270",
+  "name": "Client 0270",
+  "country": "Singapore",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 4512.0,
+  "hires": 3,
+  "jobs_posted": 7,
+  "avg_rating": 4.0,
+  "member_since": "2020-06-14",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.36,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0271",
+  "name": "Client 0271",
+  "country": "UAE",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 60405.0,
+  "hires": 36,
+  "jobs_posted": 47,
+  "avg_rating": 3.8,
+  "member_since": "2016-06-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.36,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0272",
+  "name": "Client 0272",
+  "country": "UAE",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 18580.0,
+  "hires": 30,
+  "jobs_posted": 39,
+  "avg_rating": 4.3,
+  "member_since": "2020-03-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.21,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.89,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0273",
+  "name": "Client 0273",
+  "country": "Australia",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 163285.0,
+  "hires": 51,
+  "jobs_posted": 58,
+  "avg_rating": 3.7,
+  "member_since": "2018-09-17",
+  "_hidden": {
+   "budget_ceiling_mult": 1.29,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.43,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0274",
+  "name": "Client 0274",
+  "country": "Australia",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 44766.0,
+  "hires": 52,
+  "jobs_posted": 68,
+  "avg_rating": 4.8,
+  "member_since": "2019-08-14",
+  "_hidden": {
+   "budget_ceiling_mult": 0.97,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.45,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0275",
+  "name": "Client 0275",
+  "country": "Germany",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 67926.0,
+  "hires": 23,
+  "jobs_posted": 37,
+  "avg_rating": 4.1,
+  "member_since": "2017-03-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.34,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0276",
+  "name": "Client 0276",
+  "country": "Germany",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 101935.0,
+  "hires": 34,
+  "jobs_posted": 51,
+  "avg_rating": 4.0,
+  "member_since": "2024-06-15",
+  "_hidden": {
+   "budget_ceiling_mult": 1.32,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.57,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0277",
+  "name": "Client 0277",
+  "country": "Australia",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 86800.0,
+  "hires": 56,
+  "jobs_posted": 64,
+  "avg_rating": 4.1,
+  "member_since": "2017-09-24",
+  "_hidden": {
+   "budget_ceiling_mult": 0.98,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0278",
+  "name": "Client 0278",
+  "country": "Germany",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 65356.0,
+  "hires": 19,
+  "jobs_posted": 24,
+  "avg_rating": 3.9,
+  "member_since": "2025-03-23",
+  "_hidden": {
+   "budget_ceiling_mult": 1.34,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0279",
+  "name": "Client 0279",
+  "country": "UAE",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 123346.0,
+  "hires": 38,
+  "jobs_posted": 38,
+  "avg_rating": 3.7,
+  "member_since": "2020-05-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.75,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0280",
+  "name": "Client 0280",
+  "country": "United Kingdom",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 104860.0,
+  "hires": 45,
+  "jobs_posted": 47,
+  "avg_rating": 4.7,
+  "member_since": "2019-11-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.18,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0281",
+  "name": "Client 0281",
+  "country": "UAE",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 25965.0,
+  "hires": 19,
+  "jobs_posted": 35,
+  "avg_rating": 4.8,
+  "member_since": "2017-04-08",
+  "_hidden": {
+   "budget_ceiling_mult": 1.03,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.91,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0282",
+  "name": "Client 0282",
+  "country": "Canada",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 48316.0,
+  "hires": 27,
+  "jobs_posted": 31,
+  "avg_rating": 4.3,
+  "member_since": "2022-11-20",
+  "_hidden": {
+   "budget_ceiling_mult": 0.99,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.93,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0283",
+  "name": "Client 0283",
+  "country": "UAE",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 89337.0,
+  "hires": 47,
+  "jobs_posted": 56,
+  "avg_rating": 4.5,
+  "member_since": "2021-05-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0284",
+  "name": "Client 0284",
+  "country": "Netherlands",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 93681.0,
+  "hires": 46,
+  "jobs_posted": 47,
+  "avg_rating": 4.9,
+  "member_since": "2020-02-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.3,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.74,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0285",
+  "name": "Client 0285",
+  "country": "UAE",
+  "industry": "legal",
+  "payment_verified": true,
+  "total_spent": 20741.0,
+  "hires": 47,
+  "jobs_posted": 49,
+  "avg_rating": 4.4,
+  "member_since": "2025-01-17",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.84,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0286",
+  "name": "Client 0286",
+  "country": "United States",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 74940.0,
+  "hires": 26,
+  "jobs_posted": 34,
+  "avg_rating": 4.2,
+  "member_since": "2019-01-06",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.86,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0287",
+  "name": "Client 0287",
+  "country": "Singapore",
+  "industry": "insurance",
+  "payment_verified": true,
+  "total_spent": 32684.0,
+  "hires": 11,
+  "jobs_posted": 28,
+  "avg_rating": 5.0,
+  "member_since": "2020-07-13",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.53,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0288",
+  "name": "Client 0288",
+  "country": "Germany",
+  "industry": "energy",
+  "payment_verified": false,
+  "total_spent": 101468.0,
+  "hires": 48,
+  "jobs_posted": 61,
+  "avg_rating": 3.9,
+  "member_since": "2018-10-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.08,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.76,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0289",
+  "name": "Client 0289",
+  "country": "Germany",
+  "industry": "media",
+  "payment_verified": true,
+  "total_spent": 130366.0,
+  "hires": 52,
+  "jobs_posted": 53,
+  "avg_rating": 4.8,
+  "member_since": "2018-12-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.06,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.51,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0290",
+  "name": "Client 0290",
+  "country": "UAE",
+  "industry": "nonprofit",
+  "payment_verified": true,
+  "total_spent": 143166.0,
+  "hires": 38,
+  "jobs_posted": 43,
+  "avg_rating": 4.8,
+  "member_since": "2018-11-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.13,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.71,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0291",
+  "name": "Client 0291",
+  "country": "Canada",
+  "industry": "SaaS",
+  "payment_verified": true,
+  "total_spent": 37567.0,
+  "hires": 31,
+  "jobs_posted": 31,
+  "avg_rating": 3.8,
+  "member_since": "2020-07-03",
+  "_hidden": {
+   "budget_ceiling_mult": 0.95,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.38,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0292",
+  "name": "Client 0292",
+  "country": "Netherlands",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 56102.0,
+  "hires": 18,
+  "jobs_posted": 34,
+  "avg_rating": 4.9,
+  "member_since": "2018-02-08",
+  "_hidden": {
+   "budget_ceiling_mult": 0.96,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0293",
+  "name": "Client 0293",
+  "country": "United Kingdom",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 39101.0,
+  "hires": 22,
+  "jobs_posted": 42,
+  "avg_rating": 5.0,
+  "member_since": "2019-10-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0294",
+  "name": "Client 0294",
+  "country": "Germany",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 15884.0,
+  "hires": 4,
+  "jobs_posted": 18,
+  "avg_rating": 4.2,
+  "member_since": "2017-01-19",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.42,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0295",
+  "name": "Client 0295",
+  "country": "United Kingdom",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 27113.0,
+  "hires": 39,
+  "jobs_posted": 39,
+  "avg_rating": 3.7,
+  "member_since": "2020-04-24",
+  "_hidden": {
+   "budget_ceiling_mult": 1.23,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0296",
+  "name": "Client 0296",
+  "country": "United Kingdom",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 5288.0,
+  "hires": 16,
+  "jobs_posted": 21,
+  "avg_rating": 3.7,
+  "member_since": "2019-11-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.26,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.7,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0297",
+  "name": "Client 0297",
+  "country": "Singapore",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 156635.0,
+  "hires": 50,
+  "jobs_posted": 54,
+  "avg_rating": 4.1,
+  "member_since": "2022-08-22",
+  "_hidden": {
+   "budget_ceiling_mult": 1.12,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0298",
+  "name": "Client 0298",
+  "country": "United States",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 84774.0,
+  "hires": 32,
+  "jobs_posted": 44,
+  "avg_rating": 3.6,
+  "member_since": "2021-10-21",
+  "_hidden": {
+   "budget_ceiling_mult": 1.39,
+   "dislikes_generic": false,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0299",
+  "name": "Client 0299",
+  "country": "Australia",
+  "industry": "manufacturing",
+  "payment_verified": true,
+  "total_spent": 28140.0,
+  "hires": 13,
+  "jobs_posted": 22,
+  "avg_rating": 4.7,
+  "member_since": "2020-01-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.16,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.44,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0300",
+  "name": "Client 0300",
+  "country": "UAE",
+  "industry": "edtech",
+  "payment_verified": true,
+  "total_spent": 51061.0,
+  "hires": 40,
+  "jobs_posted": 49,
+  "avg_rating": 3.9,
+  "member_since": "2024-10-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.37,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0301",
+  "name": "Client 0301",
+  "country": "Singapore",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 93128.0,
+  "hires": 36,
+  "jobs_posted": 48,
+  "avg_rating": 3.8,
+  "member_since": "2021-01-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.24,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.66,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0302",
+  "name": "Client 0302",
+  "country": "UAE",
+  "industry": "retail",
+  "payment_verified": true,
+  "total_spent": 15380.0,
+  "hires": 11,
+  "jobs_posted": 16,
+  "avg_rating": 4.9,
+  "member_since": "2025-03-31",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.91,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0303",
+  "name": "Client 0303",
+  "country": "Germany",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 27357.0,
+  "hires": 22,
+  "jobs_posted": 37,
+  "avg_rating": 3.7,
+  "member_since": "2017-03-06",
+  "_hidden": {
+   "budget_ceiling_mult": 1.13,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0304",
+  "name": "Client 0304",
+  "country": "United States",
+  "industry": "e-commerce",
+  "payment_verified": true,
+  "total_spent": 15384.0,
+  "hires": 8,
+  "jobs_posted": 20,
+  "avg_rating": 4.0,
+  "member_since": "2021-10-12",
+  "_hidden": {
+   "budget_ceiling_mult": 1.09,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.81,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0305",
+  "name": "Client 0305",
+  "country": "Canada",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 5506.0,
+  "hires": 11,
+  "jobs_posted": 28,
+  "avg_rating": 5.0,
+  "member_since": "2020-06-18",
+  "_hidden": {
+   "budget_ceiling_mult": 1.11,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0306",
+  "name": "Client 0306",
+  "country": "United States",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 149934.0,
+  "hires": 38,
+  "jobs_posted": 46,
+  "avg_rating": 4.8,
+  "member_since": "2024-01-04",
+  "_hidden": {
+   "budget_ceiling_mult": 1.07,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 250,
+   "responsiveness": 0.91,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0307",
+  "name": "Client 0307",
+  "country": "United Kingdom",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 77731.0,
+  "hires": 35,
+  "jobs_posted": 48,
+  "avg_rating": 3.8,
+  "member_since": "2016-07-20",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.64,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0308",
+  "name": "Client 0308",
+  "country": "Netherlands",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 29217.0,
+  "hires": 41,
+  "jobs_posted": 47,
+  "avg_rating": 4.1,
+  "member_since": "2018-08-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.35,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0309",
+  "name": "Client 0309",
+  "country": "Netherlands",
+  "industry": "edtech",
+  "payment_verified": false,
+  "total_spent": 111524.0,
+  "hires": 35,
+  "jobs_posted": 45,
+  "avg_rating": 4.0,
+  "member_since": "2020-07-25",
+  "_hidden": {
+   "budget_ceiling_mult": 1.28,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 150,
+   "responsiveness": 0.92,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0310",
+  "name": "Client 0310",
+  "country": "United States",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 164785.0,
+  "hires": 44,
+  "jobs_posted": 56,
+  "avg_rating": 4.7,
+  "member_since": "2024-01-05",
+  "_hidden": {
+   "budget_ceiling_mult": 1.22,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.38,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0311",
+  "name": "Client 0311",
+  "country": "Germany",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 48467.0,
+  "hires": 41,
+  "jobs_posted": 49,
+  "avg_rating": 4.3,
+  "member_since": "2016-08-27",
+  "_hidden": {
+   "budget_ceiling_mult": 1.32,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 200,
+   "responsiveness": 0.54,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0312",
+  "name": "Client 0312",
+  "country": "United States",
+  "industry": "healthcare",
+  "payment_verified": true,
+  "total_spent": 24326.0,
+  "hires": 11,
+  "jobs_posted": 16,
+  "avg_rating": 3.8,
+  "member_since": "2022-08-29",
+  "_hidden": {
+   "budget_ceiling_mult": 1.0,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.52,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0313",
+  "name": "Client 0313",
+  "country": "Germany",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 89765.0,
+  "hires": 36,
+  "jobs_posted": 40,
+  "avg_rating": 3.7,
+  "member_since": "2022-10-22",
+  "_hidden": {
+   "budget_ceiling_mult": 0.95,
+   "dislikes_generic": true,
+   "wants_question": false,
+   "max_words": 250,
+   "responsiveness": 0.44,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0314",
+  "name": "Client 0314",
+  "country": "Singapore",
+  "industry": "real estate",
+  "payment_verified": true,
+  "total_spent": 163991.0,
+  "hires": 47,
+  "jobs_posted": 66,
+  "avg_rating": 4.8,
+  "member_since": "2023-04-03",
+  "_hidden": {
+   "budget_ceiling_mult": 1.1,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.84,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0315",
+  "name": "Client 0315",
+  "country": "United Kingdom",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 28344.0,
+  "hires": 12,
+  "jobs_posted": 27,
+  "avg_rating": 4.4,
+  "member_since": "2022-02-16",
+  "_hidden": {
+   "budget_ceiling_mult": 1.25,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.46,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0316",
+  "name": "Client 0316",
+  "country": "Australia",
+  "industry": "hospitality",
+  "payment_verified": true,
+  "total_spent": 38338.0,
+  "hires": 40,
+  "jobs_posted": 59,
+  "avg_rating": 3.9,
+  "member_since": "2016-04-25",
+  "_hidden": {
+   "budget_ceiling_mult": 0.93,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 200,
+   "responsiveness": 0.32,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0317",
+  "name": "Client 0317",
+  "country": "United Kingdom",
+  "industry": "fintech",
+  "payment_verified": true,
+  "total_spent": 18883.0,
+  "hires": 10,
+  "jobs_posted": 15,
+  "avg_rating": 4.1,
+  "member_since": "2020-04-28",
+  "_hidden": {
+   "budget_ceiling_mult": 1.4,
+   "dislikes_generic": true,
+   "wants_question": true,
+   "max_words": 350,
+   "responsiveness": 0.63,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0318",
+  "name": "Client 0318",
+  "country": "Germany",
+  "industry": "logistics",
+  "payment_verified": true,
+  "total_spent": 79946.0,
+  "hires": 31,
+  "jobs_posted": 34,
+  "avg_rating": 4.9,
+  "member_since": "2021-07-02",
+  "_hidden": {
+   "budget_ceiling_mult": 1.05,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 350,
+   "responsiveness": 0.5,
+   "scam": false
+  }
+ },
+ {
+  "id": "c0319",
+  "name": "Client 0319",
+  "country": "UAE",
+  "industry": "energy",
+  "payment_verified": true,
+  "total_spent": 97346.0,
+  "hires": 59,
+  "jobs_posted": 63,
+  "avg_rating": 4.2,
+  "member_since": "2018-10-26",
+  "_hidden": {
+   "budget_ceiling_mult": 1.37,
+   "dislikes_generic": false,
+   "wants_question": false,
+   "max_words": 150,
+   "responsiveness": 0.88,
+   "scam": false
+  }
+ }
+]

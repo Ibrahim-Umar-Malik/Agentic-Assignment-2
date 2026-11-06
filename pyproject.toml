@@ -1,0 +1,63 @@
+[project]
+name = "gigbid"
+version = "1.0.0"
+description = "GigBid: a multi-agent freelancer copilot (LangGraph + MCP + advanced RAG) with a human approving every send."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+# Pinned versions: these are the exact versions the results in evals/results were produced with.
+dependencies = [
+  "langgraph==1.2.20",
+  "langgraph-checkpoint==4.3.1",
+  "langgraph-checkpoint-postgres==3.2.0",
+  "langgraph-checkpoint-sqlite==3.1.3",
+  "langgraph-supervisor==0.0.31",
+  "langchain-core==1.7.6",
+  "langchain-openai==1.7.4",
+  "langchain-ollama==1.1.0",
+  "langchain-mcp-adapters==0.3.2",
+  "mcp==1.30.0",
+  "fastapi==0.162.0",
+  "uvicorn[standard]==0.54.0",
+  "sse-starlette==3.6.0",
+  "pydantic==2.14.3",
+  "httpx==0.28.1",
+  "pyyaml==6.0.3",
+  "numpy==2.5.4",
+  "arq==0.28.0",
+  "redis==5.3.1",
+  "cryptography==50.0.2",
+  "psycopg[binary,pool]==3.3.8",
+  "aiosqlite==0.22.1",
+  "pypdf==6.21.4",
+  "python-multipart>=0.0.20",
+  "markdown>=3.7",
+]
+
+[project.optional-dependencies]
+# Open-weight embedding + reranker models (CPU is fine). Not needed for the offline/CI profile.
+models = ["sentence-transformers>=3.0", "torch>=2.4"]
+tracing = ["langfuse>=2.50"]
+dev = ["pytest==8.4.2", "pytest-asyncio==1.2.0", "ruff==0.14.3"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["agent", "rag", "core", "mcp_servers", "apps", "worker", "evals", "gigsim_standin"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests", "mcp_servers"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["apps/web", "gigsim", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "B008", "UP007", "B904"]
