@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import functools
+import os
 import re
 import time
 from collections.abc import Callable
@@ -45,7 +46,11 @@ def injection_spans(text: str) -> list[str]:
 
 
 def sanitize_untrusted(text: str) -> tuple[str, list[str]]:
-    """Defence layer 1: drop sentences that look like instructions to an AI before any model sees the post."""
+    """Defence layer 1: drop sentences that look like instructions to an AI before any model sees the post.
+    GIGBID_DEFENCES=off disables layers 1 and 2; used only by the injection eval to measure attack success before
+    defences (evals/runners/decision_eval.py --defences off). Never set it in production."""
+    if os.environ.get("GIGBID_DEFENCES") == "off":
+        return text, []
     sents = re.split(r"(?<=[.!?])\s+", text)
     kept, removed = [], []
     for s in sents:
@@ -58,6 +63,8 @@ def sanitize_untrusted(text: str) -> tuple[str, list[str]]:
 
 def wrap(kind: str, text: str) -> str:
     """Defence layer 2: delimit untrusted text; neutralise attempts to close the tag early."""
+    if os.environ.get("GIGBID_DEFENCES") == "off":
+        return text
     safe = text.replace(f"</{kind}>", "").replace(f"<{kind}>", "")
     return f"<{kind}>\n{safe}\n</{kind}>"
 

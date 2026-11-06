@@ -1,4 +1,5 @@
 name: ci
+# lint, guards, unit, contract (MCP tool-schema snapshots), graph integration, Playwright. Smoke eval: eval.yml
 on:
   push:
   pull_request:
@@ -17,11 +18,6 @@ jobs:
       - run: .venv/bin/python -m ruff check .
       - name: tests (unit, contract snapshots, graph integration incl. crash-and-resume)
         run: .venv/bin/python -m pytest
-      - name: quick evals + regression gate (results are not committed from CI)
-        run: |
-          .venv/bin/python -m evals.runners.rag_eval --quick
-          .venv/bin/python -m evals.runners.decision_eval --limit 15
-          .venv/bin/python scripts/eval_gate.py
 
   web:
     runs-on: ubuntu-latest

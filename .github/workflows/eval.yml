@@ -1,11 +1,33 @@
 name: eval
-# Full evaluation with real open-weight models. On demand and weekly; needs the GROQ_API_KEY repository secret.
+# Every PR: 30-job smoke eval (offline profile, no keys) that fails past the thresholds in scripts/eval_gate.py.
+# On demand / weekly: the full eval with real open-weight models (needs the GROQ_API_KEY repository secret).
 on:
+  pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
   schedule: [{ cron: "0 3 * * 1" }]
 
 jobs:
-  eval:
+  smoke:
+    runs-on: ubuntu-latest
+    env: { GIGBID_PROFILE: offline }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r pyproject.toml
+      - name: retrieval (quick) + 30-job decision smoke eval
+        run: |
+          .venv/bin/python -m evals.runners.rag_eval --quick
+          .venv/bin/python -m evals.runners.decision_eval --limit 10
+      - name: fail if unsupported claims rise or bid/skip F1 drops
+        run: .venv/bin/python scripts/eval_gate.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: smoke-eval, path: evals/results }
+
+  full:
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

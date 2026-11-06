@@ -1,7 +1,8 @@
-# docker compose up --build   -> http://localhost:8080 (web) ; secrets come from .env (copy .env.example)
+# Started from the repo root with `docker compose up --build` (compose.yaml includes this file).
+# Web on http://localhost:8080; secrets come from ../.env (copy .env.example).
 x-py: &py
-  build: { context: ., dockerfile: infra/docker/Dockerfile.python }
-  env_file: [.env]
+  build: { context: .., dockerfile: infra/docker/Dockerfile.python }
+  env_file: [{ path: ../.env, required: false }]
   restart: unless-stopped
   environment: &pyenv
     DATABASE_URL: postgresql+psycopg://gigbid:gigbid@postgres:5432/gigbid
@@ -59,7 +60,7 @@ services:
     depends_on: [postgres, redis, marketplace-mcp, portfolio-mcp, workspace-mcp]
 
   web:
-    build: { context: ., dockerfile: infra/docker/Dockerfile.web }
+    build: { context: .., dockerfile: infra/docker/Dockerfile.web }
     ports: ["8080:80"]
     depends_on: [api]
 

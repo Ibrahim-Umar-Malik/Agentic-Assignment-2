@@ -73,7 +73,7 @@ def register(mcp: FastMCP) -> None:
                         ) -> EvidenceResult:
         idx = backend.get(portfolio_id)
         f = filters or EvidenceFilters()
-        ev = idx.search(requirement, k=max(k * 3, 10), opts=backend.DEFAULT_OPTIONS)
+        ev = idx.search(requirement, k=max(k * 3, 10), opts=backend.default_options())
         out: list[EvidenceItem] = []
         for e in ev:
             m = e.chunk.meta

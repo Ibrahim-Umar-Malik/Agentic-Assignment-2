@@ -19,11 +19,18 @@ except ImportError:  # installed as gigbid-portfolio-mcp (rag/ is vendored into 
 
 _PKG = Path(__file__).resolve().parent
 _indexes: dict[str, PortfolioIndex] = {}
-DEFAULT_OPTIONS = Options(decompose=False, hybrid=True, rerank=True, outcome=True)
-if _gigbid_retriever is not None:  # inside GigBid the shipped variant (chosen by evaluation) is used
+# Standalone package default = GigBid's measured winner (evals/results/rag.json: structured chunks + reranking;
+# decomposition is the caller's job here: one search_evidence call per requirement).
+DEFAULT_OPTIONS = Options(rerank=True)
+
+
+def default_options() -> Options:
+    """Inside GigBid the shipped variant from config is used, read per call so evals can switch variants."""
+    if _gigbid_retriever is None:
+        return DEFAULT_OPTIONS
     from dataclasses import replace as _replace
 
-    DEFAULT_OPTIONS = _replace(_gigbid_retriever.shipped_options(), decompose=False, hyde=False)
+    return _replace(_gigbid_retriever.shipped_options(), decompose=False, hyde=False)
 
 
 def default_corpus() -> Path:

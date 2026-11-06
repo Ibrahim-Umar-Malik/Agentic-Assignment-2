@@ -155,11 +155,15 @@ def main() -> None:
     ap.add_argument("--split", default="test")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--sweep", action="store_true", help="also run the tune split and sweep thresholds")
+    ap.add_argument("--defences", choices=["on", "off"], default="on",
+                    help="off: injection eval without sanitising/delimiting (attack success before defences)")
     a = ap.parse_args()
     import logging
 
     logging.disable(logging.INFO)
-    payload = {"meta": run_meta(split=a.split, limit=a.limit)}
+    if a.defences == "off":
+        os.environ["GIGBID_DEFENCES"] = "off"
+    payload = {"meta": run_meta(split=a.split, limit=a.limit, defences=a.defences)}
     if a.sweep:
         tune = asyncio.run(run_split("tune", a.limit))
         payload["threshold_sweep"] = sweep(tune)
@@ -171,7 +175,7 @@ def main() -> None:
     payload["by_kind"] = {k: {"n": len(g), "bid_rate": mean([float(r["action"] == "bid") for r in g])}
                           for k in sorted({r["kind"] for r in rs}) for g in [[r for r in rs if r["kind"] == k]]}
     payload["rows"] = rs
-    write_result("decision", payload)
+    write_result("decision" if a.defences == "on" else "injection_no_defences", payload)
     import json
 
     print(json.dumps(payload["test" if a.split == "test" else a.split], indent=1))

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "commit": "80eb777",
+    "generated_at": "2026-11-06T12:05:25Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "split": "test"
+  },
+  "hypothesis": "requirement decomposition + reranking raises evidence Recall@5 over V0 and,\nthrough better-grounded drafts, raises the GigSim reply rate by at least 3 points.",
+  "rows": {
+    "v0_naive": {
+      "variant": "v0_naive",
+      "jobs": 180,
+      "proposals": 105,
+      "unsupported_claims_per_proposal_before_verify": 0.2762,
+      "unsupported_claims_per_proposal": 0.0,
+      "judge_score": 3.6095,
+      "gigsim_reply_rate": 0.2695,
+      "p95_latency_s": 0.239,
+      "usd_per_proposal": 0.0,
+      "by_job_kind": {
+        "fit": {
+          "n": 88,
+          "reply_rate": 0.2894
+        },
+        "injection": {
+          "n": 9,
+          "reply_rate": 0.1577
+        },
+        "lowball": {
+          "n": 6,
+          "reply_rate": 0.1827
+        },
+        "off_domain": {
+          "n": 2,
+          "reply_rate": 0.156
+        }
+      },
+      "recall@5": 0.9222,
+      "ndcg@10": 0.9283
+    },
+    "v3_rerank_v1_decompose": {
+      "variant": "v3_rerank_v1_decompose",
+      "jobs": 180,
+      "proposals": 105,
+      "unsupported_claims_per_proposal_before_verify": 0.3333,
+      "unsupported_claims_per_proposal": 0.0,
+      "judge_score": 3.9619,
+      "gigsim_reply_rate": 0.3386,
+      "p95_latency_s": 0.269,
+      "usd_per_proposal": 0.0,
+      "by_job_kind": {
+        "fit": {
+          "n": 88,
+          "reply_rate": 0.3557
+        },
+        "injection": {
+          "n": 9,
+          "reply_rate": 0.2484
+        },
+        "lowball": {
+          "n": 6,
+          "reply_rate": 0.2808
+        },
+        "off_domain": {
+          "n": 2,
+          "reply_rate": 0.1645
+        }
+      },
+      "recall@5": 0.955,
+      "ndcg@10": 0.9568
+    }
+  }
+}

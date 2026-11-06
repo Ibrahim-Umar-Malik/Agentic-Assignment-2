@@ -39,12 +39,12 @@ COMBOS = ["v2_hybrid_v1_decompose", "v3_rerank_v1_decompose", "v2_hybrid_v1_deco
 
 def score_variant(spec: str, part: str, limit: int | None = None) -> dict:
     opts = options_for(spec)
-    per_persona, all_r5, all_mrr, all_ndcg, lat, honest = {}, [], [], [], [], []
+    per_persona, all_r5, all_mrr, all_ndcg, all_n10, lat, honest = {}, [], [], [], [], [], []
     for persona in PERSONAS:
         idx = get_index(persona)
         rows = split(load_dev(persona), part)
         rows = rows[:limit] if limit else rows
-        r5s, mrrs, ndcgs = [], [], []
+        r5s, mrrs, ndcgs, n10s = [], [], [], []
         for row in rows:
             gold = row["_gold"].get("evidence") or []
             t = time.perf_counter()
@@ -60,12 +60,14 @@ def score_variant(spec: str, part: str, limit: int | None = None) -> dict:
             r5s.append(recall_at(ranked, gold, 5))
             mrrs.append(mrr(ranked, gold))
             ndcgs.append(ndcg_at(ranked, gold, 5))
-        per_persona[persona] = {"n": len(r5s), "recall@5": mean(r5s), "mrr": mean(mrrs), "ndcg@5": mean(ndcgs)}
+            n10s.append(ndcg_at(ranked, gold, 10))
+        per_persona[persona] = {"n": len(r5s), "recall@5": mean(r5s), "mrr": mean(mrrs), "ndcg@5": mean(ndcgs), "ndcg@10": mean(n10s)}
         all_r5 += r5s
         all_mrr += mrrs
         all_ndcg += ndcgs
+        all_n10 += n10s
     return {"variant": spec, "split": part, "n": len(all_r5), "recall@5": mean(all_r5), "recall@5_ci95": bootstrap_ci(all_r5),
-            "mrr": mean(all_mrr), "ndcg@5": mean(all_ndcg), "off_domain_honesty": mean(honest),
+            "mrr": mean(all_mrr), "ndcg@5": mean(all_ndcg), "ndcg@10": mean(all_n10), "off_domain_honesty": mean(honest),
             "latency_ms_p50": round(1000 * (pctile(lat, 50) or 0), 2), "latency_ms_p95": round(1000 * (pctile(lat, 95) or 0), 2),
             "per_persona": per_persona}
 

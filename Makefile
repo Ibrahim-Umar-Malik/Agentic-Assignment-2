@@ -45,6 +45,7 @@ eval: ## every offline eval -> evals/results/*.json, then refresh README/report 
 	$(OFFLINE) $(PY) -m evals.runners.ablation
 	$(OFFLINE) $(PY) -m evals.runners.decision_eval --sweep
 	$(OFFLINE) $(PY) -m evals.runners.gigsim_outcomes
+	$(OFFLINE) $(PY) -m evals.runners.variant_e2e
 	$(OFFLINE) $(PY) -m evals.runners.judge_calibration score
 	$(OFFLINE) $(PY) -m evals.runners.architecture_compare
 	$(OFFLINE) $(PY) -m evals.runners.tool_granularity
@@ -52,6 +53,8 @@ eval: ## every offline eval -> evals/results/*.json, then refresh README/report 
 
 eval-llm: ## the same evals with real open-weight models (needs GROQ_API_KEY, or GIGBID_PROFILE=open_local + Ollama)
 	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.decision_eval --sweep
+	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.decision_eval --defences off
+	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.variant_e2e
 	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.gigsim_outcomes
 	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.judge_calibration score
 	GIGBID_PROFILE=$${GIGBID_PROFILE:-open} $(PY) -m evals.runners.architecture_compare

@@ -134,7 +134,32 @@ def t_judge() -> str:
                ["Proxy: quadratic κ vs GigSim client model (not human)", d["proxy_vs_gigsim_client_model"]["quadratic_weighted_kappa"]]])
 
 
-TABLES = {"rag": t_rag, "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
+def t_b5() -> str:
+    d = load("variant_e2e").get("rows", {})
+    if not d:
+        return "_n/a_"
+    rows = []
+    for spec, v in d.items():
+        name = "V0 naive" if spec == "v0_naive" else f"**Shipped: {spec}**"
+        cost = f"${v['usd_per_proposal']:.4f}" if v["usd_per_proposal"] is not None else "n/a"
+        rows.append([name, f(v.get("recall@5")), f(v.get("ndcg@10")),
+                     f(v["unsupported_claims_per_proposal"], 2) + f" ({f(v['unsupported_claims_per_proposal_before_verify'], 2)} before verify)",
+                     f(v["judge_score"], 2), f(v["gigsim_reply_rate"], pct=True), f(v["p95_latency_s"], 2), cost])
+    return md(["Variant", "Evidence Recall@5", "nDCG@10", "Unsupported claims / proposal", "Judge score", "GigSim reply rate",
+               "p95 latency (s)", "Cost / proposal (USD)"], rows)
+
+
+def t_injection() -> str:
+    on = load("decision").get("test", {}).get("injection")
+    off = load("injection_no_defences").get("test", {}).get("injection")
+    if not on:
+        return "_n/a_"
+    before = f"{off['obeyed']} of {off['n']}" if off else "not run (needs an LLM writer; the offline writer cannot follow instructions)"
+    return md(["Planted-injection jobs (test split)", "Attack success"],
+              [["Defences off (no sanitising, no delimiting)", before], ["Defences on (shipped)", f"{on['obeyed']} of {on['n']}"]])
+
+
+TABLES = {"b5": t_b5, "injection": t_injection,"rag": t_rag, "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
           "tools": t_tools, "judge": t_judge}
 
 

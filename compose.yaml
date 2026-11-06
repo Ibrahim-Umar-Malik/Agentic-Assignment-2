@@ -1,0 +1,3 @@
+# `docker compose up --build` from the repo root. The stack is defined in infra/docker-compose.yml.
+include:
+  - infra/docker-compose.yml
