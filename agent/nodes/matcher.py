@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from core import llm
+from core import config, llm
 from rag.index.skills import expand, find_skills
 from rag.types import tokenize
 
@@ -48,10 +48,20 @@ async def matcher(state: dict) -> dict:
         for i in items[:3] if cov != "none" else []:
             evidence.setdefault(i["id"], {**i, "requirement": r})
     known = {v.lower() for v in vocab}
-    in_domain = sum(1 for r in reqs if r.lower() in known) / max(1, len(reqs))
+    generic = {g.lower() for g in config.get("decision.generic_skills", [])}
+    title = job.get("title", "").lower()
+
+    def weight(r: str) -> float:  # the skill in the title is what the client is hiring for; generic skills count less
+        return 2.0 if r.lower() in title else 0.5 if r.lower() in generic else 1.0
+
     w = {"full": 1.0, "partial": 0.5, "none": 0.0}
-    cov_score = sum(w[m.coverage] for m in matrix) / max(1, len(matrix))
-    fit = round(0.75 * cov_score + 0.25 * in_domain, 3)
+    tot = sum(weight(m.requirement) for m in matrix) or 1.0
+    cov_score = sum(weight(m.requirement) * w[m.coverage] for m in matrix) / tot
+    in_domain = sum(weight(r) for r in reqs if r.lower() in known) / (sum(weight(r) for r in reqs) or 1.0)
+    fit = 0.75 * cov_score + 0.25 * in_domain
+    if any(m.coverage == "none" and m.requirement.lower() in title for m in matrix):
+        fit *= config.get("decision.title_skill_missing_penalty", 0.6)
+    fit = round(fit, 3)
     projects: dict[str, int] = {}
     for m in matrix:
         for e in m.evidence:

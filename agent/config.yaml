@@ -82,6 +82,10 @@ decision:
   watch_min_fit: 0.30        # between watch and bid: keep an eye on it
   max_risk: 0.55             # risk score above this means skip
   min_client_spend_unverified: 1000
+  min_budget_floor_ratio: 0.7     # hourly budget below 70% of the user's floor -> skip
+  min_fixed_hours: 8              # fixed budget below 8 hours at the floor -> skip
+  title_skill_missing_penalty: 0.6
+  generic_skills: [Python, SQL, Docker, Excel, TypeScript, AWS, JavaScript, PostgreSQL, Git, REST API]
 
 pricing:
   floor_from_profile: true
