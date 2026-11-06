@@ -14,7 +14,7 @@ from typing import Any
 
 from langgraph.store.base import BaseStore
 
-from core.db import database_url
+from core.db import database_url, sibling_sqlite_path
 
 
 @asynccontextmanager
@@ -29,7 +29,7 @@ async def open_store():
     elif url.startswith("sqlite"):
         from langgraph.store.sqlite.aio import AsyncSqliteStore
 
-        path = url.split("///", 1)[1].replace(".db", "_store.db")
+        path = url.split("///", 1)[1] if os.environ.get("GIGBID_STORE_URL") else sibling_sqlite_path(url, "store")
         async with AsyncSqliteStore.from_conn_string(path) as store:
             await store.setup()
             yield store

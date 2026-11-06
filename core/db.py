@@ -93,6 +93,14 @@ def database_url() -> str:
     return url
 
 
+def sibling_sqlite_path(url: str, suffix: str) -> str:
+    """Separate SQLite file next to the main DB (checkpoints/store use their own connections and locks)."""
+    from pathlib import PurePath
+
+    p = PurePath(url.split("///", 1)[1])
+    return str(p.with_name(f"{p.stem}_{suffix}{p.suffix or '.db'}"))
+
+
 @lru_cache(maxsize=4)
 def engine(url: str | None = None) -> Engine:
     url = url or database_url()

@@ -80,3 +80,15 @@ def expand(requirement: str) -> str:
         elif any(a in low for a in aliases):
             extra.append(canon)
     return requirement + (" " + " ".join(extra) if extra else "")
+
+
+# General marketplace skill vocabulary (not persona-specific). Used to recognise what a job title is
+# hiring for even when the freelancer has never used it, so "Need Django expert" is not scored only
+# on the generic Python/PostgreSQL it also lists.
+MARKET_SKILLS = [
+    "Django", "Flask", "FastAPI", "Ruby on Rails", "Laravel", "PHP", "Vue", "Angular", "Svelte", "Flutter",
+    "Swift", "Kotlin", "React", "React Native", "Next.js", "Node.js", "NestJS", "Express.js", "GraphQL", "MongoDB",
+    "Shopify", "WordPress", "Webflow", "Unity3D", "Unreal Engine", "Solidity", "Rust", "Golang", "C#", ".NET", "Java", "Spring Boot",
+    "Salesforce", "SAP", "Power BI", "Tableau", "Looker", "Snowflake", "BigQuery", "dbt", "Airflow", "Spark",
+    "Kubernetes", "Terraform", "LangGraph", "LangChain", "PyTorch", "TensorFlow", "OpenCV", "YOLO", "RAG",
+]

@@ -45,7 +45,7 @@ async def compliance(state: dict, key: str = "draft") -> dict:
         answers.append(ScreeningAnswer(question=a["question"], answer=t))
     # P3: unsupported claims introduced by a human edit block until fixed (the agent's own were removed by the verifier)
     for cl in draft.get("claims", []) or []:
-        if cl.get("label") == "unsupported":
+        if cl.get("label") == "unsupported" and cl["text"].strip() in text:  # still present after rewrites
             vio.append(ComplianceViolation(rule_id="P3", detail=f"claim not supported by your portfolio: '{cl['text'][:80]}'", action="block"))
     if not llm.is_offline("compliance"):
         _, system = load_prompt("compliance", policy=(config.ROOT / "data" / "policy_pack" / "policy.md").read_text())

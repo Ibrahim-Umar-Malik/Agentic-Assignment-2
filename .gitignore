@@ -21,3 +21,11 @@ build/
 .DS_Store
 var/
 evals/datasets/hidden*
+
+# web
+apps/web/node_modules/
+apps/web/dist/
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/*.tsbuildinfo
+apps/web/tsconfig.tsbuildinfo

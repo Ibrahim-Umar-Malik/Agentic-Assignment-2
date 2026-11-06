@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from core import config, llm
-from rag.index.skills import expand, find_skills
+from rag.index.skills import MARKET_SKILLS, expand, find_skills
 from rag.types import tokenize
 
 from ..handoffs import EvidenceRef, FitReport, RequirementMatch
@@ -31,7 +31,8 @@ async def matcher(state: dict) -> dict:
     skills = (await gw.call("matcher", "portfolio", "list_skills", {"portfolio_id": pid}))["skills"]
     vocab = [s["skill"] for s in skills]
     text = f"{job.get('title', '')}. {job.get('description', '')}"
-    reqs = list(dict.fromkeys((job.get("skills") or []) + find_skills(text, vocab)))[:8]
+    title_skills = find_skills(job.get("title", ""), MARKET_SKILLS + vocab)
+    reqs = list(dict.fromkeys(title_skills + (job.get("skills") or []) + find_skills(text, vocab)))[:8]
     if not reqs:
         reqs = [s for s in text.split(". ") if len(s.split()) > 4][:3] or [job.get("title", "")]
     matrix: list[RequirementMatch] = []

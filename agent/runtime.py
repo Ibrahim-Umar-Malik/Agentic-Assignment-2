@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from contextlib import asynccontextmanager
 
-from core.db import database_url
+from core.db import database_url, sibling_sqlite_path
 
 from .graphs.bid_graph import build_bid_graph
 from .graphs.conversation_graph import build_conversation_graph
@@ -24,7 +24,7 @@ async def open_checkpointer():
     elif url.startswith("sqlite"):
         from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 
-        path = url.split("///", 1)[1].replace(".db", "_checkpoints.db") if "checkpoint" not in url else url.split("///", 1)[1]
+        path = url.split("///", 1)[1] if os.environ.get("GIGBID_CHECKPOINT_URL") else sibling_sqlite_path(url, "checkpoints")
         async with AsyncSqliteSaver.from_conn_string(path) as cp:
             yield cp
     else:
