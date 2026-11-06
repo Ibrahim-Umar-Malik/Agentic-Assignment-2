@@ -26,10 +26,10 @@ randomised experiment to estimate how many proposals per arm the z-test needs.
 <!-- table:ab -->
 | X2 experiment: ask one clarifying question vs close with a next step | Value |
 |---|---|
-| Jobs (paired, both arms written) | 105 |
-| Reply probability: statement / question | 24.6% / 33.7% |
-| Paired lift (question − statement) | 9.1% (95% CI [7.5, 10.8]) |
-| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 12.0% / 38.5% / 89.0% |
+| Jobs (paired, both arms written) | 111 |
+| Reply probability: statement / question | 26.4% / 35.7% |
+| Paired lift (question − statement) | +9.3 points (95% CI [7.8, 11.1]) |
+| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 10.0% / 36.0% / 88.5% |
 <!-- /table:ab -->
 
 ## What it showed

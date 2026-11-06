@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "f20e310",
-    "generated_at": "2026-11-06T12:06:46Z",
+    "commit": "dfd4987",
+    "generated_at": "2026-11-06T12:18:50Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -22,8 +22,8 @@
       "ndcg@5": 0.9021,
       "ndcg@10": 0.9059,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 1.01,
-      "latency_ms_p95": 1.73,
+      "latency_ms_p50": 1.18,
+      "latency_ms_p95": 2.17,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -61,8 +61,8 @@
       "ndcg@5": 0.9463,
       "ndcg@10": 0.9476,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 0.92,
-      "latency_ms_p95": 1.18,
+      "latency_ms_p50": 1.74,
+      "latency_ms_p95": 2.52,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -100,8 +100,8 @@
       "ndcg@5": 0.9175,
       "ndcg@10": 0.9175,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 1.13,
-      "latency_ms_p95": 1.74,
+      "latency_ms_p50": 1.58,
+      "latency_ms_p95": 2.84,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -139,8 +139,8 @@
       "ndcg@5": 0.8898,
       "ndcg@10": 0.8898,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 2.0,
-      "latency_ms_p95": 2.78,
+      "latency_ms_p50": 2.08,
+      "latency_ms_p95": 3.31,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -178,8 +178,8 @@
       "ndcg@5": 0.8246,
       "ndcg@10": 0.8246,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 1.22,
-      "latency_ms_p95": 1.55,
+      "latency_ms_p50": 0.98,
+      "latency_ms_p95": 1.81,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -217,8 +217,8 @@
       "ndcg@5": 0.5185,
       "ndcg@10": 0.6089,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 2.8,
-      "latency_ms_p95": 4.34,
+      "latency_ms_p50": 2.66,
+      "latency_ms_p95": 3.45,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -256,8 +256,8 @@
       "ndcg@5": 0.9373,
       "ndcg@10": 0.9373,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 1.17,
-      "latency_ms_p95": 1.5,
+      "latency_ms_p50": 1.14,
+      "latency_ms_p95": 1.42,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -296,7 +296,7 @@
       "ndcg@10": 0.9309,
       "off_domain_honesty": 0.0,
       "latency_ms_p50": 1.27,
-      "latency_ms_p95": 1.77,
+      "latency_ms_p95": 1.63,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -334,8 +334,8 @@
       "ndcg@5": 0.9463,
       "ndcg@10": 0.9463,
       "off_domain_honesty": 0.9756,
-      "latency_ms_p50": 1.48,
-      "latency_ms_p95": 2.09,
+      "latency_ms_p50": 1.45,
+      "latency_ms_p95": 2.14,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -373,8 +373,8 @@
       "ndcg@5": 0.9463,
       "ndcg@10": 0.9463,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 0.95,
-      "latency_ms_p95": 1.43,
+      "latency_ms_p50": 1.12,
+      "latency_ms_p95": 1.52,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -412,8 +412,8 @@
       "ndcg@5": 0.9532,
       "ndcg@10": 0.9538,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 2.74,
-      "latency_ms_p95": 4.2,
+      "latency_ms_p50": 3.57,
+      "latency_ms_p95": 5.19,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -451,8 +451,8 @@
       "ndcg@5": 0.9223,
       "ndcg@10": 0.9227,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 0.93,
-      "latency_ms_p95": 1.21,
+      "latency_ms_p50": 1.19,
+      "latency_ms_p95": 1.61,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -490,8 +490,8 @@
       "ndcg@5": 0.9303,
       "ndcg@10": 0.9303,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 3.17,
-      "latency_ms_p95": 4.96,
+      "latency_ms_p50": 3.5,
+      "latency_ms_p95": 5.23,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -530,7 +530,7 @@
       "ndcg@10": 0.938,
       "off_domain_honesty": 0.0,
       "latency_ms_p50": 1.18,
-      "latency_ms_p95": 1.49,
+      "latency_ms_p95": 1.51,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -568,8 +568,8 @@
       "ndcg@5": 0.9215,
       "ndcg@10": 0.922,
       "off_domain_honesty": 0.9756,
-      "latency_ms_p50": 1.53,
-      "latency_ms_p95": 2.72,
+      "latency_ms_p50": 1.55,
+      "latency_ms_p95": 2.24,
       "per_persona": {
         "ai_ml": {
           "n": 116,
@@ -610,8 +610,8 @@
       "ndcg@5": 0.9272,
       "ndcg@10": 0.9283,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 0.97,
-      "latency_ms_p95": 1.33,
+      "latency_ms_p50": 0.99,
+      "latency_ms_p95": 1.57,
       "per_persona": {
         "ai_ml": {
           "n": 49,
@@ -649,8 +649,8 @@
       "ndcg@5": 0.9568,
       "ndcg@10": 0.9568,
       "off_domain_honesty": 0.0,
-      "latency_ms_p50": 3.54,
-      "latency_ms_p95": 6.12,
+      "latency_ms_p50": 3.22,
+      "latency_ms_p95": 5.23,
       "per_persona": {
         "ai_ml": {
           "n": 49,

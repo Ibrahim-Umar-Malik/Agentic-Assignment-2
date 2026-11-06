@@ -55,13 +55,14 @@ async def run_variant(spec: str) -> dict:
             llm.meter_var.reset(tok)
             dt = time.perf_counter() - t
             d = out.get("draft")
-            rec = {"kind": row["_gold"]["kind"], "latency_s": dt, "usd": meter.cost_usd, "proposal": bool(d)}
+            rec = {"id": row["id"], "kind": row["_gold"]["kind"], "latency_s": dt, "usd": meter.cost_usd, "proposal": bool(d)}
             if d and (out.get("decision") or {}).get("action") == "bid":
                 ver = out.get("verification") or {}
                 e = expected(sim, row, d["cover_letter"], out["price"]["amount"], [a["answer"] for a in d.get("screening_answers", [])], tid)
                 js = await llm_judge(public_job(row), d["cover_letter"]) if not llm.is_offline("judge") else heuristic_judge(public_job(row), d["cover_letter"])
                 rec.update(unsupported_before=ver.get("unsupported_before", 0), unsupported_after=ver.get("unsupported_after", 0),
-                           p_reply=e["p_reply"], judge=js.overall)
+                           p_reply=e["p_reply"], judge=js.overall, lead=(d.get("cited_items") or [None])[0],
+                           opening=d["cover_letter"].split("\n")[0][:160], reasons=e["reasons"])
             per_job.append(rec)
     server._port_override = None
     props = [r for r in per_job if "p_reply" in r]
@@ -74,7 +75,7 @@ async def run_variant(spec: str) -> dict:
             "unsupported_claims_per_proposal": mean([r["unsupported_after"] for r in props]),
             "judge_score": mean([r["judge"] for r in props]), "gigsim_reply_rate": mean([r["p_reply"] for r in props]),
             "p95_latency_s": round(pctile(lat, 95) or 0, 3), "usd_per_proposal": round(sum(r["usd"] for r in per_job) / len(props), 6) if props else None,
-            "by_job_kind": by_kind}
+            "by_job_kind": by_kind, "per_job": [{k: r.get(k) for k in ("id", "lead", "opening", "p_reply", "reasons")} for r in props]}
 
 
 def main() -> None:
@@ -87,8 +88,21 @@ def main() -> None:
         rows[spec]["ndcg@10"] = (rag["test"]["baseline_v0"] if spec == "v0_naive" else rag["test"]["chosen"]).get("ndcg@10")
         print(spec, {k: v for k, v in rows[spec].items() if k != "by_job_kind"})
     os.environ.pop("GIGBID_RAG_VARIANT", None)
+    # Where did the reply-rate difference come from? Pair the same jobs across the two variants.
+    a = {r["id"]: r for r in rows["v0_naive"]["per_job"]}
+    b = {r["id"]: r for r in rows[rag["chosen"]]["per_job"]}
+    both = [i for i in a if i in b]
+    same = [i for i in both if a[i]["lead"] == b[i]["lead"]]
+    diff = [i for i in both if a[i]["lead"] != b[i]["lead"]]
+    metric = lambda r: "specific_metrics" in (r["reasons"] or [])  # noqa: E731
+    paired = {"jobs": len(both), "lead_evidence_changed": len(diff),
+              "reply_gain_when_lead_changed": mean([b[i]["p_reply"] - a[i]["p_reply"] for i in diff]),
+              "reply_gain_when_lead_same": mean([b[i]["p_reply"] - a[i]["p_reply"] for i in same]),
+              "share_with_metric_v0": mean([float(metric(a[i])) for i in both]),
+              "share_with_metric_shipped": mean([float(metric(b[i])) for i in both])}
+    print("paired:", paired)
     write_result("variant_e2e", {"meta": run_meta(split="test"), "hypothesis": __doc__.split("Hypothesis (written before running): ")[1].strip(),
-                                 "rows": rows})
+                                 "paired": paired, "rows": rows})
 
 
 if __name__ == "__main__":

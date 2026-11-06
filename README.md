@@ -43,23 +43,23 @@ every LLM node) and a hash embedder. `make eval-llm` reruns everything with open
 <!-- table:rag -->
 | Variant (tune split) | Recall@5 | MRR | nDCG@5 | p95 ms |
 |---|---|---|---|---|
-| v0_naive | 0.905 | 0.964 | 0.902 | 1.7 |
-| v1_decompose | 0.950 | 0.993 | 0.946 | 1.2 |
-| v2_hybrid | 0.912 | 0.980 | 0.917 | 1.7 |
-| v3_rerank | 0.883 | 0.975 | 0.890 | 2.8 |
-| v4_outcome | 0.919 | 0.843 | 0.825 | 1.6 |
-| v5_multivector | 0.660 | 0.550 | 0.518 | 4.3 |
-| v6_contextual | 0.929 | 0.992 | 0.937 | 1.5 |
-| v7_hyde | 0.933 | 0.979 | 0.931 | 1.8 |
+| v0_naive | 0.905 | 0.964 | 0.902 | 2.2 |
+| v1_decompose | 0.950 | 0.993 | 0.946 | 2.5 |
+| v2_hybrid | 0.912 | 0.980 | 0.917 | 2.8 |
+| v3_rerank | 0.883 | 0.975 | 0.890 | 3.3 |
+| v4_outcome | 0.919 | 0.843 | 0.825 | 1.8 |
+| v5_multivector | 0.660 | 0.550 | 0.518 | 3.5 |
+| v6_contextual | 0.929 | 0.992 | 0.937 | 1.4 |
+| v7_hyde | 0.933 | 0.979 | 0.931 | 1.6 |
 | v8_corrective | 0.945 | 0.996 | 0.946 | 2.1 |
-| v2_hybrid_v1_decompose | 0.945 | 0.996 | 0.946 | 1.4 |
-| **v3_rerank_v1_decompose** | 0.947 | 0.997 | 0.953 | 4.2 |
-| v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.922 | 1.2 |
-| v2_hybrid_v1_decompose_v3_rerank_v4_outcome | 0.948 | 0.966 | 0.930 | 5.0 |
+| v2_hybrid_v1_decompose | 0.945 | 0.996 | 0.946 | 1.5 |
+| **v3_rerank_v1_decompose** | 0.947 | 0.997 | 0.953 | 5.2 |
+| v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.922 | 1.6 |
+| v2_hybrid_v1_decompose_v3_rerank_v4_outcome | 0.948 | 0.966 | 0.930 | 5.2 |
 | v6_contextual_v2_hybrid_v1_decompose_v4_outcome | 0.949 | 0.974 | 0.938 | 1.5 |
-| v8_corrective_v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.921 | 2.7 |
+| v8_corrective_v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.921 | 2.2 |
 
-Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latency): **v3_rerank_v1_decompose**. Held-out test split: nDCG@5 0.957 vs naive 0.927; Recall@5 0.955 (95% CI [0.93, 0.9778]) vs 0.922. Embedder `hash`, reranker `lexical`, commit `f20e310`.
+Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latency): **v3_rerank_v1_decompose**. Held-out test split: nDCG@5 0.957 vs naive 0.927; Recall@5 0.955 (95% CI [0.93, 0.9778]) vs 0.922. Embedder `hash`, reranker `lexical`, commit `dfd4987`.
 <!-- /table:rag -->
 
 ### End to end: naive retrieval vs shipped, through the whole bid graph (test split)
@@ -67,8 +67,10 @@ Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latenc
 <!-- table:b5 -->
 | Variant | Evidence Recall@5 | nDCG@10 | Unsupported claims / proposal | Judge score | GigSim reply rate | p95 latency (s) | Cost / proposal (USD) |
 |---|---|---|---|---|---|---|---|
-| V0 naive | 0.922 | 0.928 | 0.00 (0.28 before verify) | 3.61 | 27.0% | 0.24 | $0.0000 |
-| **Shipped: v3_rerank_v1_decompose** | 0.955 | 0.957 | 0.00 (0.33 before verify) | 3.96 | 33.9% | 0.28 | $0.0000 |
+| V0 naive | 0.922 | 0.928 | 0.00 (0.27 before verify) | 3.59 | 28.3% | 0.25 | $0.0000 |
+| **Shipped: v3_rerank_v1_decompose** | 0.955 | 0.957 | 0.00 (0.32 before verify) | 3.96 | 35.4% | 0.26 | $0.0000 |
+
+Paired on the same 111 proposals: the lead evidence changed in only 5, yet reply probability rose +6.6 points on the proposals whose lead evidence did *not* change. Drafts quoting a specific metric: 8.1% with V0 vs 65.8% shipped.
 <!-- /table:b5 -->
 
 ### Decisions, safety and grounding (test split)
@@ -76,16 +78,16 @@ Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latenc
 <!-- table:decision -->
 | Metric (test split, n=180, profile `offline`) | Value |
 |---|---|
-| Bid/skip accuracy | 85.6% (95% CI [80.0, 90.6]) |
-| Bid precision / recall / F1 | 0.876 / 0.876 / 0.876 |
+| Bid/skip accuracy | 91.7% (95% CI [87.2, 95.6]) |
+| Bid precision / recall / F1 | 0.933 / 0.924 / 0.928 |
 | Scam posts not bid on | 100.0% of 17 |
-| Injected posts flagged / obeyed | 100.0% flagged, 0 of 19 obeyed |
-| Unsupported claims without verifier → shipped | 15.6% → 0.0% (224 claims) |
-| Bids inside the fair price band | 74.3% of 105 |
-| Latency per job p50 / p95 | 0.19s / 0.27s |
+| Injected posts flagged / obeyed | 94.7% flagged, 0 of 19 obeyed |
+| Unsupported claims without verifier → shipped | 15.4% → 0.0% (220 claims) |
+| Bids inside the fair price band | 84.6% of 104 |
+| Latency per job p50 / p95 | 0.18s / 0.27s |
 | Errors | 0 of 180 |
 
-Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune F1 0.9032).
+Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune F1 0.9325).
 <!-- /table:decision -->
 
 ### Outcomes in GigSim vs common baselines (test split)
@@ -93,7 +95,7 @@ Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune 
 <!-- table:outcomes -->
 | System (180 test jobs) | Bids | Connects | Reply rate | Replies / 100 Connects | Interviews | Hires | Scam bids |
 |---|---|---|---|---|---|---|---|
-| **GigBid** | 105 | 804 | 34.6% | 4.52 | 22.6 | 11.2 | 0 |
+| **GigBid** | 111 | 846 | 36.0% | 4.73 | 25.0 | 12.3 | 0 |
 | Template, bid on all | 154 | 1236 | 12.6% | 1.57 | 10.3 | 4.3 | 4 |
 | Reuse best past proposal | 180 | 1400 | 13.7% | 1.76 | 13.3 | 5.7 | 17 |
 <!-- /table:outcomes -->
@@ -103,7 +105,7 @@ Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune 
 <!-- table:arch -->
 | Architecture (50 jobs) | Decision accuracy | Scam bids | Unsupported claims | Tool calls / job | p95 latency |
 |---|---|---|---|---|---|
-| graph | 88.0% | 0 | 0.0% | 9.3 | 0.32s |
+| graph | 92.0% | 0 | 0.0% | 9.6 | 0.30s |
 | react | not run: needs an LLM |  |  |  |  |
 | supervisor | not run: needs an LLM |  |  |  |  |
 <!-- /table:arch -->
@@ -113,10 +115,10 @@ Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune 
 <!-- table:ab -->
 | X2 experiment: ask one clarifying question vs close with a next step | Value |
 |---|---|
-| Jobs (paired, both arms written) | 105 |
-| Reply probability: statement / question | 24.6% / 33.7% |
-| Paired lift (question − statement) | 9.1% (95% CI [7.5, 10.8]) |
-| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 12.0% / 38.5% / 89.0% |
+| Jobs (paired, both arms written) | 111 |
+| Reply probability: statement / question | 26.4% / 35.7% |
+| Paired lift (question − statement) | +9.3 points (95% CI [7.8, 11.1]) |
+| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 10.0% / 36.0% / 88.5% |
 <!-- /table:ab -->
 
 ## Public traces

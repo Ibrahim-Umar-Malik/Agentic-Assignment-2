@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "f20e310",
-    "generated_at": "2026-11-06T12:09:17Z",
+    "commit": "dfd4987",
+    "generated_at": "2026-11-06T12:21:12Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -12,13 +12,13 @@
   "systems": {
     "gigbid": {
       "jobs": 180,
-      "bids": 105,
-      "connects": 804,
-      "expected_replies": 36.32,
-      "reply_rate": 0.3459,
-      "replies_per_100_connects": 4.52,
-      "expected_interviews": 22.61,
-      "expected_hires": 11.15,
+      "bids": 111,
+      "connects": 846,
+      "expected_replies": 40.0,
+      "reply_rate": 0.3604,
+      "replies_per_100_connects": 4.73,
+      "expected_interviews": 24.96,
+      "expected_hires": 12.33,
       "scam_bids": 0
     },
     "template_all": {
@@ -45,26 +45,26 @@
     }
   },
   "ab_experiment": {
-    "n_jobs": 105,
-    "reply_prob_statement": 0.2458,
-    "reply_prob_question": 0.3371,
-    "paired_diff_question_minus_statement": 0.0913,
+    "n_jobs": 111,
+    "reply_prob_statement": 0.264,
+    "reply_prob_question": 0.3572,
+    "paired_diff_question_minus_statement": 0.0931,
     "paired_diff_ci95": [
-      0.0754,
-      0.1078
+      0.0777,
+      0.1112
     ],
     "share_jobs_question_better": 1.0,
     "power_by_n_per_arm": {
-      "30": 0.12,
-      "60": 0.19,
-      "120": 0.385,
-      "250": 0.605,
-      "500": 0.89
+      "30": 0.1,
+      "60": 0.225,
+      "120": 0.36,
+      "250": 0.615,
+      "500": 0.885
     },
     "by_persona": {
-      "ai_ml": 0.0806,
-      "fullstack": 0.0941,
-      "data_analyst": 0.1016
+      "ai_ml": 0.0835,
+      "fullstack": 0.0945,
+      "data_analyst": 0.1032
     }
   }
 }

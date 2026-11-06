@@ -15,7 +15,7 @@ PATTERNS = {
     "Anthropic key": r"sk-ant-[A-Za-z0-9-]{20,}",
     "Slack token": r"xox[abpr]-[A-Za-z0-9-]{10,}",
     "Fernet key assignment": r"TOKEN_ENCRYPTION_KEY\s*=\s*[A-Za-z0-9_-]{43}=",
-    "reviewer password assignment": r"REVIEWER_PASSWORD\s*[=:]\s*['\"]?[^\s'\"$]{6,}",
+    "reviewer password assignment": r"REVIEWER_PASSWORD[ \t]*[=:][ \t]*['\"]?[^\s'\"$]{6,}",
 }
 ALLOW = ("apps/web/playwright.config.ts", "apps/web/tests/e2e/helpers.ts")  # throwaway e2e-only test account
 

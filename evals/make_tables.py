@@ -145,8 +145,15 @@ def t_b5() -> str:
         rows.append([name, f(v.get("recall@5")), f(v.get("ndcg@10")),
                      f(v["unsupported_claims_per_proposal"], 2) + f" ({f(v['unsupported_claims_per_proposal_before_verify'], 2)} before verify)",
                      f(v["judge_score"], 2), f(v["gigsim_reply_rate"], pct=True), f(v["p95_latency_s"], 2), cost])
-    return md(["Variant", "Evidence Recall@5", "nDCG@10", "Unsupported claims / proposal", "Judge score", "GigSim reply rate",
-               "p95 latency (s)", "Cost / proposal (USD)"], rows)
+    t = md(["Variant", "Evidence Recall@5", "nDCG@10", "Unsupported claims / proposal", "Judge score", "GigSim reply rate",
+            "p95 latency (s)", "Cost / proposal (USD)"], rows)
+    pr = load("variant_e2e").get("paired")
+    if pr:
+        t += (f"\n\nPaired on the same {pr['jobs']} proposals: the lead evidence changed in only {pr['lead_evidence_changed']}, yet "
+              f"reply probability rose {100 * pr['reply_gain_when_lead_same']:+.1f} points on the proposals whose lead evidence did *not* "
+              f"change. Drafts quoting a specific metric: {f(pr['share_with_metric_v0'], pct=True)} with V0 vs "
+              f"{f(pr['share_with_metric_shipped'], pct=True)} shipped.")
+    return t
 
 
 def t_injection() -> str:
@@ -159,7 +166,36 @@ def t_injection() -> str:
               [["Defences off (no sanitising, no delimiting)", before], ["Defences on (shipped)", f"{on['obeyed']} of {on['n']}"]])
 
 
-TABLES = {"b5": t_b5, "injection": t_injection,"rag": t_rag, "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
+def t_failures() -> str:
+    before, after = load("failures_before_fixes"), load("failures")
+    if not after:
+        return "_n/a_"
+    cats = ["missed evidence", "wrong skip: injected post treated as client risk", "wrong skip: risk/fit threshold",
+            "wrong bid: lowball budget", "wrong bid: off-domain (missed evidence gap)", "wrong bid: other", "mispriced",
+            "unsupported claim", "generic opening", "compliance miss", "injection obeyed", "tool error"]
+    labels = {"wrong bid: other": "wrong bid: duplicate repost"}
+    rows = [[labels.get(c, c), before.get("counts", {}).get(c, 0) if before else "n/a", after["counts"].get(c, 0)] for c in cats]
+    db, da = load("decision_before_fixes").get("test", {}), load("decision").get("test", {})
+    if db and da:
+        rows.append(["**bid/skip accuracy**", f(db["decision"]["accuracy"], pct=True), f(da["decision"]["accuracy"], pct=True)])
+        rows.append(["**bids inside fair price band**", f(db["price"]["in_fair_band"], pct=True), f(da["price"]["in_fair_band"], pct=True)])
+    return md(["Failure type (test split, 180 jobs)", "Before fixes", "After fixes"], rows)
+
+
+def t_breakdown() -> str:
+    r, e = load("rag"), load("variant_e2e").get("rows", {})
+    if not r or not e:
+        return "_n/a_"
+    v0, sh = r["test"]["baseline_v0"]["per_persona"], r["test"]["chosen"]["per_persona"]
+    rows = [[f"persona: {p}", f"{f(v0[p]['recall@5'])} → {f(sh[p]['recall@5'])}", f"{f(v0[p]['ndcg@10'])} → {f(sh[p]['ndcg@10'])}", ""]
+            for p in v0]
+    a, b = e.get("v0_naive", {}).get("by_job_kind", {}), e.get(r["chosen"], {}).get("by_job_kind", {})
+    rows += [[f"job type: {k} (n={a[k]['n']})", "", "", f"{f(a[k]['reply_rate'], pct=True)} → {f(b.get(k, {}).get('reply_rate'), pct=True)}"]
+             for k in a]
+    return md(["Slice (V0 → shipped)", "Recall@5", "nDCG@10", "GigSim reply rate"], rows)
+
+
+TABLES = {"breakdown": t_breakdown, "failures": t_failures,"b5": t_b5,"injection": t_injection,"rag": t_rag, "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
           "tools": t_tools, "judge": t_judge}
 
 

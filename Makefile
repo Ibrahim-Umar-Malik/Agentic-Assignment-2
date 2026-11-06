@@ -44,6 +44,7 @@ eval: ## every offline eval -> evals/results/*.json, then refresh README/report 
 	$(OFFLINE) $(PY) -m evals.runners.rag_eval
 	$(OFFLINE) $(PY) -m evals.runners.ablation
 	$(OFFLINE) $(PY) -m evals.runners.decision_eval --sweep
+	$(OFFLINE) $(PY) -m evals.runners.failure_analysis
 	$(OFFLINE) $(PY) -m evals.runners.gigsim_outcomes
 	$(OFFLINE) $(PY) -m evals.runners.variant_e2e
 	$(OFFLINE) $(PY) -m evals.runners.judge_calibration score
