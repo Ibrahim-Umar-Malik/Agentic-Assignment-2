@@ -1,5 +1,3 @@
-from langgraph.graph import StateGraph
-from pinecone import Pinecone
 
 from celery import Celery
 

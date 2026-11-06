@@ -1,0 +1,24 @@
+# Risk Assessor patterns (configuration, not code). Severity in [0,1]; the risk score is the max severity,
+# plus client-history penalties. Injection patterns are also used to sanitise untrusted text before drafting.
+version: 2
+scam:
+  - { kind: off_platform, severity: 0.9, pattern: '(?i)\b(telegram|whatsapp|signal|skype|discord)\b' }
+  - { kind: scam, severity: 0.95, pattern: '(?i)\b(crypto|usdt|bitcoin|btc|western union|gift card)\b' }
+  - { kind: scam, severity: 0.95, pattern: '(?i)\b(cheque|check)\b.{0,40}\b(deposit|mail)' }
+  - { kind: advance_fee, severity: 0.95, pattern: '(?i)\b(purchase|buy|pay)\b.{0,40}\b(onboarding|kit|fee|equipment)\b' }
+  - { kind: free_work, severity: 0.85, pattern: '(?i)\b(unpaid|free)\b.{0,30}\b(test|trial|sample)\b' }
+  - { kind: free_work, severity: 0.75, pattern: '(?i)best submission (gets|wins)' }
+  - { kind: contact_harvest, severity: 0.8, pattern: '(?i)(send|share|include)\b.{0,30}\b(whatsapp|phone|number|personal email|email address)' }
+injection:
+  - '(?i)ignore (all )?(previous|prior|above) (instructions|prompts)'
+  - '(?i)\b(system|assistant)\s*:'
+  - '(?i)\b(ai|llm|gpt|language model)\b[^.]{0,30}\b(reading|assistant|agent)s?\b'
+  - '(?i)(reveal|paste|print|show)\b.{0,30}\b(system prompt|instructions|prompt)'
+  - '(?i)\b(you are now|test mode|developer mode)\b'
+  - '(?i)begin your (proposal|answer|reply) with'
+  - '(?i)set the (bid|price|amount)\b'
+client:
+  unverified_payment: 0.45
+  new_client_no_spend: 0.25
+  low_rating_below: 4.0
+  low_rating_penalty: 0.2

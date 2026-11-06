@@ -11,8 +11,8 @@ import os
 from pathlib import Path
 
 try:  # inside the GigBid repo
-    from rag.pipeline import Options, PortfolioIndex
     from rag import retriever as _gigbid_retriever
+    from rag.pipeline import Options, PortfolioIndex
 except ImportError:  # installed as gigbid-portfolio-mcp (rag/ is vendored into the package)
     from .rag.pipeline import Options, PortfolioIndex  # type: ignore
     _gigbid_retriever = None
@@ -20,6 +20,10 @@ except ImportError:  # installed as gigbid-portfolio-mcp (rag/ is vendored into 
 _PKG = Path(__file__).resolve().parent
 _indexes: dict[str, PortfolioIndex] = {}
 DEFAULT_OPTIONS = Options(decompose=False, hybrid=True, rerank=True, outcome=True)
+if _gigbid_retriever is not None:  # inside GigBid the shipped variant (chosen by evaluation) is used
+    from dataclasses import replace as _replace
+
+    DEFAULT_OPTIONS = _replace(_gigbid_retriever.shipped_options(), decompose=False, hyde=False)
 
 
 def default_corpus() -> Path:

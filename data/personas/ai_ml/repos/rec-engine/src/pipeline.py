@@ -1,6 +1,3 @@
-import torch
-import faiss
-from fastapi import FastAPI
 
 
 

@@ -13,7 +13,6 @@ from typing import Any
 import numpy as np
 
 from . import _config as config
-
 from .index.embed import get_embedder
 from .index.skills import expand, find_skills
 from .index.stores import BM25, VectorIndex, get_reranker, rrf

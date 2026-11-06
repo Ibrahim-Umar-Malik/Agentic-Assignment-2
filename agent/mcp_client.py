@@ -28,10 +28,10 @@ ALLOWLIST: dict[str, dict[str, list[str]]] = {
     "matcher": {"portfolio": ["search_evidence", "get_case_study", "list_skills"]},
     "pricing": {"marketplace": ["get_market_stats", "get_connects_balance", "get_policy"]},
     "writer": {"portfolio": ["search_evidence", "get_case_study"]},
-    "verifier": {"portfolio": ["search_evidence"]},
+    "verifier": {"portfolio": ["search_evidence", "get_case_study", "list_skills"]},
     "critic": {"portfolio": ["search_evidence"]},
     "compliance": {},
-    "liaison": {"marketplace": ["list_messages", "get_job"],
+    "liaison": {"marketplace": ["list_messages", "get_job"], "portfolio": ["search_evidence"],
                 "workspace": ["free_slots", "create_interview_hold", "create_email_draft"]},
     # Not an agent: the approval executor, which runs only after a human approved (R4). Holds the write tools.
     "executor": {"marketplace": ["create_proposal_draft", "submit_proposal", "send_message", "get_connects_balance"]},

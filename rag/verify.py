@@ -43,6 +43,8 @@ def is_claim(sentence: str) -> bool:
     """A sentence is a factual claim about the freelancer if it asserts experience, results or numbers."""
     if sentence.endswith("?"):
         return False
+    if re.search(r"(?i)\b(have not|haven't|never|not yet|would|will)\b", sentence) and not re.search(r"\d", sentence):
+        return False  # honest negatives and plans are not experience claims
     return bool(CLAIM_MARKERS.search(sentence)) or (bool(re.search(r"\d", sentence)) and bool(re.search(r"(?i)\b(i|my)\b", sentence)))
 
 
