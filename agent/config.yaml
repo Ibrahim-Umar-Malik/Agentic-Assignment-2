@@ -1,0 +1,126 @@
+# GigBid agent configuration. Every model, budget, threshold and platform rule the graph uses lives here
+# (or in data/policy_pack/rules.yaml), never in code. Override any key with env GIGBID_CONFIG_OVERRIDES (JSON).
+
+profile: ${GIGBID_PROFILE:-open}          # open (required) | paid (optional) | offline (CI / no-key fallback)
+
+providers:
+  groq:        { kind: openai_compatible, base_url: "https://api.groq.com/openai/v1", api_key_env: GROQ_API_KEY }
+  openrouter:  { kind: openai_compatible, base_url: "https://openrouter.ai/api/v1", api_key_env: OPENROUTER_API_KEY }
+  together:    { kind: openai_compatible, base_url: "https://api.together.xyz/v1", api_key_env: TOGETHER_API_KEY }
+  ollama:      { kind: ollama, base_url: "${OLLAMA_URL:-http://ollama:11434}" }
+  anthropic:   { kind: anthropic, api_key_env: ANTHROPIC_API_KEY }
+  offline:     { kind: offline }
+
+# USD per million tokens (input, output). Local models are 0 USD; report hardware + tok/s instead.
+prices:
+  "groq/openai/gpt-oss-20b":   [0.075, 0.30]
+  "groq/openai/gpt-oss-120b":  [0.15, 0.60]
+  "groq/qwen/qwen3-32b":       [0.29, 0.59]
+  "openrouter/moonshotai/kimi-k2.6": [0.60, 2.50]
+  "ollama/qwen3:8b":           [0, 0]
+  "ollama/qwen3:4b":           [0, 0]
+  "anthropic/claude-sonnet-5-5": [3.0, 15.0]
+  "offline/heuristic":         [0, 0]
+
+# Route by node: cheap frequent nodes on a small model, Writer and Critic on the strongest affordable one.
+profiles:
+  open:
+    default: groq/openai/gpt-oss-20b
+    fallback: groq/qwen/qwen3-32b          # used when the primary errors or times out (C7)
+    nodes:
+      scout: offline/heuristic             # dedup + queueing is deterministic, no LLM needed
+      analyst: groq/openai/gpt-oss-20b
+      risk: groq/openai/gpt-oss-20b
+      matcher: groq/openai/gpt-oss-20b
+      pricing: groq/openai/gpt-oss-20b
+      writer: groq/openai/gpt-oss-120b
+      verifier: groq/openai/gpt-oss-20b
+      critic: groq/openai/gpt-oss-120b
+      compliance: groq/openai/gpt-oss-20b
+      liaison: groq/openai/gpt-oss-120b
+      intent: groq/openai/gpt-oss-20b
+      judge: groq/openai/gpt-oss-120b
+  open_local:                              # second open configuration compared on the dev set
+    default: ollama/qwen3:8b
+    fallback: ollama/qwen3:4b
+    nodes:
+      scout: offline/heuristic
+      writer: ollama/qwen3:8b
+      critic: ollama/qwen3:8b
+  paid:
+    default: groq/openai/gpt-oss-20b
+    fallback: groq/qwen/qwen3-32b
+    nodes:
+      scout: offline/heuristic
+      writer: anthropic/claude-sonnet-5-5
+      critic: anthropic/claude-sonnet-5-5
+      liaison: anthropic/claude-sonnet-5-5
+  offline:
+    default: offline/heuristic
+    fallback: offline/heuristic
+    nodes: {}
+
+llm:
+  timeout_s: 45
+  max_retries: 2
+  temperature: 0.2
+
+# Embeddings and reranker are open models in every profile. "hash" and "lexical" are dependency-free
+# stand-ins used where model weights cannot be downloaded (CI); results files record which ran.
+retrieval:
+  variant: ${GIGBID_RAG_VARIANT:-v2_hybrid_v1_decompose_v4_outcome}   # chosen by evals/results/rag_variants.json
+  embedder: ${GIGBID_EMBEDDER:-hash}      # hash | sentence-transformers:BAAI/bge-small-en-v1.5 | ollama:nomic-embed-text
+  reranker: ${GIGBID_RERANKER:-lexical}   # lexical | cross-encoder:BAAI/bge-reranker-v2-m3
+  chunk_tokens: 180
+  k: 8
+  rrf_k: 60
+  outcome_boost: { won: 0.35, replied: 0.15, ignored: -0.10 }
+  corrective: { min_evidence_score: 0.12, max_requeries: 1 }
+
+decision:
+  bid_min_fit: 0.45          # fit score needed to recommend a bid
+  watch_min_fit: 0.30        # between watch and bid: keep an eye on it
+  max_risk: 0.55             # risk score above this means skip
+  min_client_spend_unverified: 1000
+
+pricing:
+  floor_from_profile: true
+  percentile_by_fit: { high: 0.70, mid: 0.50, low: 0.35 }
+  max_connects_per_bid: 16
+  min_expected_value_ratio: 1.0   # expected value of the bid / Connects cost in USD
+  usd_per_connect: 0.15
+
+critic:
+  max_revisions: 2
+  min_score: 0.7
+  max_words: 260
+  banned_openings: ["dear hiring manager", "i am passionate", "perfect fit", "i am very interested", "to whom it may concern"]
+
+budgets:
+  steps_per_thread: 40
+  tokens_per_thread: 60000
+  declared:
+    p95_latency_s_per_job_analysed: 25
+    p95_latency_s_per_proposal: 60
+    usd_per_job_analysed: 0.002
+    usd_per_proposal: 0.01
+
+autonomy:
+  default: suggest            # suggest | auto_skip_low_fit  (never auto-send)
+
+scheduling:
+  gigsim_scout_interval_min: 30
+  live_scout_interval_min: 240   # live Upwork: at most every 4 hours per saved search, see docs/RUNBOOK.md
+  max_jobs_per_scout: 20
+
+memory:
+  style:
+    min_occurrences: 2          # an edit pattern must appear in at least 2 separate approved edits
+    max_items: 30
+  outcome:
+    min_samples: 3              # a category needs 3 outcomes before its pattern is promoted
+    min_reply_rate_delta: 0.15
+
+marketplace:
+  mode: ${GIGBID_MARKETPLACE:-gigsim}   # gigsim | upwork_live  (R1: one port, switched by config)
+  policy_version: ${GIGSIM_POLICY_VERSION:-1}
