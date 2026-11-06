@@ -37,7 +37,7 @@ def _summary_from_state(v: dict) -> dict:
     return {"fit": (v.get("fit") or {}).get("fit_score"), "risk": (v.get("risk") or {}).get("risk_score"),
             "action": (v.get("decision") or {}).get("action"), "price": (v.get("price") or {}).get("amount"),
             "status": v.get("status"), "flags": sorted({f["kind"] for f in (v.get("risk") or {}).get("flags", []) if f.get("severity", 0) >= 0.3}),
-            "reason": v.get("status_reason")}
+            "reason": v.get("status_reason"), "experiment_arm": (v.get("meta") or {}).get("experiment_arm")}
 
 
 async def _stream(rt: Runtime, graph: Any, graph_name: str, user_id: str, thread_id: str, job_id: str | None, inp: Any,

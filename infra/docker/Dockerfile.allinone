@@ -1,0 +1,32 @@
+# Single container for free hosting (Render / Railway / Fly / Hugging Face Spaces):
+# built web UI + API + GigSim stand-in; MCP servers run in-process; SQLite on the container disk unless
+# DATABASE_URL points at Postgres (recommended: a free Neon / Supabase Postgres so data survives restarts).
+FROM node:22-slim AS web
+WORKDIR /web
+COPY apps/web/package.json apps/web/package-lock.json ./
+RUN npm ci --ignore-scripts
+COPY apps/web ./
+RUN npm run build
+
+FROM python:3.12-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 PORT=8080 GIGBID_MCP_INPROCESS=1
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/* && pip install uv==0.9.5
+WORKDIR /app
+COPY pyproject.toml README.md ./
+RUN uv pip install --system -r pyproject.toml
+COPY agent ./agent
+COPY apps/__init__.py ./apps/__init__.py
+COPY apps/api ./apps/api
+COPY core ./core
+COPY rag ./rag
+COPY mcp_servers ./mcp_servers
+COPY worker ./worker
+COPY gigsim_standin ./gigsim_standin
+COPY data ./data
+COPY scripts ./scripts
+COPY --from=web /web/dist ./apps/web/dist
+RUN useradd -m -u 1000 gigbid && mkdir -p /app/var && chown -R gigbid /app
+USER gigbid
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=5s CMD curl -fs http://127.0.0.1:${PORT}/healthz || exit 1
+CMD ["bash", "scripts/run_all.sh"]

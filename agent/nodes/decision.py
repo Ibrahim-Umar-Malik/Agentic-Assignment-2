@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from core import config
 
+from .. import experiments
 from ..handoffs import BidDecision
 from .common import node
 
@@ -46,5 +47,11 @@ def decide(state: dict) -> BidDecision:
 async def decision(state: dict) -> dict:
     dec = decide(state)
     status = {"skip": "skipped", "watch": "watching", "bid": "analysing"}[dec.action]
-    return {"decision": dec.model_dump(), "status": status, "status_reason": "; ".join(dec.reasons),
-            "_summary": f"{dec.action}: {'; '.join(dec.reasons)}"}
+    out = {"decision": dec.model_dump(), "status": status, "status_reason": "; ".join(dec.reasons),
+           "_summary": f"{dec.action}: {'; '.join(dec.reasons)}"}
+    if dec.action == "bid" and not (state.get("meta") or {}).get("experiment_arm"):
+        arm = experiments.assign(state["user_id"], state["job"]["id"])
+        if arm:  # X2: stable arm per (user, experiment, job), kept in the checkpointed meta
+            out["meta"] = {"experiment_arm": arm, "experiment_id": (experiments.active() or {}).get("id")}
+            out["_summary"] += f" [A/B arm: {arm}]"
+    return out

@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "commit": "a5c27b7",
+    "generated_at": "2026-11-06T11:55:15Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "split": "test",
+    "scoring": "expected values from the GigSim client model"
+  },
+  "systems": {
+    "gigbid": {
+      "jobs": 180,
+      "bids": 105,
+      "connects": 804,
+      "expected_replies": 36.32,
+      "reply_rate": 0.3459,
+      "replies_per_100_connects": 4.52,
+      "expected_interviews": 22.61,
+      "expected_hires": 11.15,
+      "scam_bids": 0
+    },
+    "template_all": {
+      "jobs": 180,
+      "bids": 154,
+      "connects": 1236,
+      "expected_replies": 19.35,
+      "reply_rate": 0.1256,
+      "replies_per_100_connects": 1.57,
+      "expected_interviews": 10.28,
+      "expected_hires": 4.3,
+      "scam_bids": 4
+    },
+    "reuse_best_past": {
+      "jobs": 180,
+      "bids": 180,
+      "connects": 1400,
+      "expected_replies": 24.59,
+      "reply_rate": 0.1366,
+      "replies_per_100_connects": 1.76,
+      "expected_interviews": 13.35,
+      "expected_hires": 5.71,
+      "scam_bids": 17
+    }
+  },
+  "ab_opening": {
+    "n_jobs": 105,
+    "reply_prob_statement": 0.2458,
+    "reply_prob_question": 0.3371,
+    "paired_diff_question_minus_statement": 0.0913,
+    "paired_diff_ci95": [
+      0.0754,
+      0.1078
+    ],
+    "share_jobs_question_better": 1.0,
+    "power_by_n_per_arm": {
+      "30": 0.12,
+      "60": 0.19,
+      "120": 0.385,
+      "250": 0.605,
+      "500": 0.89
+    },
+    "by_persona": {
+      "ai_ml": 0.0806,
+      "fullstack": 0.0941,
+      "data_analyst": 0.1016
+    }
+  }
+}

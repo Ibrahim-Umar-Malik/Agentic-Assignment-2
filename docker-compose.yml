@@ -1,0 +1,73 @@
+# docker compose up --build   -> http://localhost:8080 (web) ; secrets come from .env (copy .env.example)
+x-py: &py
+  build: { context: ., dockerfile: infra/docker/Dockerfile.python }
+  env_file: [.env]
+  restart: unless-stopped
+  environment: &pyenv
+    DATABASE_URL: postgresql+psycopg://gigbid:gigbid@postgres:5432/gigbid
+    REDIS_URL: redis://redis:6379/0
+    GIGSIM_URL: http://gigsim:8001
+    MARKETPLACE_MCP_URL: http://marketplace-mcp:8002/mcp
+    WORKSPACE_MCP_URL: http://workspace-mcp:8003/mcp
+    PORTFOLIO_MCP_URL: http://portfolio-mcp:8004/mcp
+    GIGBID_MCP_INPROCESS: "0"
+    OLLAMA_URL: http://ollama:11434
+  depends_on:
+    postgres: { condition: service_healthy }
+    redis: { condition: service_started }
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment: { POSTGRES_USER: gigbid, POSTGRES_PASSWORD: gigbid, POSTGRES_DB: gigbid }
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U gigbid"], interval: 5s, retries: 20 }
+
+  redis:
+    image: redis:7-alpine
+
+  gigsim:   # stand-in; replace the command with the official starter-kit simulator when available
+    <<: *py
+    command: uvicorn gigsim_standin.app:app --host 0.0.0.0 --port 8001
+    depends_on: []
+    environment: { GIGSIM_STATE: /app/var/gigsim_state.json }
+
+  marketplace-mcp:
+    <<: *py
+    command: python -m mcp_servers.marketplace.server --http --host 0.0.0.0 --port 8002
+    depends_on: [gigsim, postgres]
+
+  portfolio-mcp:
+    <<: *py
+    command: python -m mcp_servers.portfolio.server --http --host 0.0.0.0 --port 8004
+    depends_on: [postgres]
+
+  workspace-mcp:
+    <<: *py
+    command: python -m mcp_servers.workspace.server --http --host 0.0.0.0 --port 8003
+    depends_on: [postgres]
+
+  api:
+    <<: *py
+    command: uvicorn apps.api.main:app --host 0.0.0.0 --port 8080 --proxy-headers --forwarded-allow-ips=*
+    depends_on: [postgres, redis, marketplace-mcp, portfolio-mcp, workspace-mcp]
+    healthcheck: { test: ["CMD", "curl", "-fs", "http://127.0.0.1:8080/healthz"], interval: 10s, retries: 30 }
+
+  worker:
+    <<: *py
+    command: arq worker.main.WorkerSettings
+    depends_on: [postgres, redis, marketplace-mcp, portfolio-mcp, workspace-mcp]
+
+  web:
+    build: { context: ., dockerfile: infra/docker/Dockerfile.web }
+    ports: ["8080:80"]
+    depends_on: [api]
+
+  ollama:   # optional local open-weight models: docker compose --profile local-llm up
+    image: ollama/ollama:0.12.6
+    profiles: [local-llm]
+    volumes: [ollama:/root/.ollama]
+
+volumes:
+  pgdata: {}
+  ollama: {}

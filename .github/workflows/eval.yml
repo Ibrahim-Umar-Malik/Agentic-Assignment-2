@@ -1,0 +1,18 @@
+name: eval
+# Full evaluation with real open-weight models. On demand and weekly; needs the GROQ_API_KEY repository secret.
+on:
+  workflow_dispatch:
+  schedule: [{ cron: "0 3 * * 1" }]
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r pyproject.toml
+      - run: make eval PY=.venv/bin/python && make eval-llm PY=.venv/bin/python
+      - uses: actions/upload-artifact@v4
+        with: { name: eval-results, path: evals/results }

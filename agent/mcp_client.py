@@ -33,6 +33,9 @@ ALLOWLIST: dict[str, dict[str, list[str]]] = {
     "compliance": {},
     "liaison": {"marketplace": ["list_messages", "get_job"], "portfolio": ["search_evidence"],
                 "workspace": ["free_slots", "create_interview_hold", "create_email_draft"]},
+    # R&D Question C baselines (read-only tools; evals/runners/architecture_compare.py)
+    "single_agent": {"marketplace": ["get_job", "get_client_history", "get_market_stats", "get_connects_balance"],
+                     "portfolio": ["search_evidence", "get_case_study", "list_skills"]},
     # Not an agent: the approval executor, which runs only after a human approved (R4). Holds the write tools.
     "executor": {"marketplace": ["create_proposal_draft", "submit_proposal", "send_message", "get_connects_balance"]},
     # Pipeline sync (worker) reads events and proposals to keep the board current.

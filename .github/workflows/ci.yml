@@ -1,0 +1,41 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    env: { GIGBID_PROFILE: offline }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: astral-sh/setup-uv@v6
+      - run: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r pyproject.toml --extra dev
+      - name: guards (no secrets, gigsim unchanged, prompts versioned, numbers trace to evals/results)
+        run: make checks
+      - run: .venv/bin/python -m ruff check .
+      - name: tests (unit, contract snapshots, graph integration incl. crash-and-resume)
+        run: .venv/bin/python -m pytest
+      - name: quick evals + regression gate (results are not committed from CI)
+        run: |
+          .venv/bin/python -m evals.runners.rag_eval --quick
+          .venv/bin/python -m evals.runners.decision_eval --limit 15
+          .venv/bin/python scripts/eval_gate.py
+
+  web:
+    runs-on: ubuntu-latest
+    env: { GIGBID_PROFILE: offline }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: apps/web/package-lock.json }
+      - run: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r pyproject.toml
+      - run: cd apps/web && npm ci && npx tsc -b && npm run build
+      - run: cd apps/web && npx playwright install --with-deps chromium
+      - name: Playwright e2e (onboarding, approve, reject, edit, degraded mode)
+        run: cd apps/web && npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: playwright-report, path: apps/web/playwright-report }

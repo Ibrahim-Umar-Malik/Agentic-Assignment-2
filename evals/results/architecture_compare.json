@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "commit": "a5c27b7",
+    "generated_at": "2026-11-06T11:57:32Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "split": "test",
+    "jobs": 50
+  },
+  "arms": {
+    "graph": {
+      "n": 50,
+      "errors": 0,
+      "accuracy": 0.88,
+      "scam_bids": 0,
+      "unsupported_claim_rate": 0.0,
+      "mean_tool_calls": 9.34,
+      "mean_tokens": 0.0,
+      "usd_per_job": 0.0,
+      "p50_latency_s": 0.16978813099967738,
+      "p95_latency_s": 0.2951669369999763
+    },
+    "react": {
+      "status": "not_run",
+      "reason": "needs a tool-calling LLM; this run used the offline profile",
+      "how": "GIGBID_PROFILE=open GROQ_API_KEY=... make eval-llm"
+    },
+    "supervisor": {
+      "status": "not_run",
+      "reason": "needs a tool-calling LLM; this run used the offline profile",
+      "how": "GIGBID_PROFILE=open GROQ_API_KEY=... make eval-llm"
+    }
+  }
+}

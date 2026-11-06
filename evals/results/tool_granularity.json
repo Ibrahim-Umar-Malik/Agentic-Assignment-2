@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "commit": "a5c27b7",
+    "generated_at": "2026-11-06T11:58:06Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "token_estimate": "OpenAI tool-schema JSON chars / 4"
+  },
+  "n_tasks": 40,
+  "designs": {
+    "task_shaped": {
+      "tools": 8,
+      "schema_chars": 1915,
+      "schema_tokens_approx": 479,
+      "min_calls_per_task": 1.125,
+      "selection_accuracy": {
+        "status": "not_run",
+        "reason": "needs a tool-calling LLM (offline profile)"
+      }
+    },
+    "fine_grained": {
+      "tools": 22,
+      "schema_chars": 4443,
+      "schema_tokens_approx": 1111,
+      "min_calls_per_task": 2.25,
+      "selection_accuracy": {
+        "status": "not_run",
+        "reason": "needs a tool-calling LLM (offline profile)"
+      }
+    },
+    "mega": {
+      "tools": 2,
+      "schema_chars": 662,
+      "schema_tokens_approx": 166,
+      "min_calls_per_task": 1.125,
+      "selection_accuracy": {
+        "status": "not_run",
+        "reason": "needs a tool-calling LLM (offline profile)"
+      }
+    }
+  }
+}

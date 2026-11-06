@@ -132,3 +132,21 @@ async def test_many_jobs_smoke(gigsim_port):
     g = compiled()
     for j in gigsim_port.all_jobs[:20]:
         await g.ainvoke(initial(gigsim_port.get_job(j["id"]), persona=j["_meta"]["persona"]), {"configurable": {"thread_id": j["id"]}})
+
+
+async def test_policy_v2_change_request(gigsim_port, monkeypatch):
+    """2 Nov policy update: early-bid fee shows up in Connects, and every screening question must be answered."""
+    from agent.nodes.compliance import compliance
+
+    monkeypatch.setattr(gigsim_port, "policy", {"version": 2, "connects_surcharge_recent": 2, "require_all_screening_answers": True,
+                                                "description": "v2"})
+    g = compiled()
+    job = live_job(gigsim_port, "fit", n=2)
+    out = await g.ainvoke(initial(job), {"configurable": {"thread_id": "p2"}})
+    assert out["meta"]["marketplace_policy"]["version"] == 2
+    assert out["compliance"]["status"] != "block" or not job.get("screening_questions")
+    # a draft that drops an answer is blocked under v2
+    if job.get("screening_questions"):
+        st = dict(out, draft={**out["draft"], "screening_answers": []})
+        res = await compliance.__wrapped__(st) if hasattr(compliance, "__wrapped__") else await compliance(st)
+        assert res["compliance"]["status"] == "block" and any(v["rule_id"] == "MP2" for v in res["compliance"]["violations"])

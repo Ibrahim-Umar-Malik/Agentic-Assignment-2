@@ -66,7 +66,7 @@ def register(mcp: FastMCP) -> None:
     @mcp.tool(annotations=READ, description=(
         "Find portfolio evidence for ONE requirement (e.g. 'Celery background jobs' or 'RAG for legal documents'). "
         "Returns ranked items with type, source, date and, for past proposals, their outcome. Call once per requirement."))
-    def search_evidence(requirement: Annotated[str, Field(min_length=2, max_length=300)],
+    def search_evidence(requirement: Annotated[str, Field(min_length=1, max_length=300)],
                         k: Annotated[int, Field(ge=1, le=20)] = 5,
                         filters: EvidenceFilters | None = None,
                         portfolio_id: Annotated[str | None, Field(max_length=120, description="Leave empty for your own portfolio")] = None,

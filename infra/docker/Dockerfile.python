@@ -1,0 +1,23 @@
+# One Python image for the API, worker, the three MCP servers and the GigSim stand-in (command differs per service).
+FROM python:3.12-slim AS base
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+RUN pip install uv==0.9.5
+WORKDIR /app
+COPY pyproject.toml README.md ./
+# install pinned dependencies first (layer cache), then the code
+RUN uv pip install --system -r pyproject.toml
+COPY agent ./agent
+COPY apps/api ./apps/api
+COPY apps/__init__.py ./apps/__init__.py
+COPY core ./core
+COPY rag ./rag
+COPY mcp_servers ./mcp_servers
+COPY worker ./worker
+COPY gigsim_standin ./gigsim_standin
+COPY data ./data
+COPY scripts ./scripts
+RUN useradd -m gigbid && mkdir -p /app/var && chown -R gigbid /app/var
+USER gigbid
+EXPOSE 8080
+CMD ["uvicorn", "apps.api.main:app", "--host", "0.0.0.0", "--port", "8080", "--proxy-headers", "--forwarded-allow-ips=*"]

@@ -43,6 +43,15 @@ async def compliance(state: dict, key: str = "draft") -> dict:
         t, v = check_text(a["answer"], rules, "answer")
         vio += v
         answers.append(ScreeningAnswer(question=a["question"], answer=t))
+    # Change request (2 Nov marketplace policy update, v2): every screening question must have a real answer
+    mp = (state.get("meta") or {}).get("marketplace_policy") or {}
+    if key == "draft" and mp.get("require_all_screening_answers"):
+        qs = (state.get("job") or {}).get("screening_questions") or []
+        got = {a["question"]: a["answer"] for a in draft.get("screening_answers", []) or []}
+        for q in qs:
+            if len((got.get(q) or "").split()) < 8:
+                vio.append(ComplianceViolation(rule_id="MP2", detail=f"policy v{mp.get('version')}: screening question needs an answer: '{q[:60]}'",
+                                               action="block"))
     # P3: unsupported claims introduced by a human edit block until fixed (the agent's own were removed by the verifier)
     for cl in draft.get("claims", []) or []:
         if cl.get("label") == "unsupported" and cl["text"].strip() in text:  # still present after rewrites

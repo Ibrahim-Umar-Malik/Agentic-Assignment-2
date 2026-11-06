@@ -61,7 +61,9 @@ async def pricing(state: dict) -> dict:
         text = await llm.call("pricing", system, f"Quote: {pq.model_dump_json()}\nJob budget: {job.get('budget')} {job.get('budget_type')}")
         if text:
             pq.rationale = f"{text.strip()} ({pq.rationale})"
-    out = {"price": pq.model_dump(), "_summary": f"${pq.amount:.0f} {pq.budget_type}; Connects {pq.connects_cost} worth it: {pq.worth_connects}"}
+    out = {"price": pq.model_dump(), "meta": {"marketplace_policy": {k: policy.get(k) for k in
+                                                                ("version", "require_all_screening_answers", "connects_surcharge_recent")}},
+           "_summary": f"${pq.amount:.0f} {pq.budget_type}; Connects {pq.connects_cost} worth it: {pq.worth_connects}"}
     if not pq.worth_connects:
         out.update({"status": "skipped", "status_reason": f"Connects not worth it: EV ${pq.expected_value_usd} vs cost ${pq.connects_usd}",
                     "decision": {**state.get("decision", {}), "action": "skip",

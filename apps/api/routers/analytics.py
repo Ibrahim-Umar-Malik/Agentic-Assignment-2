@@ -5,6 +5,7 @@ from collections import Counter, defaultdict
 from fastapi import APIRouter, Depends
 from sqlalchemy import select
 
+from agent import experiments
 from core import config
 from core.db import approvals, engine, jobs, pipeline, row_dict, runs
 
@@ -43,7 +44,11 @@ def analytics(user: dict = Depends(current_user)) -> dict:
     lat = [r["finished_at"] - r["started_at"] for r in bid_runs]
     reasons = Counter((r.get("decision") or {}).get("reason", "").strip().lower() for r in rej if (r.get("decision") or {}).get("action") == "reject")
     skip_reasons = Counter((j.get("summary") or {}).get("reason", "").split(";")[0][:60] for j in jj if j["status"] == "skipped")
+    arm_of = {j["job_id"]: (j.get("summary") or {}).get("experiment_arm") for j in jj}
+    ab_rows = [{"arm": arm_of.get(p["job_id"]), "replied": p["stage"] in ("replied", "interview", "hired")}
+               for p in pl if p["stage"] not in ("submitted",) and arm_of.get(p["job_id"])]
     return {
+        "experiment": experiments.summarize(ab_rows),
         "funnel": {"seen": len(jj), "analysed": sum(1 for j in jj if j.get("thread_id")), "recommended_bid": sum(1 for j in jj if j.get("action") == "bid"),
                    "submitted": len(pl), "replied": replied, "hired": sum(1 for p in pl if p["stage"] == "hired")},
         "by_category": cats,

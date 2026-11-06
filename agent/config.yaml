@@ -68,7 +68,7 @@ llm:
 # Embeddings and reranker are open models in every profile. "hash" and "lexical" are dependency-free
 # stand-ins used where model weights cannot be downloaded (CI); results files record which ran.
 retrieval:
-  variant: ${GIGBID_RAG_VARIANT:-v2_hybrid_v1_decompose_v4_outcome}   # chosen by evals/results/rag_variants.json
+  variant: ${GIGBID_RAG_VARIANT:-v3_rerank_v1_decompose}   # chosen by evals/results/rag.json (selection rule in evals/runners/rag_eval.py)
   embedder: ${GIGBID_EMBEDDER:-hash}      # hash | sentence-transformers:BAAI/bge-small-en-v1.5 | ollama:nomic-embed-text
   reranker: ${GIGBID_RERANKER:-lexical}   # lexical | cross-encoder:BAAI/bge-reranker-v2-m3
   chunk_tokens: 180
@@ -78,9 +78,9 @@ retrieval:
   corrective: { min_evidence_score: 0.12, max_requeries: 1 }
 
 decision:
-  bid_min_fit: 0.45          # fit score needed to recommend a bid
-  watch_min_fit: 0.30        # between watch and bid: keep an eye on it
-  max_risk: 0.55             # risk score above this means skip
+  bid_min_fit: 0.70          # fit score needed to recommend a bid (chosen by threshold sweep on the tune split: evals/results/decision.json)
+  watch_min_fit: 0.45        # between watch and bid: keep an eye on it
+  max_risk: 0.35             # risk score above this means skip (same sweep)
   min_client_spend_unverified: 1000
   min_budget_floor_ratio: 0.7     # hourly budget below 70% of the user's floor -> skip
   min_fixed_hours: 8              # fixed budget below 8 hours at the floor -> skip
@@ -108,6 +108,14 @@ budgets:
     p95_latency_s_per_proposal: 60
     usd_per_job_analysed: 0.002
     usd_per_proposal: 0.01
+
+experiments:
+  opening:                    # X2 signature extension: proposal A/B test (agent/experiments.py)
+    enabled: ${GIGBID_AB_OPENING:-true}
+    id: opening-v1
+    arms: {statement: 0.5, question: 0.5}  # close with a concrete next step vs ask one specific clarifying question
+    min_per_arm: 30
+    alpha: 0.05
 
 autonomy:
   default: suggest            # suggest | auto_skip_low_fit  (never auto-send)

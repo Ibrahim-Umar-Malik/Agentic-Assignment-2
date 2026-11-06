@@ -1,0 +1,420 @@
+{
+  "meta": {
+    "commit": "a5c27b7",
+    "generated_at": "2026-11-06T11:56:33Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "judge": "heuristic rubric (offline)"
+  },
+  "n_items": 30,
+  "mean_overall_by_source": {
+    "gigbid": 4.07,
+    "reuse_past": 3.2,
+    "template": 2.09
+  },
+  "proxy_vs_gigsim_client_model": {
+    "note": "proxy only, not human agreement",
+    "quadratic_weighted_kappa": 0.3108,
+    "exact_agreement": 0.267
+  },
+  "items": [
+    {
+      "id": "J01",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 1.1
+    },
+    {
+      "id": "J02",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 5,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 5
+      },
+      "gigsim_score": 2.4
+    },
+    {
+      "id": "J03",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
+        "evidence": 5,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 5
+      },
+      "gigsim_score": 1.5
+    },
+    {
+      "id": "J04",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J05",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 2,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 0.967
+    },
+    {
+      "id": "J06",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 2,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": -0.267
+    },
+    {
+      "id": "J07",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J08",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 3,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 0.8
+    },
+    {
+      "id": "J09",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 5,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 5
+      },
+      "gigsim_score": 2.3
+    },
+    {
+      "id": "J10",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 1.1
+    },
+    {
+      "id": "J11",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 3,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 0.8
+    },
+    {
+      "id": "J12",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 2.0
+    },
+    {
+      "id": "J13",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 1.1
+    },
+    {
+      "id": "J14",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 1,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 3
+      },
+      "gigsim_score": 1.2
+    },
+    {
+      "id": "J15",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": -0.2
+    },
+    {
+      "id": "J16",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J17",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 1,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 3
+      },
+      "gigsim_score": -1.5
+    },
+    {
+      "id": "J18",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 1.1
+    },
+    {
+      "id": "J19",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 3,
+        "clarity": 3,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 3
+      },
+      "gigsim_score": 0.7
+    },
+    {
+      "id": "J20",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 5,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 4,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J21",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J22",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 3,
+        "clarity": 3,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 3
+      },
+      "gigsim_score": 0.7
+    },
+    {
+      "id": "J23",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 1.5
+    },
+    {
+      "id": "J24",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": -0.4
+    },
+    {
+      "id": "J25",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 2,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 1.233
+    },
+    {
+      "id": "J26",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 0.9
+    },
+    {
+      "id": "J27",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J28",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 1,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": -0.8
+    },
+    {
+      "id": "J29",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J30",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": -2.9
+    }
+  ],
+  "human": {
+    "status": "awaiting_human_labels",
+    "labelled": 0,
+    "needed": 30,
+    "how": "fill human_overall_1to5 in evals/datasets/judge_labels.csv, then re-run `score`"
+  }
+}

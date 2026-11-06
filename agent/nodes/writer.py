@@ -49,6 +49,7 @@ def heuristic_draft(state: dict, styles: list[dict], insights: list[dict], versi
     paras: list[str] = []
     top = (fit.get("top_projects") or [None])[0]
     lead = _best(evidence, project=top) if top else _best(evidence, covered[0]["requirement"] if covered else None)
+    arm = (state.get("meta") or {}).get("experiment_arm")
     question_first = any(i.get("opening") == "question" for i in insights)
     req0 = covered[0]["requirement"] if covered else (spec.get("requirements") or [{"text": "this"}])[0]["text"]
     question = f"Is the {req0} part already started, or would this be built from scratch?"
@@ -80,7 +81,11 @@ def heuristic_draft(state: dict, styles: list[dict], insights: list[dict], versi
     if needs:
         plan = f"Since you need {needs[0]}, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call."
     paras.append(plan)
-    if not question_first:
+    if arm == "statement":  # X2 arm: no clarifying question, close with a concrete next step instead
+        if question_first:
+            paras[0] = paras[0].replace(question + " ", "", 1)
+        paras.append("If this sounds right, I can send a one-page plan for the first milestone today.")
+    elif not question_first:
         paras.append(question)
     letter = "\n\n".join(paras)
     for s in styles:
@@ -134,6 +139,11 @@ async def writer(state: dict, *, store: BaseStore | None = None) -> dict:
         if regen:
             instructions = (f"Rewrite ONLY paragraph {regen.get('paragraph', 0) + 1} of the previous draft. "
                             f"User instruction: {regen.get('instruction', 'make it more specific')}")
+        arm = (state.get("meta") or {}).get("experiment_arm")
+        if arm == "question":
+            instructions += "\nA/B experiment arm 'question': include exactly one specific clarifying question about the client's project."
+        elif arm == "statement":
+            instructions += "\nA/B experiment arm 'statement': ask no questions; close with one concrete next step instead."
         _, system = load_prompt("writer", style_rules="\n".join(f"- {s['rule']}" for s in styles) or "- (none yet)",
                                 outcome_insights="\n".join(f"- {i['rule']}" for i in insights) or "- (not enough outcomes yet)",
                                 revision_instructions=instructions)

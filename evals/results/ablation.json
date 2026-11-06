@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "commit": "a5c27b7",
+    "generated_at": "2026-11-06T11:46:35Z",
+    "profile": "offline",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "split": "tune",
+    "shipped": "Options(chunking='structured', contextual=False, decompose=True, hybrid=True, rerank=True, outcome=False, multivector=False, hyde=False, corrective=False, k=8, candidates=30)"
+  },
+  "retrieval": [
+    {
+      "setting": "shipped (all components)",
+      "recall@5": 0.947,
+      "ndcg@5": 0.9532,
+      "n": 338
+    },
+    {
+      "setting": "structured chunking -> fixed 512-token chunks",
+      "recall@5": 0.947,
+      "ndcg@5": 0.9473,
+      "n": 338,
+      "delta_ndcg@5": -0.0059
+    },
+    {
+      "setting": "requirement decomposition off",
+      "recall@5": 0.8826,
+      "ndcg@5": 0.8898,
+      "n": 338,
+      "delta_ndcg@5": -0.0634
+    },
+    {
+      "setting": "reranking off",
+      "recall@5": 0.9445,
+      "ndcg@5": 0.9463,
+      "n": 338,
+      "delta_ndcg@5": -0.0069
+    },
+    {
+      "setting": "+ hybrid BM25",
+      "recall@5": 0.947,
+      "ndcg@5": 0.9532,
+      "n": 338,
+      "delta_ndcg@5": 0.0
+    },
+    {
+      "setting": "+ contextual chunk headers",
+      "recall@5": 0.9485,
+      "ndcg@5": 0.9546,
+      "n": 338,
+      "delta_ndcg@5": 0.0014
+    },
+    {
+      "setting": "+ outcome boost",
+      "recall@5": 0.9475,
+      "ndcg@5": 0.9303,
+      "n": 338,
+      "delta_ndcg@5": -0.0229
+    },
+    {
+      "setting": "+ HyDE",
+      "recall@5": 0.9529,
+      "ndcg@5": 0.9582,
+      "n": 338,
+      "delta_ndcg@5": 0.005
+    }
+  ],
+  "note": "Claim-verification ablation is in decision.json (unsupported-claim rate with and without the verifier)."
+}
