@@ -78,7 +78,7 @@ async def test_audit_log_is_append_only():
         await s.call_tool("get_connects_balance", {})
     with engine().begin() as c:
         assert c.execute(text("select count(*) from audit_log")).scalar() > 0
-    with pytest.raises(Exception):
+    with pytest.raises(Exception):  # noqa: B017  (driver-specific IntegrityError/OperationalError)
         with engine().begin() as c:
             c.execute(text("delete from audit_log"))
 

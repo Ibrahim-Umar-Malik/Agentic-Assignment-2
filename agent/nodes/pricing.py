@@ -16,7 +16,7 @@ def quote(job: dict, fit: float, stats: dict, floor: float, connects_cost: int, 
     tier = "high" if fit >= 0.7 else "mid" if fit >= 0.5 else "low"
     q = pct[tier]
     if stats.get("n"):
-        lo, mid, hi = stats["p25"], stats["median"], stats["p75"]
+        lo, hi = stats["p25"], stats["p75"]
         market = lo + (hi - lo) * (q - 0.25) / 0.5 if q >= 0.25 else lo
         market = max(lo * 0.8, min(hi * 1.1, market))
     else:
