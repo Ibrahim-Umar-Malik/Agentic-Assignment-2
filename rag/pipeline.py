@@ -12,7 +12,7 @@ from typing import Any
 
 import numpy as np
 
-from core import config
+from . import _config as config
 
 from .index.embed import get_embedder
 from .index.skills import expand, find_skills

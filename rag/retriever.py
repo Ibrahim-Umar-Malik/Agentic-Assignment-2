@@ -6,7 +6,7 @@ import os
 import threading
 from pathlib import Path
 
-from core import config
+from . import _config as config
 
 from .ingest.loaders import load_persona
 from .pipeline import Options, PortfolioIndex, RetrievalResult
