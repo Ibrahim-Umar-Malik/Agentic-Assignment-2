@@ -33,7 +33,7 @@ def seed_reviewer() -> None:
     if not email or not pw:
         return
     u = find_user(email) or create_user(email, pw, "Reviewer", os.environ.get("REVIEWER_PERSONA", "ai_ml"),
-                                        {"onboarded": True, "hourly_floor": 45})
+                                        {"onboarded": True})
     seed_searches(u)
 
 

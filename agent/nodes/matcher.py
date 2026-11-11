@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from core import config, llm
-from rag.index.skills import MARKET_SKILLS, expand, find_skills
+from rag.index.skills import MARKET_SKILLS, broad_children, expand, find_skills
 from rag.types import tokenize
 
 from ..handoffs import EvidenceRef, FitReport, RequirementMatch
@@ -13,10 +13,14 @@ from .common import node
 
 def coverage(requirement: str, items: list[dict]) -> str:
     terms = set(tokenize(expand(requirement)))
+    children = [c.lower() for c in broad_children(requirement)]
     best = 0.0
     for it in items[:3]:
         hay = (it.get("snippet", "") + " " + " ".join(it.get("skills", []))).lower()
         if requirement.lower() in hay:
+            return "full"
+        # An umbrella tag ("Machine Learning") is evidenced by a specific skill under it ("LightGBM").
+        if children and sum(1 for c in children if c in hay) >= 1:
             return "full"
         best = max(best, len(terms & set(tokenize(hay))) / max(1, len(terms)))
     return "full" if best >= 0.6 else "partial" if best >= 0.3 else "none"

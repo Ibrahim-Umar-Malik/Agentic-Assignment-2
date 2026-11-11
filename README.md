@@ -34,32 +34,53 @@ on top, Arq worker for schedules, Postgres + Redis underneath. Details: [`docs/A
 ## Results
 
 All numbers below are rendered from [`evals/results/`](evals/results) by `python -m evals.make_tables` (CI fails if they drift).
-**Important context:** the official starter kit was not available, so these runs use a synthetic stand-in GigSim and personas
-written by the same author ([`docs/DATA_CARD.md`](docs/DATA_CARD.md)), the `offline` model profile (deterministic heuristics in
-every LLM node) and a hash embedder. `make eval-llm` reruns everything with open-weight models.
+
+**Data.** Job posts, client signals and market prices are **real**. They come from six public Kaggle datasets
+(36,265 cleaned Upwork posts, 1.29M contracts). The three freelancer portfolios, client reply behaviour and the
+planted scams and injections are **synthetic** and labelled as such on every record. Details, licences and
+limitations: [`docs/DATA_CARD.md`](docs/DATA_CARD.md), [`data/real/README.md`](data/real/README.md). All runs use
+the `offline` model profile (deterministic heuristics in every LLM node) and a hash embedder. `make eval-llm`
+reruns everything with open-weight models.
+
+### What changed when the data became real
+
+<!-- table:shift -->
+| Test split (180 jobs each) | Bid/skip accuracy | Bid F1 | Bid recall | Scams not bid on | Injections obeyed | Price in fair band |
+|---|---|---|---|---|---|---|
+| Synthetic jobs, old code | 91.7% | 0.928 | 0.924 | 100.0% of 17 | 0 of 19 | 84.6% |
+| **Real jobs, old code** | 73.3% | 0.111 | 0.060 | 100.0% of 27 | 0 of 14 | 100.0% |
+| Real jobs, after fixes | 89.4% | 0.800 | 0.760 | 100.0% of 27 | 0 of 14 | 88.9% |
+
+Evidence retrieval (V0 naive, test split): Recall@5 0.922 on synthetic jobs vs 0.516 on real jobs.
+<!-- /table:shift -->
+
+The first version was built and tuned on synthetic jobs. On real Upwork posts it skipped almost every good job.
+The failure analysis and fixes are in report §9.
 
 ### Retrieval: variants compared on the tune split, shipped choice reported on the test split
 
 <!-- table:rag -->
 | Variant (tune split) | Recall@5 | MRR | nDCG@5 | p95 ms |
 |---|---|---|---|---|
-| v0_naive | 0.905 | 0.964 | 0.902 | 2.2 |
-| v1_decompose | 0.950 | 0.993 | 0.946 | 2.5 |
-| v2_hybrid | 0.912 | 0.980 | 0.917 | 2.8 |
-| v3_rerank | 0.883 | 0.975 | 0.890 | 3.3 |
-| v4_outcome | 0.919 | 0.843 | 0.825 | 1.8 |
-| v5_multivector | 0.660 | 0.550 | 0.518 | 3.5 |
-| v6_contextual | 0.929 | 0.992 | 0.937 | 1.4 |
-| v7_hyde | 0.933 | 0.979 | 0.931 | 1.6 |
-| v8_corrective | 0.945 | 0.996 | 0.946 | 2.1 |
-| v2_hybrid_v1_decompose | 0.945 | 0.996 | 0.946 | 1.5 |
-| **v3_rerank_v1_decompose** | 0.947 | 0.997 | 0.953 | 5.2 |
-| v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.922 | 1.6 |
-| v2_hybrid_v1_decompose_v3_rerank_v4_outcome | 0.948 | 0.966 | 0.930 | 5.2 |
-| v6_contextual_v2_hybrid_v1_decompose_v4_outcome | 0.949 | 0.974 | 0.938 | 1.5 |
-| v8_corrective_v2_hybrid_v1_decompose_v4_outcome | 0.942 | 0.963 | 0.921 | 2.2 |
+| v0_naive | 0.498 | 0.547 | 0.447 | 7.5 |
+| v1_decompose | 0.513 | 0.505 | 0.430 | 4.7 |
+| v2_hybrid | 0.503 | 0.552 | 0.456 | 8.4 |
+| v3_rerank | 0.487 | 0.494 | 0.423 | 8.9 |
+| v4_outcome | 0.518 | 0.521 | 0.444 | 6.3 |
+| v5_multivector | 0.421 | 0.383 | 0.316 | 15.6 |
+| v6_contextual | 0.511 | 0.566 | 0.471 | 6.2 |
+| v7_hyde | 0.607 | 0.627 | 0.537 | 5.4 |
+| v8_corrective | 0.559 | 0.560 | 0.480 | 5.2 |
+| v2_hybrid_v1_decompose | 0.531 | 0.520 | 0.445 | 4.7 |
+| v3_rerank_v1_decompose | 0.535 | 0.532 | 0.453 | 11.5 |
+| v2_hybrid_v1_decompose_v4_outcome | 0.519 | 0.484 | 0.425 | 3.9 |
+| v2_hybrid_v1_decompose_v3_rerank_v4_outcome | 0.541 | 0.496 | 0.442 | 11.4 |
+| v6_contextual_v2_hybrid_v1_decompose_v4_outcome | 0.513 | 0.501 | 0.430 | 5.0 |
+| v8_corrective_v2_hybrid_v1_decompose_v4_outcome | 0.543 | 0.529 | 0.461 | 6.6 |
+| **v7_hyde_v2_hybrid** | 0.654 | 0.696 | 0.601 | 6.0 |
+| v7_hyde_v2_hybrid_v6_contextual | 0.644 | 0.692 | 0.599 | 6.9 |
 
-Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latency): **v3_rerank_v1_decompose**. Held-out test split: nDCG@5 0.957 vs naive 0.927; Recall@5 0.955 (95% CI [0.93, 0.9778]) vs 0.922. Embedder `hash`, reranker `lexical`, commit `dfd4987`.
+Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latency): **v7_hyde_v2_hybrid**. Held-out test split: nDCG@5 0.582 vs naive 0.450; Recall@5 0.626 (95% CI [0.5645, 0.6901]) vs 0.516. Embedder `hash`, reranker `lexical`, commit `9ba9cd9`.
 <!-- /table:rag -->
 
 ### End to end: naive retrieval vs shipped, through the whole bid graph (test split)
@@ -67,10 +88,10 @@ Chosen by rule (max nDCG@5 on tune split (2 dp), then MRR, then lower p95 latenc
 <!-- table:b5 -->
 | Variant | Evidence Recall@5 | nDCG@10 | Unsupported claims / proposal | Judge score | GigSim reply rate | p95 latency (s) | Cost / proposal (USD) |
 |---|---|---|---|---|---|---|---|
-| V0 naive | 0.922 | 0.928 | 0.00 (0.27 before verify) | 3.59 | 28.3% | 0.25 | $0.0000 |
-| **Shipped: v3_rerank_v1_decompose** | 0.955 | 0.957 | 0.00 (0.32 before verify) | 3.96 | 35.4% | 0.26 | $0.0000 |
+| V0 naive | 0.516 | 0.453 | 0.00 (0.30 before verify) | 3.66 | 26.0% | 0.39 | $0.0000 |
+| **Shipped: v7_hyde_v2_hybrid** | 0.626 | 0.602 | 0.00 (0.26 before verify) | 4.00 | 34.9% | 0.43 | $0.0000 |
 
-Paired on the same 111 proposals: the lead evidence changed in only 5, yet reply probability rose +6.6 points on the proposals whose lead evidence did *not* change. Drafts quoting a specific metric: 8.1% with V0 vs 65.8% shipped.
+Paired on the same 47 proposals: the lead evidence changed in only 10, yet reply probability rose +8.2 points on the proposals whose lead evidence did *not* change. Drafts quoting a specific metric: 19.1% with V0 vs 46.8% shipped.
 <!-- /table:b5 -->
 
 ### Decisions, safety and grounding (test split)
@@ -78,16 +99,16 @@ Paired on the same 111 proposals: the lead evidence changed in only 5, yet reply
 <!-- table:decision -->
 | Metric (test split, n=180, profile `offline`) | Value |
 |---|---|
-| Bid/skip accuracy | 91.7% (95% CI [87.2, 95.6]) |
-| Bid precision / recall / F1 | 0.933 / 0.924 / 0.928 |
-| Scam posts not bid on | 100.0% of 17 |
-| Injected posts flagged / obeyed | 94.7% flagged, 0 of 19 obeyed |
-| Unsupported claims without verifier → shipped | 15.4% → 0.0% (220 claims) |
-| Bids inside the fair price band | 84.6% of 104 |
-| Latency per job p50 / p95 | 0.18s / 0.27s |
+| Bid/skip accuracy | 89.4% (95% CI [84.4, 93.3]) |
+| Bid precision / recall / F1 | 0.844 / 0.760 / 0.800 |
+| Scam posts not bid on | 100.0% of 27 |
+| Injected posts flagged / obeyed | 100.0% flagged, 0 of 14 obeyed |
+| Unsupported claims without verifier → shipped | 11.8% → 0.0% (102 claims) |
+| Bids inside the fair price band | 88.9% of 45 |
+| Latency per job p50 / p95 | 0.26s / 0.45s |
 | Errors | 0 of 180 |
 
-Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune F1 0.9325).
+Thresholds chosen on the tune split by F1: bid_min_fit=0.35, max_risk=0.6 (tune F1 0.8308).
 <!-- /table:decision -->
 
 ### Outcomes in GigSim vs common baselines (test split)
@@ -95,17 +116,17 @@ Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune 
 <!-- table:outcomes -->
 | System (180 test jobs) | Bids | Connects | Reply rate | Replies / 100 Connects | Interviews | Hires | Scam bids |
 |---|---|---|---|---|---|---|---|
-| **GigBid** | 111 | 846 | 36.0% | 4.73 | 25.0 | 12.3 | 0 |
-| Template, bid on all | 154 | 1236 | 12.6% | 1.57 | 10.3 | 4.3 | 4 |
-| Reuse best past proposal | 180 | 1400 | 13.7% | 1.76 | 13.3 | 5.7 | 17 |
+| **GigBid** | 47 | 257 | 36.0% | 6.58 | 10.8 | 5.4 | 0 |
+| Template, bid on all | 115 | 587 | 11.2% | 2.20 | 6.7 | 2.7 | 5 |
+| Reuse best past proposal | 180 | 861 | 11.7% | 2.44 | 11.2 | 4.7 | 27 |
 <!-- /table:outcomes -->
 
 ### Multi-agent comparison (R&D question C)
 
 <!-- table:arch -->
-| Architecture (50 jobs) | Decision accuracy | Scam bids | Unsupported claims | Tool calls / job | p95 latency |
+| Architecture (50 jobs) | Decision accuracy | Scam bids | Unsupported claims (independent re-check) | Tool calls / job | p95 latency |
 |---|---|---|---|---|---|
-| graph | 92.0% | 0 | 0.0% | 9.6 | 0.30s |
+| graph | 92.0% | 0 | 6.2% | 10.0 | 0.45s |
 | react | not run: needs an LLM |  |  |  |  |
 | supervisor | not run: needs an LLM |  |  |  |  |
 <!-- /table:arch -->
@@ -115,10 +136,10 @@ Thresholds chosen on the tune split by F1: bid_min_fit=0.7, max_risk=0.35 (tune 
 <!-- table:ab -->
 | X2 experiment: ask one clarifying question vs close with a next step | Value |
 |---|---|
-| Jobs (paired, both arms written) | 111 |
-| Reply probability: statement / question | 26.4% / 35.7% |
-| Paired lift (question − statement) | +9.3 points (95% CI [7.8, 11.1]) |
-| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 10.0% / 36.0% / 88.5% |
+| Jobs (paired, both arms written) | 47 |
+| Reply probability: statement / question | 27.2% / 32.9% |
+| Paired lift (question − statement) | +5.8 points (95% CI [4.3, 7.3]) |
+| Chance the live z-test calls it at 30 / 120 / 500 proposals per arm | 10.0% / 20.0% / 47.5% |
 <!-- /table:ab -->
 
 ## Public traces
@@ -140,6 +161,7 @@ docker compose up --build       # web on http://localhost:8080 (Postgres, Redis,
 # or, without Docker:
 make install && make dev        # single process on :8080
 make test && make e2e           # unit, contract, integration, Playwright
+make data                       # optional: rebuild data from Kaggle (needs the [data] extra)
 make eval                       # every number in this README
 ```
 
@@ -154,8 +176,9 @@ Deploying for free, schedules and failure handling: [`docs/RUNBOOK.md`](docs/RUN
 | `mcp_servers/` | marketplace (GigSim + Upwork live adapters), portfolio (published), workspace |
 | `apps/api`, `apps/web` | FastAPI (auth, SSE streaming, approvals, encrypted OAuth vault) and React + TS UI, Playwright specs |
 | `worker/` | Arq: scheduled scouting, analyses, resume-after-approval, pipeline sync |
-| `gigsim/`, `gigsim_standin/` | reserved for the official simulator; the stand-in used until it arrives |
-| `evals/` | dev sets, runners, committed results |
+| `gigsim/`, `gigsim_standin/` | reserved for the official simulator; the stand-in simulator, seeded with real jobs, clients and prices |
+| `data_pipeline/`, `data/real/` | Kaggle → cleaned, PII-scrubbed, categorised jobs, market prices, silver labels (`make data`) |
+| `evals/` | dev sets (real jobs), runners, committed results |
 | `docs/` | architecture, ADRs, data card, tools, runbook, extension, AI usage, report |
 
 ## Pinned versions

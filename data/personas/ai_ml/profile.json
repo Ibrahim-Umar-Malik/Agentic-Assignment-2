@@ -3,7 +3,7 @@
   "name": "Sana Mirza",
   "headline": "AI/ML Engineer: LLM apps, RAG and production ML",
   "years_experience": 6,
-  "hourly_floor_usd": 45,
+  "hourly_floor_usd": 30,
   "location": "Lahore, Pakistan",
   "skills": [
     "AWS",
@@ -63,5 +63,22 @@
     "time series",
     "tool calling",
     "topic modelling"
-  ]
+  ],
+  "job_success_rate": 86.4,
+  "avg_response_time_hrs": 13.1,
+  "_provenance": {
+    "synthetic": [
+      "name",
+      "headline",
+      "skills",
+      "portfolio"
+    ],
+    "real:C": [
+      "hourly_floor_usd (median paid hourly rate in persona categories)"
+    ],
+    "third_party_synthetic:S": [
+      "job_success_rate",
+      "avg_response_time_hrs"
+    ]
+  }
 }

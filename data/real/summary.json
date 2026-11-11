@@ -1,0 +1,67 @@
+{
+ "stats": {
+  "rows_raw": 63950,
+  "after_url_dedupe": null,
+  "after_text_dedupe": 59594,
+  "after_length_language_filter": 49912,
+  "after_budget_filter": 36265
+ },
+ "floors": {
+  "ai_ml": 30,
+  "fullstack": 21,
+  "data_analyst": 30
+ },
+ "dev": {
+  "ai_ml": {
+   "fit": 67,
+   "off_domain": 46,
+   "scam": 31,
+   "weak_fit": 22,
+   "injection": 19,
+   "duplicate": 9,
+   "lowball": 6,
+   "bid_true": 59
+  },
+  "fullstack": {
+   "fit": 60,
+   "off_domain": 45,
+   "weak_fit": 36,
+   "lowball": 19,
+   "scam": 18,
+   "injection": 14,
+   "duplicate": 8,
+   "bid_true": 49
+  },
+  "data_analyst": {
+   "fit": 64,
+   "off_domain": 51,
+   "weak_fit": 28,
+   "scam": 23,
+   "injection": 12,
+   "duplicate": 11,
+   "lowball": 11,
+   "bid_true": 55
+  }
+ },
+ "live": {
+  "ai_ml": 60,
+  "fullstack": 60,
+  "data_analyst": 60
+ },
+ "category_counts": {
+  "other": 16634,
+  "frontend": 9202,
+  "fullstack_saas": 2372,
+  "mobile": 2168,
+  "ecommerce": 1734,
+  "classic_ml": 937,
+  "analytics_stats": 734,
+  "spreadsheet": 683,
+  "bi_dashboards": 542,
+  "devops": 535,
+  "llm_apps": 457,
+  "data_engineering": 182,
+  "computer_vision": 83,
+  "mlops": 2
+ }
+}

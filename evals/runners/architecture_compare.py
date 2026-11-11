@@ -17,6 +17,8 @@ import os
 import re
 import time
 
+from core.personas import persona_floor
+
 from .common import PERSONAS, eval_env, load_dev, mean, pctile, public_job, run_meta, split, write_result
 
 eval_env()
@@ -67,7 +69,7 @@ def parse_final(text: str) -> dict:
 async def run_graph(persona: str, row: dict, graph) -> dict:
     tid = f"arch:{persona}:{row['id']}"
     out = await graph.ainvoke({"user_id": f"arch-{persona}", "persona": persona, "thread_id": tid, "trace_id": tid, "job": public_job(row),
-                               "meta": {"hourly_floor": 40, "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
+                               "meta": {"hourly_floor": persona_floor(persona), "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
     return {"action": (out.get("decision") or {}).get("action"), "letter": (out.get("draft") or {}).get("cover_letter", "")}
 
 

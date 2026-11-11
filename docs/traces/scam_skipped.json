@@ -3,15 +3,15 @@
  "trace_id": "trace-scam-skipped",
  "profile": "offline",
  "job": {
-  "id": "j-ai_ml-046",
-  "title": "Need LoRA expert: fine-tuned clinical note summariser",
-  "budget": 82,
+  "id": "j-ai_ml-020",
+  "title": "Creating a Chat GPT powered Chatbot for hotels",
+  "budget": 40.0,
   "budget_type": "hourly",
-  "connects_cost": 8
+  "connects_cost": 1
  },
  "outcome": {
   "status": "skipped",
-  "reason": "risk too high (0.85): Likely scam: free_work",
+  "reason": "risk too high (0.95): Likely scam: scam",
   "decision": "skip",
   "submission": null,
   "critiques": 0
@@ -28,7 +28,7 @@
    "name": "node.scout",
    "kind": "node",
    "t_start_s": 0.0,
-   "duration_s": 0.0038,
+   "duration_s": 0.0039,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -43,8 +43,8 @@
   {
    "name": "node.analyst",
    "kind": "node",
-   "t_start_s": 0.0717,
-   "duration_s": 0.0023,
+   "t_start_s": 0.0192,
+   "duration_s": 0.0046,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -58,8 +58,8 @@
   {
    "name": "node.risk",
    "kind": "node",
-   "t_start_s": 0.0753,
-   "duration_s": 0.1933,
+   "t_start_s": 0.0254,
+   "duration_s": 0.2692,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -74,8 +74,8 @@
   {
    "name": "node.matcher",
    "kind": "node",
-   "t_start_s": 0.0843,
-   "duration_s": 0.2231,
+   "t_start_s": 0.0364,
+   "duration_s": 0.4075,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -90,72 +90,148 @@
   {
    "name": "mcp.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.1098,
-   "duration_s": 0.1267,
+   "t_start_s": 0.0689,
+   "duration_s": 0.1783,
    "attrs": {
     "args": {
-     "client_id": "c0008"
+     "client_id": "c-0aad97e773"
     },
     "user": "u-demo",
-    "result_size": 809
+    "result_size": 773
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.2176,
+   "t_start_s": 0.2205,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.133,
+    "latency_s": 0.184,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.2621,
+   "t_start_s": 0.2709,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "fine-tuning",
+     "requirement": "Python",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.039,
+    "latency_s": 0.041,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.2647,
+   "t_start_s": 0.2856,
    "duration_s": 0.0,
    "attrs": {
     "agent": "risk",
     "args": {
-     "client_id": "c0008"
+     "client_id": "c-0aad97e773"
     },
-    "latency_s": 0.189,
+    "latency_s": 0.26,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.2875,
+   "t_start_s": 0.3189,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "LoRA",
+     "requirement": "Chatbot Development",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.047,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.3441,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Artificial Intelligence",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.024,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.3684,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Bot Development",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.023,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.3927,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Machine Learning",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.023,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.4187,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Chat & Messaging Software",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
@@ -169,26 +245,26 @@
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.3067,
+   "t_start_s": 0.4425,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "HuggingFace Transformers",
+     "requirement": "NLP",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.018,
+    "latency_s": 0.022,
     "attempt": 0
    }
   },
   {
    "name": "node.decide",
    "kind": "node",
-   "t_start_s": 0.309,
+   "t_start_s": 0.4463,
    "duration_s": 0.0,
    "attrs": {
     "model": null,

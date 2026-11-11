@@ -1,128 +1,317 @@
 id,job_title,job_description,proposal,human_overall_1to5,notes
-J01,Need PyTorch expert: two-tower product recommender,"We are a manufacturing company. We have a deadline with a key customer and need help fast. We need someone experienced with embeddings, recommender systems and PyTorch. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with embeddings, recommender systems, PyTorch. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J02,Looking for LightGBM expert: property price estimation model,"We are a hospitality company. Our current setup does not scale and the team is stretched. We need someone experienced with LightGBM and feature engineering. Deliverables: a working solution, documentation and a handover call. Timeline: 8 weeks.","Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you describe.
+J01,Python + Web Scraping developer with 5+ years of Experience,"We are currently looking for a Python Developer with experience in web scraping Automation and crawling tools and modules
 
-For feature engineering: in the subscription churn prediction project I built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.
+Experience in various data extraction methods (like data extraction from PDF Files, web
+pages, etc) 
 
-Since you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Skills Required:
 
-Is the LightGBM part already started, or would this be built from scratch?",,
-J03,Need Pinecone expert: semantic search migration to pinecone,"We are a energy company. Our current setup does not scale and the team is stretched. We need someone experienced with Elasticsearch and semantic search. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Search success rate up 27%; p95 latency 180 ms: that was the outcome of my semantic search migration to Pinecone project, which is close to what you describe.
+Understanding requirements of customer needs, identifying sources and scraping/collecting data and integrating the data crawled and scraped into our databases.
 
-Since you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Debug and understand the existing scraping solution and fix the production issue. 
 
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J04,Need LoRA expert: fine-tuned clinical note summariser,"We are a hospitality company. Doctors spent 15 minutes per discharge summary. We need someone experienced with PyTorch, fine-tuning, AWS SageMaker, parameter-efficient fine-tuning and HuggingFace Transformers. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with PyTorch, fine-tuning, AWS SageMaker, LoRA, HuggingFace Transformers. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J05,Looking for LayoutLM expert: invoice field extraction pipeline (reposted),"We are a retail company. Our accounts-payable team keyed 20 fields from 4,000 supplier invoices a month. We need someone experienced with Docker, LayoutLM, PyTorch, HuggingFace Transformers, FastAPI and OCR. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.
+Set up a production server for the deployment of the solution.
 
-For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.
+Python, Shell scripting and Web Scraping
 
-Since you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Knowledge of Libraries like Selenium, Requests, Scrappy, BeautifulSoup, NumPy, Pandas, Matplotlib, SciPy, TensorFlow, Keras, PyTorch, Plotly and Tableau.
 
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J06,Looking for LightGBM expert: property price estimation model,"We are a edtech company. Our current setup does not scale and the team is stretched. We need someone experienced with feature engineering, LightGBM and scikit-learn. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you describe.
+Experience in writing SQL queries.
 
-For feature engineering: in the subscription churn prediction project I built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.
+Sound knowledge of writing API
 
-Since you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Working knowledge of cloud platforms such as AWS
 
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J07,Hiring LangGraph expert: multilingual customer-support agent,"We are a e-commerce company. Our previous contractor left the work half-finished. We need someone experienced with an agent workflow framework, LLM agents and a managed vector database. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with LangGraph, LLM agents, Pinecone. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J08,Hiring time series expert: hourly energy demand forecasting,"We are a legal company. Our utility over-bought reserve power because forecasts were 9% off. We need someone experienced with LightGBM and Airflow. Deliverables: a working solution, documentation and a handover call. Timeline: 8 weeks.","Quick question before I scope this: is the LangGraph part already started? I recently shipped a multilingual customer-support agent (Automated 58% of tickets with a 4.6/5 CSAT).
+Sound knowledge of HTML, CSS, XPATH, Regex and HTML DOM.
 
-My approach: Designed a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.
+Must follow the below criteria 
+• Full-time Consultants/Freelancers.
+• Available for calls and work between 10 AM to 8 PM IST.
+• Do not have more than 1 active project.
+• Location: India only.
+• Not accepting applications from Agencies
+• Available over MS TEAM and phone during working hours.
+• Should have a high-configuration laptop and stable internet connection.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Python, Data Science, Web Scraping. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J02,Computer vision expert,"I need AI solution which will capture mobile screen and validate results in mobile online games like Call of Duty Mobile. For example there are two gamers who play 1vs1 in multiplayer, AI solution should record what's going on the screen of the users during the game and check what score everyone have and who won tournament/duel. So there will be mobile application which will record game session and send automatically video on server and I need AI/ML solution which will analyze this video and report to the service who won the match","Sana delivered our invoice field extraction pipeline on time. Field-level F1 of 0.94; manual keying time down 70%.
 
-I can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.",,
-J09,Looking for LangGraph expert: multi-agent operations assistant,"We are a energy company. We have a deadline with a key customer and need help fast. We need someone experienced with Python and LLM agents. Deliverables: a working solution, documentation and a handover call. Timeline: 8 weeks.","Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third: that was the outcome of my multilingual customer-support agent project, which is close to what you describe.
+For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.
 
-For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier. For LLM agents: in the multi-agent operations assistant project I built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.
-
-Since you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
-
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J10,Looking for LoRA expert: fine-tuned clinical note summariser,"We are a legal company. Doctors spent 15 minutes per discharge summary. We need someone experienced with PyTorch, HuggingFace Transformers and AWS SageMaker. Deliverables: a working solution, documentation and a handover call. Timeline: 8 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with PyTorch, HuggingFace Transformers, AWS SageMaker. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J11,Need RAG expert: contract q&a assistant,"We are a nonprofit company. We have a deadline with a key customer and need help fast. We need someone experienced with Python and pgvector. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Quick question before I scope this: is the LangGraph part already started? I recently shipped a multilingual customer-support agent (Automated 58% of tickets with a 4.6/5 CSAT).
-
-My approach: Designed a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.
-
-I can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.",,
-J12,Seeking LangGraph expert: multilingual customer-support agent,"We are a legal company. Our Shopify brand answered 3,000 tickets a week in English, Urdu and Arabic by hand. We need someone experienced with Pinecone and LLM agents. Deliverables: a working solution, documentation and a handover call. Timeline: 2 weeks.","Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third: that was the outcome of my multilingual customer-support agent project, which is close to what you describe.
-
-For LLM agents: in the multi-agent operations assistant project I built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.
+I have not used TensorFlow, React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.
 
 Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
 
-Is the LangGraph part already started, or would this be built from scratch?",,
-J13,Looking for WordPress expert: wordpress to next.js migration,"We are a manufacturing company. We have a deadline with a key customer and need help fast. We need someone experienced with Next.js and WordPress. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Next.js, WordPress. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J14,Hiring someone to improve our edtech product,"We are a hospitality company. Things are slow and our team is frustrated. We think Socket.IO could help, maybe Node.js too. Open to ideas. Long-term work possible.","Rendered 40 live charts at 60 FPS on a mid-range laptop: that was the outcome of my live crypto price dashboard project, which is close to what you describe.
+If this sounds right, I can send a one-page plan for the first milestone today.",,
+J03,Computer Vision Engineer,"Keyo is looking for a highly experienced Computer Vision engineer and Neural Network architect to join our team to help us continue to evolve the biometric capture systems that provide the foundation for biometric authentication within the Keyo network. Specifically, the candidate will be an important member in building computer vision software to match palm images on a massive scale for authentication in real-world environments. Candidates should have the following skills:
 
-For Socket.IO: in the real-time classroom chat project I socket.IO chat with Redis pub/sub so it scales across instances, plus moderation tools. For Node.js: in the restaurant ordering progressive web app project I direct-ordering PWA with Stripe payments and an Express order API with kitchen display.
+Demonstrated experience in computer vision development and design - including clear evidence of exceptional skills in this area
+Significant core neural network experience / research orientated and familiar with state of the art tech in neural network architecture
+Any experience in biometric authentication is a plus (but not required)
+Candidates will be asked to provide their accomplishments and experience in the above as a pre-requisite for interview
 
-Since you need availability for ongoing work, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Confidence Gap
+We know the confidence gap and imposter syndrome can get in the way of meeting spectacular candidates, so please don’t hesitate to apply — we’d love to hear from you.
+
+About Keyo
+We are building a company that reflects the world in which we want to live. One where we can enjoy the convenience of biometrics without compromising our privacy or personal freedom. To make this a reality, our technology allows businesses of all kinds to adopt biometric authentication quickly and easily. With Keyo, people are clocking into work, paying for a coffee, and unlocking doors with a wave of their hand. Our team is remote first, by design. Our talented employees work from all over the world because we want Keyo to reflect the people who use it: global citizens who bring their diverse perspectives to solve unique problems.
+We are at an exciting juncture and looking for new voices and ideas to continue building our vision for the company. Keyo believes that the things that make us unique are our greatest strengths. We have an inclusive, global, remote-first workplace that comprises people from all different lifestyles, backgrounds, abilities, and nationalities.
+Please note: Keyo is undergoing SOC2 compliance and performs background checks, and provides security training to team members.","Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to what you describe.
+
+For Data Science: in the subscription churn prediction project I built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs. For OpenCV: in the real-time defect detection on an assembly line project I trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.
+
+I have not used Model Optimization in client work, so I would start with a short spike and confirm the approach with you before building on it.
+
+Since you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+Is the Data Science part already started, or would this be built from scratch?",,
+J04,Python Developer for image processing for our roofing business,"Hello,
+
+We are looking to hire a professional Python Machine Learning Developer who can help with back end for our roofing software.
+
+The scope is to develop a python algorithm to detect the available roof placement area for solar panels.
+
+Once this goes well, a lot more work will be assigned.
+
+Look forward to the proposals!","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Computer Vision, Deep Learning, Python, Image Processing, Machine Learning, Artificial Intelligence, API, JavaScript. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J05,NoCode NLP Chatbot demo,"This is initially a very simple 30 minute task 
+
+1- You will be given a set of Question answers file
+2- You will deploy it on a domain , there is wp-admin access of that site
+3- You bot will absorb the QA file , train on it and intelligently reply about the questions
+
+initial set is just a 10 pager QA with 100 questions but in later phases it will keep all companies data,, 
+
+Please mention in your cover letter "" i am willing to start right now on my profile's hourly rate i know how to deploy a NOCODE nlp chatbot on a hosting of ionos. and i will use (e,g landbot.io+chatgpt)____ tech stack""","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Chatbot Development, Bot Development, Natural Language Processing, Dialogflow API, IBM Watson, Python. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J06,Deep Learning programmer to add more features to an existing classification code,I am looking for skilled DL programmer to make changes to an existing python code. Data and code will be provided. This task must be finished in 4 days so only but if you have expertise and time to do so.,"Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Python, Deep Learning, Natural Language Processing, Artificial Intelligence. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J07,Random Python Works,"We have several python projects
+- Developing user interface 
+- Making bots (10$/weekly run it)
+- And more
+
+Works may includes natural language processing, AI, automation, web scraping, etc
+
+Long term work","Built with LangGraph, MCP, Python: that was the outcome of my agent-ops project, which is close to what you describe.
+
+For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier. For Data Science: in the subscription churn prediction project I built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs. For Natural Language Processing: in the semantic search migration to Pinecone project I migrated to hybrid semantic search on Pinecone with a re-ranker, keeping BM25 for exact names.
+
+I have not used Data Scraping, Automation in client work, so I would start with a short spike and confirm the approach with you before building on it.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
 
 If this sounds right, I can send a one-page plan for the first milestone today.",,
-J15,Seeking WordPress expert: wordpress to next.js migration,"We are a energy company. We have a deadline with a key customer and need help fast. We need someone experienced with WordPress and headless WordPress. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.
+J08,"Data scientist, with strong understanding on GPT3 and ChatGPT","Looking for data scientist expert who can analyze multiple datasets and build a model to generate content ( text and image ). 
 
-For Next.js: in the clinic appointment booking system project I next.js booking site on Supabase with row-level security and Twilio SMS reminders.
+Use of GPT 3 and ChatGPT with possible prompts and suggestion 
+and much more.","AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.
 
-Since you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+For Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.
 
-Is the WordPress part already started, or would this be built from scratch?",,
-J16,Seeking GraphQL expert: graphql gateway over legacy rest apis,"We are a energy company. Our current setup does not scale and the team is stretched. We need someone experienced with Docker, Node.js, Apollo and GraphQL. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Docker, Node.js, Apollo, GraphQL. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J17,Hiring React Native expert: fitness tracking mobile app,"We are a hospitality company. We have a deadline with a key customer and need help fast. We need someone experienced with Firebase and TypeScript. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","4.7 stars on the App Store; 1,900 monthly active users: that was the outcome of my fitness tracking mobile app project, which is close to what you describe.
+I have not used Data Science Consultation, Model Optimization in client work, so I would start with a short spike and confirm the approach with you before building on it.
 
-Since you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
 
 If this sounds right, I can send a one-page plan for the first milestone today.",,
-J18,Seeking Next.js expert: clinic appointment booking system,"We are a healthcare company. Our previous contractor left the work half-finished. We need someone experienced with Twilio, Next.js, Supabase, Tailwind CSS and TypeScript. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Twilio, Next.js, Supabase, Tailwind CSS, TypeScript. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J19,Looking for someone to improve our media system,"We are a SaaS company. Things are slow and our team is frustrated. We think Sanity could help, maybe TypeScript too. Open to ideas. Long-term work possible.","You need GraphQL work similar to my graphql gateway over legacy rest apis: Screen load requests from 14 to 1; p95 latency down 48%.
+J09,Simple website,"Hi
+
+I want to build a clean website, with simple functionality:
+
+1. Signup: via Linkedin, phone number or email 
+2. Create a simple profile: fill a form, upload few pictures.
+3. Create a listing: fill a form, upload few pictures 
+4. Browse existing listings: by city, date, budget, etc.
+
+Small admin portal will allow me to add listings, approve members, etc.
+
+Preference for using existing tools and frameworks that allow you to build a website like that very fast given functionality is really basic here (not sure if wordpress or wix, etc. can be good for the functionality here) . Just needs to look clean and nice.
+
+Need to deliver this ~2 weeks.
+
+Thanks,","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Web Development, WordPress, Web Design, Wix. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J10,Convert Next.js app to PWA,"We have a JAMstack Next.js app with Firebase and Sanity as the backend. 
+We are looking for an experienced developer to help us create a PWA that has the following functionality: 
+
+- support login
+- push notifications
+- offline mode 
+
+Please submit a proposal if you've done this before and use the word ""future"" in it.
+
+Thanks","Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what you describe.
+
+For Next.js: in the wordPress to Next.js migration project I headless WordPress with a static Next.js + Tailwind frontend.
+
+I have not used JavaScript in client work, so I would start with a short spike and confirm the approach with you before building on it.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+If this sounds right, I can send a one-page plan for the first milestone today.",,
+J11,Develop and setup timed whisper ai docker,"Develop and setup docker of whisper ai timestemped ([link removed]
+For voice recognition app
+
+Code will be written in python
+The code will run in aws environment (s3, sqs ..ec2)
+
+Code will be flexible to run a configured number of processes (please describe in offer how you will implement configuration ) 
+
+Each process will pop a pack from sqs queue -
+A pack will describe:
+ Client user id
+ S3 path to wav to process 
+ Language
+ Wav processed time
+
+Process will transcribe the wav and save response in the same name with json ending instead of wav
+
+Report process ( kinesis or to sql directly) 
+User id
+Path - 
+start time (gmt) 
+end time
+Success true/false
+
+Code should be auto scalable
+ After code will be running there will be some performance tests to study best configuration
+
+Please describe what are the weak part of this design
+Please estimate development time","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Python, Docker, Amazon Web Services, DevOps. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J12,Adding a new feature for my Educational Web App using Node.js & React,"I have a React-Node.js-based web app which consists of a CRUD API made with express.js and connected to a Postgres database and there are 4 react pages to be integrated with
+
+what is needed in this stage is to add new logic to the app from a backend perspective.
+the new feature to be added is to implement a system like file system in the Operating systems in the API endpoints
+JSON response that is supposed to be returned will be provided for the developer","Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what you describe.
+
+I have not used ExpressJS in client work, so I would start with a short spike and confirm the approach with you before building on it.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+Is the Node.js part already started, or would this be built from scratch?",,
+J13,Wordpress site needed - Alabamarailroad.com copy,"Pull old Wordpress files/database from GoDaddy. hosting/domain moved to IONOS, and need to move content. Old wordpress contains a virus that GoDaddy allowed to populate, so need to move without the virus. 
+
+If moving is not possible, could recreate using similar sister site. Open to the idea of revitalizing/updating the website for a 2023 look and feel.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Web Development, Mockup, Website, Business with 1-9 Employees, WordPress, Web Design. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J14,Website,"I am looking for someone who has experience with construction related website experience with word press .
+Facebook page design will be needed .and 
+experience with Ai is a huge plus .
+
+Marketing experience is a plus
+Thankyou","Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what you describe.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+Is the Web Development part already started, or would this be built from scratch?",,
+J15,WordPress Developer,"I ma looking for WordPress developer for blogging website. 
+Website should be SEO friendly.
+website theme should be AdSense friendly, etc.
+
+Full description we will discuss later.
+
+Note: I have bought domain and hosting already.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Web Development, WordPress Development, WordPress, Blog, phpMyAdmin, Web Design, WordPress Plugin, CSS. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J16,Custom Visual Studio Code (VSCode) extension wanted,"Attached is the PDF we have created. 
+Basically, we are looking for a VSCode extension that interacts with the API in our product.
+
+All of the API endpoints are quite clearly documented and easily tested for results. We would just like these results turned into a VSCode extension. 
+
+We are an open-source software company but this project is being run by a team outside the software engeering group.","You need GraphQL work similar to my graphql gateway over legacy rest apis: Screen load requests from 14 to 1; p95 latency down 48%.
 
 My approach: Apollo GraphQL gateway with DataLoader batching and response caching, shipped in Docker.
 
 I can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.",,
-J20,Seeking Shopify API expert: shopify inventory sync app,"We are a edtech company. Our merchant oversold stock across Shopify and two warehouses. We need someone experienced with Shopify API and Node.js. Deliverables: a working solution, documentation and a handover call. Timeline: 3 weeks.","Overselling incidents went from weekly to none in three months: that was the outcome of my shopify inventory sync app project, which is close to what you describe.
+J17,loyalty Web & Mobile App,loyalty web mobile app same as Starbucks mobile app I need a loyalty system with an e-commerce mobile and web app or a loyalty web and mobile app only. React js or Flutter,"Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what you describe.
 
-For Node.js: in the restaurant ordering progressive web app project I direct-ordering PWA with Stripe payments and an Express order API with kitchen display.
+For React Native: in the fitness tracking mobile app project I react Native (Expo) app with Firebase auth and Firestore, offline-first logging and push notifications.
 
 Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
 
-Is the Shopify API part already started, or would this be built from scratch?",,
-J21,Need React expert: logistics admin dashboard,"We are a media company. Our current setup does not scale and the team is stretched. We need someone experienced with Chart.js and React. Deliverables: a working solution, documentation and a handover call. Timeline: 2 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Chart.js, React. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J22,Need someone to improve our SaaS product,"We are a healthcare company. Things are slow and our team is frustrated. We think AWS ECS could help, maybe Kubernetes too. Open to ideas. Long-term work possible.","You need GraphQL work similar to my graphql gateway over legacy rest apis: Screen load requests from 14 to 1; p95 latency down 48%.
+Is the React Native part already started, or would this be built from scratch?",,
+J18,Data visualization and analysis expert for a new project,"We are looking to hire someone with expertise in conducting statistical analysis and creating meaningful visuals to help our field team with an ongoing project.
+Major deliverables will revolve around:
+- Identification, extraction, cleaning and transformation of data
+- Analysing the data and information, including applying advanced statistical and analytical methods. 
+- Producing written, graphical and verbal interpretation of results appropriate for semi-technical field members.
 
-My approach: Apollo GraphQL gateway with DataLoader batching and response caching, shipped in Docker.
+Knowledge of MS Excel, PowerBI and statistical platforms like Python and R is essential.
+
+Applicants will be provided with a short screening assessment task that involves conducting exploratory analysis on some open source government data, and reporting on the findings of analysis. After the screening task is submitted, a short interview to discuss your reports and findings will be conducted followed by the final selection.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Data Analysis, Data Visualization, Python, R, Microsoft Power BI, Business Intelligence, Statistics, Microsoft Excel. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J19,Build A Dashboard Report,"I have a dataset on real estate, and need to build a report base on the dataset, have the matric , needed someone with experience to help build the report base on the metrix.","Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.
+
+For Data Visualization: in the open government data cleaning project I pandas pipeline with schema validation and fuzzy matching of place names. For Microsoft Power BI: in the executive sales dashboard in Power BI project I star-schema model in SQL Server with a Power BI dashboard and row-level security per region.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+Is the Data Visualization part already started, or would this be built from scratch?",,
+J20,PowerBi Dashboard,"We have been calculating commissions in PowerBI by combining data in Excel by aggregating data from Dynamics 365 and time capture system (manual). The commission model already exist in PowerBI.
+
+Having moved to a new time capture system (Ruddr) we would like to automate the process and avoid manual downloads. API connections are in place, but need to be modeled to the commission model has been built in PowerBI.
+
+If all goes well, we would like to also automate a scorecard based on the same data. The model exists in Excel format, but will need to be created in PowerBI and possible integrated into SharePoint.
+
+Need someone that knows PowerBI well and also API's.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Data Visualization, Data Analysis, Microsoft Power BI Data Visualization, API Integration, Microsoft Power BI. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J21,Extract clicks and impression data from google ads,"We would like to extract click and impression data from google ads on daily basis. Google sheets could be a good potential target for the extracted data.
+
+Google ads scripting would be our first preference for this solution, but we are open to other solutions.","Pipeline failures noticed within minutes instead of days: that was the outcome of my airflow ETL pipelines project, which is close to what you describe.
+
+For Data Extraction: in the open government data cleaning project I pandas pipeline with schema validation and fuzzy matching of place names.
+
+Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+Is the Data Extraction part already started, or would this be built from scratch?",,
+J22,Data analyst/ Statistician,"DISCLAIMER:
+*This is a great opportunity to join our team on a TRIAL basis, with the potential to grow into a longer-term contracted position. This trial period will give us a chance to see how well you perform and evaluate your fit for the role and our company. If your performance meets our expectations, we look forward to discussing the possibility of a more permanent arrangement.*
+
+About the Role:
+
+We are seeking a highly motivated and detail-oriented Data Analyst/Statistician to join our team. In this role, you will be responsible for evaluating sporting events and providing educated predictions for outcomes to be used for prescribing betting odds to patrons on our platform. You will leverage your expertise in statistics and data analysis to analyze a wide range of data sources, including player and team statistics, performance data, and other relevant information, to make accurate predictions about the outcome of sporting events.
+
+Responsibilities:
+
+Evaluate a wide range of data sources to make accurate predictions about the outcome of sporting events
+Analyze player and team statistics, performance data, and other relevant information to gain insights into the performance of individual players and teams
+Use statistical modeling techniques to determine the probability of various outcomes for sporting events
+Provide data-driven insights and recommendations to internal stakeholders, including coaches, analysts, and executives
+Work closely with cross-functional teams, including data scientists, software engineers, and product managers, to develop and implement predictive models and algorithms
+Stay up-to-date with the latest developments in sports analytics and data science
+Provide betting odds to patrons on our platform based on your analysis and predictions
+Requirements:
+
+Bachelor's or Master's degree in Statistics, Mathematics, Computer Science, or a related field
+Strong knowledge of statistics and data analysis, including experience with statistical modeling and machine learning algorithms
+Experience with sports analytics, particularly in evaluating sporting events and making predictions about outcomes
+Strong analytical skills and the ability to analyze large, complex data sets
+Excellent communication and interpersonal skills, with the ability to present complex data insights to non-technical stakeholders
+Familiarity with programming languages such as R, Python, or SQL
+Passion for sports and a deep understanding of the sporting landscape
+Knowledge of the betting industry and how odds are prescribed is a plus
+This is a fantastic opportunity for a data analyst or statistician with a passion for sports and a strong background in data analysis and prediction to join a fast-growing company in the sports betting industry. If you're ready to make a difference and work with a team of talented professionals, we'd love to hear from you!","Board approved a new donor programme based on the findings: that was the outcome of my donor survey analysis in R project, which is close to what you describe.
+
+For Data Analysis: in the open government data cleaning project I pandas pipeline with schema validation and fuzzy matching of place names.
+
+Since you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
+
+If this sounds right, I can send a one-page plan for the first milestone today.",,
+J23,Seeking experienced techie to set up analytics for my website,"I have a start up company with a simple website. Id like to be able to see and use my analytics to see how my site is being viewed and used ie seeing where Im getting clicks, what pages are getting the most traffic etc.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Data Analysis, Data Analytics, Growth Analytics, Marketing Analytics, Google Analytics. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J24,SQL Developer Needed Remotely,"Job Title - SQL Developer
+
+Location - Anywhere within the United States. 
+
+Job Description
+
+Position Description: Must have at least two (2) years' experience in the following:
+
+- Developing stored procedures, complicated database SQL queries, and functions, views, and so on.
+- Working together with multiple web platforms and web developers to produce embedded SQL queries.
+- Data transfer from Excel to SQL Server and other versions thereof.
+- Doing general database administration activities such as the establishment of tables, views, indexes, triggers, and so on.
+- Database architecture, design, development, and best practices.
+- Proficiency with third-party database modeling tools (such as Visual Studio for Enterprise Architects, Erwin, and Visio) and other equivalent third-party software products.
+
+Education: A Bachelor's Degree in Computer Science, Information Systems, Engineering, Business, or another comparable scientific or technological area from a recognized college or university, or two (2) years of equivalent experience in a relevant field.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience.
+
+My approach: Fivetran into Snowflake, dbt models with tests and documentation, one metrics layer.
 
 I can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.",,
-J23,Hiring Docker expert: monolith containerisation and deployment (reposted),"We are a retail company. Our current setup does not scale and the team is stretched. We need someone experienced with Docker and CI/CD. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","Screen load requests from 14 to 1; p95 latency down 48%: that was the outcome of my graphQL gateway over legacy REST APIs project, which is close to what you describe.
-
-For CI/CD: in the end-to-end test suite project I playwright suite of 120 tests across three browsers, sharded in GitHub Actions.
-
-Since you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
-
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J24,Looking for pandas expert: open government data cleaning,"We are a media company. We have a deadline with a key customer and need help fast. We need someone experienced with data quality, pandas and Python. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with data quality, pandas, Python. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J25,Seeking Excel expert: excel reporting automation,"We are a nonprofit company. Our plant's monthly production report took four days of copy-paste. We need someone experienced with Power Query, Excel and VBA. Deliverables: a working solution, documentation and a handover call. Timeline: 2 weeks.","Report time from 4 days to 30 minutes: that was the outcome of my excel reporting automation project, which is close to what you describe.
-
-For Excel: in the inventory demand forecast project I seasonal forecasts in Python delivered to buyers as an Excel template they already used.
-
-Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
-
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J26,Looking for Power BI expert: hospital kpi reporting,"We are a legal company. Bed occupancy and wait times were reported a month late. We need someone experienced with SQL, Microsoft dashboards, HIPAA and data governance. Deliverables: a working solution, documentation and a handover call. Timeline: 3 weeks.","Daily KPIs used in morning huddles across 4 wards: that was the outcome of my hospital KPI reporting project, which is close to what you describe.
-
-For Power BI: in the executive sales dashboard in Power BI project I star-schema model in SQL Server with a Power BI dashboard and row-level security per region. For SQL: in the telecom churn analysis in SQL project I rebuilt churn logic in Snowflake SQL with reconciliations and a Tableau view.
-
-Plan: a short discovery call, a first working milestone you can test, then documentation and a handover call.
-
-Is the Power BI part already started, or would this be built from scratch?",,
-J27,Looking for Power BI expert: hospital kpi reporting,"We are a hospitality company. Our previous contractor left the work half-finished. We need someone experienced with HIPAA and SQL. Deliverables: a working solution, documentation and a handover call. Timeline: 4 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with HIPAA, SQL. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J28,Looking for someone to improve our retail workflow,"We are a SaaS company. Things are slow and our team is frustrated. We think time series could help, maybe forecasting too. Open to ideas. Long-term work possible.","Stock-outs during peak down 28%: that was the outcome of my inventory demand forecast project, which is close to what you describe.
-
-Since you need availability for ongoing work, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.
-
-If this sounds right, I can send a one-page plan for the first milestone today.",,
-J29,Looking for Google Analytics 4 expert: ga4 migration and marketing reporting,"We are a media company. We have a deadline with a key customer and need help fast. We need someone experienced with Looker Studio, Google Analytics 4 and Google Tag Manager. Deliverables: a working solution, documentation and a handover call. Timeline: 6 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Looker Studio, Google Analytics 4, Google Tag Manager. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
-J30,Hiring Python expert: marketing mix model,"We are a nonprofit company. Our previous contractor left the work half-finished. We need someone experienced with regression, statsmodels, marketing analytics and Python. Deliverables: a working solution, documentation and a handover call. Timeline: 2 weeks.","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience.
+J25,A custom report/dashboard creation on Power BI & Databox platforms.,"Creating a custom dashboard/reports on power BI using SQL data source as per our requirements. Also creating a query-based report using the databox platform.,","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience. I have read your job post carefully and I am the perfect fit for this job. I have worked with Data Analysis, Data Visualization, Microsoft Power BI, SQL. I can start immediately and deliver high quality work on time. Looking forward to hearing from you.",,
+J26,Tableau work,"I need some help with modifying an existing visualizatioin of tableau. Basically I repeatedly send out a survey with different modules to different clients. Today my tableau is connected to the survey platform and after each survey is completed the data is being visualized in a certain way. But this way of handling the process is not suitable for me in the long run. I would need some help to instead upload a prepared data file to tableau and with some minor configuration visualize each graph. I would need some help of a tableau expert who both can help me with this tasks and also help me with some future visualisations. 
+I have attached a screenshot of the current visualisation.
+best regards
+Aram","Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience.
 
 My approach: Fivetran into Snowflake, dbt models with tests and documentation, one metrics layer.
 

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "dfd4987",
-    "generated_at": "2026-11-06T12:22:23Z",
+    "commit": "9ba9cd9",
+    "generated_at": "2026-11-11T15:13:52Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -15,12 +15,12 @@
       "errors": 0,
       "accuracy": 0.92,
       "scam_bids": 0,
-      "unsupported_claim_rate": 0.0,
-      "mean_tool_calls": 9.6,
+      "unsupported_claim_rate": 0.0625,
+      "mean_tool_calls": 9.98,
       "mean_tokens": 0.0,
       "usd_per_job": 0.0,
-      "p50_latency_s": 0.1919632310000452,
-      "p95_latency_s": 0.3030327810001836
+      "p50_latency_s": 0.2477636930002518,
+      "p95_latency_s": 0.4510994249999385
     },
     "react": {
       "status": "not_run",

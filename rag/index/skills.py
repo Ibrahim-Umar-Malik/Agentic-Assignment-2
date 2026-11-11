@@ -70,10 +70,68 @@ def find_skills(text: str, vocabulary: list[str]) -> list[str]:
     return list(dict.fromkeys(found))
 
 
+# Umbrella skill tags used on real marketplaces (from the Upwork job datasets, docs/DATA_CARD.md) and the
+# specific skills that evidence them. Real clients tag "Machine Learning", not "LightGBM", so a portfolio item
+# showing LightGBM counts as evidence for the umbrella tag. Found by failure analysis on real jobs.
+BROAD_TAGS: dict[str, list[str]] = {
+    "machine learning": ["scikit-learn", "XGBoost", "LightGBM", "PyTorch", "TensorFlow", "classification", "regression",
+                         "forecasting", "churn", "recommender", "model"],
+    "machine learning model": ["scikit-learn", "XGBoost", "LightGBM", "PyTorch", "TensorFlow", "classification", "model"],
+    "deep learning": ["PyTorch", "TensorFlow", "neural network", "CNN", "transformer", "BERT", "YOLO"],
+    "neural network": ["PyTorch", "TensorFlow", "GNN", "CNN", "two-tower"],
+    "artificial neural network": ["PyTorch", "TensorFlow", "neural network"],
+    "artificial intelligence": ["LLM", "machine learning", "PyTorch", "LangChain", "LangGraph", "OpenAI API", "NLP"],
+    "data science": ["pandas", "scikit-learn", "statistics", "forecasting", "XGBoost", "Python"],
+    "natural language processing": ["NLP", "spaCy", "BERT", "HuggingFace Transformers", "sentiment", "LLM"],
+    "chatbot": ["LLM agents", "RAG", "LangGraph", "support bot", "OpenAI API"],
+    "chatbot development": ["LLM agents", "RAG", "LangGraph", "OpenAI API"],
+    "ai chatbot": ["LLM agents", "RAG", "LangGraph", "OpenAI API"],
+    "chatgpt": ["OpenAI API", "LLM", "GPT"],
+    "gpt-3": ["OpenAI API", "LLM", "GPT"],
+    "openai codex": ["OpenAI API", "LLM"],
+    "generative model": ["LLM", "fine-tuning", "LoRA"],
+    "classification": ["classifier", "classification", "churn", "fraud", "sentiment", "LightGBM", "XGBoost"],
+    "python scikit-learn": ["scikit-learn"],
+    "predictive analytics": ["forecasting", "churn", "XGBoost", "LightGBM", "scikit-learn"],
+    "time series analysis": ["forecasting", "Prophet", "time series"],
+    "statistics": ["statistics", "statsmodels", "A/B testing", "R"],
+    "computer vision": ["OpenCV", "YOLO", "OCR", "image", "defect detection"],
+    "model optimization": ["hyperparameter", "quantization", "LoRA", "MLflow"],
+    "model tuning": ["hyperparameter", "fine-tuning", "LoRA"],
+    "data analysis": ["pandas", "SQL", "Excel", "statistics", "R", "analysis"],
+    "data analytics": ["pandas", "SQL", "Excel", "statistics", "dashboard"],
+    "data visualization": ["Power BI", "Tableau", "Looker", "dashboard", "matplotlib"],
+    "dashboard": ["Power BI", "Tableau", "Looker", "dashboard"],
+    "business intelligence": ["Power BI", "Tableau", "Looker", "dbt", "Snowflake"],
+    "microsoft excel": ["Excel", "VBA", "Power Query", "spreadsheet"],
+    "microsoft power bi": ["Power BI", "DAX"],
+    "google data studio": ["Looker Studio", "Google Analytics 4", "dashboard"],
+    "marketing analytics": ["Google Analytics 4", "marketing mix", "attribution", "A/B testing"],
+    "etl pipeline": ["Airflow", "dbt", "ETL", "Snowflake"],
+    "data engineering": ["Airflow", "dbt", "Snowflake", "ETL"],
+    "web development": ["React", "Next.js", "Node.js", "Django", "TypeScript", "JavaScript"],
+    "web design": ["React", "Next.js", "Tailwind", "CSS", "responsive"],
+    "front-end development": ["React", "Next.js", "TypeScript", "CSS"],
+    "back-end development": ["Node.js", "Django", "FastAPI", "PostgreSQL", "GraphQL"],
+    "full-stack development": ["React", "Node.js", "Django", "PostgreSQL", "Next.js"],
+    "mobile app development": ["React Native", "Expo", "mobile"],
+    "ecommerce website": ["Shopify", "Stripe", "checkout"],
+    "api integration": ["REST", "GraphQL", "webhook", "API"],
+    "api development": ["FastAPI", "Node.js", "GraphQL", "REST"],
+    "html": ["React", "Next.js", "CSS"],
+    "css": ["Tailwind", "CSS", "React"],
+}
+
+
+def broad_children(requirement: str) -> list[str]:
+    return BROAD_TAGS.get(requirement.strip().lower(), [])
+
+
 def expand(requirement: str) -> str:
-    """Query expansion for corrective retrieval: add canonical names for alias phrases and vice versa."""
+    """Query expansion for corrective retrieval: add canonical names for alias phrases and vice versa,
+    and the specific skills behind an umbrella marketplace tag."""
     low = requirement.lower()
-    extra = []
+    extra = list(broad_children(requirement)[:5])
     for canon, aliases in all_aliases().items():
         if canon.lower() in low:
             extra.extend(aliases[:2])

@@ -3,7 +3,7 @@
   "name": "Daniel Okafor",
   "headline": "Full-stack web developer: React, Next.js, Node and Django",
   "years_experience": 8,
-  "hourly_floor_usd": 40,
+  "hourly_floor_usd": 21,
   "location": "Lagos, Nigeria",
   "skills": [
     "AWS ECS",
@@ -53,5 +53,22 @@
     "WordPress",
     "headless WordPress",
     "webhooks"
-  ]
+  ],
+  "job_success_rate": 86.7,
+  "avg_response_time_hrs": 13.0,
+  "_provenance": {
+    "synthetic": [
+      "name",
+      "headline",
+      "skills",
+      "portfolio"
+    ],
+    "real:C": [
+      "hourly_floor_usd (median paid hourly rate in persona categories)"
+    ],
+    "third_party_synthetic:S": [
+      "job_success_rate",
+      "avg_response_time_hrs"
+    ]
+  }
 }

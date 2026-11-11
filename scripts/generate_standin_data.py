@@ -1,4 +1,10 @@
-"""Generate the STAND-IN starter kit: three persona corpora, a policy pack, GigSim seed data and dev sets.
+"""Generate the SYNTHETIC parts of GigBid's data: three freelancer persona corpora and the policy pack.
+
+Since the Kaggle rebuild (data_pipeline/prepare.py), jobs, clients, market prices and dev sets come from real
+public datasets; this script only writes the personas (no public dataset has freelancer portfolios with case
+studies, code and past proposals) and the policy pack. `--synthetic-jobs` restores the old synthetic jobs.
+
+Original note:
 
 Why this exists: the official starter kit (GigSim, persona corpora, policy pack, dev set) is distributed on
 Google Classroom and was not available when this repository was built. This script produces a synthetic
@@ -700,14 +706,18 @@ rules:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=".")
+    ap.add_argument("--synthetic-jobs", action="store_true",
+                    help="also write the old fully synthetic jobs/clients/dev sets (superseded by data_pipeline.prepare, "
+                         "which builds them from real Kaggle job posts)")
     args = ap.parse_args()
     root = Path(args.out)
     rng = random.Random(SEED)
     for key, spec in PERSONAS.items():
         build_persona(root, key, spec, rng)
     clients = make_clients(rng)
-    write(root / "data" / "gigsim_seed" / "clients.json", json.dumps(clients, indent=1))
-    build_jobs(root, rng, clients)
+    if args.synthetic_jobs:
+        write(root / "data" / "gigsim_seed" / "clients.json", json.dumps(clients, indent=1))
+        build_jobs(root, rng, clients)
     write(root / "data" / "policy_pack" / "policy.md", POLICY_MD)
     write(root / "data" / "policy_pack" / "rules.yaml", RULES_YAML)
     print("stand-in data written under", root.resolve())

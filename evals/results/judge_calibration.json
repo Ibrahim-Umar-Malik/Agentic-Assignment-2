@@ -1,23 +1,23 @@
 {
   "meta": {
-    "commit": "dfd4987",
-    "generated_at": "2026-11-06T12:22:13Z",
+    "commit": "9ba9cd9",
+    "generated_at": "2026-11-11T15:13:37Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
     "data": "stand-in GigSim + personas (official starter kit not available at build time)",
     "judge": "heuristic rubric (offline)"
   },
-  "n_items": 30,
+  "n_items": 26,
   "mean_overall_by_source": {
-    "gigbid": 4.07,
-    "reuse_past": 3.2,
-    "template": 2.09
+    "gigbid": 3.91,
+    "reuse_past": 2.33,
+    "template": 2.75
   },
   "proxy_vs_gigsim_client_model": {
     "note": "proxy only, not human agreement",
-    "quadratic_weighted_kappa": 0.3108,
-    "exact_agreement": 0.267
+    "quadratic_weighted_kappa": 0.4179,
+    "exact_agreement": 0.269
   },
   "items": [
     {
@@ -31,33 +31,33 @@
         "professionalism": 2,
         "overall": 2
       },
-      "gigsim_score": 1.1
+      "gigsim_score": 0.2
     },
     {
       "id": "J02",
       "source": "gigbid",
       "judge": {
-        "relevance": 5,
+        "relevance": 2,
         "evidence": 4,
         "clarity": 5,
-        "opening": 5,
+        "opening": 4,
         "professionalism": 5,
-        "overall": 5
+        "overall": 4
       },
-      "gigsim_score": 2.4
+      "gigsim_score": 1.233
     },
     {
       "id": "J03",
       "source": "gigbid",
       "judge": {
         "relevance": 3,
-        "evidence": 5,
+        "evidence": 4,
         "clarity": 5,
         "opening": 5,
         "professionalism": 5,
-        "overall": 5
+        "overall": 4
       },
-      "gigsim_score": 1.5
+      "gigsim_score": 1.6
     },
     {
       "id": "J04",
@@ -65,41 +65,67 @@
       "judge": {
         "relevance": 5,
         "evidence": 1,
-        "clarity": 3,
+        "clarity": 5,
         "opening": 2,
         "professionalism": 2,
-        "overall": 2
+        "overall": 3
       },
       "gigsim_score": 0.2
     },
     {
       "id": "J05",
-      "source": "gigbid",
+      "source": "template",
       "judge": {
-        "relevance": 2,
-        "evidence": 4,
+        "relevance": 5,
+        "evidence": 1,
         "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 4
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
       },
-      "gigsim_score": 0.967
+      "gigsim_score": 1.1
     },
     {
       "id": "J06",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J07",
       "source": "gigbid",
       "judge": {
-        "relevance": 2,
+        "relevance": 4,
+        "evidence": 2,
+        "clarity": 5,
+        "opening": 4,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 1.333
+    },
+    {
+      "id": "J08",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 3,
         "evidence": 4,
         "clarity": 5,
         "opening": 5,
         "professionalism": 5,
         "overall": 4
       },
-      "gigsim_score": -0.267
+      "gigsim_score": 1.767
     },
     {
-      "id": "J07",
+      "id": "J09",
       "source": "template",
       "judge": {
         "relevance": 5,
@@ -112,33 +138,20 @@
       "gigsim_score": 0.2
     },
     {
-      "id": "J08",
-      "source": "reuse_past",
+      "id": "J10",
+      "source": "gigbid",
       "judge": {
-        "relevance": 1,
-        "evidence": 3,
+        "relevance": 3,
+        "evidence": 4,
         "clarity": 5,
         "opening": 5,
         "professionalism": 5,
         "overall": 4
       },
-      "gigsim_score": 0.8
+      "gigsim_score": 1.5
     },
     {
-      "id": "J09",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 5,
-        "evidence": 4,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 5
-      },
-      "gigsim_score": 2.3
-    },
-    {
-      "id": "J10",
+      "id": "J11",
       "source": "template",
       "judge": {
         "relevance": 5,
@@ -151,23 +164,101 @@
       "gigsim_score": 1.1
     },
     {
-      "id": "J11",
-      "source": "reuse_past",
+      "id": "J12",
+      "source": "gigbid",
       "judge": {
-        "relevance": 1,
-        "evidence": 3,
+        "relevance": 2,
+        "evidence": 4,
         "clarity": 5,
         "opening": 5,
         "professionalism": 5,
         "overall": 4
       },
-      "gigsim_score": 0.8
+      "gigsim_score": -0.167
     },
     {
-      "id": "J12",
+      "id": "J13",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J14",
       "source": "gigbid",
       "judge": {
-        "relevance": 3,
+        "relevance": 2,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 1.467
+    },
+    {
+      "id": "J15",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 1.1
+    },
+    {
+      "id": "J16",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 3,
+        "clarity": 3,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 3
+      },
+      "gigsim_score": 0.7
+    },
+    {
+      "id": "J17",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 1,
+        "evidence": 4,
+        "clarity": 5,
+        "opening": 5,
+        "professionalism": 5,
+        "overall": 4
+      },
+      "gigsim_score": 1.2
+    },
+    {
+      "id": "J18",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J19",
+      "source": "gigbid",
+      "judge": {
+        "relevance": 4,
         "evidence": 4,
         "clarity": 5,
         "opening": 5,
@@ -177,215 +268,46 @@
       "gigsim_score": 2.0
     },
     {
-      "id": "J13",
+      "id": "J20",
       "source": "template",
       "judge": {
         "relevance": 5,
         "evidence": 1,
-        "clarity": 3,
+        "clarity": 5,
         "opening": 2,
         "professionalism": 2,
-        "overall": 2
-      },
-      "gigsim_score": 1.1
-    },
-    {
-      "id": "J14",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 1,
-        "evidence": 2,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
         "overall": 3
-      },
-      "gigsim_score": 1.2
-    },
-    {
-      "id": "J15",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 3,
-        "evidence": 2,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 4
-      },
-      "gigsim_score": -0.2
-    },
-    {
-      "id": "J16",
-      "source": "template",
-      "judge": {
-        "relevance": 5,
-        "evidence": 1,
-        "clarity": 3,
-        "opening": 2,
-        "professionalism": 2,
-        "overall": 2
       },
       "gigsim_score": 0.2
     },
     {
-      "id": "J17",
+      "id": "J21",
       "source": "gigbid",
       "judge": {
-        "relevance": 1,
-        "evidence": 2,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 3
-      },
-      "gigsim_score": -1.5
-    },
-    {
-      "id": "J18",
-      "source": "template",
-      "judge": {
-        "relevance": 5,
-        "evidence": 1,
-        "clarity": 3,
-        "opening": 2,
-        "professionalism": 2,
-        "overall": 2
-      },
-      "gigsim_score": 1.1
-    },
-    {
-      "id": "J19",
-      "source": "reuse_past",
-      "judge": {
-        "relevance": 1,
-        "evidence": 3,
-        "clarity": 3,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 3
-      },
-      "gigsim_score": 0.7
-    },
-    {
-      "id": "J20",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 5,
+        "relevance": 3,
         "evidence": 2,
         "clarity": 5,
         "opening": 4,
         "professionalism": 5,
         "overall": 4
       },
-      "gigsim_score": 0.2
-    },
-    {
-      "id": "J21",
-      "source": "template",
-      "judge": {
-        "relevance": 5,
-        "evidence": 1,
-        "clarity": 3,
-        "opening": 2,
-        "professionalism": 2,
-        "overall": 2
-      },
-      "gigsim_score": 0.2
+      "gigsim_score": 1.06
     },
     {
       "id": "J22",
-      "source": "reuse_past",
-      "judge": {
-        "relevance": 1,
-        "evidence": 3,
-        "clarity": 3,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 3
-      },
-      "gigsim_score": 0.7
-    },
-    {
-      "id": "J23",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 3,
-        "evidence": 4,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 4
-      },
-      "gigsim_score": 1.5
-    },
-    {
-      "id": "J24",
-      "source": "template",
-      "judge": {
-        "relevance": 5,
-        "evidence": 1,
-        "clarity": 3,
-        "opening": 2,
-        "professionalism": 2,
-        "overall": 2
-      },
-      "gigsim_score": -0.4
-    },
-    {
-      "id": "J25",
       "source": "gigbid",
       "judge": {
         "relevance": 2,
         "evidence": 2,
         "clarity": 5,
-        "opening": 5,
+        "opening": 4,
         "professionalism": 5,
-        "overall": 4
+        "overall": 3
       },
-      "gigsim_score": 1.233
+      "gigsim_score": 0.4
     },
     {
-      "id": "J26",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 3,
-        "evidence": 2,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 4
-      },
-      "gigsim_score": 0.9
-    },
-    {
-      "id": "J27",
-      "source": "template",
-      "judge": {
-        "relevance": 5,
-        "evidence": 1,
-        "clarity": 3,
-        "opening": 2,
-        "professionalism": 2,
-        "overall": 2
-      },
-      "gigsim_score": 0.2
-    },
-    {
-      "id": "J28",
-      "source": "gigbid",
-      "judge": {
-        "relevance": 1,
-        "evidence": 4,
-        "clarity": 5,
-        "opening": 5,
-        "professionalism": 5,
-        "overall": 4
-      },
-      "gigsim_score": -0.8
-    },
-    {
-      "id": "J29",
+      "id": "J23",
       "source": "template",
       "judge": {
         "relevance": 5,
@@ -398,7 +320,7 @@
       "gigsim_score": 0.2
     },
     {
-      "id": "J30",
+      "id": "J24",
       "source": "reuse_past",
       "judge": {
         "relevance": 1,
@@ -408,7 +330,33 @@
         "professionalism": 2,
         "overall": 2
       },
-      "gigsim_score": -2.9
+      "gigsim_score": -1.4
+    },
+    {
+      "id": "J25",
+      "source": "template",
+      "judge": {
+        "relevance": 5,
+        "evidence": 1,
+        "clarity": 5,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 3
+      },
+      "gigsim_score": 0.2
+    },
+    {
+      "id": "J26",
+      "source": "reuse_past",
+      "judge": {
+        "relevance": 1,
+        "evidence": 1,
+        "clarity": 3,
+        "opening": 2,
+        "professionalism": 2,
+        "overall": 2
+      },
+      "gigsim_score": -1.4
     }
   ],
   "human": {

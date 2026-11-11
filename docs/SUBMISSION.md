@@ -25,7 +25,7 @@ Everything that can be built without your accounts is in the repo. These steps a
 8. **Write-up.** Publish `docs/writeup.md` on Medium or LinkedIn and add the link to the README.
 9. **Upwork.** If you have API access, connect it in Settings and run `python scripts/upwork_list_tools.py`.
    Otherwise the adapter stays on its documented stub, which the report already says.
-10. **Starter kit.** When the official GigSim kit and personas arrive, put them in `gigsim/` and `data/`, run `make eval`,
-    and rebuild the report. The circularity caveat in the report can then be removed.
+10. **Label audit** (optional, strengthens report §2): fill `human_kind` / `human_bid` for the 45 rows in
+    `evals/datasets/label_audit.csv` to measure how often the silver labels on real jobs are right.
 11. **Submit together:** the report PDF, deployed URL, public repo link, video link, MCP server link, write-up link, and
     `gigbid-source.zip` (rebuild it with `make zip` after any change).

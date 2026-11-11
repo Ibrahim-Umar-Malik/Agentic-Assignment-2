@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "dfd4987",
-    "generated_at": "2026-11-06T12:24:50Z",
+    "commit": "9ba9cd9",
+    "generated_at": "2026-11-11T15:13:37Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -10,758 +10,198 @@
   },
   "hypothesis": "requirement decomposition + reranking raises evidence Recall@5 over V0 and,\nthrough better-grounded drafts, raises the GigSim reply rate by at least 3 points.",
   "paired": {
-    "jobs": 111,
-    "lead_evidence_changed": 5,
-    "reply_gain_when_lead_changed": 0.1698,
-    "reply_gain_when_lead_same": 0.0663,
-    "share_with_metric_v0": 0.0811,
-    "share_with_metric_shipped": 0.6577
+    "jobs": 47,
+    "lead_evidence_changed": 10,
+    "reply_gain_when_lead_changed": 0.1153,
+    "reply_gain_when_lead_same": 0.0823,
+    "share_with_metric_v0": 0.1915,
+    "share_with_metric_shipped": 0.4681
   },
   "rows": {
     "v0_naive": {
       "variant": "v0_naive",
       "jobs": 180,
-      "proposals": 111,
-      "unsupported_claims_per_proposal_before_verify": 0.2703,
+      "proposals": 47,
+      "unsupported_claims_per_proposal_before_verify": 0.2979,
       "unsupported_claims_per_proposal": 0.0,
-      "judge_score": 3.5946,
-      "gigsim_reply_rate": 0.2835,
-      "p95_latency_s": 0.247,
+      "judge_score": 3.6596,
+      "gigsim_reply_rate": 0.2601,
+      "p95_latency_s": 0.39,
       "usd_per_proposal": 0.0,
       "by_job_kind": {
+        "duplicate": {
+          "n": 2,
+          "reply_rate": 0.323
+        },
         "fit": {
-          "n": 89,
-          "reply_rate": 0.3062
+          "n": 32,
+          "reply_rate": 0.2652
         },
         "injection": {
-          "n": 14,
-          "reply_rate": 0.1651
-        },
-        "lowball": {
           "n": 6,
-          "reply_rate": 0.2652
+          "reply_rate": 0.1342
         },
         "off_domain": {
           "n": 2,
-          "reply_rate": 0.156
+          "reply_rate": 0.2325
+        },
+        "weak_fit": {
+          "n": 5,
+          "reply_rate": 0.3646
         }
       },
       "per_job": [
         {
           "id": "dev-ai_ml-007",
-          "lead": "ai_ml:case:legal-rag",
-          "opening": "# Contract Q&A assistant for a mid-size law firm ## The problem Associates spent hours searching 12,000 contracts for indemnity and termination clauses. ## What",
-          "p_reply": 0.103,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-009",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "# Fine-tuned clinical note summariser ## The problem Doctors spent 15 minutes per discharge summary. ## What I did LoRA fine-tuned an open 8B model on de-identi",
-          "p_reply": 0.202,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-017",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "# Two-tower product recommender ## The problem A fashion store showed the same best-sellers to everyone. ## What I did Trained a two-tower retrieval model with ",
-          "p_reply": 0.142,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-018",
           "lead": "ai_ml:case:price-model",
           "opening": "# Property price estimation model ## The problem Agents priced listings by gut feeling. ## What I did LightGBM with geospatial features and conformal intervals,",
-          "p_reply": 0.447,
+          "p_reply": 0.25,
           "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
+            "skill_coverage=0.50"
           ]
         },
         {
           "id": "dev-ai_ml-019",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "# Semantic search migration to Pinecone ## The problem Keyword search on a 2M-article archive returned poor results for natural questions. ## What I did Migrate",
-          "p_reply": 0.405,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-027",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "# Fine-tuned clinical note summariser ## The problem Doctors spent 15 minutes per discharge summary. ## What I did LoRA fine-tuned an open 8B model on de-identi",
-          "p_reply": 0.388,
-          "reasons": [
-            "skill_coverage=0.40",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-029",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "# Multi-agent operations assistant ## The problem Dispatchers juggled five internal tools to answer one shipment question. ## What I did Built a LangGraph super",
-          "p_reply": 0.156,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-037",
-          "lead": "ai_ml:case:invoice-ocr",
-          "opening": "# Invoice field extraction pipeline ## The problem An accounts-payable team keyed 20 fields from 4,000 supplier invoices a month. ## What I did Fine-tuned Layou",
-          "p_reply": 0.167,
+          "lead": "ai_ml:review:invoice-ocr",
+          "opening": "Sana delivered our invoice field extraction pipeline on time. Field-level F1 of 0.94; manual keying time down 70%.",
+          "p_reply": 0.299,
           "reasons": [
             "skill_coverage=0.17",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-039",
-          "lead": "ai_ml:case:price-model",
-          "opening": "# Property price estimation model ## The problem Agents priced listings by gut feeling. ## What I did LightGBM with geospatial features and conformal intervals,",
-          "p_reply": 0.028,
-          "reasons": [
-            "skill_coverage=0.33",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-047",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "# Multilingual customer-support agent ## The problem A Shopify brand answered 3,000 tickets a week in English, Urdu and Arabic by hand. ## What I did Designed a",
-          "p_reply": 0.214,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-048",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "# Hourly energy demand forecasting ## The problem A utility over-bought reserve power because forecasts were 9% off. ## What I did Stacked LightGBM with weather",
-          "p_reply": 0.222,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-057",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "# Multilingual customer-support agent ## The problem A Shopify brand answered 3,000 tickets a week in English, Urdu and Arabic by hand. ## What I did Designed a",
-          "p_reply": 0.144,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-058",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "# Fine-tuned clinical note summariser ## The problem Doctors spent 15 minutes per discharge summary. ## What I did LoRA fine-tuned an open 8B model on de-identi",
-          "p_reply": 0.196,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-059",
-          "lead": "ai_ml:case:price-model",
-          "opening": "# Property price estimation model ## The problem Agents priced listings by gut feeling. ## What I did LightGBM with geospatial features and conformal intervals,",
-          "p_reply": 0.032,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-067",
-          "lead": "ai_ml:case:legal-rag",
-          "opening": "# Contract Q&A assistant for a mid-size law firm ## The problem Associates spent hours searching 12,000 contracts for indemnity and termination clauses. ## What",
-          "p_reply": 0.194,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-068",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "# Two-tower product recommender ## The problem A fashion store showed the same best-sellers to everyone. ## What I did Trained a two-tower retrieval model with ",
-          "p_reply": 0.271,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-077",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "# Multilingual customer-support agent ## The problem A Shopify brand answered 3,000 tickets a week in English, Urdu and Arabic by hand. ## What I did Designed a",
-          "p_reply": 0.065,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-088",
-          "lead": "ai_ml:case:review-sentiment",
-          "opening": "# Hotel review sentiment and topic dashboard ## The problem A hotel group could not see why ratings dipped at three properties. ## What I did Aspect-based senti",
-          "p_reply": 0.213,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-089",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "# Semantic search migration to Pinecone ## The problem Keyword search on a 2M-article archive returned poor results for natural questions. ## What I did Migrate",
-          "p_reply": 0.214,
-          "reasons": [
-            "skill_coverage=0.40",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-098",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "# Hourly energy demand forecasting ## The problem A utility over-bought reserve power because forecasts were 9% off. ## What I did Stacked LightGBM with weather",
-          "p_reply": 0.675,
-          "reasons": [
-            "skill_coverage=0.40",
             "specific_metrics"
           ]
         },
         {
-          "id": "dev-ai_ml-099",
-          "lead": "ai_ml:case:defect-vision",
-          "opening": "# Real-time defect detection on an assembly line ## The problem Manual inspection missed hairline cracks on cast parts at 2 parts per second. ## What I did Trai",
-          "p_reply": 0.208,
-          "reasons": [
-            "skill_coverage=0.20"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-107",
+          "id": "dev-ai_ml-047",
           "lead": "ai_ml:case:fraud-gnn",
           "opening": "# Payment fraud detection with graph neural networks ## The problem Fraud rings evaded per-transaction rules. ## What I did Modelled accounts, devices and cards",
-          "p_reply": 0.196,
+          "p_reply": 0.127,
           "reasons": [
-            "skill_coverage=0.50"
+            "skill_coverage=0.17"
           ]
         },
         {
-          "id": "dev-ai_ml-109",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "# Multi-agent operations assistant ## The problem Dispatchers juggled five internal tools to answer one shipment question. ## What I did Built a LangGraph super",
-          "p_reply": 0.18,
+          "id": "dev-ai_ml-048",
+          "lead": "ai_ml:repo:agent-ops",
+          "opening": "# agent-ops Built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write. ## Run ``` make dev ``` B",
+          "p_reply": 0.114,
           "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-117",
-          "lead": "ai_ml:case:invoice-ocr",
-          "opening": "# Invoice field extraction pipeline ## The problem An accounts-payable team keyed 20 fields from 4,000 supplier invoices a month. ## What I did Fine-tuned Layou",
-          "p_reply": 0.059,
-          "reasons": [
-            "skill_coverage=0.00",
+            "skill_coverage=0.33",
             "asks_question"
           ]
         },
         {
-          "id": "dev-ai_ml-118",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "# Payment fraud detection with graph neural networks ## The problem Fraud rings evaded per-transaction rules. ## What I did Modelled accounts, devices and cards",
-          "p_reply": 0.562,
+          "id": "dev-ai_ml-087",
+          "lead": "ai_ml:case:review-sentiment",
+          "opening": "# Hotel review sentiment and topic dashboard ## The problem A hotel group could not see why ratings dipped at three properties. ## What I did Aspect-based senti",
+          "p_reply": 0.272,
+          "reasons": [
+            "skill_coverage=0.33",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-128",
+          "lead": "ai_ml:case:churn-model",
+          "opening": "# Subscription churn prediction ## The problem A B2B SaaS lost 4% of accounts a month with no early warning. ## What I did Built gradient-boosted churn scores r",
+          "p_reply": 0.421,
           "reasons": [
             "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-119",
-          "lead": "ai_ml:case:doc-classifier",
-          "opening": "# Insurance document classifier ## The problem Claims documents were sorted into 27 types by hand. ## What I did Fine-tuned a BERT classifier and deployed it on",
-          "p_reply": 0.633,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-127",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "# Two-tower product recommender ## The problem A fashion store showed the same best-sellers to everyone. ## What I did Trained a two-tower retrieval model with ",
-          "p_reply": 0.6,
-          "reasons": [
-            "skill_coverage=0.67",
+            "specific_metrics",
             "asks_question"
           ]
         },
         {
           "id": "dev-ai_ml-129",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "# Multi-agent operations assistant ## The problem Dispatchers juggled five internal tools to answer one shipment question. ## What I did Built a LangGraph super",
-          "p_reply": 0.087,
+          "lead": "ai_ml:case:churn-model",
+          "opening": "# Subscription churn prediction ## The problem A B2B SaaS lost 4% of accounts a month with no early warning. ## What I did Built gradient-boosted churn scores r",
+          "p_reply": 0.34,
           "reasons": [
             "skill_coverage=0.33",
+            "specific_metrics",
             "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-137",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "# Two-tower product recommender ## The problem A fashion store showed the same best-sellers to everyone. ## What I did Trained a two-tower retrieval model with ",
-          "p_reply": 0.387,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-138",
-          "lead": "ai_ml:case:defect-vision",
-          "opening": "# Real-time defect detection on an assembly line ## The problem Manual inspection missed hairline cracks on cast parts at 2 parts per second. ## What I did Trai",
-          "p_reply": 0.329,
-          "reasons": [
-            "skill_coverage=0.33"
           ]
         },
         {
           "id": "dev-ai_ml-147",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "# Multi-agent operations assistant ## The problem Dispatchers juggled five internal tools to answer one shipment question. ## What I did Built a LangGraph super",
-          "p_reply": 0.174,
+          "lead": "ai_ml:repo:agent-ops",
+          "opening": "# agent-ops Built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write. ## Run ``` make dev ``` B",
+          "p_reply": 0.18,
           "reasons": [
-            "skill_coverage=0.20",
+            "skill_coverage=0.25",
             "asks_question"
           ]
         },
         {
-          "id": "dev-ai_ml-148",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "# Fine-tuned clinical note summariser ## The problem Doctors spent 15 minutes per discharge summary. ## What I did LoRA fine-tuned an open 8B model on de-identi",
-          "p_reply": 0.623,
+          "id": "dev-ai_ml-149",
+          "lead": "ai_ml:repo:agent-ops",
+          "opening": "# agent-ops Built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write. ## Run ``` make dev ``` B",
+          "p_reply": 0.395,
           "reasons": [
-            "skill_coverage=0.40",
-            "specific_metrics",
-            "asks_question"
+            "skill_coverage=0.50"
           ]
         },
         {
           "id": "dev-ai_ml-158",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "# Payment fraud detection with graph neural networks ## The problem Fraud rings evaded per-transaction rules. ## What I did Modelled accounts, devices and cards",
-          "p_reply": 0.44,
+          "lead": "ai_ml:case:defect-vision",
+          "opening": "# Real-time defect detection on an assembly line ## The problem Manual inspection missed hairline cracks on cast parts at 2 parts per second. ## What I did Trai",
+          "p_reply": 0.163,
           "reasons": [
-            "skill_coverage=0.50"
+            "skill_coverage=0.17"
           ]
         },
         {
-          "id": "dev-ai_ml-159",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "# Two-tower product recommender ## The problem A fashion store showed the same best-sellers to everyone. ## What I did Trained a two-tower retrieval model with ",
-          "p_reply": 0.433,
-          "reasons": [
-            "skill_coverage=0.67"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-167",
-          "lead": "ai_ml:case:llm-eval",
-          "opening": "# LLM evaluation harness for a tutoring product ## The problem Prompt changes regularly broke answers nobody noticed until students complained. ## What I did Bu",
-          "p_reply": 0.174,
+          "id": "dev-ai_ml-169",
+          "lead": null,
+          "opening": "I have not used ChatGPT, Character Design in client work, so I would start with a short spike and confirm the approach with you before building on it.",
+          "p_reply": 0.489,
           "reasons": [
             "skill_coverage=0.33",
             "asks_question"
           ]
         },
         {
-          "id": "dev-ai_ml-179",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "# Payment fraud detection with graph neural networks ## The problem Fraud rings evaded per-transaction rules. ## What I did Modelled accounts, devices and cards",
-          "p_reply": 0.711,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-187",
-          "lead": "ai_ml:case:churn-model",
-          "opening": "# Subscription churn prediction ## The problem A B2B SaaS lost 4% of accounts a month with no early warning. ## What I did Built gradient-boosted churn scores r",
-          "p_reply": 0.556,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-189",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "# Hourly energy demand forecasting ## The problem A utility over-bought reserve power because forecasts were 9% off. ## What I did Stacked LightGBM with weather",
-          "p_reply": 0.223,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-197",
+          "id": "dev-ai_ml-188",
           "lead": "ai_ml:case:review-sentiment",
           "opening": "# Hotel review sentiment and topic dashboard ## The problem A hotel group could not see why ratings dipped at three properties. ## What I did Aspect-based senti",
-          "p_reply": 0.306,
+          "p_reply": 0.092,
           "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
+            "skill_coverage=0.20"
           ]
         },
         {
           "id": "dev-ai_ml-198",
-          "lead": "ai_ml:case:churn-model",
-          "opening": "# Subscription churn prediction ## The problem A B2B SaaS lost 4% of accounts a month with no early warning. ## What I did Built gradient-boosted churn scores r",
-          "p_reply": 0.345,
+          "lead": "ai_ml:case:price-model",
+          "opening": "# Property price estimation model ## The problem Agents priced listings by gut feeling. ## What I did LightGBM with geospatial features and conformal intervals,",
+          "p_reply": 0.267,
           "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
+            "skill_coverage=0.50",
             "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-199",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "# Semantic search migration to Pinecone ## The problem Keyword search on a 2M-article archive returned poor results for natural questions. ## What I did Migrate",
-          "p_reply": 0.164,
-          "reasons": [
-            "skill_coverage=0.50"
           ]
         },
         {
           "id": "dev-fullstack-007",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
-          "p_reply": 0.578,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-019",
-          "lead": "fullstack:case:realtime-chat",
-          "opening": "# Real-time classroom chat ## The problem Teachers lost students in long video calls with no side channel. ## What I did Socket.IO chat with Redis pub/sub so it",
-          "p_reply": 0.403,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-027",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
-          "p_reply": 0.465,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-037",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "# GraphQL gateway over legacy REST APIs ## The problem Mobile clients made 14 REST calls to render one screen. ## What I did Apollo GraphQL gateway with DataLoa",
-          "p_reply": 0.031,
-          "reasons": [
-            "skill_coverage=0.40",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-038",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "# GraphQL gateway over legacy REST APIs ## The problem Mobile clients made 14 REST calls to render one screen. ## What I did Apollo GraphQL gateway with DataLoa",
-          "p_reply": 0.375,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-fullstack-047",
-          "lead": "fullstack:case:fitness-app",
-          "opening": "# Fitness tracking mobile app ## The problem A personal trainer wanted clients to log workouts between sessions. ## What I did React Native (Expo) app with Fire",
-          "p_reply": 0.228,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-048",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "# marketplace-mvp Django REST backend with a React frontend, S3 photo uploads and a simple booking flow. ## Run ``` make dev ``` Built with Django, React, Postg",
-          "p_reply": 0.323,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-057",
-          "lead": "fullstack:case:clinic-booking",
-          "opening": "# Clinic appointment booking system ## The problem Receptionists booked appointments by phone and missed reminders. ## What I did Next.js booking site on Supaba",
-          "p_reply": 0.13,
-          "reasons": [
-            "skill_coverage=0.60"
-          ]
-        },
-        {
-          "id": "dev-fullstack-058",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "# Headless CMS migration for a publisher ## The problem A publisher's legacy CMS made every page load in four seconds. ## What I did Migrated 6,000 articles to ",
-          "p_reply": 0.101,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-068",
-          "lead": "fullstack:case:shopify-app",
-          "opening": "# Shopify inventory sync app ## The problem A merchant oversold stock across Shopify and two warehouses. ## What I did A Shopify embedded app on Remix using the",
-          "p_reply": 0.011,
-          "reasons": [
-            "skill_coverage=0.00",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-069",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "# Monolith containerisation and deployment ## The problem Deploys were manual SSH sessions that took an afternoon. ## What I did Containerised a Rails monolith,",
-          "p_reply": 0.08,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-077",
-          "lead": "fullstack:case:admin-dashboard",
-          "opening": "# Logistics admin dashboard ## The problem Ops managers exported CSVs from three systems every morning. ## What I did NestJS API aggregating the three sources i",
-          "p_reply": 0.679,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-078",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "# Monolith containerisation and deployment ## The problem Deploys were manual SSH sessions that took an afternoon. ## What I did Containerised a Rails monolith,",
-          "p_reply": 0.547,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-079",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "# GraphQL gateway over legacy REST APIs ## The problem Mobile clients made 14 REST calls to render one screen. ## What I did Apollo GraphQL gateway with DataLoa",
-          "p_reply": 0.207,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-087",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
-          "p_reply": 0.272,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-088",
-          "lead": "fullstack:case:saas-billing",
-          "opening": "# Subscription billing dashboard ## The problem A B2B SaaS handled upgrades and refunds through support tickets. ## What I did Built a self-serve billing portal",
-          "p_reply": 0.253,
-          "reasons": [
-            "skill_coverage=0.40"
-          ]
-        },
-        {
-          "id": "dev-fullstack-089",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "# Headless CMS migration for a publisher ## The problem A publisher's legacy CMS made every page load in four seconds. ## What I did Migrated 6,000 articles to ",
-          "p_reply": 0.271,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-fullstack-099",
-          "lead": "fullstack:case:shopify-app",
-          "opening": "# Shopify inventory sync app ## The problem A merchant oversold stock across Shopify and two warehouses. ## What I did A Shopify embedded app on Remix using the",
-          "p_reply": 0.3,
-          "reasons": [
-            "skill_coverage=0.75"
-          ]
-        },
-        {
-          "id": "dev-fullstack-107",
-          "lead": "fullstack:case:e2e-suite",
-          "opening": "# End-to-end test suite ## The problem Releases broke the signup flow twice a month. ## What I did Playwright suite of 120 tests across three browsers, sharded ",
-          "p_reply": 0.559,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-109",
-          "lead": "fullstack:case:sso-rollout",
-          "opening": "# Single sign-on rollout ## The problem Enterprise customers refused to buy without SSO. ## What I did Added SAML and OIDC SSO through Auth0 with SCIM provision",
-          "p_reply": 0.52,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-117",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "# Monolith containerisation and deployment ## The problem Deploys were manual SSH sessions that took an afternoon. ## What I did Containerised a Rails monolith,",
-          "p_reply": 0.13,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-118",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "# Live crypto price dashboard ## The problem Traders needed sub-second charts across 40 pairs. ## What I did React with D3 canvas charts fed by exchange WebSock",
-          "p_reply": 0.364,
-          "reasons": [
-            "skill_coverage=0.40"
-          ]
-        },
-        {
-          "id": "dev-fullstack-119",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "# Live crypto price dashboard ## The problem Traders needed sub-second charts across 40 pairs. ## What I did React with D3 canvas charts fed by exchange WebSock",
-          "p_reply": 0.42,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-fullstack-127",
-          "lead": "fullstack:case:clinic-booking",
-          "opening": "# Clinic appointment booking system ## The problem Receptionists booked appointments by phone and missed reminders. ## What I did Next.js booking site on Supaba",
-          "p_reply": 0.207,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-129",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
-          "p_reply": 0.018,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-137",
-          "lead": "fullstack:case:realtime-chat",
-          "opening": "# Real-time classroom chat ## The problem Teachers lost students in long video calls with no side channel. ## What I did Socket.IO chat with Redis pub/sub so it",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
           "p_reply": 0.303,
           "reasons": [
-            "skill_coverage=0.67"
+            "skill_coverage=0.25",
+            "specific_metrics"
           ]
         },
         {
-          "id": "dev-fullstack-138",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "# GraphQL gateway over legacy REST APIs ## The problem Mobile clients made 14 REST calls to render one screen. ## What I did Apollo GraphQL gateway with DataLoa",
-          "p_reply": 0.1,
+          "id": "dev-fullstack-009",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
+          "p_reply": 0.436,
           "reasons": [
-            "skill_coverage=0.00"
+            "skill_coverage=0.25",
+            "specific_metrics"
           ]
         },
         {
-          "id": "dev-fullstack-139",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "# Monolith containerisation and deployment ## The problem Deploys were manual SSH sessions that took an afternoon. ## What I did Containerised a Rails monolith,",
-          "p_reply": 0.547,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-147",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "# marketplace-mvp Django REST backend with a React frontend, S3 photo uploads and a simple booking flow. ## Run ``` make dev ``` Built with Django, React, Postg",
-          "p_reply": 0.525,
-          "reasons": [
-            "skill_coverage=0.67"
-          ]
-        },
-        {
-          "id": "dev-fullstack-149",
-          "lead": "fullstack:case:fitness-app",
-          "opening": "# Fitness tracking mobile app ## The problem A personal trainer wanted clients to log workouts between sessions. ## What I did React Native (Expo) app with Fire",
-          "p_reply": 0.301,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-157",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "# Live crypto price dashboard ## The problem Traders needed sub-second charts across 40 pairs. ## What I did React with D3 canvas charts fed by exchange WebSock",
-          "p_reply": 0.422,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-158",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "# marketplace-mvp Django REST backend with a React frontend, S3 photo uploads and a simple booking flow. ## Run ``` make dev ``` Built with Django, React, Postg",
-          "p_reply": 0.301,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-169",
-          "lead": "fullstack:case:admin-dashboard",
-          "opening": "# Logistics admin dashboard ## The problem Ops managers exported CSVs from three systems every morning. ## What I did NestJS API aggregating the three sources i",
+          "id": "dev-fullstack-018",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
           "p_reply": 0.05,
           "reasons": [
             "skill_coverage=0.67",
@@ -769,388 +209,341 @@
           ]
         },
         {
-          "id": "dev-fullstack-178",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "# marketplace-mvp Django REST backend with a React frontend, S3 photo uploads and a simple booking flow. ## Run ``` make dev ``` Built with Django, React, Postg",
-          "p_reply": 0.593,
+          "id": "dev-fullstack-028",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.206,
           "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
+            "skill_coverage=0.33"
           ]
         },
         {
-          "id": "dev-fullstack-187",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "# Headless CMS migration for a publisher ## The problem A publisher's legacy CMS made every page load in four seconds. ## What I did Migrated 6,000 articles to ",
-          "p_reply": 0.278,
-          "reasons": [
-            "skill_coverage=0.25"
-          ]
-        },
-        {
-          "id": "dev-fullstack-189",
-          "lead": "fullstack:case:saas-billing",
-          "opening": "# Subscription billing dashboard ## The problem A B2B SaaS handled upgrades and refunds through support tickets. ## What I did Built a self-serve billing portal",
-          "p_reply": 0.203,
-          "reasons": [
-            "skill_coverage=0.40",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-007",
-          "lead": "data_analyst:case:open-data-cleaning",
-          "opening": "# Open government data cleaning ## The problem A civic project had 40 inconsistent CSV releases. ## What I did pandas pipeline with schema validation and fuzzy ",
-          "p_reply": 0.319,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-008",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "# Excel reporting automation ## The problem A plant's monthly production report took four days of copy-paste. ## What I did Power Query to pull ERP exports, piv",
-          "p_reply": 0.392,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-017",
-          "lead": "data_analyst:case:hospital-kpi",
-          "opening": "# Hospital KPI reporting ## The problem Bed occupancy and wait times were reported a month late. ## What I did Daily Power BI KPI pack on a de-identified SQL mo",
-          "p_reply": 0.196,
+          "id": "dev-fullstack-029",
+          "lead": "fullstack:case:graphql-gateway",
+          "opening": "# GraphQL gateway over legacy REST APIs ## The problem Mobile clients made 14 REST calls to render one screen. ## What I did Apollo GraphQL gateway with DataLoa",
+          "p_reply": 0.543,
           "reasons": [
             "skill_coverage=0.75",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-028",
-          "lead": "data_analyst:case:inventory-forecast",
-          "opening": "# Inventory demand forecast ## The problem Stores ran out of best-sellers every holiday season. ## What I did Seasonal forecasts in Python delivered to buyers a",
-          "p_reply": 0.068,
+          "id": "dev-fullstack-037",
+          "lead": "fullstack:case:marketplace-mvp",
+          "opening": "# Two-sided rental marketplace MVP ## The problem A founder needed an MVP to show investors in eight weeks. ## What I did Django REST backend with a React front",
+          "p_reply": 0.153,
           "reasons": [
-            "skill_coverage=0.75",
-            "asks_question",
-            "over_budget_ceiling"
+            "skill_coverage=0.33"
           ]
         },
         {
-          "id": "dev-data_analyst-037",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
-          "p_reply": 0.368,
+          "id": "dev-fullstack-047",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
+          "p_reply": 0.377,
           "reasons": [
-            "skill_coverage=0.33",
+            "skill_coverage=0.50",
+            "specific_metrics",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-039",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "# Marketing mix model ## The problem A brand split its $3M budget by habit. ## What I did Bayesian-flavoured marketing mix regression with adstock and saturatio",
-          "p_reply": 0.36,
+          "id": "dev-fullstack-069",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
+          "p_reply": 0.52,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-077",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
+          "p_reply": 0.316,
+          "reasons": [
+            "skill_coverage=0.17",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-fullstack-088",
+          "lead": "fullstack:repo:k8s-migration",
+          "opening": "# k8s-migration Containerised a Rails monolith, wrote Terraform for ECS and set up blue-green deploys. ## Run ``` make dev ``` Built with Docker, Kubernetes, AW",
+          "p_reply": 0.07,
+          "reasons": [
+            "skill_coverage=0.00"
+          ]
+        },
+        {
+          "id": "dev-fullstack-108",
+          "lead": "fullstack:case:fitness-app",
+          "opening": "# Fitness tracking mobile app ## The problem A personal trainer wanted clients to log workouts between sessions. ## What I did React Native (Expo) app with Fire",
+          "p_reply": 0.104,
+          "reasons": [
+            "skill_coverage=0.00",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-109",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "# Restaurant ordering progressive web app ## The problem A restaurant group paid 25% commission to delivery apps. ## What I did Direct-ordering PWA with Stripe ",
+          "p_reply": 0.428,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-119",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.35,
           "reasons": [
             "skill_coverage=0.50"
           ]
         },
         {
-          "id": "dev-data_analyst-047",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.144,
+          "id": "dev-fullstack-127",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.18,
           "reasons": [
             "skill_coverage=0.50",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-058",
-          "lead": "data_analyst:case:pricing-elasticity",
-          "opening": "# SaaS pricing elasticity analysis ## The problem A SaaS planned a price rise with no data on churn risk. ## What I did Estimated elasticity by plan from past p",
-          "p_reply": 0.013,
+          "id": "dev-fullstack-129",
+          "lead": "fullstack:repo:shopify-app",
+          "opening": "# shopify-app A Shopify embedded app on Remix using the Admin GraphQL API and webhooks with retry queues. ## Run ``` make dev ``` Built with Shopify API, Node.j",
+          "p_reply": 0.333,
           "reasons": [
-            "skill_coverage=0.00",
+            "skill_coverage=0.83",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-138",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.141,
+          "reasons": [
+            "skill_coverage=1.00",
             "over_budget_ceiling"
           ]
         },
         {
-          "id": "dev-data_analyst-067",
-          "lead": "data_analyst:case:inventory-forecast",
-          "opening": "# Inventory demand forecast ## The problem Stores ran out of best-sellers every holiday season. ## What I did Seasonal forecasts in Python delivered to buyers a",
-          "p_reply": 0.089,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-077",
-          "lead": "data_analyst:case:survey-r",
-          "opening": "# Donor survey analysis in R ## The problem A charity had 9,000 survey responses and no analyst. ## What I did Weighted survey analysis and open-text coding in ",
-          "p_reply": 0.323,
+          "id": "dev-fullstack-139",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.344,
           "reasons": [
             "skill_coverage=0.67",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-078",
-          "lead": "data_analyst:case:checkout-ab",
-          "opening": "# Checkout A/B test analysis ## The problem A redesign test was called early on a noisy uplift. ## What I did Re-ran the analysis with CUPED variance reduction ",
-          "p_reply": 0.079,
+          "id": "dev-fullstack-147",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.309,
           "reasons": [
-            "skill_coverage=0.00"
+            "skill_coverage=0.60"
           ]
         },
         {
-          "id": "dev-data_analyst-087",
-          "lead": "data_analyst:case:survey-r",
-          "opening": "# Donor survey analysis in R ## The problem A charity had 9,000 survey responses and no analyst. ## What I did Weighted survey analysis and open-text coding in ",
-          "p_reply": 0.289,
+          "id": "dev-fullstack-168",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.16,
           "reasons": [
-            "skill_coverage=0.50",
+            "skill_coverage=0.17",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-088",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "# Marketing mix model ## The problem A brand split its $3M budget by habit. ## What I did Bayesian-flavoured marketing mix regression with adstock and saturatio",
-          "p_reply": 0.44,
+          "id": "dev-fullstack-178",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.367,
           "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-097",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "# Excel reporting automation ## The problem A plant's monthly production report took four days of copy-paste. ## What I did Power Query to pull ERP exports, piv",
-          "p_reply": 0.403,
-          "reasons": [
-            "skill_coverage=0.50",
+            "skill_coverage=1.00",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-098",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "# HR attrition dashboard in Tableau ## The problem An HR team could not explain rising resignations. ## What I did Tableau dashboard with survival curves by tea",
-          "p_reply": 0.054,
+          "id": "dev-fullstack-179",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "# WordPress to Next.js migration ## The problem A charity's WordPress site was slow and hacked twice. ## What I did Headless WordPress with a static Next.js + T",
+          "p_reply": 0.046,
           "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-109",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.191,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-118",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "# Marketing mix model ## The problem A brand split its $3M budget by habit. ## What I did Bayesian-flavoured marketing mix regression with adstock and saturatio",
-          "p_reply": 0.371,
-          "reasons": [
-            "skill_coverage=0.67"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-119",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "# HR attrition dashboard in Tableau ## The problem An HR team could not explain rising resignations. ## What I did Tableau dashboard with survival curves by tea",
-          "p_reply": 0.298,
-          "reasons": [
-            "skill_coverage=0.25",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-127",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.302,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-129",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
-          "p_reply": 0.164,
-          "reasons": [
-            "skill_coverage=0.25"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-137",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.174,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-138",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
-          "p_reply": 0.016,
-          "reasons": [
-            "skill_coverage=0.33",
+            "skill_coverage=0.60",
+            "asks_question",
             "over_budget_ceiling"
           ]
         },
         {
-          "id": "dev-data_analyst-139",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "# Marketing mix model ## The problem A brand split its $3M budget by habit. ## What I did Bayesian-flavoured marketing mix regression with adstock and saturatio",
-          "p_reply": 0.25,
+          "id": "dev-data_analyst-017",
+          "lead": "data_analyst:case:telco-churn-sql",
+          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
+          "p_reply": 0.459,
           "reasons": [
-            "skill_coverage=0.50"
+            "skill_coverage=1.00",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-028",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "# Executive sales dashboard in Power BI ## The problem Regional managers waited a week for Excel sales packs. ## What I did Star-schema model in SQL Server with",
+          "p_reply": 0.27,
+          "reasons": [
+            "skill_coverage=0.20",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-039",
+          "lead": "data_analyst:case:open-data-cleaning",
+          "opening": "# Open government data cleaning ## The problem A civic project had 40 inconsistent CSV releases. ## What I did pandas pipeline with schema validation and fuzzy ",
+          "p_reply": 0.059,
+          "reasons": [
+            "skill_coverage=0.00"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-058",
+          "lead": "data_analyst:case:survey-r",
+          "opening": "# Donor survey analysis in R ## The problem A charity had 9,000 survey responses and no analyst. ## What I did Weighted survey analysis and open-text coding in ",
+          "p_reply": 0.084,
+          "reasons": [
+            "skill_coverage=0.00"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-067",
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
+          "p_reply": 0.086,
+          "reasons": [
+            "skill_coverage=0.00"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-078",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "# Executive sales dashboard in Power BI ## The problem Regional managers waited a week for Excel sales packs. ## What I did Star-schema model in SQL Server with",
+          "p_reply": 0.309,
+          "reasons": [
+            "skill_coverage=0.60"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-099",
+          "lead": "data_analyst:case:telco-churn-sql",
+          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
+          "p_reply": 0.411,
+          "reasons": [
+            "skill_coverage=0.60"
           ]
         },
         {
           "id": "dev-data_analyst-147",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.31,
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
+          "p_reply": 0.02,
           "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-149",
-          "lead": "data_analyst:case:airflow-etl",
-          "opening": "# Airflow ETL pipelines ## The problem Nightly cron scripts failed silently. ## What I did Rebuilt 30 jobs as Airflow DAGs with retries, alerts and data-quality",
-          "p_reply": 0.141,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-158",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "# Marketing mix model ## The problem A brand split its $3M budget by habit. ## What I did Bayesian-flavoured marketing mix regression with adstock and saturatio",
-          "p_reply": 0.18,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-168",
-          "lead": "data_analyst:case:pricing-elasticity",
-          "opening": "# SaaS pricing elasticity analysis ## The problem A SaaS planned a price rise with no data on churn risk. ## What I did Estimated elasticity by plan from past p",
-          "p_reply": 0.441,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
+            "skill_coverage=0.17",
+            "over_budget_ceiling"
           ]
         },
         {
           "id": "dev-data_analyst-177",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "# HR attrition dashboard in Tableau ## The problem An HR team could not explain rising resignations. ## What I did Tableau dashboard with survival curves by tea",
-          "p_reply": 0.141,
+          "lead": "data_analyst:case:survey-r",
+          "opening": "# Donor survey analysis in R ## The problem A charity had 9,000 survey responses and no analyst. ## What I did Weighted survey analysis and open-text coding in ",
+          "p_reply": 0.136,
           "reasons": [
-            "skill_coverage=0.25"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-178",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "# Excel reporting automation ## The problem A plant's monthly production report took four days of copy-paste. ## What I did Power Query to pull ERP exports, piv",
-          "p_reply": 0.195,
-          "reasons": [
-            "skill_coverage=0.50"
+            "skill_coverage=0.20"
           ]
         },
         {
           "id": "dev-data_analyst-179",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "# Telecom churn analysis in SQL ## The problem A telco's churn reports disagreed with finance. ## What I did Rebuilt churn logic in Snowflake SQL with reconcili",
-          "p_reply": 0.254,
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
+          "p_reply": 0.296,
           "reasons": [
-            "skill_coverage=0.50",
+            "skill_coverage=0.17",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-188",
-          "lead": "data_analyst:case:hospital-kpi",
-          "opening": "# Hospital KPI reporting ## The problem Bed occupancy and wait times were reported a month late. ## What I did Daily Power BI KPI pack on a de-identified SQL mo",
-          "p_reply": 0.358,
+          "id": "dev-data_analyst-187",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "# Executive sales dashboard in Power BI ## The problem Regional managers waited a week for Excel sales packs. ## What I did Star-schema model in SQL Server with",
+          "p_reply": 0.264,
+          "reasons": [
+            "skill_coverage=0.33",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-189",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "# Executive sales dashboard in Power BI ## The problem Regional managers waited a week for Excel sales packs. ## What I did Star-schema model in SQL Server with",
+          "p_reply": 0.272,
           "reasons": [
             "skill_coverage=0.67"
           ]
         },
         {
-          "id": "dev-data_analyst-189",
+          "id": "dev-data_analyst-199",
           "lead": "data_analyst:case:ga4-migration",
           "opening": "# GA4 migration and marketing reporting ## The problem Universal Analytics was sunsetting and reports would break. ## What I did Rebuilt tracking in GTM, export",
-          "p_reply": 0.288,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-198",
-          "lead": "data_analyst:case:airflow-etl",
-          "opening": "# Airflow ETL pipelines ## The problem Nightly cron scripts failed silently. ## What I did Rebuilt 30 jobs as Airflow DAGs with retries, alerts and data-quality",
-          "p_reply": 0.633,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-199",
-          "lead": "data_analyst:case:open-data-cleaning",
-          "opening": "# Open government data cleaning ## The problem A civic project had 40 inconsistent CSV releases. ## What I did pandas pipeline with schema validation and fuzzy ",
-          "p_reply": 0.263,
+          "p_reply": 0.414,
           "reasons": [
             "skill_coverage=0.50",
             "asks_question"
           ]
         }
       ],
-      "recall@5": 0.9222,
-      "ndcg@10": 0.9283
+      "recall@5": 0.516,
+      "ndcg@10": 0.4533
     },
-    "v3_rerank_v1_decompose": {
-      "variant": "v3_rerank_v1_decompose",
+    "v7_hyde_v2_hybrid": {
+      "variant": "v7_hyde_v2_hybrid",
       "jobs": 180,
-      "proposals": 111,
-      "unsupported_claims_per_proposal_before_verify": 0.3243,
+      "proposals": 47,
+      "unsupported_claims_per_proposal_before_verify": 0.2553,
       "unsupported_claims_per_proposal": 0.0,
-      "judge_score": 3.955,
-      "gigsim_reply_rate": 0.3545,
-      "p95_latency_s": 0.255,
+      "judge_score": 4.0,
+      "gigsim_reply_rate": 0.3494,
+      "p95_latency_s": 0.432,
       "usd_per_proposal": 0.0,
       "by_job_kind": {
+        "duplicate": {
+          "n": 2,
+          "reply_rate": 0.431
+        },
         "fit": {
-          "n": 89,
-          "reply_rate": 0.3739
+          "n": 32,
+          "reply_rate": 0.3657
         },
         "injection": {
-          "n": 14,
-          "reply_rate": 0.2648
-        },
-        "lowball": {
           "n": 6,
-          "reply_rate": 0.3382
+          "reply_rate": 0.2098
         },
         "off_domain": {
           "n": 2,
-          "reply_rate": 0.1645
+          "reply_rate": 0.279
+        },
+        "weak_fit": {
+          "n": 5,
+          "reply_rate": 0.4084
         }
       },
       "per_job": [
@@ -1158,954 +551,6 @@
           "id": "dev-ai_ml-007",
           "lead": "ai_ml:case:legal-rag",
           "opening": "Cut clause review time by 41% across 9 associates; answers cite the exact page: that was the outcome of my contract Q&A assistant for a mid-size law firm projec",
-          "p_reply": 0.37,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-009",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model: that was the outcome of my fine-tuned clinical note summariser projec",
-          "p_reply": 0.202,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-017",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAG",
-          "p_reply": 0.283,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-018",
-          "lead": "ai_ml:case:price-model",
-          "opening": "Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you descri",
-          "p_reply": 0.776,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-019",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "Search success rate up 27%; p95 latency 180 ms: that was the outcome of my semantic search migration to Pinecone project, which is close to what you describe.",
-          "p_reply": 0.631,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-027",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model: that was the outcome of my fine-tuned clinical note summariser projec",
-          "p_reply": 0.388,
-          "reasons": [
-            "skill_coverage=0.40",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-029",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "Average handling time per query fell from 9 to 3 minutes: that was the outcome of my multi-agent operations assistant project, which is close to what you descri",
-          "p_reply": 0.33,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-037",
-          "lead": "ai_ml:case:invoice-ocr",
-          "opening": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.",
-          "p_reply": 0.383,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-039",
-          "lead": "ai_ml:case:price-model",
-          "opening": "Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you descri",
-          "p_reply": 0.089,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-047",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third: that was the outcome of my multilingual customer-support agent project, which ",
-          "p_reply": 0.476,
-          "reasons": [
-            "skill_coverage=0.67",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-048",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "For LightGBM: in the property price estimation model project I lightGBM with geospatial features and conformal intervals, exposed in a simple web form.",
-          "p_reply": 0.122,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-057",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third: that was the outcome of my multilingual customer-support agent project, which ",
-          "p_reply": 0.703,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-058",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model: that was the outcome of my fine-tuned clinical note summariser projec",
-          "p_reply": 0.336,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-059",
-          "lead": "ai_ml:case:price-model",
-          "opening": "Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you descri",
-          "p_reply": 0.095,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-067",
-          "lead": "ai_ml:case:legal-rag",
-          "opening": "Cut clause review time by 41% across 9 associates; answers cite the exact page: that was the outcome of my contract Q&A assistant for a mid-size law firm projec",
-          "p_reply": 0.711,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-068",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAG",
-          "p_reply": 0.271,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-077",
-          "lead": "ai_ml:case:support-bot",
-          "opening": "Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third: that was the outcome of my multilingual customer-support agent project, which ",
-          "p_reply": 0.265,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-088",
-          "lead": "ai_ml:case:review-sentiment",
-          "opening": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard p",
-          "p_reply": 0.11,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-089",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "Search success rate up 27%; p95 latency 180 ms: that was the outcome of my semantic search migration to Pinecone project, which is close to what you describe.",
-          "p_reply": 0.304,
-          "reasons": [
-            "skill_coverage=0.60",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-098",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "For Airflow: in the subscription churn prediction project I built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explana",
-          "p_reply": 0.276,
-          "reasons": [
-            "skill_coverage=0.20"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-099",
-          "lead": "ai_ml:case:defect-vision",
-          "opening": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close t",
-          "p_reply": 0.319,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-107",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to ",
-          "p_reply": 0.379,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-109",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "Average handling time per query fell from 9 to 3 minutes: that was the outcome of my multi-agent operations assistant project, which is close to what you descri",
-          "p_reply": 0.322,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-117",
-          "lead": "ai_ml:case:invoice-ocr",
-          "opening": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.",
-          "p_reply": 0.33,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-118",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to ",
-          "p_reply": 0.639,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-119",
-          "lead": "ai_ml:case:doc-classifier",
-          "opening": "97.2% accuracy; triage time from 2 days to 2 hours: that was the outcome of my insurance document classifier project, which is close to what you describe.",
-          "p_reply": 0.866,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-127",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAG",
-          "p_reply": 0.387,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-129",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "Average handling time per query fell from 9 to 3 minutes: that was the outcome of my multi-agent operations assistant project, which is close to what you descri",
-          "p_reply": 0.145,
-          "reasons": [
-            "skill_coverage=0.17",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-137",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAG",
-          "p_reply": 0.387,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-138",
-          "lead": "ai_ml:case:defect-vision",
-          "opening": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close t",
-          "p_reply": 0.391,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-147",
-          "lead": "ai_ml:case:agent-ops",
-          "opening": "Average handling time per query fell from 9 to 3 minutes: that was the outcome of my multi-agent operations assistant project, which is close to what you descri",
-          "p_reply": 0.26,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-148",
-          "lead": "ai_ml:case:lora-clinical",
-          "opening": "Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model: that was the outcome of my fine-tuned clinical note summariser projec",
-          "p_reply": 0.623,
-          "reasons": [
-            "skill_coverage=0.40",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-158",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to ",
-          "p_reply": 0.686,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-159",
-          "lead": "ai_ml:case:rec-engine",
-          "opening": "For PyTorch: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAG",
-          "p_reply": 0.267,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-167",
-          "lead": "ai_ml:case:llm-eval",
-          "opening": "Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what y",
-          "p_reply": 0.174,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-179",
-          "lead": "ai_ml:case:fraud-gnn",
-          "opening": "Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to ",
-          "p_reply": 0.686,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-187",
-          "lead": "ai_ml:case:churn-model",
-          "opening": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what ",
-          "p_reply": 0.556,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-189",
-          "lead": "ai_ml:case:energy-forecast",
-          "opening": "Since you need availability for ongoing work, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.",
-          "p_reply": 0.08,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-197",
-          "lead": "ai_ml:case:review-sentiment",
-          "opening": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard p",
-          "p_reply": 0.475,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-198",
-          "lead": "ai_ml:case:churn-model",
-          "opening": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what ",
-          "p_reply": 0.345,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-ai_ml-199",
-          "lead": "ai_ml:case:vector-migration",
-          "opening": "Search success rate up 27%; p95 latency 180 ms: that was the outcome of my semantic search migration to Pinecone project, which is close to what you describe.",
-          "p_reply": 0.316,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-007",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
-          "p_reply": 0.578,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-019",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "Rendered 40 live charts at 60 FPS on a mid-range laptop: that was the outcome of my live crypto price dashboard project, which is close to what you describe.",
-          "p_reply": 0.526,
-          "reasons": [
-            "skill_coverage=0.75",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-027",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
-          "p_reply": 0.363,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-037",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "Screen load requests from 14 to 1; p95 latency down 48%: that was the outcome of my graphQL gateway over legacy REST APIs project, which is close to what you de",
-          "p_reply": 0.059,
-          "reasons": [
-            "skill_coverage=0.20",
-            "specific_metrics",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-038",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "Screen load requests from 14 to 1; p95 latency down 48%: that was the outcome of my graphQL gateway over legacy REST APIs project, which is close to what you de",
-          "p_reply": 0.584,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-047",
-          "lead": "fullstack:case:fitness-app",
-          "opening": "4.7 stars on the App Store; 1,900 monthly active users: that was the outcome of my fitness tracking mobile app project, which is close to what you describe.",
-          "p_reply": 0.118,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-048",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "Built with Django, React, PostgreSQL: that was the outcome of my marketplace-mvp project, which is close to what you describe.",
-          "p_reply": 0.323,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-057",
-          "lead": "fullstack:case:clinic-booking",
-          "opening": "No-shows fell 35%; front desk calls down 40%: that was the outcome of my clinic appointment booking system project, which is close to what you describe.",
-          "p_reply": 0.139,
-          "reasons": [
-            "skill_coverage=0.20",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-058",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "Largest Contentful Paint from 4.1 s to 1.2 s; organic traffic +22%: that was the outcome of my headless CMS migration for a publisher project, which is close to",
-          "p_reply": 0.086,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-068",
-          "lead": "fullstack:case:shopify-app",
-          "opening": "Overselling incidents went from weekly to none in three months: that was the outcome of my shopify inventory sync app project, which is close to what you descri",
-          "p_reply": 0.044,
-          "reasons": [
-            "skill_coverage=0.50",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-069",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "Deploys from 3 hours to 12 minutes; zero-downtime releases: that was the outcome of my monolith containerisation and deployment project, which is close to what ",
-          "p_reply": 0.18,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-077",
-          "lead": "fullstack:case:admin-dashboard",
-          "opening": "Saved roughly 10 hours a week of manual reporting: that was the outcome of my logistics admin dashboard project, which is close to what you describe.",
-          "p_reply": 0.382,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-078",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "Deploys from 3 hours to 12 minutes; zero-downtime releases: that was the outcome of my monolith containerisation and deployment project, which is close to what ",
-          "p_reply": 0.6,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-079",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "Screen load requests from 14 to 1; p95 latency down 48%: that was the outcome of my graphQL gateway over legacy REST APIs project, which is close to what you de",
-          "p_reply": 0.36,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-087",
-          "lead": "fullstack:case:wp-to-next",
-          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
-          "p_reply": 0.272,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-088",
-          "lead": "fullstack:case:saas-billing",
-          "opening": "Support tickets about billing down 63%; upgrades up 12%: that was the outcome of my subscription billing dashboard project, which is close to what you describe.",
-          "p_reply": 0.269,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-089",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "Largest Contentful Paint from 4.1 s to 1.2 s; organic traffic +22%: that was the outcome of my headless CMS migration for a publisher project, which is close to",
-          "p_reply": 0.323,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-099",
-          "lead": "fullstack:case:shopify-app",
-          "opening": "Overselling incidents went from weekly to none in three months: that was the outcome of my shopify inventory sync app project, which is close to what you descri",
-          "p_reply": 0.062,
-          "reasons": [
-            "skill_coverage=0.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-107",
-          "lead": "fullstack:case:e2e-suite",
-          "opening": "Zero signup regressions in six months; CI time 9 minutes: that was the outcome of my end-to-end test suite project, which is close to what you describe.",
-          "p_reply": 0.59,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-109",
-          "lead": "fullstack:case:sso-rollout",
-          "opening": "Unblocked three enterprise deals worth $240k ARR: that was the outcome of my single sign-on rollout project, which is close to what you describe.",
-          "p_reply": 0.48,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-117",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "Deploys from 3 hours to 12 minutes; zero-downtime releases: that was the outcome of my monolith containerisation and deployment project, which is close to what ",
-          "p_reply": 0.309,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-118",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "Rendered 40 live charts at 60 FPS on a mid-range laptop: that was the outcome of my live crypto price dashboard project, which is close to what you describe.",
-          "p_reply": 0.364,
-          "reasons": [
-            "skill_coverage=0.40"
-          ]
-        },
-        {
-          "id": "dev-fullstack-119",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "Rendered 40 live charts at 60 FPS on a mid-range laptop: that was the outcome of my live crypto price dashboard project, which is close to what you describe.",
-          "p_reply": 0.42,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-fullstack-127",
-          "lead": "fullstack:case:clinic-booking",
-          "opening": "No-shows fell 35%; front desk calls down 40%: that was the outcome of my clinic appointment booking system project, which is close to what you describe.",
-          "p_reply": 0.19,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-129",
-          "lead": "fullstack:case:saas-billing",
-          "opening": "Support tickets about billing down 63%; upgrades up 12%: that was the outcome of my subscription billing dashboard project, which is close to what you describe.",
-          "p_reply": 0.208,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-137",
-          "lead": "fullstack:case:realtime-chat",
-          "opening": "Handled 8,000 concurrent users at peak with p95 message latency of 120 ms: that was the outcome of my real-time classroom chat project, which is close to what y",
-          "p_reply": 0.223,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-138",
-          "lead": "fullstack:case:graphql-gateway",
-          "opening": "Screen load requests from 14 to 1; p95 latency down 48%: that was the outcome of my graphQL gateway over legacy REST APIs project, which is close to what you de",
-          "p_reply": 0.405,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-139",
-          "lead": "fullstack:case:k8s-migration",
-          "opening": "Deploys from 3 hours to 12 minutes; zero-downtime releases: that was the outcome of my monolith containerisation and deployment project, which is close to what ",
-          "p_reply": 0.6,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-147",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "Built with Django, React, PostgreSQL: that was the outcome of my marketplace-mvp project, which is close to what you describe.",
-          "p_reply": 0.687,
-          "reasons": [
-            "skill_coverage=1.00"
-          ]
-        },
-        {
-          "id": "dev-fullstack-149",
-          "lead": "fullstack:repo:admin-dashboard",
-          "opening": "Built with React, TypeScript, NestJS: that was the outcome of my admin-dashboard project, which is close to what you describe.",
-          "p_reply": 0.301,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-157",
-          "lead": "fullstack:case:crypto-dashboard",
-          "opening": "Rendered 40 live charts at 60 FPS on a mid-range laptop: that was the outcome of my live crypto price dashboard project, which is close to what you describe.",
-          "p_reply": 0.422,
-          "reasons": [
-            "skill_coverage=0.67",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-158",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "Built with Django, React, PostgreSQL: that was the outcome of my marketplace-mvp project, which is close to what you describe.",
-          "p_reply": 0.301,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-169",
-          "lead": "fullstack:case:admin-dashboard",
-          "opening": "Saved roughly 10 hours a week of manual reporting: that was the outcome of my logistics admin dashboard project, which is close to what you describe.",
-          "p_reply": 0.027,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-fullstack-178",
-          "lead": "fullstack:repo:marketplace-mvp",
-          "opening": "Built with Django, React, PostgreSQL: that was the outcome of my marketplace-mvp project, which is close to what you describe.",
-          "p_reply": 0.593,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-fullstack-187",
-          "lead": "fullstack:case:headless-cms",
-          "opening": "Largest Contentful Paint from 4.1 s to 1.2 s; organic traffic +22%: that was the outcome of my headless CMS migration for a publisher project, which is close to",
-          "p_reply": 0.537,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-fullstack-189",
-          "lead": "fullstack:case:saas-billing",
-          "opening": "Support tickets about billing down 63%; upgrades up 12%: that was the outcome of my subscription billing dashboard project, which is close to what you describe.",
-          "p_reply": 0.327,
-          "reasons": [
-            "skill_coverage=0.40",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-007",
-          "lead": "data_analyst:case:open-data-cleaning",
-          "opening": "Produced one tidy dataset used by two newsrooms: that was the outcome of my open government data cleaning project, which is close to what you describe.",
-          "p_reply": 0.166,
-          "reasons": [
-            "skill_coverage=0.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-008",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "Report time from 4 days to 30 minutes: that was the outcome of my excel reporting automation project, which is close to what you describe.",
-          "p_reply": 0.362,
-          "reasons": [
-            "skill_coverage=0.33",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-017",
-          "lead": "data_analyst:case:hospital-kpi",
-          "opening": "Daily KPIs used in morning huddles across 4 wards: that was the outcome of my hospital KPI reporting project, which is close to what you describe.",
-          "p_reply": 0.133,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-028",
-          "lead": "data_analyst:case:inventory-forecast",
-          "opening": "Stock-outs during peak down 28%: that was the outcome of my inventory demand forecast project, which is close to what you describe.",
-          "p_reply": 0.058,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics",
-            "asks_question",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-037",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
-          "p_reply": 0.368,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-039",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "Reallocated 15% of spend to search; same sales at 11% lower cost: that was the outcome of my marketing mix model project, which is close to what you describe.",
-          "p_reply": 0.455,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-047",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
-          "p_reply": 0.315,
-          "reasons": [
-            "skill_coverage=0.75",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-058",
-          "lead": "data_analyst:case:pricing-elasticity",
-          "opening": "Price rise of 12% with no measurable churn increase: that was the outcome of my saaS pricing elasticity analysis project, which is close to what you describe.",
-          "p_reply": 0.155,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics",
-            "over_budget_ceiling"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-067",
-          "lead": "data_analyst:case:inventory-forecast",
-          "opening": "Stock-outs during peak down 28%: that was the outcome of my inventory demand forecast project, which is close to what you describe.",
-          "p_reply": 0.249,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-077",
-          "lead": "data_analyst:case:survey-r",
-          "opening": "Board approved a new donor programme based on the findings: that was the outcome of my donor survey analysis in R project, which is close to what you describe.",
-          "p_reply": 0.208,
-          "reasons": [
-            "skill_coverage=0.33",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-078",
-          "lead": "data_analyst:case:checkout-ab",
-          "opening": "Showed the uplift was not significant, saving a costly rollout; later tests 30% shorter: that was the outcome of my checkout A/B test analysis project, which is",
-          "p_reply": 0.319,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-087",
-          "lead": "data_analyst:case:survey-r",
-          "opening": "Board approved a new donor programme based on the findings: that was the outcome of my donor survey analysis in R project, which is close to what you describe.",
-          "p_reply": 0.442,
-          "reasons": [
-            "skill_coverage=1.00",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-088",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "Reallocated 15% of spend to search; same sales at 11% lower cost: that was the outcome of my marketing mix model project, which is close to what you describe.",
-          "p_reply": 0.556,
-          "reasons": [
-            "skill_coverage=0.25",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-097",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "Report time from 4 days to 30 minutes: that was the outcome of my excel reporting automation project, which is close to what you describe.",
-          "p_reply": 0.37,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-098",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "Identified two teams with 3x attrition; targeted actions cut it by a quarter: that was the outcome of my HR attrition dashboard in Tableau project, which is clo",
-          "p_reply": 0.329,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-109",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
           "p_reply": 0.469,
           "reasons": [
             "skill_coverage=1.00",
@@ -2113,20 +558,344 @@
           ]
         },
         {
-          "id": "dev-data_analyst-118",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "Reallocated 15% of spend to search; same sales at 11% lower cost: that was the outcome of my marketing mix model project, which is close to what you describe.",
-          "p_reply": 0.273,
+          "id": "dev-ai_ml-019",
+          "lead": "ai_ml:review:invoice-ocr",
+          "opening": "Sana delivered our invoice field extraction pipeline on time. Field-level F1 of 0.94; manual keying time down 70%.",
+          "p_reply": 0.356,
+          "reasons": [
+            "skill_coverage=0.33",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-047",
+          "lead": "ai_ml:case:fraud-gnn",
+          "opening": "Caught 31% more fraud at the same false-positive rate: that was the outcome of my payment fraud detection with graph neural networks project, which is close to ",
+          "p_reply": 0.358,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-048",
+          "lead": "ai_ml:case:legal-rag",
+          "opening": "Cut clause review time by 41% across 9 associates; answers cite the exact page: that was the outcome of my contract Q&A assistant for a mid-size law firm projec",
+          "p_reply": 0.241,
+          "reasons": [
+            "skill_coverage=0.33",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-087",
+          "lead": "ai_ml:case:review-sentiment",
+          "opening": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard p",
+          "p_reply": 0.422,
+          "reasons": [
+            "skill_coverage=0.67",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-128",
+          "lead": "ai_ml:repo:agent-ops",
+          "opening": "Built with LangGraph, MCP, Python: that was the outcome of my agent-ops project, which is close to what you describe.",
+          "p_reply": 0.407,
+          "reasons": [
+            "skill_coverage=0.83",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-129",
+          "lead": "ai_ml:case:churn-model",
+          "opening": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what ",
+          "p_reply": 0.41,
+          "reasons": [
+            "skill_coverage=0.67",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-147",
+          "lead": "ai_ml:case:legal-rag",
+          "opening": "Cut clause review time by 41% across 9 associates; answers cite the exact page: that was the outcome of my contract Q&A assistant for a mid-size law firm projec",
+          "p_reply": 0.33,
+          "reasons": [
+            "skill_coverage=0.25",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-149",
+          "lead": "ai_ml:repo:agent-ops",
+          "opening": "Built with LangGraph, MCP, Python: that was the outcome of my agent-ops project, which is close to what you describe.",
+          "p_reply": 0.488,
+          "reasons": [
+            "skill_coverage=0.67"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-158",
+          "lead": "ai_ml:case:defect-vision",
+          "opening": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close t",
+          "p_reply": 0.404,
+          "reasons": [
+            "skill_coverage=0.33",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-169",
+          "lead": "ai_ml:case:legal-rag",
+          "opening": "Cut clause review time by 41% across 9 associates; answers cite the exact page: that was the outcome of my contract Q&A assistant for a mid-size law firm projec",
+          "p_reply": 0.726,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-188",
+          "lead": "ai_ml:case:review-sentiment",
+          "opening": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard p",
+          "p_reply": 0.144,
+          "reasons": [
+            "skill_coverage=0.40"
+          ]
+        },
+        {
+          "id": "dev-ai_ml-198",
+          "lead": "ai_ml:case:price-model",
+          "opening": "Median error 6.2%; listings priced in a fifth of the time: that was the outcome of my property price estimation model project, which is close to what you descri",
+          "p_reply": 0.464,
+          "reasons": [
+            "skill_coverage=1.00",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-007",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.374,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-fullstack-009",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.538,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-fullstack-018",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.113,
+          "reasons": [
+            "skill_coverage=1.00",
+            "over_budget_ceiling"
+          ]
+        },
+        {
+          "id": "dev-fullstack-028",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.334,
+          "reasons": [
+            "skill_coverage=0.67"
+          ]
+        },
+        {
+          "id": "dev-fullstack-029",
+          "lead": "fullstack:case:graphql-gateway",
+          "opening": "For Docker: in the graphQL gateway over legacy REST APIs project I apollo GraphQL gateway with DataLoader batching and response caching, shipped in Docker. For ",
+          "p_reply": 0.543,
+          "reasons": [
+            "skill_coverage=0.75",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-037",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.23,
+          "reasons": [
+            "skill_coverage=0.17",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-fullstack-047",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.377,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-069",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.52,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-077",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.25,
           "reasons": [
             "skill_coverage=0.00",
             "specific_metrics"
           ]
         },
         {
-          "id": "dev-data_analyst-119",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "Identified two teams with 3x attrition; targeted actions cut it by a quarter: that was the outcome of my HR attrition dashboard in Tableau project, which is clo",
-          "p_reply": 0.726,
+          "id": "dev-fullstack-088",
+          "lead": "fullstack:repo:k8s-migration",
+          "opening": "Built with Docker, Kubernetes, AWS ECS: that was the outcome of my k8s-migration project, which is close to what you describe.",
+          "p_reply": 0.07,
+          "reasons": [
+            "skill_coverage=0.00"
+          ]
+        },
+        {
+          "id": "dev-fullstack-108",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.235,
+          "reasons": [
+            "skill_coverage=0.00",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-109",
+          "lead": "fullstack:case:restaurant-pwa",
+          "opening": "Moved 30% of orders to the direct channel within 4 months: that was the outcome of my restaurant ordering progressive web app project, which is close to what yo",
+          "p_reply": 0.428,
+          "reasons": [
+            "skill_coverage=0.50",
+            "specific_metrics",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-119",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.566,
+          "reasons": [
+            "skill_coverage=1.00"
+          ]
+        },
+        {
+          "id": "dev-fullstack-127",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.296,
+          "reasons": [
+            "skill_coverage=0.83",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-129",
+          "lead": "fullstack:repo:shopify-app",
+          "opening": "Built with Shopify API, Node.js, GraphQL: that was the outcome of my shopify-app project, which is close to what you describe.",
+          "p_reply": 0.333,
+          "reasons": [
+            "skill_coverage=0.83",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-138",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.141,
+          "reasons": [
+            "skill_coverage=1.00",
+            "over_budget_ceiling"
+          ]
+        },
+        {
+          "id": "dev-fullstack-139",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.392,
+          "reasons": [
+            "skill_coverage=1.00",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-147",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.437,
+          "reasons": [
+            "skill_coverage=1.00"
+          ]
+        },
+        {
+          "id": "dev-fullstack-168",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.217,
+          "reasons": [
+            "skill_coverage=0.33",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-178",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.367,
+          "reasons": [
+            "skill_coverage=1.00",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-fullstack-179",
+          "lead": "fullstack:case:wp-to-next",
+          "opening": "Lighthouse performance 38 to 97; no incidents since: that was the outcome of my wordPress to Next.js migration project, which is close to what you describe.",
+          "p_reply": 0.119,
+          "reasons": [
+            "skill_coverage=1.00",
+            "asks_question",
+            "over_budget_ceiling"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-017",
+          "lead": "data_analyst:case:telco-churn-sql",
+          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
+          "p_reply": 0.493,
           "reasons": [
             "skill_coverage=0.75",
             "specific_metrics",
@@ -2134,167 +903,125 @@
           ]
         },
         {
-          "id": "dev-data_analyst-127",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
-          "p_reply": 0.487,
+          "id": "dev-data_analyst-028",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "Weekly reporting time from 2 days to 20 minutes; adopted by 60 managers: that was the outcome of my executive sales dashboard in Power BI project, which is clos",
+          "p_reply": 0.459,
           "reasons": [
-            "skill_coverage=1.00",
+            "skill_coverage=0.40",
             "specific_metrics",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-129",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
-          "p_reply": 0.164,
+          "id": "dev-data_analyst-039",
+          "lead": "data_analyst:case:airflow-etl",
+          "opening": "Pipeline failures noticed within minutes instead of days: that was the outcome of my airflow ETL pipelines project, which is close to what you describe.",
+          "p_reply": 0.224,
+          "reasons": [
+            "skill_coverage=0.60"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-058",
+          "lead": "data_analyst:case:survey-r",
+          "opening": "Board approved a new donor programme based on the findings: that was the outcome of my donor survey analysis in R project, which is close to what you describe.",
+          "p_reply": 0.144,
           "reasons": [
             "skill_coverage=0.25"
           ]
         },
         {
-          "id": "dev-data_analyst-137",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
-          "p_reply": 0.466,
+          "id": "dev-data_analyst-067",
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
+          "p_reply": 0.133,
           "reasons": [
-            "skill_coverage=1.00",
+            "skill_coverage=0.20"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-078",
+          "lead": "data_analyst:case:sales-dashboard",
+          "opening": "Weekly reporting time from 2 days to 20 minutes; adopted by 60 managers: that was the outcome of my executive sales dashboard in Power BI project, which is clos",
+          "p_reply": 0.482,
+          "reasons": [
+            "skill_coverage=0.80",
             "specific_metrics"
           ]
         },
         {
-          "id": "dev-data_analyst-138",
+          "id": "dev-data_analyst-099",
+          "lead": "data_analyst:case:telco-churn-sql",
+          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
+          "p_reply": 0.594,
+          "reasons": [
+            "skill_coverage=0.60",
+            "specific_metrics"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-147",
           "lead": "data_analyst:case:ga4-migration",
           "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
-          "p_reply": 0.039,
+          "p_reply": 0.076,
           "reasons": [
             "skill_coverage=0.67",
             "over_budget_ceiling"
           ]
         },
         {
-          "id": "dev-data_analyst-139",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "Reallocated 15% of spend to search; same sales at 11% lower cost: that was the outcome of my marketing mix model project, which is close to what you describe.",
-          "p_reply": 0.228,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-147",
-          "lead": "data_analyst:case:telco-churn-sql",
-          "opening": "Churn numbers reconciled to finance within 0.2%: that was the outcome of my telecom churn analysis in SQL project, which is close to what you describe.",
-          "p_reply": 0.483,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-149",
-          "lead": "data_analyst:case:airflow-etl",
-          "opening": "Pipeline failures noticed within minutes instead of days: that was the outcome of my airflow ETL pipelines project, which is close to what you describe.",
-          "p_reply": 0.141,
-          "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-158",
-          "lead": "data_analyst:case:marketing-mix",
-          "opening": "Reallocated 15% of spend to search; same sales at 11% lower cost: that was the outcome of my marketing mix model project, which is close to what you describe.",
-          "p_reply": 0.164,
-          "reasons": [
-            "skill_coverage=0.00",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-168",
-          "lead": "data_analyst:case:inventory-forecast",
-          "opening": "Stock-outs during peak down 28%: that was the outcome of my inventory demand forecast project, which is close to what you describe.",
-          "p_reply": 0.767,
-          "reasons": [
-            "skill_coverage=1.00",
-            "specific_metrics",
-            "asks_question"
-          ]
-        },
-        {
           "id": "dev-data_analyst-177",
-          "lead": "data_analyst:case:hr-attrition",
-          "opening": "Identified two teams with 3x attrition; targeted actions cut it by a quarter: that was the outcome of my HR attrition dashboard in Tableau project, which is clo",
-          "p_reply": 0.335,
+          "lead": "data_analyst:case:open-data-cleaning",
+          "opening": "Produced one tidy dataset used by two newsrooms: that was the outcome of my open government data cleaning project, which is close to what you describe.",
+          "p_reply": 0.197,
           "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-178",
-          "lead": "data_analyst:case:excel-automation",
-          "opening": "Report time from 4 days to 30 minutes: that was the outcome of my excel reporting automation project, which is close to what you describe.",
-          "p_reply": 0.304,
-          "reasons": [
-            "skill_coverage=0.50",
-            "specific_metrics"
+            "skill_coverage=0.40"
           ]
         },
         {
           "id": "dev-data_analyst-179",
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
+          "p_reply": 0.296,
+          "reasons": [
+            "skill_coverage=0.17",
+            "asks_question"
+          ]
+        },
+        {
+          "id": "dev-data_analyst-187",
           "lead": "data_analyst:case:sales-dashboard",
           "opening": "Weekly reporting time from 2 days to 20 minutes; adopted by 60 managers: that was the outcome of my executive sales dashboard in Power BI project, which is clos",
-          "p_reply": 0.464,
+          "p_reply": 0.541,
           "reasons": [
-            "skill_coverage=0.50",
+            "skill_coverage=0.67",
             "specific_metrics",
             "asks_question"
           ]
         },
         {
-          "id": "dev-data_analyst-188",
-          "lead": "data_analyst:case:hospital-kpi",
-          "opening": "Daily KPIs used in morning huddles across 4 wards: that was the outcome of my hospital KPI reporting project, which is close to what you describe.",
-          "p_reply": 0.222,
-          "reasons": [
-            "skill_coverage=0.33"
-          ]
-        },
-        {
           "id": "dev-data_analyst-189",
-          "lead": "data_analyst:case:ga4-migration",
-          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
-          "p_reply": 0.288,
+          "lead": "data_analyst:case:open-data-cleaning",
+          "opening": "Produced one tidy dataset used by two newsrooms: that was the outcome of my open government data cleaning project, which is close to what you describe.",
+          "p_reply": 0.272,
           "reasons": [
-            "skill_coverage=0.50"
-          ]
-        },
-        {
-          "id": "dev-data_analyst-198",
-          "lead": "data_analyst:case:airflow-etl",
-          "opening": "Pipeline failures noticed within minutes instead of days: that was the outcome of my airflow ETL pipelines project, which is close to what you describe.",
-          "p_reply": 0.633,
-          "reasons": [
-            "skill_coverage=0.50",
-            "asks_question"
+            "skill_coverage=0.67"
           ]
         },
         {
           "id": "dev-data_analyst-199",
-          "lead": "data_analyst:case:open-data-cleaning",
-          "opening": "Produced one tidy dataset used by two newsrooms: that was the outcome of my open government data cleaning project, which is close to what you describe.",
-          "p_reply": 0.202,
+          "lead": "data_analyst:case:ga4-migration",
+          "opening": "All 24 reports live before the cutover with event-level data in BigQuery: that was the outcome of my GA4 migration and marketing reporting project, which is clo",
+          "p_reply": 0.414,
           "reasons": [
-            "skill_coverage=0.25",
+            "skill_coverage=0.50",
             "asks_question"
           ]
         }
       ],
-      "recall@5": 0.955,
-      "ndcg@10": 0.9568
+      "recall@5": 0.6262,
+      "ndcg@10": 0.6019
     }
   }
 }

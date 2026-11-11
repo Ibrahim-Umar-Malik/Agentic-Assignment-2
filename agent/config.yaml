@@ -68,7 +68,7 @@ llm:
 # Embeddings and reranker are open models in every profile. "hash" and "lexical" are dependency-free
 # stand-ins used where model weights cannot be downloaded (CI); results files record which ran.
 retrieval:
-  variant: ${GIGBID_RAG_VARIANT:-v3_rerank_v1_decompose}   # chosen by evals/results/rag.json (selection rule in evals/runners/rag_eval.py)
+  variant: ${GIGBID_RAG_VARIANT:-v7_hyde_v2_hybrid}   # chosen by evals/results/rag.json on the real-job tune split (selection rule in evals/runners/rag_eval.py); was v3_rerank_v1_decompose on synthetic jobs
   embedder: ${GIGBID_EMBEDDER:-hash}      # hash | sentence-transformers:BAAI/bge-small-en-v1.5 | ollama:nomic-embed-text
   reranker: ${GIGBID_RERANKER:-lexical}   # lexical | cross-encoder:BAAI/bge-reranker-v2-m3
   chunk_tokens: 180
@@ -78,18 +78,19 @@ retrieval:
   corrective: { min_evidence_score: 0.12, max_requeries: 1 }
 
 decision:
-  bid_min_fit: 0.70          # fit score needed to recommend a bid (chosen by threshold sweep on the tune split: evals/results/decision.json)
-  watch_min_fit: 0.45        # between watch and bid: keep an eye on it
-  max_risk: 0.35             # risk score above this means skip (same sweep)
+  bid_min_fit: 0.35          # chosen by the threshold sweep on the TUNE split of the real-job dev set (evals/results/decision.json); was 0.70 on synthetic jobs
+  watch_min_fit: 0.25        # between watch and bid: keep an eye on it
+  max_risk: 0.60             # same sweep; real clients carry more risk signals than the synthetic ones (was 0.35)
   min_client_spend_unverified: 1000
   min_budget_floor_ratio: 0.7     # hourly budget below 70% of the user's floor -> skip
-  min_fixed_hours: 8              # fixed budget below 8 hours at the floor -> skip
+  min_fixed_hours: 4              # fixed budget below 4 hours at the floor -> skip (was 8; real paid fixed-price p25 is $50-90, see data/real/market_stats.json)
   title_skill_missing_penalty: 0.6
   generic_skills: [Python, SQL, Docker, Excel, TypeScript, AWS, JavaScript, PostgreSQL, Git, REST API]
 
 pricing:
   floor_from_profile: true
-  percentile_by_fit: { high: 0.70, mid: 0.50, low: 0.35 }
+  percentile_by_fit: { high: 0.70, mid: 0.50, low: 0.35 }   # market band position, used only when a post has no budget
+  budget_anchor: { max_ratio: 1.0, share_by_fit: { high: 0.95, mid: 0.88, low: 0.80 } }
   max_connects_per_bid: 16
   min_expected_value_ratio: 1.0   # expected value of the bid / Connects cost in USD
   usd_per_connect: 0.15

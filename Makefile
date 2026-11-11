@@ -2,17 +2,20 @@
 PY ?= .venv/bin/python
 OFFLINE = GIGBID_PROFILE=offline
 
-.PHONY: help install seed dev up down test e2e lint checks eval eval-llm tables report demo zip
+.PHONY: help install seed data dev up down test e2e lint checks eval eval-llm tables report demo zip
 
 help:
 	@grep -E '^[a-z-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  %-10s %s\n", $$1, $$2}'
 
 install: ## Python venv + web deps
-	uv venv .venv --python 3.12 && uv pip install --python $(PY) -r pyproject.toml --extra dev
+	uv venv .venv --python 3.12 && uv pip install --python $(PY) -r pyproject.toml --extra dev --extra data
 	cd apps/web && npm ci
 
-seed: ## regenerate the stand-in personas, GigSim seed data and dev sets (deterministic, SEED=4016)
+seed: data ## alias for `make data`
+
+data: ## synthetic personas + policy, then real Kaggle jobs -> GigSim seed and dev sets (needs `--extra data`; deterministic)
 	$(PY) scripts/generate_standin_data.py
+	$(PY) -m data_pipeline.prepare
 
 dev: ## run GigSim stand-in + API + built web UI on :8080 (single process, in-process MCP)
 	cd apps/web && npm run build
@@ -50,6 +53,7 @@ eval: ## every offline eval -> evals/results/*.json, then refresh README/report 
 	$(OFFLINE) $(PY) -m evals.runners.judge_calibration score
 	$(OFFLINE) $(PY) -m evals.runners.architecture_compare
 	$(OFFLINE) $(PY) -m evals.runners.tool_granularity
+	$(PY) -m evals.runners.risk_real
 	$(PY) -m evals.make_tables
 
 eval-llm: ## the same evals with real open-weight models (needs GROQ_API_KEY, or GIGBID_PROFILE=open_local + Ollama)

@@ -1,14 +1,23 @@
 # Risk Assessor patterns (configuration, not code). Severity in [0,1]; the risk score is the max severity,
 # plus client-history penalties. Injection patterns are also used to sanitise untrusted text before drafting.
-version: 2
+version: 3
+# v3 (after measuring on 5,000 real Upwork posts, data/real/jobs_sample.jsonl): v2 flagged 2.9% of real posts as
+# scams, mostly legitimate Discord/Telegram-bot and crypto-product jobs. Patterns now need an ask (contact me on X,
+# pay in crypto, send your phone number), not just the word. See docs/DATA_CARD.md and evals/results/risk_real.json.
 scam:
-  - { kind: off_platform, severity: 0.9, pattern: '(?i)\b(telegram|whatsapp|signal|skype|discord)\b' }
-  - { kind: scam, severity: 0.95, pattern: '(?i)\b(crypto|usdt|bitcoin|btc|western union|gift card)\b' }
+  - { kind: off_platform, severity: 0.9, pattern: '(?i)\b(contact|message|text|reach|add|dm|chat with|talk to)\b[^.\n]{0,25}\b(on|via|at|through)\s+(telegram|whatsapp|signal|skype|discord)\b' }
+  - { kind: off_platform, severity: 0.9, pattern: '(?i)\b(telegram|whatsapp|skype|signal)\b\s*(:|@|id\b|handle\b|number\b)' }
+  - { kind: off_platform, severity: 0.9, pattern: '(?i)\b(external|outside|another|third[- ]party)\s+(messaging|chat)\s+(app|platform)\b|\boff[- ]platform\b' }
+  - { kind: scam, severity: 0.95, pattern: '(?i)\b(pay|paid|payment|salary)\b[^.\n]{0,40}\b(crypto|usdt|bitcoin|btc)\b' }
+  - { kind: scam, severity: 0.95, pattern: '(?i)\b(western union|gift cards?)\b' }
   - { kind: scam, severity: 0.95, pattern: '(?i)\b(cheque|check)\b.{0,40}\b(deposit|mail)' }
-  - { kind: advance_fee, severity: 0.95, pattern: '(?i)\b(purchase|buy|pay)\b.{0,40}\b(onboarding|kit|fee|equipment)\b' }
+  - { kind: advance_fee, severity: 0.95, pattern: '(?i)\b(purchase|buy|pay for)\b.{0,40}\b(onboarding|starter|training)\s+(kit|fee|package)\b' }
+  - { kind: advance_fee, severity: 0.95, pattern: '(?i)\b(registration|onboarding|application)\s+fee\b' }
   - { kind: free_work, severity: 0.85, pattern: '(?i)\b(unpaid|free)\b.{0,30}\b(test|trial|sample)\b' }
   - { kind: free_work, severity: 0.75, pattern: '(?i)best submission (gets|wins)' }
-  - { kind: contact_harvest, severity: 0.8, pattern: '(?i)(send|share|include)\b.{0,30}\b(whatsapp|phone|number|personal email|email address)' }
+  # Income scams (the fraud class in the external fake-job benchmark): "earn $5000/week, no experience, contact now".
+  - { kind: income_scam, severity: 0.8, pattern: '(?i)\bearn\s*(up to\s*)?\$?\s*\d[\d,]*\s*(k\b)?\s*(/|per|a|every)?\s*(week|wk|day|daily|weekly)\b' }
+  - { kind: contact_harvest, severity: 0.8, pattern: '(?i)(send|share|include)\b.{0,30}\b(whatsapp|phone number|mobile number|personal email|email address|contact number)' }
 injection:
   - '(?i)ignore (all )?(previous|prior|above) (instructions|prompts)'
   - '(?i)\b(system|assistant)\s*:'

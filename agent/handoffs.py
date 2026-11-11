@@ -29,8 +29,8 @@ class JobSpec(BaseModel):
 
 
 class RiskFlag(BaseModel):
-    kind: Literal["scam", "free_work", "off_platform", "contact_harvest", "advance_fee", "injection", "unverified_payment",
-                  "new_client", "low_budget", "duplicate", "other"]
+    kind: Literal["scam", "free_work", "off_platform", "contact_harvest", "advance_fee", "income_scam", "injection",
+                  "unverified_payment", "new_client", "low_budget", "duplicate", "other"]
     severity: float = Field(ge=0, le=1)
     evidence: str = ""
 

@@ -3,27 +3,27 @@
  "trace_id": "trace-crash-resume",
  "profile": "offline",
  "job": {
-  "id": "j-ai_ml-057",
-  "title": "Hiring LayoutLM expert: invoice field extraction pipeline",
-  "budget": 1608,
-  "budget_type": "fixed",
-  "connects_cost": 16
+  "id": "j-ai_ml-037",
+  "title": "Machine Learning developer needed for an anti-bot product",
+  "budget": 120.0,
+  "budget_type": "hourly",
+  "connects_cost": 6
  },
  "outcome": {
   "status": "submitted",
-  "reason": "fit 1.00 >= 0.7",
+  "reason": "fit 0.67 >= 0.35",
   "decision": "bid",
   "submission": {
    "status": "ok",
-   "proposal_id": "p-378fa18361",
+   "proposal_id": "p-bb3a29f968",
    "marketplace_status": "submitted",
-   "connects_spent": 16,
+   "connects_spent": 6,
    "duplicate": false,
    "replay_after_crash": {
     "status": "duplicate",
-    "proposal_id": "p-378fa18361",
+    "proposal_id": "p-bb3a29f968",
     "marketplace_status": "submitted",
-    "connects_spent": 16,
+    "connects_spent": 6,
     "duplicate": true
    }
   },
@@ -49,7 +49,7 @@
    "name": "node.scout",
    "kind": "node",
    "t_start_s": 0.0,
-   "duration_s": 0.0004,
+   "duration_s": 0.0007,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -64,8 +64,8 @@
   {
    "name": "node.analyst",
    "kind": "node",
-   "t_start_s": 0.0025,
-   "duration_s": 0.0004,
+   "t_start_s": 0.0061,
+   "duration_s": 0.0009,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -79,8 +79,8 @@
   {
    "name": "node.risk",
    "kind": "node",
-   "t_start_s": 0.0035,
-   "duration_s": 0.0449,
+   "t_start_s": 0.0083,
+   "duration_s": 0.0613,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -95,8 +95,8 @@
   {
    "name": "node.matcher",
    "kind": "node",
-   "t_start_s": 0.0043,
-   "duration_s": 0.1085,
+   "t_start_s": 0.0092,
+   "duration_s": 0.2181,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -111,72 +111,110 @@
   {
    "name": "mcp.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.0064,
-   "duration_s": 0.0192,
+   "t_start_s": 0.0125,
+   "duration_s": 0.0215,
    "attrs": {
     "args": {
-     "client_id": "c0203"
+     "client_id": "c-42b2da8f15"
     },
     "user": "u-demo",
-    "result_size": 520
+    "result_size": 792
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.0135,
+   "t_start_s": 0.0286,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.009,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.search_evidence",
-   "kind": "tool",
-   "t_start_s": 0.0394,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "matcher",
-    "args": {
-     "requirement": "LayoutLM",
-     "k": 4,
-     "portfolio_id": "ai_ml",
-     "filters": {
-      "exclude_ids": []
-     }
-    },
-    "latency_s": 0.024,
+    "latency_s": 0.019,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.0478,
+   "t_start_s": 0.0681,
    "duration_s": 0.0,
    "attrs": {
     "agent": "risk",
     "args": {
-     "client_id": "c0203"
+     "client_id": "c-42b2da8f15"
     },
-    "latency_s": 0.044,
+    "latency_s": 0.06,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0644,
+   "t_start_s": 0.0812,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "OCR",
+     "requirement": "Data Analysis",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.05,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1068,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Data Science",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.025,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1308,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Python",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.023,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1561,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Machine Learning",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
@@ -190,64 +228,64 @@
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0805,
+   "t_start_s": 0.1796,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "FastAPI",
+     "requirement": "Artificial Intelligence",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.016,
+    "latency_s": 0.022,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0962,
+   "t_start_s": 0.2026,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "PyTorch",
+     "requirement": "Deep Learning",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.015,
+    "latency_s": 0.022,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.1122,
+   "t_start_s": 0.2263,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "HuggingFace Transformers",
+     "requirement": "React Native",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.015,
+    "latency_s": 0.023,
     "attempt": 0
    }
   },
   {
    "name": "node.decide",
    "kind": "node",
-   "t_start_s": 0.1142,
+   "t_start_s": 0.2292,
    "duration_s": 0.0001,
    "attrs": {
     "model": null,
@@ -265,8 +303,8 @@
   {
    "name": "node.pricing",
    "kind": "node",
-   "t_start_s": 0.1162,
-   "duration_s": 0.0212,
+   "t_start_s": 0.2318,
+   "duration_s": 0.0361,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -281,37 +319,37 @@
   {
    "name": "mcp.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.1179,
-   "duration_s": 0.0023,
+   "t_start_s": 0.2344,
+   "duration_s": 0.0033,
    "attrs": {
     "args": {
-     "category": "computer_vision",
-     "budget_type": "fixed"
+     "category": "classic_ml",
+     "budget_type": "hourly"
     },
     "user": "u-demo",
-    "result_size": 106
+    "result_size": 102
    }
   },
   {
    "name": "tool.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.1298,
+   "t_start_s": 0.254,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {
-     "category": "computer_vision",
-     "budget_type": "fixed"
+     "category": "classic_ml",
+     "budget_type": "hourly"
     },
-    "latency_s": 0.014,
+    "latency_s": 0.022,
     "attempt": 0
    }
   },
   {
    "name": "mcp.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1322,
-   "duration_s": 0.0015,
+   "t_start_s": 0.2582,
+   "duration_s": 0.0027,
    "attrs": {
     "args": {},
     "user": "u-demo",
@@ -321,20 +359,20 @@
   {
    "name": "tool.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1367,
+   "t_start_s": 0.2668,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {},
-    "latency_s": 0.006,
+    "latency_s": 0.012,
     "attempt": 0
    }
   },
   {
    "name": "node.writer",
    "kind": "node",
-   "t_start_s": 0.1397,
-   "duration_s": 0.0001,
+   "t_start_s": 0.2707,
+   "duration_s": 0.0002,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -350,8 +388,8 @@
   {
    "name": "node.verifier",
    "kind": "node",
-   "t_start_s": 0.1414,
-   "duration_s": 0.0423,
+   "t_start_s": 0.2728,
+   "duration_s": 0.0718,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -366,51 +404,66 @@
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.1547,
+   "t_start_s": 0.2882,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
-     "id": "ai_ml:case:invoice-ocr",
+     "id": "ai_ml:case:churn-model",
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.013,
+    "latency_s": 0.015,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.1678,
+   "t_start_s": 0.3035,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
-     "id": "ai_ml:case:rec-engine",
+     "id": "ai_ml:case:lora-clinical",
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.012,
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.3192,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:fraud-gnn",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.015,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.1789,
+   "t_start_s": 0.3313,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.01,
+    "latency_s": 0.011,
     "attempt": 0
    }
   },
   {
    "name": "node.critic",
    "kind": "node",
-   "t_start_s": 0.1855,
+   "t_start_s": 0.3474,
    "duration_s": 0.0001,
    "attrs": {
     "model": "offline/heuristic",
@@ -425,8 +478,8 @@
   {
    "name": "node.compliance",
    "kind": "node",
-   "t_start_s": 0.1879,
-   "duration_s": 0.0002,
+   "t_start_s": 0.3507,
+   "duration_s": 0.0006,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -441,8 +494,8 @@
   {
    "name": "node.preview",
    "kind": "node",
-   "t_start_s": 0.1897,
-   "duration_s": 0.0351,
+   "t_start_s": 0.3537,
+   "duration_s": 0.0589,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -457,56 +510,57 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.2049,
+   "t_start_s": 0.3795,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-057",
-     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
-     "bid_amount": 1770.0,
+     "job_id": "j-ai_ml-037",
+     "cover_letter": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\n\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the Data Analysis part already started, or would this be built from scratch?",
+     "bid_amount": 106.0,
      "answers": [
+      "My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.",
       "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
      ],
      "idempotency_key": "trace-crash-resume:draft:v1:e0",
      "dry_run": true
     },
-    "latency_s": 0.015,
+    "latency_s": 0.026,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2242,
+   "t_start_s": 0.4114,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
      "draft_id": "pending",
-     "job_id": "j-ai_ml-057",
+     "job_id": "j-ai_ml-037",
      "idempotency_key": "trace-crash-resume:submit:preview",
      "dry_run": true
     },
-    "latency_s": 0.019,
+    "latency_s": 0.03,
     "attempt": 0
    }
   },
   {
    "name": "node.approval",
    "kind": "node",
-   "t_start_s": 0.2262,
-   "duration_s": 0.0002,
+   "t_start_s": 0.4148,
+   "duration_s": 0.0005,
    "attrs": {
     "model": null,
-    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-057', 'title': 'Hiring LayoutLM expert: invoice field extraction pipeline', 'budget': 1608, 'budget_type': 'fixed', 'category': 'computer_vision'}, 'draft': {'cover_letter': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'screening_answers': [{'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'claims': [{'text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:proposal:011', 'ai_ml:proposal:041', 'ai_ml:proposal:042'], 'score': 0.8}, {'text': 'For FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:rec-engine'], 'score': 1.0}], 'version': 1, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:invoice-ocr', 'ai_ml:case:rec-engine']}, 'evidence': [{'id': 'ai_ml:proposal:011', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for media company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:proposal:041', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'ignored', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for edtech company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:proposal:042', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'ignored', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for nonprofit company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LayoutLM'}, {'id': 'ai_ml:case:invoice-ocr', 'type': 'case_study', 'source': 'case_studies/invoice-ocr.md', 'date': '[PHONE]', 'outcome': None, 'project': 'invoice-ocr', 'title': 'Invoice field extraction pipeline', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch', 'FastAPI', 'Docker', 'OCR'], 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time down 70%.\\n\\n## Stack\\nLayoutLM, HuggingFace Transformers, PyTorch, FastAPI, Docker, OCR', 'score': 1.0, 'requirement': 'OCR'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, LightGBM, LoRA, MCP, MLOps, MLflow, NLP, Neo4j, OCR, ONNX, OpenAI API, OpenCV, Pinecone, PostgreSQL, Prophet, PyTorch, PyTorch Geometric, Python, RAG, RAGAS, Redis, Streamlit, Whisper, XGBoost, YOLO, edg', 'score': 1.0, 'requirement': 'OCR'}, {'id': 'ai_ml:case:rec-engine', 'type': 'case_study', 'source': 'case_studies/rec-engine.md', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'Two-tower product recommender', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': '# Two-tower product recommender\\n\\n## The problem\\nA fashion store showed the same best-sellers to everyone.\\n\\n## What I did\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Result\\nClick-through up 18% and average order value up 6% in an A/B test.\\n\\n## Stack\\nPyTorch, recommender systems, Faiss, FastAPI, embeddings', 'score': 1.0, 'requirement': 'FastAPI'}, {'id': 'ai_ml:repo:rec-engine', 'type': 'repo_code', 'source': 'repos/rec-engine/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'rec-engine', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 1.0, 'requirement': 'FastAPI'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 1.0, 'requirement': 'PyTorch'}, {'id': 'ai_ml:case:review-sentiment', 'type': 'case_study', 'source': 'case_studies/review-sentiment.md', 'date': '[PHONE]', 'outcome': None, 'project': 'review-sentiment', 'title': 'Hotel review sentiment and topic dashboard', 'skills': ['NLP', 'spaCy', 'HuggingFace Transformers', 'Streamlit', 'topic modelling'], 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\n## Stack\\nNLP, spaCy, HuggingFace Transformers, Streamlit, topic modelling', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}, {'id': 'ai_ml:case:lora-clinical', 'type': 'case_study', 'source': 'case_studies/lora-clinical.md', 'date': '[PHONE]', 'outcome': None, 'project': 'lora-clinical', 'title': 'Fine-tuned clinical note summariser', 'skills': ['LoRA', 'fine-tuning', 'HuggingFace Transformers', 'PyTorch', 'AWS SageMaker'], 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model.\\n\\n## Stack\\nLoRA, fine-tuning, HuggingFace Transformers, PyTorch, AWS SageMaker', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}], 'fit': {'fit_score': 1.0, 'matrix': [{'requirement': 'LayoutLM', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:011', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for media company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'replied'}, {'item_id': 'ai_ml:proposal:041', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for edtech company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'ignored'}, {'item_id': 'ai_ml:proposal:042', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for nonprofit company', 'snippet': 'You need LayoutLM work similar to my invoice field extraction pipeline: Field-level F1 of 0.94; manual keying time down 70%.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: mile', 'score': 1.0, 'outcome': 'ignored'}]}, {'requirement': 'OCR', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': 'CV\\n## Selected work\\n- **Contract Q&A assistant for a mid-size law firm** (legal): Cut clause review time by 41% across 9 associates; answers cite the exact page.\\n- **Multilingual customer-support agent** (e-commerce): Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third.\\n', 'score': 1.0, 'outcome': None}]}, {'requirement': 'FastAPI', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:rec-engine', 'project': 'rec-engine', 'type': 'case_study', 'title': 'Two-tower product recommender', 'snippet': '# Two-tower product recommender\\n\\n## The problem\\nA fashion store showed the same best-sellers to everyone.\\n\\n## What I did\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Result\\nClick-through up 18% and average order value up 6% in an A/B test.\\n\\n## Stack\\nPyT', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_code', 'title': 'rec-engine', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}]}, {'requirement': 'PyTorch', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_readme', 'title': 'rec-engine', 'snippet': '# rec-engine\\n\\nTrained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with PyTorch, recommender systems, Faiss.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}]}, {'requirement': 'HuggingFace Transformers', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:review-sentiment', 'project': 'review-sentiment', 'type': 'case_study', 'title': 'Hotel review sentiment and topic dashboard', 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; it', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:lora-clinical', 'project': 'lora-clinical', 'type': 'case_study', 'title': 'Fine-tuned clinical note summariser', 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 ov', 'score': 1.0, 'outcome': None}]}], 'reasons': ['5/5 requirements fully evidenced', '100% of requirements are skills in the portfolio'], 'unsupported_requirements': [], 'top_projects': ['invoice-ocr', 'rec-engine', 'fraud-gnn']}, 'risk': {'risk_score': 0.044, 'client_quality': 0.89, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.89; 0 flag(s).'}, 'price': {'amount': 1770.0, 'budget_type': 'fixed', 'rationale': \"market [PHONE] (p25-p75, n=81), fit tier high -> p70; kept within 10% of the client's budget ($1608)\", 'market': {'category': 'computer_vision', 'n': 81, 'budget_type': 'fixed', 'p25': 1640.0, 'median': 2390.0, 'p75': 3280.0, 'source': None}, 'floor': 40.0, 'connects_cost': 16, 'connects_usd': 2.4, 'expected_value_usd': 61.95, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-057', 'cover_letter': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'bid_amount': 1770.0, 'answers': ['Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.']}, 'connects_cost': 16, 'connects_balance_after': 100, 'marketplace': 'gigsim'}, 'critiques': [{'score': 0.8, 'approve': True, 'issues': [{'kind': 'personalisation', 'detail': \"mentions 1/5 of the client's requirements\", 'paragraph': None}], 'revision_instructions': \"personalisation: mentions 1/5 of the client's requirements\", 'version': 1}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\\n\\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'cleaned_answers': [{'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.', 'label': 'supported', 'score': 0.8, 'evidence_ids': ['ai_ml:proposal:011', 'ai_ml:proposal:041', 'ai_ml:proposal:042'], 'reasons': []}, {'text': 'For FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:rec-engine'], 'reasons': []}], 'n_claims': 2, 'unsupported_before': 0, 'unsupported_rate_before': 0.0, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='5defde10586dfa9f8171d5c96481aea9', response_schema=None),)"
+    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-037', 'title': 'Machine Learning developer needed for an anti-bot product', 'budget': 120.0, 'budget_type': 'hourly', 'category': 'classic_ml'}, 'draft': {'cover_letter': 'AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\\n\\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the Data Analysis part already started, or would this be built from scratch?', 'screening_answers': [{'question': 'Describe a similar project you have completed.', 'answer': 'My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}, {'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'claims': [{'text': 'AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:churn-model'], 'score': 0.8}, {'text': 'For Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.', 'label': 'supported', 'evidence_ids': ['ai_ml:proposal:020', 'ai_ml:case:lora-clinical'], 'score': 0.875}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'score': 1.0}], 'version': 1, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:churn-model', 'ai_ml:case:lora-clinical', 'ai_ml:case:fraud-gnn']}, 'evidence': [{'id': 'ai_ml:proposal:020', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'lora-clinical', 'title': 'Need help with LoRA for manufacturing company', 'skills': ['LoRA', 'fine-tuning', 'HuggingFace Transformers'], 'snippet': 'Quick question before I scope this: is the LoRA part already started? I recently shipped a fine-tuned clinical note summariser (Draft summaries accepted with light edits 78% of the time).\\n\\nMy approach: LoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'Data Analysis'}, {'id': 'ai_ml:case:lora-clinical', 'type': 'case_study', 'source': 'case_studies/lora-clinical.md', 'date': '[PHONE]', 'outcome': None, 'project': 'lora-clinical', 'title': 'Fine-tuned clinical note summariser', 'skills': ['LoRA', 'fine-tuning', 'HuggingFace Transformers', 'PyTorch', 'AWS SageMaker'], 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model.\\n\\n## Stack\\nLoRA, fine-tuning, HuggingFace Transformers, PyTorch, AWS SageMaker', 'score': 0.9839, 'requirement': 'Data Analysis'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': 'CV\\n## Selected work\\n- **Contract Q&A assistant for a mid-size law firm** (legal): Cut clause review time by 41% across 9 associates; answers cite the exact page.\\n- **Multilingual customer-support agent** (e-commerce): Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third.\\n- **Invoice field extraction pipeline** (fintech): Field-level F1 of 0.94; manual keying time down 70%.\\n- **Subscription churn prediction** (SaaS): AUC 0.87; retention team saved an estimated $310k AR', 'score': 0.9683, 'requirement': 'Data Analysis'}, {'id': 'ai_ml:repo:churn-model', 'type': 'repo_readme', 'source': 'repos/churn-model/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'churn-model', 'title': 'churn-model', 'skills': ['scikit-learn', 'XGBoost', 'MLflow', 'Airflow', 'Python', 'feature engineering'], 'snippet': '# churn-model\\n\\nBuilt gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with scikit-learn, XGBoost, MLflow.', 'score': 1.0, 'requirement': 'Data Science'}, {'id': 'ai_ml:case:churn-model', 'type': 'case_study', 'source': 'case_studies/churn-model.md', 'date': '[PHONE]', 'outcome': None, 'project': 'churn-model', 'title': 'Subscription churn prediction', 'skills': ['scikit-learn', 'XGBoost', 'MLflow', 'Airflow', 'Python', 'feature engineering'], 'snippet': '# Subscription churn prediction\\n\\n## The problem\\nA B2B SaaS lost 4% of accounts a month with no early warning.\\n\\n## What I did\\nBuilt gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.\\n\\n## Result\\nAUC 0.87; retention team saved an estimated $310k ARR in two quarters.\\n\\n## Stack\\nscikit-learn, XGBoost, MLflow, Airflow, Python, feature engineering', 'score': 0.9683, 'requirement': 'Data Science'}, {'id': 'ai_ml:repo:agent-ops', 'type': 'repo_readme', 'source': 'repos/agent-ops/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'agent-ops', 'title': 'agent-ops', 'skills': ['LangGraph', 'MCP', 'Python', 'PostgreSQL', 'LLM agents', 'tool calling'], 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:repo:support-bot', 'type': 'repo_readme', 'source': 'repos/support-bot/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'support-bot', 'title': 'support-bot', 'skills': ['LangGraph', 'Pinecone', 'Python', 'Redis', 'LLM agents', 'Celery'], 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'requirement': 'Python'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 0.9685, 'requirement': 'Python'}, {'id': 'ai_ml:repo:defect-vision', 'type': 'repo_code', 'source': 'repos/defect-vision/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'defect-vision', 'title': 'defect-vision', 'skills': ['YOLO', 'PyTorch', 'OpenCV', 'ONNX', 'edge deployment'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 1.0, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:repo:rec-engine', 'type': 'repo_code', 'source': 'repos/rec-engine/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'rec-engine', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 0.9839, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:case:legal-rag', 'type': 'case_study', 'source': 'case_studies/legal-rag.md', 'date': '[PHONE]', 'outcome': None, 'project': 'legal-rag', 'title': 'Contract Q&A assistant for a mid-size law firm', 'skills': ['RAG', 'LangChain', 'pgvector', 'FastAPI', 'OpenAI API', 'Python'], 'snippet': '# Contract Q&A assistant for a mid-size law firm\\n\\n## The problem\\nAssociates spent hours searching 12,000 contracts for indemnity and termination clauses.\\n\\n## What I did\\nBuilt a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.\\n\\n## Result\\nCut clause review time by 41% across 9 associates; answers cite the exact page.\\n\\n## Stack\\nRAG, LangChain, pgvector, FastAPI, OpenAI API, Python', 'score': 0.9683, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:repo:llm-eval', 'type': 'repo_code', 'source': 'repos/llm-eval/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'llm-eval', 'title': 'llm-eval', 'skills': ['LLM evaluation', 'RAGAS', 'pytest', 'Python', 'prompt engineering'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\"\"\"\\n    return 0', 'score': 0.9839, 'requirement': 'Artificial Intelligence'}, {'id': 'ai_ml:proposal:012', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'vector-migration', 'title': 'Need help with Pinecone for healthcare company', 'skills': ['Pinecone', 'Elasticsearch', 'embeddings'], 'snippet': 'You need Pinecone work similar to my semantic search migration to pinecone: Search success rate up 27%; p95 latency 180 ms.\\n\\nMy approach: Migrated to hybrid semantic search on Pinecone with a re-ranker, keeping BM25 for exact names.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'Deep Learning'}, {'id': 'ai_ml:proposal:022', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'vector-migration', 'title': 'Need help with Pinecone for logistics company', 'skills': ['Pinecone', 'Elasticsearch', 'embeddings'], 'snippet': 'You need Pinecone work similar to my semantic search migration to pinecone: Search success rate up 27%; p95 latency 180 ms.\\n\\nMy approach: Migrated to hybrid semantic search on Pinecone with a re-ranker, keeping BM25 for exact names.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 0.9839, 'requirement': 'Deep Learning'}, {'id': 'ai_ml:proposal:018', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'ignored', 'project': 'invoice-ocr', 'title': 'Need help with LayoutLM for media company', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch'], 'snippet': 'Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 0.9683, 'requirement': 'Deep Learning'}], 'fit': {'fit_score': 0.667, 'matrix': [{'requirement': 'Data Analysis', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:020', 'project': 'lora-clinical', 'type': 'proposal', 'title': 'Need help with LoRA for manufacturing company', 'snippet': 'Quick question before I scope this: is the LoRA part already started? I recently shipped a fine-tuned clinical note summariser (Draft summaries accepted with light edits 78% of the time).\\n\\nMy approach: LoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop', 'score': 1.0, 'outcome': 'replied'}, {'item_id': 'ai_ml:case:lora-clinical', 'project': 'lora-clinical', 'type': 'case_study', 'title': 'Fine-tuned clinical note summariser', 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 ov', 'score': 0.9839, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': 'CV\\n## Selected work\\n- **Contract Q&A assistant for a mid-size law firm** (legal): Cut clause review time by 41% across 9 associates; answers cite the exact page.\\n- **Multilingual customer-support agent** (e-commerce): Automated 58% of tickets with a 4.6/5 CSAT; human escalations dropped by a third.\\n', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Data Science', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:churn-model', 'project': 'churn-model', 'type': 'repo_readme', 'title': 'churn-model', 'snippet': '# churn-model\\n\\nBuilt gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with scikit-learn, XGBoost, MLflow.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:churn-model', 'project': 'churn-model', 'type': 'repo_code', 'title': 'churn-model', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.\"\"\"\\n    return 0', 'score': 0.9839, 'outcome': None}, {'item_id': 'ai_ml:case:churn-model', 'project': 'churn-model', 'type': 'case_study', 'title': 'Subscription churn prediction', 'snippet': '# Subscription churn prediction\\n\\n## The problem\\nA B2B SaaS lost 4% of accounts a month with no early warning.\\n\\n## What I did\\nBuilt gradient-boosted churn scores refreshed daily by Airflow, tracked in MLflow, with SHAP explanations for CSMs.\\n\\n## Result\\nAUC 0.87; retention team saved an estimated $310', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Python', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:agent-ops', 'project': 'agent-ops', 'type': 'repo_readme', 'title': 'agent-ops', 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:support-bot', 'project': 'support-bot', 'type': 'repo_readme', 'title': 'support-bot', 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 0.9685, 'outcome': None}]}, {'requirement': 'Machine Learning', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:defect-vision', 'project': 'defect-vision', 'type': 'repo_code', 'title': 'defect-vision', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_code', 'title': 'rec-engine', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 0.9839, 'outcome': None}, {'item_id': 'ai_ml:case:legal-rag', 'project': 'legal-rag', 'type': 'case_study', 'title': 'Contract Q&A assistant for a mid-size law firm', 'snippet': '# Contract Q&A assistant for a mid-size law firm\\n\\n## The problem\\nAssociates spent hours searching 12,000 contracts for indemnity and termination clauses.\\n\\n## What I did\\nBuilt a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.\\n', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Artificial Intelligence', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:support-bot', 'project': 'support-bot', 'type': 'repo_code', 'title': 'support-bot', 'snippet': 'from celery import Celery\\n\\napp = Celery(\\'jobs\\', broker=\\'redis://redis:6379/0\\')\\n\\n\\[EMAIL](bind=True, max_retries=3)\\ndef reindex(self, source_id: str) -> int:\\n    \"\"\"Nightly re-index; retried with backoff.\"\"\"\\n    return run_pipeline(source_id)\\n\\n\\ndef run_pipeline(source_id: str) -> int:\\n    \"\"\"Design', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_code', 'title': 'llm-eval', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\"\"\"\\n    return 0', 'score': 0.9839, 'outcome': None}, {'item_id': 'ai_ml:repo:agent-ops', 'project': 'agent-ops', 'type': 'repo_code', 'title': 'agent-ops', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\"\"\"\\n    return 0', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Deep Learning', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:012', 'project': 'vector-migration', 'type': 'proposal', 'title': 'Need help with Pinecone for healthcare company', 'snippet': 'You need Pinecone work similar to my semantic search migration to pinecone: Search success rate up 27%; p95 latency 180 ms.\\n\\nMy approach: Migrated to hybrid semantic search on Pinecone with a re-ranker, keeping BM25 for exact names.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone ', 'score': 1.0, 'outcome': 'replied'}, {'item_id': 'ai_ml:proposal:022', 'project': 'vector-migration', 'type': 'proposal', 'title': 'Need help with Pinecone for logistics company', 'snippet': 'You need Pinecone work similar to my semantic search migration to pinecone: Search success rate up 27%; p95 latency 180 ms.\\n\\nMy approach: Migrated to hybrid semantic search on Pinecone with a re-ranker, keeping BM25 for exact names.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone ', 'score': 0.9839, 'outcome': 'replied'}, {'item_id': 'ai_ml:proposal:018', 'project': 'invoice-ocr', 'type': 'proposal', 'title': 'Need help with LayoutLM for media company', 'snippet': 'Dear Hiring Manager, I am a passionate and hardworking professional with many years of experience.\\n\\nMy approach: Fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milesto', 'score': 0.9683, 'outcome': 'ignored'}]}, {'requirement': 'React Native', 'coverage': 'none', 'evidence': []}], 'reasons': ['6/7 requirements fully evidenced', '7% of requirements are skills in the portfolio'], 'unsupported_requirements': ['React Native'], 'top_projects': ['churn-model', 'lora-clinical', 'agent-ops']}, 'risk': {'risk_score': 0.252, 'client_quality': 0.67, 'flags': [{'kind': 'other', 'severity': 0.2, 'evidence': 'avg rating [PHONE]'}], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.67; 1 flag(s).'}, 'price': {'amount': 106.0, 'budget_type': 'hourly', 'rationale': \"market [PHONE] (p25-p75, n=18), fit tier mid -> p50; 88% of the client's budget ($120) for a mid fit\", 'market': {'category': 'classic_ml', 'n': 18, 'budget_type': 'hourly', 'p25': 20.0, 'median': 50.0, 'p75': 77.0, 'source': None}, 'floor': 40.0, 'connects_cost': 6, 'connects_usd': 0.9, 'expected_value_usd': 53.02, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-037', 'cover_letter': 'AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\\n\\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the Data Analysis part already started, or would this be built from scratch?', 'bid_amount': 106.0, 'answers': ['My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.', 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.']}, 'connects_cost': 6, 'connects_balance_after': 112, 'marketplace': 'gigsim'}, 'critiques': [{'score': 0.8, 'approve': True, 'issues': [{'kind': 'personalisation', 'detail': \"mentions 2/6 of the client's requirements\", 'paragraph': None}], 'revision_instructions': \"personalisation: mentions 2/6 of the client's requirements\", 'version': 1}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\\n\\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the Data Analysis part already started, or would this be built from scratch?', 'cleaned_answers': [{'question': 'Describe a similar project you have completed.', 'answer': 'My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}, {'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.', 'label': 'supported', 'score': 0.8, 'evidence_ids': ['ai_ml:case:churn-model'], 'reasons': []}, {'text': 'For Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.', 'label': 'supported', 'score': 0.875, 'evidence_ids': ['ai_ml:proposal:020', 'ai_ml:case:lora-clinical'], 'reasons': []}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'reasons': []}], 'n_claims': 4, 'unsupported_before': 0, 'unsupported_rate_before': 0.0, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='367946795e4c49fa973a642b05769794', response_schema=None),)"
    }
   },
   {
    "name": "node.approval",
    "kind": "node",
-   "t_start_s": 0.2598,
-   "duration_s": 0.0001,
+   "t_start_s": 0.4757,
+   "duration_s": 0.0,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -521,8 +575,8 @@
   {
    "name": "node.submit",
    "kind": "node",
-   "t_start_s": 0.262,
-   "duration_s": 0.0352,
+   "t_start_s": 0.4793,
+   "duration_s": 0.08,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -537,14 +591,15 @@
   {
    "name": "mcp.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.2648,
-   "duration_s": 0.0031,
+   "t_start_s": 0.4839,
+   "duration_s": 0.0043,
    "attrs": {
     "args": {
-     "job_id": "j-ai_ml-057",
-     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
-     "bid_amount": 1770.0,
+     "job_id": "j-ai_ml-037",
+     "cover_letter": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\n\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the Data Analysis part already started, or would this be built from scratch?",
+     "bid_amount": 106.0,
      "answers": [
+      "My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.",
       "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
      ],
      "idempotency_key": "trace-crash-resume:draft:v1e0",
@@ -556,32 +611,33 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.2793,
+   "t_start_s": 0.5156,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-057",
-     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
-     "bid_amount": 1770.0,
+     "job_id": "j-ai_ml-037",
+     "cover_letter": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\n\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the Data Analysis part already started, or would this be built from scratch?",
+     "bid_amount": 106.0,
      "answers": [
+      "My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.",
       "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
      ],
      "idempotency_key": "trace-crash-resume:draft:v1e0"
     },
-    "latency_s": 0.017,
+    "latency_s": 0.036,
     "attempt": 0
    }
   },
   {
    "name": "mcp.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2835,
-   "duration_s": 0.0019,
+   "t_start_s": 0.5267,
+   "duration_s": 0.0043,
    "attrs": {
     "args": {
-     "draft_id": "d-8b725939b9",
-     "job_id": "j-ai_ml-057",
+     "draft_id": "d-0af6af4e26",
+     "job_id": "j-ai_ml-037",
      "idempotency_key": "trace-crash-resume:submit:v1e0",
      "dry_run": false
     },
@@ -591,24 +647,24 @@
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2961,
+   "t_start_s": 0.5564,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "draft_id": "d-8b725939b9",
-     "job_id": "j-ai_ml-057",
+     "draft_id": "d-0af6af4e26",
+     "job_id": "j-ai_ml-037",
      "idempotency_key": "trace-crash-resume:submit:v1e0"
     },
-    "latency_s": 0.016,
+    "latency_s": 0.039,
     "attempt": 0
    }
   },
   {
    "name": "node.submit",
    "kind": "node",
-   "t_start_s": 0.3076,
-   "duration_s": 0.0274,
+   "t_start_s": 0.5823,
+   "duration_s": 0.0539,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -623,36 +679,37 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.3202,
+   "t_start_s": 0.6124,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-057",
-     "cover_letter": "Field-level F1 of 0.94; manual keying time down 70%: that was the outcome of my invoice field extraction pipeline project, which is close to what you describe.\n\nFor FastAPI: in the two-tower product recommender project I trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
-     "bid_amount": 1770.0,
+     "job_id": "j-ai_ml-037",
+     "cover_letter": "AUC 0.87; retention team saved an estimated $310k ARR in two quarters: that was the outcome of my subscription churn prediction project, which is close to what you describe.\n\nFor Data Analysis: in the fine-tuned clinical note summariser project I loRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used React Native in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the Data Analysis part already started, or would this be built from scratch?",
+     "bid_amount": 106.0,
      "answers": [
+      "My fine-tuned clinical note summariser project: Draft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model. The case study and code are in my marketplace portfolio and I can walk you through them on a call.",
       "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
      ],
      "idempotency_key": "trace-crash-resume:draft:v1e0"
     },
-    "latency_s": 0.013,
+    "latency_s": 0.03,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.334,
+   "t_start_s": 0.634,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "draft_id": "d-8b725939b9",
-     "job_id": "j-ai_ml-057",
+     "draft_id": "d-0af6af4e26",
+     "job_id": "j-ai_ml-037",
      "idempotency_key": "trace-crash-resume:submit:v1e0"
     },
-    "latency_s": 0.013,
+    "latency_s": 0.02,
     "attempt": 0
    }
   }

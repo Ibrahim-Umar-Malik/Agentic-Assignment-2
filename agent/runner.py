@@ -13,6 +13,7 @@ from sqlalchemy import select, update
 
 from core import events, tracing
 from core.db import approvals, conversations, dead_letter, engine, jobs, row_dict, runs, users
+from core.personas import persona_floor
 
 from .mcp_client import ToolUnavailable
 from .runtime import Runtime
@@ -22,7 +23,7 @@ log = logging.getLogger("gigbid.runner")
 
 def user_meta(user: dict) -> dict:
     s = user.get("settings") or {}
-    return {"hourly_floor": s.get("hourly_floor", 40), "hours_per_week": s.get("hours_per_week", 20),
+    return {"hourly_floor": s.get("hourly_floor", persona_floor(user.get("persona"))), "hours_per_week": s.get("hours_per_week", 20),
             "portfolio_id": f"{user.get('persona') or 'ai_ml'}:{user['id']}" if s.get("own_portfolio") else (user.get("persona") or "ai_ml"),
             "deleted_items": s.get("deleted_items", []), "autonomy": s.get("autonomy", "suggest")}
 

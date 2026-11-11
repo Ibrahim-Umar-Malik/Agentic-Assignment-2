@@ -25,3 +25,15 @@ Every number in the README and report comes from `evals/results/*.json`, produce
    edit test.
 5. **An A/B experiment that could not differ.** The first experiment (question-first vs evidence-first opening)
    kept the question in both arms, so the paired difference was exactly 0.0. Redesigned as question vs no question.
+6. **The whole system was tuned to data its author wrote.** The first build used synthetic jobs written by the
+   same AI that wrote the agents. It scored a bid F1 of 0.93 there and 0.11 on real Upwork posts, where it bid on
+   3 of 50 jobs it should have. The synthetic posts named skills exactly as the portfolio did; real clients write
+   "Machine Learning", not "LightGBM". Caught only because Ibrahim supplied real datasets (report §9).
+7. **A first silver-label rule credited skills the portfolio could not prove.** The hand-written list of tags a
+   persona "can claim" included NumPy and Keras, which no portfolio project shows. A job could then be labelled
+   "bid" while the Writer had no evidence to cite. Caught while reading tune-split misses; the rule now keeps a tag
+   only if it appears in the portfolio text (`data_pipeline/tag_competence.py`). The label change was made once,
+   from tune-split examples, and is disclosed in the data card.
+8. **Scam rules that fired on ordinary work.** The rules flagged any post mentioning Telegram, Discord or crypto:
+   2.9% of 5,000 real posts, mostly bot-building and crypto-product jobs. They also missed every "earn $5,000 a
+   week" fraud in an external benchmark. Both were measured, not guessed (`evals/results/risk_real.json`).

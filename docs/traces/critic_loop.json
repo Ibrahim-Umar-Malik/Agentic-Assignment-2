@@ -3,15 +3,15 @@
  "trace_id": "trace-critic-loop",
  "profile": "offline",
  "job": {
-  "id": "j-ai_ml-037",
-  "title": "Hiring LLM evaluation expert: llm evaluation harness",
-  "budget": 1743,
+  "id": "j-ai_ml-018",
+  "title": "Computer vision + machine learning for pose detection and exercise guidance",
+  "budget": 2500.0,
   "budget_type": "fixed",
-  "connects_cost": 8
+  "connects_cost": 6
  },
  "outcome": {
   "status": "awaiting_approval",
-  "reason": "fit 1.00 >= 0.7",
+  "reason": "fit 0.64 >= 0.35",
   "decision": "bid",
   "submission": null,
   "critiques": 3
@@ -40,7 +40,7 @@
    "name": "node.scout",
    "kind": "node",
    "t_start_s": 0.0,
-   "duration_s": 0.0003,
+   "duration_s": 0.001,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -55,8 +55,8 @@
   {
    "name": "node.analyst",
    "kind": "node",
-   "t_start_s": 0.0023,
-   "duration_s": 0.0004,
+   "t_start_s": 0.0048,
+   "duration_s": 0.0026,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -70,8 +70,8 @@
   {
    "name": "node.risk",
    "kind": "node",
-   "t_start_s": 0.0034,
-   "duration_s": 0.0522,
+   "t_start_s": 0.0099,
+   "duration_s": 0.0867,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -86,8 +86,8 @@
   {
    "name": "node.matcher",
    "kind": "node",
-   "t_start_s": 0.0042,
-   "duration_s": 0.1449,
+   "t_start_s": 0.0115,
+   "duration_s": 0.2138,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -102,67 +102,86 @@
   {
    "name": "mcp.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.006,
-   "duration_s": 0.0194,
+   "t_start_s": 0.016,
+   "duration_s": 0.028,
    "attrs": {
     "args": {
-     "client_id": "c0202"
+     "client_id": "c-81cc9d8704"
     },
     "user": "u-demo",
-    "result_size": 581
+    "result_size": 773
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.0129,
+   "t_start_s": 0.0356,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.009,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.search_evidence",
-   "kind": "tool",
-   "t_start_s": 0.0434,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "matcher",
-    "args": {
-     "requirement": "LLM evaluation",
-     "k": 4,
-     "portfolio_id": "ai_ml",
-     "filters": {
-      "exclude_ids": []
-     }
-    },
-    "latency_s": 0.029,
+    "latency_s": 0.024,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.0545,
+   "t_start_s": 0.094,
    "duration_s": 0.0,
    "attrs": {
     "agent": "risk",
     "args": {
-     "client_id": "c0202"
+     "client_id": "c-81cc9d8704"
     },
-    "latency_s": 0.051,
+    "latency_s": 0.084,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.075,
+   "t_start_s": 0.1132,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Machine Learning",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.072,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1497,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "matcher",
+    "args": {
+     "requirement": "Computer Vision",
+     "k": 4,
+     "portfolio_id": "ai_ml",
+     "filters": {
+      "exclude_ids": []
+     }
+    },
+    "latency_s": 0.035,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.search_evidence",
+   "kind": "tool",
+   "t_start_s": 0.1873,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
@@ -174,71 +193,33 @@
       "exclude_ids": []
      }
     },
-    "latency_s": 0.031,
+    "latency_s": 0.036,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0969,
+   "t_start_s": 0.2236,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "prompt engineering",
+     "requirement": "TensorFlow",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.021,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.search_evidence",
-   "kind": "tool",
-   "t_start_s": 0.1287,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "matcher",
-    "args": {
-     "requirement": "RAGAS",
-     "k": 4,
-     "portfolio_id": "ai_ml",
-     "filters": {
-      "exclude_ids": []
-     }
-    },
-    "latency_s": 0.031,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.search_evidence",
-   "kind": "tool",
-   "t_start_s": 0.1484,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "matcher",
-    "args": {
-     "requirement": "pytest",
-     "k": 4,
-     "portfolio_id": "ai_ml",
-     "filters": {
-      "exclude_ids": []
-     }
-    },
-    "latency_s": 0.019,
+    "latency_s": 0.035,
     "attempt": 0
    }
   },
   {
    "name": "node.decide",
    "kind": "node",
-   "t_start_s": 0.1506,
+   "t_start_s": 0.2281,
    "duration_s": 0.0001,
    "attrs": {
     "model": null,
@@ -256,8 +237,8 @@
   {
    "name": "node.pricing",
    "kind": "node",
-   "t_start_s": 0.1526,
-   "duration_s": 0.0246,
+   "t_start_s": 0.2314,
+   "duration_s": 0.035,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -272,37 +253,37 @@
   {
    "name": "mcp.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.1545,
-   "duration_s": 0.0023,
+   "t_start_s": 0.2345,
+   "duration_s": 0.0033,
    "attrs": {
     "args": {
-     "category": "mlops",
+     "category": "classic_ml",
      "budget_type": "fixed"
     },
     "user": "u-demo",
-    "result_size": 96
+    "result_size": 103
    }
   },
   {
    "name": "tool.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.1688,
+   "t_start_s": 0.2557,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {
-     "category": "mlops",
+     "category": "classic_ml",
      "budget_type": "fixed"
     },
-    "latency_s": 0.016,
+    "latency_s": 0.024,
     "attempt": 0
    }
   },
   {
    "name": "mcp.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1712,
-   "duration_s": 0.0015,
+   "t_start_s": 0.2588,
+   "duration_s": 0.0018,
    "attrs": {
     "args": {},
     "user": "u-demo",
@@ -312,204 +293,20 @@
   {
    "name": "tool.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1763,
+   "t_start_s": 0.2655,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {},
-    "latency_s": 0.007,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "node.writer",
-   "kind": "node",
-   "t_start_s": 0.1791,
-   "duration_s": 0.0001,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "draft",
-     "revision_request",
-     "revisions"
-    ]
-   }
-  },
-  {
-   "name": "node.verifier",
-   "kind": "node",
-   "t_start_s": 0.1807,
-   "duration_s": 0.0407,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "draft",
-     "verification"
-    ]
-   }
-  },
-  {
-   "name": "tool.portfolio.get_case_study",
-   "kind": "tool",
-   "t_start_s": 0.1933,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "id": "ai_ml:case:llm-eval",
-     "portfolio_id": "ai_ml"
-    },
-    "latency_s": 0.013,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.get_case_study",
-   "kind": "tool",
-   "t_start_s": 0.206,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "id": "ai_ml:case:fraud-gnn",
-     "portfolio_id": "ai_ml"
-    },
-    "latency_s": 0.012,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.list_skills",
-   "kind": "tool",
-   "t_start_s": 0.2166,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "portfolio_id": "ai_ml"
-    },
-    "latency_s": 0.01,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "node.critic",
-   "kind": "node",
-   "t_start_s": 0.2231,
-   "duration_s": 0.0001,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "critiques"
-    ]
-   }
-  },
-  {
-   "name": "node.writer",
-   "kind": "node",
-   "t_start_s": 0.2254,
-   "duration_s": 0.0001,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "draft",
-     "revision_request",
-     "revisions"
-    ]
-   }
-  },
-  {
-   "name": "node.verifier",
-   "kind": "node",
-   "t_start_s": 0.2271,
-   "duration_s": 0.0391,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "draft",
-     "verification"
-    ]
-   }
-  },
-  {
-   "name": "tool.portfolio.get_case_study",
-   "kind": "tool",
-   "t_start_s": 0.2396,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "id": "ai_ml:case:llm-eval",
-     "portfolio_id": "ai_ml"
-    },
-    "latency_s": 0.012,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.get_case_study",
-   "kind": "tool",
-   "t_start_s": 0.2522,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "id": "ai_ml:case:fraud-gnn",
-     "portfolio_id": "ai_ml"
-    },
-    "latency_s": 0.012,
-    "attempt": 0
-   }
-  },
-  {
-   "name": "tool.portfolio.list_skills",
-   "kind": "tool",
-   "t_start_s": 0.2618,
-   "duration_s": 0.0,
-   "attrs": {
-    "agent": "verifier",
-    "args": {
-     "portfolio_id": "ai_ml"
-    },
     "latency_s": 0.009,
     "attempt": 0
    }
   },
   {
-   "name": "node.critic",
-   "kind": "node",
-   "t_start_s": 0.2677,
-   "duration_s": 0.0001,
-   "attrs": {
-    "model": "offline/heuristic",
-    "tokens": 0,
-    "cost_usd": 0.0,
-    "output_keys": [
-     "_summary",
-     "critiques"
-    ]
-   }
-  },
-  {
    "name": "node.writer",
    "kind": "node",
-   "t_start_s": 0.2697,
-   "duration_s": 0.0001,
+   "t_start_s": 0.2689,
+   "duration_s": 0.0002,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -525,8 +322,8 @@
   {
    "name": "node.verifier",
    "kind": "node",
-   "t_start_s": 0.2713,
-   "duration_s": 0.038,
+   "t_start_s": 0.2709,
+   "duration_s": 0.0504,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -541,27 +338,41 @@
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.2835,
+   "t_start_s": 0.2854,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
-     "id": "ai_ml:case:llm-eval",
+     "id": "ai_ml:case:legal-rag",
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.012,
+    "latency_s": 0.014,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.2955,
+   "t_start_s": 0.3013,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
      "id": "ai_ml:case:fraud-gnn",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.list_skills",
+   "kind": "tool",
+   "t_start_s": 0.3139,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
      "portfolio_id": "ai_ml"
     },
     "latency_s": 0.011,
@@ -569,23 +380,193 @@
    }
   },
   {
+   "name": "node.critic",
+   "kind": "node",
+   "t_start_s": 0.3237,
+   "duration_s": 0.0011,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "critiques"
+    ]
+   }
+  },
+  {
+   "name": "node.writer",
+   "kind": "node",
+   "t_start_s": 0.328,
+   "duration_s": 0.0002,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "revision_request",
+     "revisions"
+    ]
+   }
+  },
+  {
+   "name": "node.verifier",
+   "kind": "node",
+   "t_start_s": 0.3303,
+   "duration_s": 0.0514,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "verification"
+    ]
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.3451,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:legal-rag",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.3608,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:fraud-gnn",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.305,
+   "t_start_s": 0.3737,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.009,
+    "latency_s": 0.012,
     "attempt": 0
    }
   },
   {
    "name": "node.critic",
    "kind": "node",
-   "t_start_s": 0.3109,
+   "t_start_s": 0.3841,
+   "duration_s": 0.0001,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "critiques"
+    ]
+   }
+  },
+  {
+   "name": "node.writer",
+   "kind": "node",
+   "t_start_s": 0.3868,
+   "duration_s": 0.0002,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "revision_request",
+     "revisions"
+    ]
+   }
+  },
+  {
+   "name": "node.verifier",
+   "kind": "node",
+   "t_start_s": 0.3891,
+   "duration_s": 0.0508,
+   "attrs": {
+    "model": "offline/heuristic",
+    "tokens": 0,
+    "cost_usd": 0.0,
+    "output_keys": [
+     "_summary",
+     "draft",
+     "verification"
+    ]
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.4052,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:legal-rag",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.016,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.get_case_study",
+   "kind": "tool",
+   "t_start_s": 0.4206,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "id": "ai_ml:case:fraud-gnn",
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.015,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "tool.portfolio.list_skills",
+   "kind": "tool",
+   "t_start_s": 0.4327,
+   "duration_s": 0.0,
+   "attrs": {
+    "agent": "verifier",
+    "args": {
+     "portfolio_id": "ai_ml"
+    },
+    "latency_s": 0.011,
+    "attempt": 0
+   }
+  },
+  {
+   "name": "node.critic",
+   "kind": "node",
+   "t_start_s": 0.442,
    "duration_s": 0.0001,
    "attrs": {
     "model": "offline/heuristic",
@@ -600,8 +581,8 @@
   {
    "name": "node.compliance",
    "kind": "node",
-   "t_start_s": 0.313,
-   "duration_s": 0.0002,
+   "t_start_s": 0.4443,
+   "duration_s": 0.0004,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -616,8 +597,8 @@
   {
    "name": "node.preview",
    "kind": "node",
-   "t_start_s": 0.3146,
-   "duration_s": 0.035,
+   "t_start_s": 0.4464,
+   "duration_s": 0.0433,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -632,47 +613,50 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.3306,
+   "t_start_s": 0.466,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-037",
-     "cover_letter": "Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.\n\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the LLM evaluation part already started, or would this be built from scratch?",
-     "bid_amount": 1920.0,
-     "answers": [],
+     "job_id": "j-ai_ml-018",
+     "cover_letter": "For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used TensorFlow in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIf this sounds right, I can send a one-page plan for the first milestone today.",
+     "bid_amount": 2200.0,
+     "answers": [
+      "My contract Q&A assistant for a mid-size law firm project: Cut clause review time by 41% across 9 associates; answers cite the exact page. The case study and code are in my marketplace portfolio and I can walk you through them on a call.",
+      "I would rather discuss this on a short call."
+     ],
      "idempotency_key": "trace-critic-loop:draft:v3:e0",
      "dry_run": true
     },
-    "latency_s": 0.016,
+    "latency_s": 0.02,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.3484,
+   "t_start_s": 0.4887,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
      "draft_id": "pending",
-     "job_id": "j-ai_ml-037",
+     "job_id": "j-ai_ml-018",
      "idempotency_key": "trace-critic-loop:submit:preview",
      "dry_run": true
     },
-    "latency_s": 0.017,
+    "latency_s": 0.022,
     "attempt": 0
    }
   },
   {
    "name": "node.approval",
    "kind": "node",
-   "t_start_s": 0.3521,
-   "duration_s": 0.0004,
+   "t_start_s": 0.4917,
+   "duration_s": 0.0003,
    "attrs": {
     "model": null,
-    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-037', 'title': 'Hiring LLM evaluation expert: llm evaluation harness', 'budget': 1743, 'budget_type': 'fixed', 'category': 'mlops'}, 'draft': {'cover_letter': 'Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the LLM evaluation part already started, or would this be built from scratch?', 'screening_answers': [], 'claims': [{'text': 'Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:proposal:005', 'ai_ml:proposal:040', 'ai_ml:case:llm-eval'], 'score': 0.786}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'score': 1.0}], 'version': 3, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:llm-eval', 'ai_ml:case:fraud-gnn']}, 'evidence': [{'id': 'ai_ml:proposal:005', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'won', 'project': 'llm-eval', 'title': 'Need help with LLM evaluation for healthcare company', 'skills': ['LLM evaluation', 'RAGAS', 'pytest'], 'snippet': 'You need LLM evaluation work similar to my llm evaluation harness for a tutoring product: Caught 14 regressions before release in three months.\\n\\nMy approach: Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LLM evaluation'}, {'id': 'ai_ml:proposal:040', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'llm-eval', 'title': 'Need help with LLM evaluation for hospitality company', 'skills': ['LLM evaluation', 'RAGAS', 'pytest'], 'snippet': 'You need LLM evaluation work similar to my llm evaluation harness for a tutoring product: Caught 14 regressions before release in three months.\\n\\nMy approach: Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'LLM evaluation'}, {'id': 'ai_ml:repo:llm-eval', 'type': 'repo_readme', 'source': 'repos/llm-eval/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'llm-eval', 'title': 'llm-eval', 'skills': ['LLM evaluation', 'RAGAS', 'pytest', 'Python', 'prompt engineering'], 'snippet': '# llm-eval\\n\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LLM evaluation, RAGAS, pytest.', 'score': 1.0, 'requirement': 'LLM evaluation'}, {'id': 'ai_ml:repo:agent-ops', 'type': 'repo_readme', 'source': 'repos/agent-ops/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'agent-ops', 'title': 'agent-ops', 'skills': ['LangGraph', 'MCP', 'Python', 'PostgreSQL', 'LLM agents', 'tool calling'], 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:repo:support-bot', 'type': 'repo_readme', 'source': 'repos/support-bot/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'support-bot', 'title': 'support-bot', 'skills': ['LangGraph', 'Pinecone', 'Python', 'Redis', 'LLM agents', 'Celery'], 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:case:llm-eval', 'type': 'case_study', 'source': 'case_studies/llm-eval.md', 'date': '[PHONE]', 'outcome': None, 'project': 'llm-eval', 'title': 'LLM evaluation harness for a tutoring product', 'skills': ['LLM evaluation', 'RAGAS', 'pytest', 'Python', 'prompt engineering'], 'snippet': '# LLM evaluation harness for a tutoring product\\n\\n## The problem\\nPrompt changes regularly broke answers nobody noticed until students complained.\\n\\n## What I did\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Result\\nCaught 14 regressions before release in three months.\\n\\n## Stack\\nLLM evaluation, RAGAS, pytest, Python, prompt engineering', 'score': 1.0, 'requirement': 'prompt engineering'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, LightGBM, LoRA, MCP, MLOps, MLflow, NLP, Neo4j, OCR, ONNX, OpenAI API, OpenCV, Pinecone, PostgreSQL, Prophet, PyTorch, PyTorch Geometric, Python, RAG, RAGAS, Redis, Streamlit, Whisper, XGBoost, YOLO, edg', 'score': 1.0, 'requirement': 'prompt engineering'}], 'fit': {'fit_score': 1.0, 'matrix': [{'requirement': 'LLM evaluation', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:005', 'project': 'llm-eval', 'type': 'proposal', 'title': 'Need help with LLM evaluation for healthcare company', 'snippet': 'You need LLM evaluation work similar to my llm evaluation harness for a tutoring product: Caught 14 regressions before release in three months.\\n\\nMy approach: Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\nI can share the rep', 'score': 1.0, 'outcome': 'won'}, {'item_id': 'ai_ml:proposal:040', 'project': 'llm-eval', 'type': 'proposal', 'title': 'Need help with LLM evaluation for hospitality company', 'snippet': 'You need LLM evaluation work similar to my llm evaluation harness for a tutoring product: Caught 14 regressions before release in three months.\\n\\nMy approach: Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\nI can share the rep', 'score': 1.0, 'outcome': 'replied'}, {'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_readme', 'title': 'llm-eval', 'snippet': '# llm-eval\\n\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LLM evaluation, RAGAS, pytest.', 'score': 1.0, 'outcome': None}]}, {'requirement': 'Python', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:agent-ops', 'project': 'agent-ops', 'type': 'repo_readme', 'title': 'agent-ops', 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:support-bot', 'project': 'support-bot', 'type': 'repo_readme', 'title': 'support-bot', 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 1.0, 'outcome': None}]}, {'requirement': 'prompt engineering', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:llm-eval', 'project': 'llm-eval', 'type': 'case_study', 'title': 'LLM evaluation harness for a tutoring product', 'snippet': '# LLM evaluation harness for a tutoring product\\n\\n## The problem\\nPrompt changes regularly broke answers nobody noticed until students complained.\\n\\n## What I did\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Result\\nCaught ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_code', 'title': 'llm-eval', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}]}, {'requirement': 'RAGAS', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_readme', 'title': 'llm-eval', 'snippet': '# llm-eval\\n\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LLM evaluation, RAGAS, pytest.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:llm-eval', 'project': 'llm-eval', 'type': 'case_study', 'title': 'LLM evaluation harness for a tutoring product', 'snippet': '# LLM evaluation harness for a tutoring product\\n\\n## The problem\\nPrompt changes regularly broke answers nobody noticed until students complained.\\n\\n## What I did\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Result\\nCaught ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_code', 'title': 'llm-eval', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Built a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}]}, {'requirement': 'pytest', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:llm-eval', 'project': 'llm-eval', 'type': 'repo_readme', 'title': 'llm-eval', 'snippet': '# llm-eval\\n\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LLM evaluation, RAGAS, pytest.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:llm-eval', 'project': 'llm-eval', 'type': 'case_study', 'title': 'LLM evaluation harness for a tutoring product', 'snippet': '# LLM evaluation harness for a tutoring product\\n\\n## The problem\\nPrompt changes regularly broke answers nobody noticed until students complained.\\n\\n## What I did\\nBuilt a regression harness with RAGAS metrics, golden sets and an LLM judge calibrated against teacher labels, run in CI.\\n\\n## Result\\nCaught ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 1.0, 'outcome': None}]}], 'reasons': ['5/5 requirements fully evidenced', '100% of requirements are skills in the portfolio'], 'unsupported_requirements': [], 'top_projects': ['llm-eval', 'agent-ops', 'support-bot']}, 'risk': {'risk_score': 0.02, 'client_quality': 0.95, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.95; 0 flag(s).'}, 'price': {'amount': 1920.0, 'budget_type': 'fixed', 'rationale': \"market [PHONE] (p25-p75, n=59), fit tier high -> p70; kept within 10% of the client's budget ($1743)\", 'market': {'category': 'mlops', 'n': 59, 'budget_type': 'fixed', 'p25': 1630.0, 'median': 2060.0, 'p75': 2530.0, 'source': None}, 'floor': 40.0, 'connects_cost': 8, 'connects_usd': 1.2, 'expected_value_usd': 67.2, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-037', 'cover_letter': 'Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the LLM evaluation part already started, or would this be built from scratch?', 'bid_amount': 1920.0, 'answers': []}, 'connects_cost': 8, 'connects_balance_after': 108, 'marketplace': 'gigsim'}, 'critiques': [{'score': 0.8, 'approve': False, 'issues': [{'kind': 'personalisation', 'detail': \"mentions 2/5 of the client's requirements\", 'paragraph': None}], 'revision_instructions': \"personalisation: mentions 2/5 of the client's requirements\", 'version': 3}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the LLM evaluation part already started, or would this be built from scratch?', 'cleaned_answers': [], 'policy_version': 1}, 'verification': {'claims': [{'text': 'Caught 14 regressions before release in three months: that was the outcome of my LLM evaluation harness for a tutoring product project, which is close to what you describe.', 'label': 'supported', 'score': 0.786, 'evidence_ids': ['ai_ml:proposal:005', 'ai_ml:proposal:040', 'ai_ml:case:llm-eval'], 'reasons': []}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'reasons': []}], 'n_claims': 2, 'unsupported_before': 0, 'unsupported_rate_before': 0.0, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='41480c3026f5cd86945729150eb27149', response_schema=None),)"
+    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-018', 'title': 'Computer vision + machine learning for pose detection and exercise guidance', 'budget': 2500.0, 'budget_type': 'fixed', 'category': 'classic_ml'}, 'draft': {'cover_letter': 'For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used TensorFlow in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'screening_answers': [{'question': 'Describe a similar project you have completed.', 'answer': 'My contract Q&A assistant for a mid-size law firm project: Cut clause review time by 41% across 9 associates; answers cite the exact page. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}, {'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}], 'claims': [{'text': 'For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:legal-rag'], 'score': 0.889}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'score': 1.0}], 'version': 3, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:legal-rag', 'ai_ml:case:fraud-gnn']}, 'evidence': [{'id': 'ai_ml:repo:defect-vision', 'type': 'repo_code', 'source': 'repos/defect-vision/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'defect-vision', 'title': 'defect-vision', 'skills': ['YOLO', 'PyTorch', 'OpenCV', 'ONNX', 'edge deployment'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 1.0, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:repo:rec-engine', 'type': 'repo_code', 'source': 'repos/rec-engine/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'rec-engine', 'title': 'rec-engine', 'skills': ['PyTorch', 'recommender systems', 'Faiss', 'FastAPI', 'embeddings'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 0.9839, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:case:legal-rag', 'type': 'case_study', 'source': 'case_studies/legal-rag.md', 'date': '[PHONE]', 'outcome': None, 'project': 'legal-rag', 'title': 'Contract Q&A assistant for a mid-size law firm', 'skills': ['RAG', 'LangChain', 'pgvector', 'FastAPI', 'OpenAI API', 'Python'], 'snippet': '# Contract Q&A assistant for a mid-size law firm\\n\\n## The problem\\nAssociates spent hours searching 12,000 contracts for indemnity and termination clauses.\\n\\n## What I did\\nBuilt a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.\\n\\n## Result\\nCut clause review time by 41% across 9 associates; answers cite the exact page.\\n\\n## Stack\\nRAG, LangChain, pgvector, FastAPI, OpenAI API, Python', 'score': 0.9683, 'requirement': 'Machine Learning'}, {'id': 'ai_ml:review:invoice-ocr', 'type': 'review', 'source': 'reviews.jsonl', 'date': '[PHONE]', 'outcome': None, 'project': 'invoice-ocr', 'title': 'Review (4\u2605)', 'skills': [], 'snippet': 'Sana delivered our invoice field extraction pipeline on time. Field-level F1 of 0.94; manual keying time down 70%. Communication was clear throughout.', 'score': 1.0, 'requirement': 'Computer Vision'}, {'id': 'ai_ml:proposal:004', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'meeting-notes', 'title': 'Need help with Whisper for fintech company', 'skills': ['Whisper', 'OpenAI API', 'FastAPI'], 'snippet': 'Hi there! I am very interested in your project and can start immediately.\\n\\nMy approach: Whisper transcription, diarisation and an LLM extractor for action items, with a queue of background workers for long calls.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 0.9839, 'requirement': 'Computer Vision'}, {'id': 'ai_ml:repo:agent-ops', 'type': 'repo_readme', 'source': 'repos/agent-ops/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'agent-ops', 'title': 'agent-ops', 'skills': ['LangGraph', 'MCP', 'Python', 'PostgreSQL', 'LLM agents', 'tool calling'], 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:repo:support-bot', 'type': 'repo_readme', 'source': 'repos/support-bot/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'support-bot', 'title': 'support-bot', 'skills': ['LangGraph', 'Pinecone', 'Python', 'Redis', 'LLM agents', 'Celery'], 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'requirement': 'Python'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 0.9685, 'requirement': 'Python'}], 'fit': {'fit_score': 0.636, 'matrix': [{'requirement': 'Machine Learning', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:defect-vision', 'project': 'defect-vision', 'type': 'repo_code', 'title': 'defect-vision', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:rec-engine', 'project': 'rec-engine', 'type': 'repo_code', 'title': 'rec-engine', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a two-tower retrieval model with Faiss ANN serving and a FastAPI ranking layer.\"\"\"\\n    return 0', 'score': 0.9839, 'outcome': None}, {'item_id': 'ai_ml:case:legal-rag', 'project': 'legal-rag', 'type': 'case_study', 'title': 'Contract Q&A assistant for a mid-size law firm', 'snippet': '# Contract Q&A assistant for a mid-size law firm\\n\\n## The problem\\nAssociates spent hours searching 12,000 contracts for indemnity and termination clauses.\\n\\n## What I did\\nBuilt a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.\\n', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Computer Vision', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:review:invoice-ocr', 'project': 'invoice-ocr', 'type': 'review', 'title': 'Review (4\u2605)', 'snippet': 'Sana delivered our invoice field extraction pipeline on time. Field-level F1 of 0.94; manual keying time down 70%. Communication was clear throughout.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:proposal:004', 'project': 'meeting-notes', 'type': 'proposal', 'title': 'Need help with Whisper for fintech company', 'snippet': 'Hi there! I am very interested in your project and can start immediately.\\n\\nMy approach: Whisper transcription, diarisation and an LLM extractor for action items, with a queue of background workers for long calls.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milesto', 'score': 0.9839, 'outcome': 'replied'}, {'item_id': 'ai_ml:repo:defect-vision', 'project': 'defect-vision', 'type': 'repo_readme', 'title': 'defect-vision', 'snippet': '# defect-vision\\n\\nInternal tooling. See src/.', 'score': 0.9683, 'outcome': None}]}, {'requirement': 'Python', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:agent-ops', 'project': 'agent-ops', 'type': 'repo_readme', 'title': 'agent-ops', 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:support-bot', 'project': 'support-bot', 'type': 'repo_readme', 'title': 'support-bot', 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 0.9685, 'outcome': None}]}, {'requirement': 'TensorFlow', 'coverage': 'none', 'evidence': []}], 'reasons': ['3/4 requirements fully evidenced', '9% of requirements are skills in the portfolio'], 'unsupported_requirements': ['TensorFlow'], 'top_projects': ['defect-vision', 'rec-engine', 'legal-rag']}, 'risk': {'risk_score': 0.193, 'client_quality': 0.518, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.52; 0 flag(s).'}, 'price': {'amount': 2200.0, 'budget_type': 'fixed', 'rationale': \"market [PHONE] (p25-p75, n=28), fit tier mid -> p50; 88% of the client's budget ($2500) for a mid fit\", 'market': {'category': 'classic_ml', 'n': 28, 'budget_type': 'fixed', 'p25': 45.0, 'median': 141.5, 'p75': 500.0, 'source': None}, 'floor': 40.0, 'connects_cost': 6, 'connects_usd': 0.9, 'expected_value_usd': 52.98, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-018', 'cover_letter': 'For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used TensorFlow in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'bid_amount': 2200.0, 'answers': ['My contract Q&A assistant for a mid-size law firm project: Cut clause review time by 41% across 9 associates; answers cite the exact page. The case study and code are in my marketplace portfolio and I can walk you through them on a call.', 'I would rather discuss this on a short call.']}, 'connects_cost': 6, 'connects_balance_after': 112, 'marketplace': 'gigsim'}, 'critiques': [{'score': 1.0, 'approve': False, 'issues': [], 'revision_instructions': '', 'version': 3}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page. For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used TensorFlow in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nSince you need speed and a clear plan for the deadline, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIf this sounds right, I can send a one-page plan for the first milestone today.', 'cleaned_answers': [{'question': 'Describe a similar project you have completed.', 'answer': 'My contract Q&A assistant for a mid-size law firm project: Cut clause review time by 41% across 9 associates; answers cite the exact page. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}, {'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'For Machine Learning: in the contract Q&A assistant for a mid-size law firm project I built a retrieval-augmented assistant with clause-level chunking, hybrid search on pgvector and citations back to the source page.', 'label': 'supported', 'score': 0.889, 'evidence_ids': ['ai_ml:case:legal-rag'], 'reasons': []}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'reasons': []}], 'n_claims': 4, 'unsupported_before': 1, 'unsupported_rate_before': 0.25, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='20a4fd38cff8f2dcb1fd19547878019e', response_schema=None),)"
    }
   }
  ]

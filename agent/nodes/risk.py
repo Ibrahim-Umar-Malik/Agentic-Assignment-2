@@ -51,7 +51,7 @@ def assess(job: dict, client: dict) -> RiskReport:
         flags.append(RiskFlag(kind="injection", severity=0.3, evidence="; ".join(inj)[:200]))
     q, cflags = client_quality(client or {})
     flags += cflags
-    scam = any(f.kind in ("scam", "advance_fee", "off_platform", "free_work", "contact_harvest") and f.severity >= 0.75 for f in flags)
+    scam = any(f.kind in ("scam", "advance_fee", "off_platform", "free_work", "contact_harvest", "income_scam") and f.severity >= 0.75 for f in flags)
     # Injection is flagged and neutralised (sanitise + delimit + compliance) but does not make the client risky:
     # counting it skipped 7 legitimate test-split jobs (evals/results/failures.json, report section 8).
     risk = max([f.severity for f in flags if f.kind != "injection"] + [0.0])

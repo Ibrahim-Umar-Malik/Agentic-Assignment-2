@@ -20,6 +20,8 @@ import os
 import re
 import time
 
+from core.personas import persona_floor
+
 from .common import (
     PERSONAS,
     bootstrap_ci,
@@ -51,7 +53,7 @@ async def run_job(graph, persona: str, row: dict) -> dict:
     t = time.perf_counter()
     try:
         out = await graph.ainvoke({"user_id": f"eval-{persona}", "persona": persona, "thread_id": tid, "trace_id": tid,
-                                   "job": job, "meta": {"hourly_floor": 40, "portfolio_id": persona}},
+                                   "job": job, "meta": {"hourly_floor": persona_floor(persona), "portfolio_id": persona}},
                                   {"configurable": {"thread_id": tid}})
         err = None
     except Exception as e:  # recorded, never hidden
@@ -112,7 +114,7 @@ def sweep(rs: list[dict]) -> dict:
     """Pick bid_min_fit / max_risk by F1 on recorded scores (tune split only)."""
     ok = [r for r in rs if not r["error"] and r["fit"] is not None and r["risk"] is not None]
     best = None
-    for f in [x / 100 for x in range(25, 71, 5)]:
+    for f in [x / 100 for x in range(10, 76, 5)]:
         for k in [x / 100 for x in range(35, 81, 5)]:
             pred = [(r["fit"] >= f and r["risk"] <= k and not r["scam_flag"]) for r in ok]
             tp = sum(p and r["gold_bid"] for p, r in zip(pred, ok, strict=True))
@@ -188,6 +190,7 @@ def main() -> None:
         tune = asyncio.run(run_split("tune", a.limit))
         payload["threshold_sweep"] = sweep(tune)
         payload["tune"] = score(tune)
+        payload["tune_rows"] = tune
         print("sweep:", payload["threshold_sweep"])
     rs = asyncio.run(run_split(a.split, a.limit))
     payload["test" if a.split == "test" else a.split] = score(rs)

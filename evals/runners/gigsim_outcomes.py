@@ -21,6 +21,8 @@ import logging
 import os
 import random
 
+from core.personas import persona_floor
+
 from .common import (
     PERSONAS,
     ROOT,
@@ -97,7 +99,7 @@ async def main_async() -> dict:
             verified = sim.clients[row["client_id"]].get("payment_verified")
             tid = f"oc:{persona}:{row['id']}"
             out = await graph.ainvoke({"user_id": f"eval-{persona}", "persona": persona, "thread_id": tid, "trace_id": tid, "job": job,
-                                       "meta": {"hourly_floor": 40, "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
+                                       "meta": {"hourly_floor": persona_floor(persona), "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
             bid = (out.get("decision") or {}).get("action") == "bid" and bool(out.get("draft"))
             if bid:
                 d, price = out["draft"], out["price"]["amount"]

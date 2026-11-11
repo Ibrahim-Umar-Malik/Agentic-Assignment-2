@@ -28,15 +28,17 @@ def quote(job: dict, fit: float, stats: dict, floor: float, connects_cost: int, 
         amount = min_amount
         notes.append(f"raised to your floor (${min_amount:.0f})")
     budget = float(job.get("budget") or 0)
-    # Anchor to the client's stated budget (report section 8, "mispriced"): never above it, and for strong fits
-    # not far below it. The floor still wins: a budget under your floor is a skip, not a discount.
-    anchor = p.get("budget_anchor", {"max_ratio": 1.0, "min_ratio_high_fit": 0.85})
-    if budget and amount > budget * anchor["max_ratio"]:
-        amount = max(min_amount, budget * anchor["max_ratio"])
-        notes.append(f"capped at the client's budget (${budget:.0f})")
-    elif budget and tier == "high" and amount < budget * anchor["min_ratio_high_fit"]:
-        amount = budget * anchor["min_ratio_high_fit"]
-        notes.append(f"strong fit: raised to {int(anchor['min_ratio_high_fit'] * 100)}% of the client's budget")
+    # Anchor to the client's stated budget. On real Upwork posts (docs/DATA_CARD.md) the category's paid p25-p75
+    # is far below most posted budgets (most contracts are small), so market-only pricing under-bid 24 of 32
+    # mispriced tune-split jobs, e.g. $270 on a $4,000 job (report section 8). With a budget, quote a fit-dependent
+    # share of it; the market band is used only when the post has no budget. The floor still wins.
+    anchor = p.get("budget_anchor", {"max_ratio": 1.0, "share_by_fit": {"high": 0.95, "mid": 0.88, "low": 0.8}})
+    if budget:
+        target = budget * anchor["share_by_fit"][tier]
+        amount = max(min_amount, min(budget * anchor["max_ratio"], target))
+        notes.append(f"{int(anchor['share_by_fit'][tier] * 100)}% of the client's budget (${budget:.0f}) for a {tier} fit")
+        if amount > budget * anchor["max_ratio"]:
+            notes.append("your floor is above the client's budget")
     amount = round(amount, 0) if bt == "hourly" else round(amount / 10) * 10
     p_win = max(0.02, min(0.35, 0.05 + 0.3 * fit))
     value = amount * (20 if bt == "hourly" else 1)  # expected engagement value

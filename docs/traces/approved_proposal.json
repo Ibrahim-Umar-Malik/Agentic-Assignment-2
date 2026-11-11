@@ -3,21 +3,21 @@
  "trace_id": "trace-approved",
  "profile": "offline",
  "job": {
-  "id": "j-ai_ml-042",
-  "title": "Seeking NLP expert: hotel review sentiment and topic dashboard",
-  "budget": 67,
+  "id": "j-ai_ml-045",
+  "title": "Tesseract Guru Needed to Pull data from POS Receipts",
+  "budget": 30.0,
   "budget_type": "hourly",
-  "connects_cost": 4
+  "connects_cost": 2
  },
  "outcome": {
   "status": "submitted",
-  "reason": "fit 1.00 >= 0.7",
+  "reason": "fit 0.60 >= 0.35",
   "decision": "bid",
   "submission": {
    "status": "ok",
-   "proposal_id": "p-c9d99d3248",
+   "proposal_id": "p-47e55130cf",
    "marketplace_status": "submitted",
-   "connects_spent": 4,
+   "connects_spent": 2,
    "duplicate": false
   },
   "critiques": 1
@@ -42,7 +42,7 @@
    "name": "node.scout",
    "kind": "node",
    "t_start_s": 0.0,
-   "duration_s": 0.0004,
+   "duration_s": 0.0006,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -57,8 +57,8 @@
   {
    "name": "node.analyst",
    "kind": "node",
-   "t_start_s": 0.0028,
-   "duration_s": 0.0007,
+   "t_start_s": 0.0032,
+   "duration_s": 0.0018,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -72,8 +72,8 @@
   {
    "name": "node.risk",
    "kind": "node",
-   "t_start_s": 0.0043,
-   "duration_s": 0.0537,
+   "t_start_s": 0.006,
+   "duration_s": 0.0759,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -88,8 +88,8 @@
   {
    "name": "node.matcher",
    "kind": "node",
-   "t_start_s": 0.0051,
-   "duration_s": 0.0908,
+   "t_start_s": 0.007,
+   "duration_s": 0.141,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -104,105 +104,105 @@
   {
    "name": "mcp.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.0075,
-   "duration_s": 0.0233,
+   "t_start_s": 0.0099,
+   "duration_s": 0.0346,
    "attrs": {
     "args": {
-     "client_id": "c0254"
+     "client_id": "c-ec950faf0b"
     },
     "user": "u-demo",
-    "result_size": 516
+    "result_size": 808
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.0161,
+   "t_start_s": 0.0219,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.011,
+    "latency_s": 0.015,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0474,
+   "t_start_s": 0.0671,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "NLP",
+     "requirement": "OpenCV",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.029,
+    "latency_s": 0.041,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.get_client_history",
    "kind": "tool",
-   "t_start_s": 0.0573,
+   "t_start_s": 0.0801,
    "duration_s": 0.0,
    "attrs": {
     "agent": "risk",
     "args": {
-     "client_id": "c0254"
+     "client_id": "c-ec950faf0b"
     },
-    "latency_s": 0.053,
+    "latency_s": 0.074,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0759,
+   "t_start_s": 0.1133,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "spaCy",
+     "requirement": "Tesseract OCR",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.028,
+    "latency_s": 0.045,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.search_evidence",
    "kind": "tool",
-   "t_start_s": 0.0949,
+   "t_start_s": 0.1456,
    "duration_s": 0.0,
    "attrs": {
     "agent": "matcher",
     "args": {
-     "requirement": "HuggingFace Transformers",
+     "requirement": "Python",
      "k": 4,
      "portfolio_id": "ai_ml",
      "filters": {
       "exclude_ids": []
      }
     },
-    "latency_s": 0.018,
+    "latency_s": 0.031,
     "attempt": 0
    }
   },
   {
    "name": "node.decide",
    "kind": "node",
-   "t_start_s": 0.0975,
+   "t_start_s": 0.1509,
    "duration_s": 0.0001,
    "attrs": {
     "model": null,
@@ -220,8 +220,8 @@
   {
    "name": "node.pricing",
    "kind": "node",
-   "t_start_s": 0.0998,
-   "duration_s": 0.0236,
+   "t_start_s": 0.1547,
+   "duration_s": 0.0349,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -236,37 +236,37 @@
   {
    "name": "mcp.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.1017,
-   "duration_s": 0.0021,
+   "t_start_s": 0.158,
+   "duration_s": 0.0037,
    "attrs": {
     "args": {
-     "category": "classic_ml",
+     "category": "computer_vision",
      "budget_type": "hourly"
     },
     "user": "u-demo",
-    "result_size": 102
+    "result_size": 107
    }
   },
   {
    "name": "tool.marketplace.get_market_stats",
    "kind": "tool",
-   "t_start_s": 0.115,
+   "t_start_s": 0.1797,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {
-     "category": "classic_ml",
+     "category": "computer_vision",
      "budget_type": "hourly"
     },
-    "latency_s": 0.015,
+    "latency_s": 0.025,
     "attempt": 0
    }
   },
   {
    "name": "mcp.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1174,
-   "duration_s": 0.0023,
+   "t_start_s": 0.1828,
+   "duration_s": 0.0019,
    "attrs": {
     "args": {},
     "user": "u-demo",
@@ -276,20 +276,20 @@
   {
    "name": "tool.marketplace.get_policy",
    "kind": "tool",
-   "t_start_s": 0.1229,
+   "t_start_s": 0.1888,
    "duration_s": 0.0,
    "attrs": {
     "agent": "pricing",
     "args": {},
-    "latency_s": 0.007,
+    "latency_s": 0.008,
     "attempt": 0
    }
   },
   {
    "name": "node.writer",
    "kind": "node",
-   "t_start_s": 0.1251,
-   "duration_s": 0.0003,
+   "t_start_s": 0.1919,
+   "duration_s": 0.0004,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -305,8 +305,8 @@
   {
    "name": "node.verifier",
    "kind": "node",
-   "t_start_s": 0.1274,
-   "duration_s": 0.0452,
+   "t_start_s": 0.194,
+   "duration_s": 0.0481,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -321,12 +321,12 @@
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.1413,
+   "t_start_s": 0.2085,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
-     "id": "ai_ml:case:review-sentiment",
+     "id": "ai_ml:case:defect-vision",
      "portfolio_id": "ai_ml"
     },
     "latency_s": 0.014,
@@ -336,22 +336,22 @@
   {
    "name": "tool.portfolio.get_case_study",
    "kind": "tool",
-   "t_start_s": 0.1543,
+   "t_start_s": 0.2233,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
     "args": {
-     "id": "ai_ml:case:invoice-ocr",
+     "id": "ai_ml:case:fraud-gnn",
      "portfolio_id": "ai_ml"
     },
-    "latency_s": 0.012,
+    "latency_s": 0.014,
     "attempt": 0
    }
   },
   {
    "name": "tool.portfolio.list_skills",
    "kind": "tool",
-   "t_start_s": 0.1663,
+   "t_start_s": 0.2347,
    "duration_s": 0.0,
    "attrs": {
     "agent": "verifier",
@@ -365,8 +365,8 @@
   {
    "name": "node.critic",
    "kind": "node",
-   "t_start_s": 0.1743,
-   "duration_s": 0.0002,
+   "t_start_s": 0.2441,
+   "duration_s": 0.0001,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -380,8 +380,8 @@
   {
    "name": "node.compliance",
    "kind": "node",
-   "t_start_s": 0.1763,
-   "duration_s": 0.0028,
+   "t_start_s": 0.2466,
+   "duration_s": 0.0034,
    "attrs": {
     "model": "offline/heuristic",
     "tokens": 0,
@@ -396,8 +396,8 @@
   {
    "name": "node.preview",
    "kind": "node",
-   "t_start_s": 0.1807,
-   "duration_s": 0.0376,
+   "t_start_s": 0.2525,
+   "duration_s": 0.0508,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -412,56 +412,56 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.1954,
+   "t_start_s": 0.278,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-042",
-     "cover_letter": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\n\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\n\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the NLP part already started, or would this be built from scratch?",
-     "bid_amount": 55.0,
+     "job_id": "j-ai_ml-045",
+     "cover_letter": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\n\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the OpenCV part already started, or would this be built from scratch?",
+     "bid_amount": 40.0,
      "answers": [
       "I would rather discuss this on a short call.",
-      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+      "My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call."
      ],
      "idempotency_key": "trace-approved:draft:v1:e0",
      "dry_run": true
     },
-    "latency_s": 0.015,
+    "latency_s": 0.025,
     "attempt": 0
    }
   },
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2173,
+   "t_start_s": 0.3022,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
      "draft_id": "pending",
-     "job_id": "j-ai_ml-042",
+     "job_id": "j-ai_ml-045",
      "idempotency_key": "trace-approved:submit:preview",
      "dry_run": true
     },
-    "latency_s": 0.021,
+    "latency_s": 0.023,
     "attempt": 0
    }
   },
   {
    "name": "node.approval",
    "kind": "node",
-   "t_start_s": 0.2198,
-   "duration_s": 0.0002,
+   "t_start_s": 0.3052,
+   "duration_s": 0.0003,
    "attrs": {
     "model": null,
-    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-042', 'title': 'Seeking NLP expert: hotel review sentiment and topic dashboard', 'budget': 67, 'budget_type': 'hourly', 'category': 'classic_ml'}, 'draft': {'cover_letter': 'Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\\n\\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the NLP part already started, or would this be built from scratch?', 'screening_answers': [{'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}, {'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'claims': [{'text': 'Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:proposal:028', 'ai_ml:case:review-sentiment'], 'score': 0.833}, {'text': 'For HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:invoice-ocr'], 'score': 1.0}], 'version': 1, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:review-sentiment', 'ai_ml:case:invoice-ocr']}, 'evidence': [{'id': 'ai_ml:proposal:028', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'won', 'project': 'review-sentiment', 'title': 'Need help with NLP for insurance company', 'skills': ['NLP', 'spaCy', 'HuggingFace Transformers'], 'snippet': 'You need NLP work similar to my hotel review sentiment and topic dashboard: Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\nMy approach: Aspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'NLP'}, {'id': 'ai_ml:case:review-sentiment', 'type': 'case_study', 'source': 'case_studies/review-sentiment.md', 'date': '[PHONE]', 'outcome': None, 'project': 'review-sentiment', 'title': 'Hotel review sentiment and topic dashboard', 'skills': ['NLP', 'spaCy', 'HuggingFace Transformers', 'Streamlit', 'topic modelling'], 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\n## Stack\\nNLP, spaCy, HuggingFace Transformers, Streamlit, topic modelling', 'score': 1.0, 'requirement': 'NLP'}, {'id': 'ai_ml:proposal:044', 'type': 'proposal', 'source': 'proposals.jsonl', 'date': '[PHONE]', 'outcome': 'replied', 'project': 'review-sentiment', 'title': 'Need help with NLP for nonprofit company', 'skills': ['NLP', 'spaCy', 'HuggingFace Transformers'], 'snippet': 'Quick question before I scope this: is the NLP part already started? I recently shipped a hotel review sentiment and topic dashboard (Found a housekeeping issue at one property).\\n\\nMy approach: Aspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\nI can share the repo and a short walkthrough. Proposed: milestone 1 discovery, milestone 2 build, milestone 3 handover.', 'score': 1.0, 'requirement': 'NLP'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, LightGBM, LoRA, MCP, MLOps, MLflow, NLP, Neo4j, OCR, ONNX, OpenAI API, OpenCV, Pinecone, PostgreSQL, Prophet, PyTorch, PyTorch Geometric, Python, RAG, RAGAS, Redis, Streamlit, Whisper, XGBoost, YOLO, edg', 'score': 1.0, 'requirement': 'spaCy'}, {'id': 'ai_ml:case:invoice-ocr', 'type': 'case_study', 'source': 'case_studies/invoice-ocr.md', 'date': '[PHONE]', 'outcome': None, 'project': 'invoice-ocr', 'title': 'Invoice field extraction pipeline', 'skills': ['LayoutLM', 'HuggingFace Transformers', 'PyTorch', 'FastAPI', 'Docker', 'OCR'], 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time down 70%.\\n\\n## Stack\\nLayoutLM, HuggingFace Transformers, PyTorch, FastAPI, Docker, OCR', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}, {'id': 'ai_ml:case:lora-clinical', 'type': 'case_study', 'source': 'case_studies/lora-clinical.md', 'date': '[PHONE]', 'outcome': None, 'project': 'lora-clinical', 'title': 'Fine-tuned clinical note summariser', 'skills': ['LoRA', 'fine-tuning', 'HuggingFace Transformers', 'PyTorch', 'AWS SageMaker'], 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 over the base model.\\n\\n## Stack\\nLoRA, fine-tuning, HuggingFace Transformers, PyTorch, AWS SageMaker', 'score': 1.0, 'requirement': 'HuggingFace Transformers'}], 'fit': {'fit_score': 1.0, 'matrix': [{'requirement': 'NLP', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:proposal:028', 'project': 'review-sentiment', 'type': 'proposal', 'title': 'Need help with NLP for insurance company', 'snippet': 'You need NLP work similar to my hotel review sentiment and topic dashboard: Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\nMy approach: Aspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\nI can share the repo ', 'score': 1.0, 'outcome': 'won'}, {'item_id': 'ai_ml:case:review-sentiment', 'project': 'review-sentiment', 'type': 'case_study', 'title': 'Hotel review sentiment and topic dashboard', 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; it', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:proposal:044', 'project': 'review-sentiment', 'type': 'proposal', 'title': 'Need help with NLP for nonprofit company', 'snippet': 'Quick question before I scope this: is the NLP part already started? I recently shipped a hotel review sentiment and topic dashboard (Found a housekeeping issue at one property).\\n\\nMy approach: Aspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\nI can s', 'score': 1.0, 'outcome': 'replied'}]}, {'requirement': 'spaCy', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:review-sentiment', 'project': 'review-sentiment', 'type': 'case_study', 'title': 'Hotel review sentiment and topic dashboard', 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; it', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:proposal:028', 'project': 'review-sentiment', 'type': 'proposal', 'title': 'Need help with NLP for insurance company', 'snippet': 'You need NLP work similar to my hotel review sentiment and topic dashboard: Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter.\\n\\nMy approach: Aspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\nI can share the repo ', 'score': 1.0, 'outcome': 'won'}]}, {'requirement': 'HuggingFace Transformers', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:invoice-ocr', 'project': 'invoice-ocr', 'type': 'case_study', 'title': 'Invoice field extraction pipeline', 'snippet': '# Invoice field extraction pipeline\\n\\n## The problem\\nAn accounts-payable team keyed 20 fields from 4,000 supplier invoices a month.\\n\\n## What I did\\nFine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\n## Result\\nField-level F1 of 0.94; manual keying time ', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:review-sentiment', 'project': 'review-sentiment', 'type': 'case_study', 'title': 'Hotel review sentiment and topic dashboard', 'snippet': '# Hotel review sentiment and topic dashboard\\n\\n## The problem\\nA hotel group could not see why ratings dipped at three properties.\\n\\n## What I did\\nAspect-based sentiment with a fine-tuned DeBERTa plus BERTopic, surfaced in a Streamlit dashboard.\\n\\n## Result\\nFound a housekeeping issue at one property; it', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:case:lora-clinical', 'project': 'lora-clinical', 'type': 'case_study', 'title': 'Fine-tuned clinical note summariser', 'snippet': '# Fine-tuned clinical note summariser\\n\\n## The problem\\nDoctors spent 15 minutes per discharge summary.\\n\\n## What I did\\nLoRA fine-tuned an open 8B model on de-identified notes on SageMaker, with a clinician review loop.\\n\\n## Result\\nDraft summaries accepted with light edits 78% of the time; ROUGE-L +9 ov', 'score': 1.0, 'outcome': None}]}], 'reasons': ['3/3 requirements fully evidenced', '100% of requirements are skills in the portfolio'], 'unsupported_requirements': [], 'top_projects': ['review-sentiment', 'invoice-ocr', 'lora-clinical']}, 'risk': {'risk_score': 0.02, 'client_quality': 0.95, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.95; 0 flag(s).'}, 'price': {'amount': 55.0, 'budget_type': 'hourly', 'rationale': 'market [PHONE] (p25-p75, n=53), fit tier high -> p70', 'market': {'category': 'classic_ml', 'n': 53, 'budget_type': 'hourly', 'p25': 43.9, 'median': 49.7, 'p75': 56.1, 'source': None}, 'floor': 40.0, 'connects_cost': 4, 'connects_usd': 0.6, 'expected_value_usd': 38.5, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-042', 'cover_letter': 'Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\\n\\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the NLP part already started, or would this be built from scratch?', 'bid_amount': 55.0, 'answers': ['I would rather discuss this on a short call.', 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.']}, 'connects_cost': 4, 'connects_balance_after': 116, 'marketplace': 'gigsim'}, 'critiques': [{'score': 1.0, 'approve': True, 'issues': [], 'revision_instructions': '', 'version': 1}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\\n\\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\\n\\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the NLP part already started, or would this be built from scratch?', 'cleaned_answers': [{'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}, {'question': 'What would you need from us to start?', 'answer': 'Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.', 'label': 'supported', 'score': 0.833, 'evidence_ids': ['ai_ml:proposal:028', 'ai_ml:case:review-sentiment'], 'reasons': []}, {'text': 'For HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:invoice-ocr'], 'reasons': []}], 'n_claims': 3, 'unsupported_before': 1, 'unsupported_rate_before': 0.333, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='647323797808a9dce4f4fe0f5d28c36f', response_schema=None),)"
+    "error": "GraphInterrupt: (Interrupt(value={'kind': 'proposal', 'job': {'id': 'j-ai_ml-045', 'title': 'Tesseract Guru Needed to Pull data from POS Receipts', 'budget': 30.0, 'budget_type': 'hourly', 'category': 'computer_vision'}, 'draft': {'cover_letter': 'Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the OpenCV part already started, or would this be built from scratch?', 'screening_answers': [{'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}, {'question': 'Describe a similar project you have completed.', 'answer': 'My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}], 'claims': [{'text': 'Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:defect-vision'], 'score': 0.824}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'score': 1.0}], 'version': 1, 'strategy': 'evidence_first', 'cited_items': ['ai_ml:case:defect-vision', 'ai_ml:case:fraud-gnn']}, 'evidence': [{'id': 'ai_ml:case:defect-vision', 'type': 'case_study', 'source': 'case_studies/defect-vision.md', 'date': '[PHONE]', 'outcome': None, 'project': 'defect-vision', 'title': 'Real-time defect detection on an assembly line', 'skills': ['YOLO', 'PyTorch', 'OpenCV', 'ONNX', 'edge deployment'], 'snippet': '# Real-time defect detection on an assembly line\\n\\n## The problem\\nManual inspection missed hairline cracks on cast parts at 2 parts per second.\\n\\n## What I did\\nTrained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\\n\\n## Result\\nRecall 96% at 38 FPS; scrap reaching customers fell by half.\\n\\n## Stack\\nYOLO, PyTorch, OpenCV, ONNX, edge deployment', 'score': 1.0, 'requirement': 'OpenCV'}, {'id': 'ai_ml:cv', 'type': 'cv', 'source': 'cv.md', 'date': None, 'outcome': None, 'project': None, 'title': 'CV', 'skills': ['AWS', 'AWS SageMaker', 'Airflow', 'BERT', 'Celery', 'Docker', 'Elasticsearch', 'Faiss', 'FastAPI', 'HuggingFace Transformers', 'Kubernetes', 'LLM agents', 'LLM evaluation', 'LangChain', 'LangGraph', 'LayoutLM', 'LightGBM', 'LoRA', 'MCP', 'MLOps', 'MLflow', 'NLP', 'Neo4j', 'OCR', 'ONNX', 'OpenAI API', 'OpenCV', 'Pinecone', 'PostgreSQL', 'Prophet', 'PyTorch', 'PyTorch Geometric', 'Python', 'RAG', 'RAGAS', 'Redis', 'Streamlit', 'Whisper', 'XGBoost', 'YOLO', 'edge deployment', 'embeddings', 'feature engineering', 'fine-tuning', 'geospatial', 'graph neural networks', 'pgvector', 'prompt engineering', 'pytest', 'recommender systems', 'scikit-learn', 'semantic search', 'spaCy', 'speech-to-text', 'time series', 'tool calling', 'topic modelling'], 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, LightGBM, LoRA, MCP, MLOps, MLflow, NLP, Neo4j, OCR, ONNX, OpenAI API, OpenCV, Pinecone, PostgreSQL, Prophet, PyTorch, PyTorch Geometric, Python, RAG, RAGAS, Redis, Streamlit, Whisper, XGBoost, YOLO, edg', 'score': 0.9549, 'requirement': 'OpenCV'}, {'id': 'ai_ml:repo:defect-vision', 'type': 'repo_code', 'source': 'repos/defect-vision/src/pipeline.py', 'date': '[PHONE]', 'outcome': None, 'project': 'defect-vision', 'title': 'defect-vision', 'skills': ['YOLO', 'PyTorch', 'OpenCV', 'ONNX', 'edge deployment'], 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 0.8823, 'requirement': 'OpenCV'}, {'id': 'ai_ml:repo:agent-ops', 'type': 'repo_readme', 'source': 'repos/agent-ops/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'agent-ops', 'title': 'agent-ops', 'skills': ['LangGraph', 'MCP', 'Python', 'PostgreSQL', 'LLM agents', 'tool calling'], 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'requirement': 'Python'}, {'id': 'ai_ml:repo:support-bot', 'type': 'repo_readme', 'source': 'repos/support-bot/README.md', 'date': '[PHONE]', 'outcome': None, 'project': 'support-bot', 'title': 'support-bot', 'skills': ['LangGraph', 'Pinecone', 'Python', 'Redis', 'LLM agents', 'Celery'], 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'requirement': 'Python'}, {'id': 'ai_ml:case:fraud-gnn', 'type': 'case_study', 'source': 'case_studies/fraud-gnn.md', 'date': '[PHONE]', 'outcome': None, 'project': 'fraud-gnn', 'title': 'Payment fraud detection with graph neural networks', 'skills': ['PyTorch Geometric', 'graph neural networks', 'Neo4j', 'Python'], 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTorch Geometric, graph neural networks, Neo4j, Python', 'score': 0.9685, 'requirement': 'Python'}], 'fit': {'fit_score': 0.6, 'matrix': [{'requirement': 'OpenCV', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:case:defect-vision', 'project': 'defect-vision', 'type': 'case_study', 'title': 'Real-time defect detection on an assembly line', 'snippet': '# Real-time defect detection on an assembly line\\n\\n## The problem\\nManual inspection missed hairline cracks on cast parts at 2 parts per second.\\n\\n## What I did\\nTrained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\\n\\n## Result\\nRecall 96% at 38 FPS; scrap reac', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:cv', 'project': None, 'type': 'cv', 'title': 'CV', 'snippet': '# Sana Mirza\\n**AI/ML Engineer: LLM apps, RAG and production ML**  \\nLahore, Pakistan \u00b7 6 years freelancing\\n\\n## Skills\\nAWS, AWS SageMaker, Airflow, BERT, Celery, Docker, Elasticsearch, Faiss, FastAPI, HuggingFace Transformers, Kubernetes, LLM agents, LLM evaluation, LangChain, LangGraph, LayoutLM, Lig', 'score': 0.9549, 'outcome': None}, {'item_id': 'ai_ml:repo:defect-vision', 'project': 'defect-vision', 'type': 'repo_code', 'title': 'defect-vision', 'snippet': 'def run_pipeline(source_id: str) -> int:\\n    \"\"\"Trained a YOLOv8 detector on augmented crack images and exported it to ONNX for a Jetson edge box.\"\"\"\\n    return 0', 'score': 0.8823, 'outcome': None}]}, {'requirement': 'Tesseract OCR', 'coverage': 'none', 'evidence': []}, {'requirement': 'Python', 'coverage': 'full', 'evidence': [{'item_id': 'ai_ml:repo:agent-ops', 'project': 'agent-ops', 'type': 'repo_readme', 'title': 'agent-ops', 'snippet': '# agent-ops\\n\\nBuilt a LangGraph supervisor with MCP tool servers for the TMS, warehouse and email, with human approval before any write.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, MCP, Python.', 'score': 1.0, 'outcome': None}, {'item_id': 'ai_ml:repo:support-bot', 'project': 'support-bot', 'type': 'repo_readme', 'title': 'support-bot', 'snippet': '# support-bot\\n\\nDesigned a LangGraph agent that routes intents, retrieves policy answers from Pinecone and escalates refunds to humans; background jobs re-index the help centre nightly.\\n\\n## Run\\n```\\nmake dev\\n```\\n\\nBuilt with LangGraph, Pinecone, Python.', 'score': 0.9761, 'outcome': None}, {'item_id': 'ai_ml:case:fraud-gnn', 'project': 'fraud-gnn', 'type': 'case_study', 'title': 'Payment fraud detection with graph neural networks', 'snippet': '# Payment fraud detection with graph neural networks\\n\\n## The problem\\nFraud rings evaded per-transaction rules.\\n\\n## What I did\\nModelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\n## Result\\nCaught 31% more fraud at the same false-positive rate.\\n\\n## Stack\\nPyTor', 'score': 0.9685, 'outcome': None}]}], 'reasons': ['2/3 requirements fully evidenced', '60% of requirements are skills in the portfolio'], 'unsupported_requirements': ['Tesseract OCR'], 'top_projects': ['defect-vision', 'agent-ops', 'support-bot']}, 'risk': {'risk_score': 0.02, 'client_quality': 0.95, 'flags': [], 'injection_detected': False, 'scam': False, 'summary': 'Client quality 0.95; 0 flag(s).'}, 'price': {'amount': 40.0, 'budget_type': 'hourly', 'rationale': \"market [PHONE] (p25-p75, n=7), fit tier mid -> p50; 88% of the client's budget ($30) for a mid fit; your floor is above the client's budget\", 'market': {'category': 'computer_vision', 'n': 7, 'budget_type': 'hourly', 'p25': 20.0, 'median': 30.0, 'p75': 100.0, 'source': None}, 'floor': 40.0, 'connects_cost': 2, 'connects_usd': 0.3, 'expected_value_usd': 18.4, 'worth_connects': True}, 'preview': {'would_send': {'job_id': 'j-ai_ml-045', 'cover_letter': 'Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the OpenCV part already started, or would this be built from scratch?', 'bid_amount': 40.0, 'answers': ['I would rather discuss this on a short call.', 'My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call.']}, 'connects_cost': 2, 'connects_balance_after': 118, 'marketplace': 'gigsim'}, 'critiques': [{'score': 1.0, 'approve': True, 'issues': [], 'revision_instructions': '', 'version': 1}], 'compliance': {'status': 'pass', 'violations': [], 'cleaned_text': 'Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\\n\\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\\n\\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\\n\\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\\n\\nIs the OpenCV part already started, or would this be built from scratch?', 'cleaned_answers': [{'question': 'What is your availability per week?', 'answer': 'I would rather discuss this on a short call.'}, {'question': 'Describe a similar project you have completed.', 'answer': 'My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call.'}], 'policy_version': 1}, 'verification': {'claims': [{'text': 'Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.', 'label': 'supported', 'score': 0.824, 'evidence_ids': ['ai_ml:case:defect-vision'], 'reasons': []}, {'text': 'For Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.', 'label': 'supported', 'score': 1.0, 'evidence_ids': ['ai_ml:case:fraud-gnn'], 'reasons': []}], 'n_claims': 4, 'unsupported_before': 1, 'unsupported_rate_before': 0.25, 'unsupported_after': 0, 'unsupported_rate_after': 0.0}, 'blocked': False}, id='c3b0a32d2a36a32f98bc8dcb7523ca93', response_schema=None),)"
    }
   },
   {
    "name": "node.approval",
    "kind": "node",
-   "t_start_s": 0.224,
+   "t_start_s": 0.31,
    "duration_s": 0.0,
    "attrs": {
     "model": null,
@@ -477,8 +477,8 @@
   {
    "name": "node.submit",
    "kind": "node",
-   "t_start_s": 0.2261,
-   "duration_s": 0.0349,
+   "t_start_s": 0.3125,
+   "duration_s": 0.0573,
    "attrs": {
     "model": null,
     "tokens": 0,
@@ -493,16 +493,16 @@
   {
    "name": "mcp.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.2288,
-   "duration_s": 0.0023,
+   "t_start_s": 0.3159,
+   "duration_s": 0.0028,
    "attrs": {
     "args": {
-     "job_id": "j-ai_ml-042",
-     "cover_letter": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\n\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\n\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the NLP part already started, or would this be built from scratch?",
-     "bid_amount": 55.0,
+     "job_id": "j-ai_ml-045",
+     "cover_letter": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\n\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the OpenCV part already started, or would this be built from scratch?",
+     "bid_amount": 40.0,
      "answers": [
       "I would rather discuss this on a short call.",
-      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+      "My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call."
      ],
      "idempotency_key": "trace-approved:draft:v1e0",
      "dry_run": false
@@ -513,33 +513,33 @@
   {
    "name": "tool.marketplace.create_proposal_draft",
    "kind": "tool",
-   "t_start_s": 0.2429,
+   "t_start_s": 0.3363,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "job_id": "j-ai_ml-042",
-     "cover_letter": "Found a housekeeping issue at one property; its rating recovered 0.4 stars in a quarter: that was the outcome of my hotel review sentiment and topic dashboard project, which is close to what you describe.\n\nFor HuggingFace Transformers: in the invoice field extraction pipeline project I fine-tuned LayoutLMv3 on 1,200 labelled invoices and served it behind a FastAPI endpoint in Docker.\n\nSince you need a design that scales, my plan is a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the NLP part already started, or would this be built from scratch?",
-     "bid_amount": 55.0,
+     "job_id": "j-ai_ml-045",
+     "cover_letter": "Recall 96% at 38 FPS; scrap reaching customers fell by half: that was the outcome of my real-time defect detection on an assembly line project, which is close to what you describe.\n\nFor Python: in the payment fraud detection with graph neural networks project I modelled accounts, devices and cards as a graph in Neo4j and trained a GraphSAGE classifier.\n\nI have not used Tesseract OCR in client work, so I would start with a short spike and confirm the approach with you before building on it.\n\nPlan: a short discovery call, a first working milestone you can test, then documentation and a handover call.\n\nIs the OpenCV part already started, or would this be built from scratch?",
+     "bid_amount": 40.0,
      "answers": [
       "I would rather discuss this on a short call.",
-      "Access to the current code or data, one sample of the expected output, and a 30-minute kickoff to agree the first milestone."
+      "My real-time defect detection on an assembly line project: Recall 96% at 38 FPS; scrap reaching customers fell by half. The case study and code are in my marketplace portfolio and I can walk you through them on a call."
      ],
      "idempotency_key": "trace-approved:draft:v1e0"
     },
-    "latency_s": 0.017,
+    "latency_s": 0.024,
     "attempt": 0
    }
   },
   {
    "name": "mcp.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2463,
-   "duration_s": 0.0022,
+   "t_start_s": 0.3417,
+   "duration_s": 0.0032,
    "attrs": {
     "args": {
-     "draft_id": "d-ff64dfd92e",
-     "job_id": "j-ai_ml-042",
+     "draft_id": "d-e178ab96cf",
+     "job_id": "j-ai_ml-045",
      "idempotency_key": "trace-approved:submit:v1e0",
      "dry_run": false
     },
@@ -549,16 +549,16 @@
   {
    "name": "tool.marketplace.submit_proposal",
    "kind": "tool",
-   "t_start_s": 0.2592,
+   "t_start_s": 0.3659,
    "duration_s": 0.0,
    "attrs": {
     "agent": "executor",
     "args": {
-     "draft_id": "d-ff64dfd92e",
-     "job_id": "j-ai_ml-042",
+     "draft_id": "d-e178ab96cf",
+     "job_id": "j-ai_ml-045",
      "idempotency_key": "trace-approved:submit:v1e0"
     },
-    "latency_s": 0.016,
+    "latency_s": 0.029,
     "attempt": 0
    }
   }

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "commit": "dfd4987",
-    "generated_at": "2026-11-06T12:21:12Z",
+    "commit": "9ba9cd9",
+    "generated_at": "2026-11-11T15:12:06Z",
     "profile": "offline",
     "embedder": "hash",
     "reranker": "lexical",
@@ -12,59 +12,59 @@
   "systems": {
     "gigbid": {
       "jobs": 180,
-      "bids": 111,
-      "connects": 846,
-      "expected_replies": 40.0,
-      "reply_rate": 0.3604,
-      "replies_per_100_connects": 4.73,
-      "expected_interviews": 24.96,
-      "expected_hires": 12.33,
+      "bids": 47,
+      "connects": 257,
+      "expected_replies": 16.91,
+      "reply_rate": 0.3599,
+      "replies_per_100_connects": 6.58,
+      "expected_interviews": 10.77,
+      "expected_hires": 5.42,
       "scam_bids": 0
     },
     "template_all": {
       "jobs": 180,
-      "bids": 154,
-      "connects": 1236,
-      "expected_replies": 19.35,
-      "reply_rate": 0.1256,
-      "replies_per_100_connects": 1.57,
-      "expected_interviews": 10.28,
-      "expected_hires": 4.3,
-      "scam_bids": 4
+      "bids": 115,
+      "connects": 587,
+      "expected_replies": 12.9,
+      "reply_rate": 0.1122,
+      "replies_per_100_connects": 2.2,
+      "expected_interviews": 6.65,
+      "expected_hires": 2.7,
+      "scam_bids": 5
     },
     "reuse_best_past": {
       "jobs": 180,
       "bids": 180,
-      "connects": 1400,
-      "expected_replies": 24.59,
-      "reply_rate": 0.1366,
-      "replies_per_100_connects": 1.76,
-      "expected_interviews": 13.35,
-      "expected_hires": 5.71,
-      "scam_bids": 17
+      "connects": 861,
+      "expected_replies": 21.02,
+      "reply_rate": 0.1168,
+      "replies_per_100_connects": 2.44,
+      "expected_interviews": 11.21,
+      "expected_hires": 4.69,
+      "scam_bids": 27
     }
   },
   "ab_experiment": {
-    "n_jobs": 111,
-    "reply_prob_statement": 0.264,
-    "reply_prob_question": 0.3572,
-    "paired_diff_question_minus_statement": 0.0931,
+    "n_jobs": 47,
+    "reply_prob_statement": 0.2715,
+    "reply_prob_question": 0.329,
+    "paired_diff_question_minus_statement": 0.0575,
     "paired_diff_ci95": [
-      0.0777,
-      0.1112
+      0.043,
+      0.0734
     ],
     "share_jobs_question_better": 1.0,
     "power_by_n_per_arm": {
       "30": 0.1,
-      "60": 0.225,
-      "120": 0.36,
-      "250": 0.615,
-      "500": 0.885
+      "60": 0.12,
+      "120": 0.2,
+      "250": 0.27,
+      "500": 0.475
     },
     "by_persona": {
-      "ai_ml": 0.0835,
-      "fullstack": 0.0945,
-      "data_analyst": 0.1032
+      "ai_ml": 0.0638,
+      "fullstack": 0.0555,
+      "data_analyst": 0.0544
     }
   }
 }

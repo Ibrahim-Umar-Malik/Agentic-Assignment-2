@@ -18,6 +18,8 @@ import sys
 
 from pydantic import BaseModel, Field
 
+from core.personas import persona_floor
+
 from .common import (
     DATASETS,
     PERSONAS,
@@ -105,7 +107,7 @@ async def build() -> None:
             else:
                 tid = f"judge:{row['id']}"
                 out = await graph.ainvoke({"user_id": "judge", "persona": persona, "thread_id": tid, "trace_id": tid, "job": job,
-                                           "meta": {"hourly_floor": 40, "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
+                                           "meta": {"hourly_floor": persona_floor(persona), "portfolio_id": persona}}, {"configurable": {"thread_id": tid}})
                 if not out.get("draft"):
                     continue
                 letter, source = out["draft"]["cover_letter"], "gigbid"

@@ -1,122 +1,112 @@
-# My retrieval got 3% better and my reply rate 7 points better. Retrieval was not the reason.
+# My agent scored 0.93 on data I wrote and 0.11 on real job posts
 
-*What building a multi-agent proposal writer taught me about measuring RAG by what it buys downstream.*
+*What 36,000 real Upwork posts did to a multi-agent system tuned on synthetic data, and the one result that survived.*
 
 For a university R&D assignment I built GigBid, a copilot for freelancers on marketplaces like Upwork. It reads new
-job posts on a schedule, skips scams and bad fits, and for the good ones prepares a priced proposal grounded in the
-freelancer's own portfolio: case studies, repositories, past proposals and client reviews. A human approves every
-proposal before anything is sent. Under the hood it is two LangGraph graphs, a handful of MCP servers and a
-retrieval pipeline over the portfolio.
+job posts on a schedule and skips scams and bad fits. For the good ones, it prepares a priced proposal grounded in
+the freelancer's portfolio. A human approves every proposal before anything is sent. Under the hood it is two
+LangGraph graphs, three MCP servers and a retrieval pipeline over the portfolio.
 
-The assignment asked for something I assumed would be the boring part: build at least four retrieval variants,
-compare them, and ship the best. I built nine. The interesting result was not which one won. It was that the metric
-I used to pick the winner was measuring the wrong thing, and the real effect was hiding in a detail none of my
-retrieval metrics could see.
+No data came with the assignment at first, so I generated it: three freelancer personas, a few hundred clients,
+600 labelled job posts with planted scams and prompt injections, and a marketplace simulator. I tuned everything on
+that. On the held-out test split the bid/skip decision reached an F1 of 0.93, with no scam bid on and no injection
+obeyed. Then real data arrived, and the same code scored 0.11.
 
-## The setup
+This is about what broke, what the fixes were, and the one finding from the synthetic build that survived.
 
-Each test job lists requirements ("LangGraph", "RAG evaluation", "Postgres"). The Fit Matcher agent asks the
-Portfolio MCP server for evidence per requirement and builds a requirement-by-evidence matrix. The Writer drafts
-from that evidence, a verifier deletes any claim the evidence does not support, a Critic can send the draft back
-twice, and a Compliance Guard enforces the platform's rules. Outcomes come from a marketplace simulator whose
-simulated clients reply, interview and hire based on preferences the agent never sees.
+## The setup that made it look good
 
-The retrieval variants were the usual menu: a naive baseline (fixed 512-token chunks, dense search), requirement
-decomposition, hybrid BM25 + dense with reciprocal rank fusion, reranking, an "outcome boost" that prefers evidence
-from proposals that won, multi-vector indexing, contextual chunk headers, HyDE and a corrective loop. Every dev job
-has gold labels for which portfolio projects genuinely evidence it, so I could score Recall@5, MRR and nDCG.
+GigBid decides to bid when a Fit Matcher finds portfolio evidence for the job's requirements and a Risk Assessor
+finds nothing alarming. The thresholds (fit at least 0.70, risk at most 0.35) were chosen by a sweep on a tune split.
+I wrote down the selection rules before running anything and touched the test split once. That is the textbook
+protocol, and it was not enough.
 
-Before running anything I wrote down a selection rule (best nDCG@5 on a tune split, ties broken by MRR then latency)
-and a hypothesis: decomposition plus reranking would raise evidence recall over the baseline and, through better
-grounded drafts, raise the simulated reply rate by at least three points. The test split was touched once, at the end.
+The problem was upstream of the protocol. I had written the job generator, the personas and the agents, so they
+shared a vocabulary. A synthetic post asked for "LangGraph, pgvector and FastAPI"; the synthetic portfolio said
+"LangGraph, pgvector and FastAPI". Fit scores were high because the two sides were literally made of the same words.
 
-## The result that looked like a win
+## The real data
 
-The rule picked decomposition plus reranking over structured chunks. On the held-out split, Recall@5 went from 0.922
-to 0.955 and nDCG@10 from 0.928 to 0.957. A respectable, unexciting improvement.
+The rebuilt dev set uses 36,265 cleaned posts from a public Upwork dataset, with titles, descriptions, the client's
+own skill tags, budgets, Connects and client history. Market prices come from 1.29 million real freelance contracts.
+The portfolios are still synthetic: no public dataset has freelancers' case studies, code and past proposals. Labels
+are rules over the client's tags and the skills the portfolio can prove. The planted scams and injections are still
+synthetic overlays on real posts, because safety metrics need known ground truth.
 
-Then I ran both pipelines end to end through the whole bid graph, on the same jobs, and scored the drafts with the
-simulator. The simulated reply rate went from 28.3% to 35.4%. The judge score went up too.
+The old code on the new data kept its safety record: no scam was bid on and no injection obeyed. But of the 50 test
+jobs it should have bid on, it bid on 3. Accuracy looked fine at 73%, because skipping is usually right. F1 told the
+truth.
 
-Seven points of reply rate from three points of recall should have made me suspicious immediately. It did not,
-because it confirmed my hypothesis. I almost wrote "better retrieval, more replies" in the report and moved on.
+## Why it failed
 
-## Pairing the drafts
+Failure analysis on the tune split found four causes, none of them visible on synthetic data.
 
-What stopped me was a second question the assignment insisted on: where did better retrieval *not* translate into
-replies, and why? To answer it I paired the two runs proposal by proposal and asked a very simple question: did the
-better retriever change which project the proposal leads with?
+**Real clients tag umbrella skills.** A real post for a churn model is tagged "Machine Learning", "Data Science",
+"Artificial Intelligence". The portfolio says "LightGBM", "pandas", "scikit-learn". The matcher treated each tag as
+a requirement and looked for it in the evidence. It found nothing, so fit came out at 0.07 to 0.20 for jobs the
+persona plainly fits. The fix was an umbrella-tag ontology built from the most common real tags, so evidence for a
+specific skill counts for the umbrella over it.
 
-It did for 5 proposals out of 111.
+**My price floors were invented.** I had given the personas floors of $40–45 an hour. The median paid rate in their
+categories, from the contracts data, is $21–30. Jobs a typical freelancer would take were skipped as "below floor".
 
-For the other 106, both pipelines found the same lead project. The naive baseline was already ranking the right
-project first almost every time; my portfolio corpus is small and the job posts name their skills plainly. And yet
-the reply probability on those *unchanged* proposals rose by 6.6 points.
+**My scam rules were written against my own scams.** On synthetic data they caught every scam with no false alarms.
+On 5,000 real posts they flagged 2.9% as scams, mostly Telegram bots, Discord bots and crypto products: legitimate
+work that merely mentions those words. An external fake-job dataset showed the opposite failure. The rules caught
+none of its "earn $5,000 a week, no experience, contact now" frauds, a type my generator had never produced.
+Rules that need an *ask* ("contact me on Telegram", "pay in crypto"), plus an income-scam rule, brought false alarms
+to 0.4% and benchmark recall to 81%.
 
-So the improvement was not coming from finding better evidence. It was coming from what the Writer could *do* with
-the same evidence.
+**Market prices are not job prices.** Pricing from the category's market band under-bid real jobs badly, for example
+$270 on a $4,000 post. Most real contracts are small, so the market's interquartile range sits far below the budget
+of any substantial post. Quoting a fit-dependent share of the client's own budget fixed most of it.
 
-## Chunk boundaries decide what you can quote
+After those fixes and a threshold re-sweep on the real tune split, test F1 is 0.80 with precision 0.84 and recall
+0.76. Accuracy is 89%, scams are still all caught, and no injection was obeyed. Not 0.93, but it is a number about
+the world rather than about my generator.
 
-The difference between the two pipelines that nDCG does not see is the shape of the chunk. The naive baseline cuts
-documents every 512 tokens. My shipped pipeline chunks case studies by structure, keeping "The problem", "What I did"
-and "Result" together.
+## The finding that survived
 
-A case study's most persuasive line is its result: "Caught 14 regressions before release in three months." With fixed
-chunks, the retriever returned the right case study, scored as a hit by every metric, but the chunk often stopped
-before the "Result" section. The Writer, told to lead with a measurable outcome from the evidence and never to
-invent one, had nothing to quote, so it fell back to a sentence about the project instead of its outcome.
+On synthetic data I had found something I wrote up at the time. A better retriever raised the simulated reply rate
+by 7 points, but not because it found better evidence. Pairing the drafts showed the lead project rarely changed.
+What changed was the *chunk*: fixed 512-token chunks cut case studies before their "Result" section, so the writer
+had no number to quote. Structured chunks keep problem, approach and result together.
 
-I counted: drafts that quote a specific metric went from 8.1% with the naive baseline to 65.8% with structured
-chunks. The simulated clients reward specific numbers, and the reply rate followed.
+I expected this to evaporate on real data, since it came from a synthetic world. It did not.
 
-Retrieval metrics are computed at the level of "did you return a chunk from the right project". They are blind to
-"did you return the *part* of the project the downstream agent needs". For a writer, those are different questions.
+On real posts the retrieval winner changed: HyDE plus hybrid search, not decomposition plus reranking. Retrieval is
+much harder (Recall@5 for the naive pipeline fell from 0.92 to 0.52, because real posts describe problems in the
+client's words, not the portfolio's). The shipped pipeline lifted Recall@5 to 0.63, and the simulated reply rate
+rose from 26.0% to 34.9%. Paired on the same 47 proposals, the lead evidence changed in only 10. On the proposals
+whose lead evidence did *not* change, reply probability still rose 8.2 points. Drafts quoting a specific metric went
+from 19% to 47%. In the ablation, switching structured chunking off is now the single most damaging change (−0.06
+nDCG@5).
 
-## The ablation agreed, once I knew how to read it
+So the mechanism held: chunk boundaries decide what a writer can quote, and ranking metrics cannot see it.
 
-The ablation table had been telling me this all along and I had misread it. Switching off structured chunking cost
-less than 0.01 nDCG@5, which I had filed as "chunking barely matters". Switching off requirement decomposition cost
-0.063, which I filed as "decomposition is the important part". For retrieval, that is true. For replies, the ordering
-is reversed: decomposition changes which project leads in a few cases, while chunking changes what every draft can say.
+## What I would tell someone building agents on synthetic data
 
-Two other results fit the same picture. Outcome boosting, preferring evidence from proposals that won, *lowered*
-nDCG by 0.023. And multi-vector indexing, which stores summaries, READMEs, code and proposals separately and fuses
-them, was by far the worst variant. Both were designed to be clever about *which* document to return. Neither did
-anything about *what span* the writer gets.
+**Your generator and your system share a vocabulary.** If one author (or one model) writes both, matching is easy
+by construction. The first real-data run will tell you how much of your score was that shared vocabulary.
 
-## The uncomfortable side effect
+**Measure rules on real text, both ways.** Precision on real legitimate text and recall on real fraud are separate
+measurements, and synthetic data gives you neither. My scam rules were perfect on synthetic data and wrong in both
+directions on real data.
 
-There is a cost. With structured chunks the Writer has more quotable material and attempts more claims: unsupported
-claims per proposal *before* verification went from 0.27 to 0.32. A better retriever made the writer bolder, not
-more careful. After the claim verifier, both are at zero on the test split, but only because the verifier exists. If
-I had shipped the better retriever without it, I would have shipped more overclaiming proposals and higher retrieval
-scores at the same time.
+**Ground parameters in data you did not write.** Every number I had chosen by intuition (floors, fixed-price
+minimums, thresholds) was wrong in the same direction: tuned to a cleaner, richer world than the real one.
 
-## What I would tell someone building RAG for an agent
+**Keep the protocol anyway.** The tune/test discipline did not prevent the failure, but it made it measurable.
+Because every fix was chosen on the tune split, the 0.80 means something.
 
-**Measure retrieval by what the next agent produces, not only by what the retriever returns.** I now keep two tables:
-retrieval metrics on the tune split to choose candidates, and an end-to-end table (claims, judge score, simulated
-reply rate, latency, cost) for the two or three that survive. The second table changed my understanding even though
-it did not change the winner.
-
-**Pair your comparisons.** Averages told me "variant B is better". Pairing the same jobs told me *why*, and the why
-was not the variant's headline feature.
-
-**Treat chunking as a product decision.** Chunk boundaries decide what a downstream writer can cite. That is closer
-to "what can this agent say" than to an indexing detail.
-
-**Put a verifier behind any retrieval improvement.** Better evidence invites more claims.
+**Pair your comparisons.** The chunking finding only appeared by pairing proposals for the same job. It survived a
+complete change of data, which is the best evidence I have that it is real.
 
 ## Limits
 
-This is one project with honest caveats. The data and the marketplace simulator are synthetic, written by me
-while the official starter kit was unavailable, so the simulated clients reward what I believed clients reward:
-skill coverage, specific numbers, a question, a sensible price. The runs used deterministic heuristic agents instead
-of LLMs because the environment had no model access, so an LLM writer might paraphrase around a missing "Result"
-section better than my heuristic writer does. The effect I measured is about the *interface* between retriever and
-writer, which an LLM shares, but the size of it will change. All numbers here come from files in the repository's
-`evals/results/` folder, and the runs that need real models are one command away.
-
-The one result I am confident will survive is the method: when a retrieval improvement shows up downstream, pair the
-outputs and ask what actually changed. Mine was not what I had hypothesised, and it was more useful.
+The portfolios and the simulator's reply model are still mine, so reply rates are still circular: they show that
+GigBid optimises what my simulator rewards. The labels on real jobs are rules, not human judgments, and a 45-row
+audit sheet is waiting for a human. Every run used deterministic heuristic agents instead of LLMs, because the build
+environment had no model access. An LLM matcher might bridge "Machine Learning" to "LightGBM" on its own, though
+retrieval and labels would still need the ontology. All numbers here come from files in the repository's
+`evals/results/` folder, and the runs with real models are one command away.

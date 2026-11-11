@@ -14,6 +14,8 @@ import logging
 import os
 import time
 
+from core.personas import persona_floor
+
 from .common import PERSONAS, eval_env, load_dev, mean, pctile, public_job, run_meta, split, write_result
 
 eval_env()
@@ -50,7 +52,7 @@ async def run_variant(spec: str) -> dict:
             tok = llm.meter_var.set(meter)
             t = time.perf_counter()
             out = await graph.ainvoke({"user_id": f"ve-{persona}", "persona": persona, "thread_id": tid, "trace_id": tid,
-                                       "job": public_job(row), "meta": {"hourly_floor": 40, "portfolio_id": persona}},
+                                       "job": public_job(row), "meta": {"hourly_floor": persona_floor(persona), "portfolio_id": persona}},
                                       {"configurable": {"thread_id": tid}})
             llm.meter_var.reset(tok)
             dt = time.perf_counter() - t

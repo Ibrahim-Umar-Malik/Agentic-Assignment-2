@@ -14,7 +14,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RES = ROOT / "evals" / "results"
-TARGETS = [ROOT / "README.md", ROOT / "docs" / "report" / "report.md", ROOT / "docs" / "writeup.md", ROOT / "docs" / "EXTENSION.md"]
+TARGETS = [ROOT / "README.md", ROOT / "docs" / "report" / "report.md", ROOT / "docs" / "writeup.md", ROOT / "docs" / "EXTENSION.md",
+           ROOT / "docs" / "DATA_CARD.md"]
 
 
 def load(name: str) -> dict:
@@ -110,7 +111,7 @@ def t_arch() -> str:
         else:
             rows.append([k, f(v.get("accuracy"), pct=True), v.get("scam_bids"), f(v.get("unsupported_claim_rate"), pct=True),
                          f(v.get("mean_tool_calls"), 1), f(v.get("p95_latency_s"), 2) + "s"])
-    return md(["Architecture (50 jobs)", "Decision accuracy", "Scam bids", "Unsupported claims", "Tool calls / job", "p95 latency"], rows)
+    return md(["Architecture (50 jobs)", "Decision accuracy", "Scam bids", "Unsupported claims (independent re-check)", "Tool calls / job", "p95 latency"], rows)
 
 
 def t_tools() -> str:
@@ -161,25 +162,86 @@ def t_injection() -> str:
     off = load("injection_no_defences").get("test", {}).get("injection")
     if not on:
         return "_n/a_"
-    before = f"{off['obeyed']} of {off['n']}" if off else "not run (needs an LLM writer; the offline writer cannot follow instructions)"
+    offline = load("injection_no_defences").get("meta", {}).get("profile") == "offline"
+    if off and not offline:
+        before = f"{off['obeyed']} of {off['n']}"
+    else:
+        before = "not measurable offline (the heuristic writer cannot follow instructions); run `make eval-llm`"
     return md(["Planted-injection jobs (test split)", "Attack success"],
               [["Defences off (no sanitising, no delimiting)", before], ["Defences on (shipped)", f"{on['obeyed']} of {on['n']}"]])
 
 
 def t_failures() -> str:
-    before, after = load("failures_before_fixes"), load("failures")
+    before, after = load("failures_real_before_fixes"), load("failures")
     if not after:
         return "_n/a_"
-    cats = ["missed evidence", "wrong skip: injected post treated as client risk", "wrong skip: risk/fit threshold",
-            "wrong bid: lowball budget", "wrong bid: off-domain (missed evidence gap)", "wrong bid: other", "mispriced",
-            "unsupported claim", "generic opening", "compliance miss", "injection obeyed", "tool error"]
-    labels = {"wrong bid: other": "wrong bid: duplicate repost"}
-    rows = [[labels.get(c, c), before.get("counts", {}).get(c, 0) if before else "n/a", after["counts"].get(c, 0)] for c in cats]
-    db, da = load("decision_before_fixes").get("test", {}), load("decision").get("test", {})
+    cats = ["wrong skip: risk/fit threshold", "wrong skip: injected post treated as client risk",
+            "wrong bid: weak fit (client's skill tags mostly not in portfolio)", "wrong bid: lowball budget",
+            "wrong bid: off-domain (missed evidence gap)", "wrong bid: repost not recognised", "wrong bid: scam",
+            "mispriced", "unsupported claim", "injection obeyed", "tool error"]
+    rows = [[c, before.get("counts", {}).get(c, 0) if before else "n/a", after["counts"].get(c, 0)] for c in cats]
+    db, da = load("decision_real_before_fixes").get("test", {}), load("decision").get("test", {})
     if db and da:
         rows.append(["**bid/skip accuracy**", f(db["decision"]["accuracy"], pct=True), f(da["decision"]["accuracy"], pct=True)])
-        rows.append(["**bids inside fair price band**", f(db["price"]["in_fair_band"], pct=True), f(da["price"]["in_fair_band"], pct=True)])
-    return md(["Failure type (test split, 180 jobs)", "Before fixes", "After fixes"], rows)
+        rows.append(["**bid F1 (precision / recall)**", f"{f(db['decision']['bid_f1'])} ({f(db['decision']['bid_precision'])} / {f(db['decision']['bid_recall'])})",
+                     f"{f(da['decision']['bid_f1'])} ({f(da['decision']['bid_precision'])} / {f(da['decision']['bid_recall'])})"])
+        rows.append(["**bids inside fair price band**", f"{f(db['price']['in_fair_band'], pct=True)} of {db['price']['n']}",
+                     f"{f(da['price']['in_fair_band'], pct=True)} of {da['price']['n']}"])
+    return md(["Failure type (real-job test split, 180 jobs)", "Before (code tuned on synthetic jobs)", "After fixes"], rows)
+
+
+def t_shift() -> str:
+    syn, old, new = load("decision_synthetic").get("test"), load("decision_real_before_fixes").get("test"), load("decision").get("test")
+    rs, rr = load("rag_synthetic"), load("rag")
+    if not (syn and old and new):
+        return "_n/a_"
+
+    def col(t: dict) -> list:
+        return [f(t["decision"]["accuracy"], pct=True), f(t["decision"]["bid_f1"]), f(t["decision"]["bid_recall"]),
+                f"{f(t['scam']['recall'], pct=True)} of {t['scam']['n']}", f"{t['injection']['obeyed']} of {t['injection']['n']}",
+                f(t["price"]["in_fair_band"], pct=True)]
+    head = ["Test split (180 jobs each)", "Bid/skip accuracy", "Bid F1", "Bid recall", "Scams not bid on", "Injections obeyed",
+            "Price in fair band"]
+    rows = [["Synthetic jobs, old code", *col(syn)], ["**Real jobs, old code**", *col(old)], ["Real jobs, after fixes", *col(new)]]
+    t = md(head, rows)
+    if rs and rr:
+        t += (f"\n\nEvidence retrieval (V0 naive, test split): Recall@5 {f(rs['test']['baseline_v0']['recall@5'])} on synthetic "
+              f"jobs vs {f(rr['test']['baseline_v0']['recall@5'])} on real jobs.")
+    return t
+
+
+def t_risk_real() -> str:
+    d = load("risk_real")
+    if not d:
+        return "_n/a_"
+    rp, fb = d["real_posts"], d.get("fraud_benchmark", {})
+    rows = [["Scam-level flags on 5,000 real Upwork posts", f(rp.get("v2_before", {}).get("flag_rate"), pct=True) if "v2_before" in rp else "n/a",
+             f(rp["v3_current"]["flag_rate"], pct=True)]]
+    if fb.get("rules"):
+        r2, r3 = fb["rules"].get("v2_before"), fb["rules"]["v3_current"]
+        rows.append([f"External fake-job benchmark: recall (n={fb['n_test']}, 50% fraud)", f(r2["recall"], pct=True) if r2 else "n/a", f(r3["recall"], pct=True)])
+        rows.append(["External fake-job benchmark: precision", f(r2["precision"], pct=True) if r2 else "n/a", f(r3["precision"], pct=True)])
+        lr = fb["tfidf_logreg_trained_on_tune"]
+        foot = (f"\n\nA TF-IDF + logistic-regression detector trained on the benchmark's own tune split reaches precision "
+                f"{f(lr['precision'], pct=True)} / recall {f(lr['recall'], pct=True)}; its top features ({', '.join(fb['top_fraud_terms'][:5])}) "
+                f"show the fraud class is templated, so this is an upper bound for that dataset, not for Upwork.")
+    else:
+        foot = "\n\nExternal benchmark not run (dataset not available offline)."
+    return md(["Scam rules on real text", "v2 (before)", "v3 (shipped)"], rows) + foot
+
+
+def t_data() -> str:
+    p = ROOT / "data" / "real" / "summary.json"
+    if not p.exists():
+        return "_n/a_"
+    s = json.loads(p.read_text())
+    st, fl = s["stats"], s["floors"]
+    rows = [["Upwork job posts (dataset A), raw", f"{st['rows_raw']:,}"], ["after de-duplication", f"{st['after_text_dedupe']:,}"],
+            ["after English / length filter", f"{st['after_length_language_filter']:,}"], ["with a usable budget (the job pool)", f"{st['after_budget_filter']:,}"],
+            ["Contracts used for paid-rate statistics (dataset C sample)", "300,000 of 1,292,791"],
+            ["Persona hourly floors from real paid rates (ai_ml / fullstack / data_analyst)", f"${fl['ai_ml']} / ${fl['fullstack']} / ${fl['data_analyst']}"],
+            ["Dev-set jobs (3 personas × 200), GigSim live jobs", f"{sum(sum(v for k, v in d.items() if k != 'bid_true') for d in s['dev'].values())}, {sum(s['live'].values())}"]]
+    return md(["Data pipeline (data_pipeline/prepare.py)", "Count"], rows)
 
 
 def t_breakdown() -> str:
@@ -195,8 +257,9 @@ def t_breakdown() -> str:
     return md(["Slice (V0 → shipped)", "Recall@5", "nDCG@10", "GigSim reply rate"], rows)
 
 
-TABLES = {"breakdown": t_breakdown, "failures": t_failures,"b5": t_b5,"injection": t_injection,"rag": t_rag, "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
-          "tools": t_tools, "judge": t_judge}
+TABLES = {"breakdown": t_breakdown, "failures": t_failures, "b5": t_b5, "injection": t_injection, "rag": t_rag,
+          "ablation": t_ablation, "decision": t_decision, "outcomes": t_outcomes, "ab": t_ab, "arch": t_arch,
+          "tools": t_tools, "judge": t_judge, "shift": t_shift, "risk_real": t_risk_real, "data": t_data}
 
 
 def render(text: str) -> str:

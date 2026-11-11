@@ -34,7 +34,9 @@ def check_password(pw: str, stored: str) -> bool:
 
 def create_user(email: str, password: str, name: str = "", persona: str = "ai_ml", settings: dict | None = None) -> dict:
     uid = "u-" + uuid.uuid4().hex[:12]
-    defaults = {"hourly_floor": 40, "weekly_connects_budget": 60, "autonomy": "suggest", "marketplace": "gigsim",
+    from core.personas import persona_floor
+
+    defaults = {"hourly_floor": persona_floor(persona), "weekly_connects_budget": 60, "autonomy": "suggest", "marketplace": "gigsim",
                 "hours_per_week": 20, "deleted_items": [], "onboarded": False}
     with engine().begin() as c:
         c.execute(users.insert().values(id=uid, email=email.lower(), password_hash=hash_password(password), name=name,

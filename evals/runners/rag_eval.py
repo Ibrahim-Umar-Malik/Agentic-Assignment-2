@@ -34,7 +34,9 @@ from .common import (
 
 COMBOS = ["v2_hybrid_v1_decompose", "v3_rerank_v1_decompose", "v2_hybrid_v1_decompose_v4_outcome",
           "v2_hybrid_v1_decompose_v3_rerank_v4_outcome", "v6_contextual_v2_hybrid_v1_decompose_v4_outcome",
-          "v8_corrective_v2_hybrid_v1_decompose_v4_outcome"]
+          "v8_corrective_v2_hybrid_v1_decompose_v4_outcome",
+          # added after the real-data rebuild: the ablation of the first pick (v7_hyde) showed hybrid search adding +0.06
+          "v7_hyde_v2_hybrid", "v7_hyde_v2_hybrid_v6_contextual"]
 
 
 def score_variant(spec: str, part: str, limit: int | None = None) -> dict:

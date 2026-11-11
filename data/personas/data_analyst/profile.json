@@ -3,7 +3,7 @@
   "name": "Lena Kowalski",
   "headline": "Data analyst: SQL, dbt, Power BI and experiment analysis",
   "years_experience": 5,
-  "hourly_floor_usd": 35,
+  "hourly_floor_usd": 30,
   "location": "Krakow, Poland",
   "skills": [
     "A/B testing",
@@ -49,5 +49,22 @@
     "survey analysis",
     "survival analysis",
     "time series"
-  ]
+  ],
+  "job_success_rate": 86.5,
+  "avg_response_time_hrs": 13.3,
+  "_provenance": {
+    "synthetic": [
+      "name",
+      "headline",
+      "skills",
+      "portfolio"
+    ],
+    "real:C": [
+      "hourly_floor_usd (median paid hourly rate in persona categories)"
+    ],
+    "third_party_synthetic:S": [
+      "job_success_rate",
+      "avg_response_time_hrs"
+    ]
+  }
 }

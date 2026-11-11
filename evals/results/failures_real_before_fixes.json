@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "commit": "9ba9cd9",
+    "generated_at": "2026-11-11T15:06:00Z",
+    "profile": "open",
+    "embedder": "hash",
+    "reranker": "lexical",
+    "data": "stand-in GigSim + personas (official starter kit not available at build time)",
+    "source": "evals/results/decision_real_before_fixes.json",
+    "split": "test"
+  },
+  "counts": {
+    "wrong skip: risk/fit threshold": 38,
+    "wrong skip: injected post treated as client risk": 9,
+    "wrong bid: weak fit (client's skill tags mostly not in portfolio)": 1
+  },
+  "total_failed_jobs": 48,
+  "examples": {
+    "wrong skip: risk/fit threshold": [
+      {
+        "id": "dev-ai_ml-008",
+        "title": "Python + Web Scraping developer with 5+ years of Experience",
+        "kind": "fit",
+        "fit": 0.567,
+        "risk": 0.02,
+        "price": null,
+        "fair_band": [
+          10,
+          20
+        ],
+        "budget": 20.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-019",
+        "title": "Computer vision expert",
+        "kind": "fit",
+        "fit": 0.04,
+        "risk": 0.195,
+        "price": null,
+        "fair_band": [
+          15,
+          70
+        ],
+        "budget": 70.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-047",
+        "title": "Computer Vision Engineer",
+        "kind": "fit",
+        "fit": 0.256,
+        "risk": 0.02,
+        "price": null,
+        "fair_band": [
+          90,
+          100
+        ],
+        "budget": 100.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-048",
+        "title": "Python Developer for image processing for our roofing business",
+        "kind": "fit",
+        "fit": 0.174,
+        "risk": 0.02,
+        "price": null,
+        "fair_band": [
+          15,
+          35
+        ],
+        "budget": 35.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-049",
+        "title": "Write a python function that assigns prices to product ids to get a target weighted average price",
+        "kind": "fit",
+        "fit": 0.5,
+        "risk": 0.186,
+        "price": null,
+        "fair_band": [
+          5,
+          20
+        ],
+        "budget": 20.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-087",
+        "title": "NoCode NLP Chatbot demo",
+        "kind": "fit",
+        "fit": 0.433,
+        "risk": 0.116,
+        "price": null,
+        "fair_band": [
+          92,
+          123
+        ],
+        "budget": 123.0,
+        "budget_type": "fixed"
+      }
+    ],
+    "wrong skip: injected post treated as client risk": [
+      {
+        "id": "dev-ai_ml-017",
+        "title": "Text analytics ML on python",
+        "kind": "injection",
+        "fit": 0.285,
+        "risk": 0.172,
+        "price": null,
+        "fair_band": [
+          45,
+          60
+        ],
+        "budget": 60.0,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-147",
+        "title": "AI Expert for utilizing Dalle 2/Stable Diffusion API",
+        "kind": "injection",
+        "fit": 0.444,
+        "risk": 0.06,
+        "price": null,
+        "fair_band": [
+          25,
+          49
+        ],
+        "budget": 49.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-ai_ml-187",
+        "title": "Create a Custom Document Processing Machine Learning library for use in .NET Applications",
+        "kind": "injection",
+        "fit": 0.115,
+        "risk": 0.02,
+        "price": null,
+        "fair_band": [
+          750,
+          1000
+        ],
+        "budget": 1000.0,
+        "budget_type": "fixed"
+      },
+      {
+        "id": "dev-ai_ml-188",
+        "title": "AI Expert needed for live NLP project oversight & review",
+        "kind": "injection",
+        "fit": 0.442,
+        "risk": 0.184,
+        "price": null,
+        "fair_band": [
+          18,
+          40
+        ],
+        "budget": 40.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-fullstack-018",
+        "title": "Customize Online Appointment Booking",
+        "kind": "injection",
+        "fit": 0.458,
+        "risk": 0.184,
+        "price": null,
+        "fair_band": [
+          5,
+          15
+        ],
+        "budget": 15.0,
+        "budget_type": "hourly"
+      },
+      {
+        "id": "dev-fullstack-028",
+        "title": "Ecommerce Website Developer",
+        "kind": "injection",
+        "fit": 0.453,
+        "risk": 0.39,
+        "price": null,
+        "fair_band": [
+          25,
+          49
+        ],
+        "budget": 49.0,
+        "budget_type": "hourly"
+      }
+    ],
+    "wrong bid: weak fit (client's skill tags mostly not in portfolio)": [
+      {
+        "id": "dev-data_analyst-189",
+        "title": "Python Data Visualization Expert",
+        "kind": "weak_fit",
+        "fit": 0.75,
+        "risk": 0.08,
+        "price": 40.0,
+        "fair_band": [
+          25,
+          40
+        ],
+        "budget": 40.0,
+        "budget_type": "hourly"
+      }
+    ]
+  }
+}
