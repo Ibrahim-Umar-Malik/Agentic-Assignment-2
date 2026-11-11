@@ -11,6 +11,7 @@ Everything that can be built without your accounts is in the repo.
   that key on Render and set `GIGBID_PROFILE=open` to switch to open-weight models. Pushes to `main` redeploy it.
 - The Portfolio MCP server installs from the public repo with the uvx command in `mcp_servers/portfolio/README.md`
   (checked: it starts and lists its three tools).
+- A captioned demo video was recorded from the live app and uploaded to your Google Drive (sharing is step 2 below).
 - The free Render Postgres expires on 2026-12-11. That is after marking, but upgrade it or move `DATABASE_URL` to Neon if
   the app must stay up longer.
 
@@ -18,7 +19,9 @@ Everything that can be built without your accounts is in the repo.
 
 1. **Reviewer login.** Put `REVIEWER_EMAIL` / `REVIEWER_PASSWORD` (sent to you privately, not in this repo) in a
    *private* comment on GCR.
-2. **Video.** Record from `docs/VIDEO_SCRIPT.md` (3:00), upload it as Unlisted, and test the link in a private window.
+2. **Video.** A captioned, silent 2:41 walkthrough recorded from the live app is in your Google Drive: https://drive.google.com/file/d/1bShXS-Lz9a5c9RUfxCAHotdKSJfyrz0s/view
+   Set it to "Anyone with the link can view" (Share → General access) and test it in a private window. If the course wants
+   your voice, record over it from `docs/VIDEO_SCRIPT.md` instead.
 3. **Write-up.** Optionally publish `docs/writeup.md` on Medium or LinkedIn and add the link to the README. Otherwise
    submit the GitHub link: https://github.com/Ibrahim-Umar-Malik/Agentic-Assignment-2/blob/main/docs/writeup.md
 4. **Portfolio MCP server link:** https://github.com/Ibrahim-Umar-Malik/Agentic-Assignment-2/tree/main/mcp_servers/portfolio

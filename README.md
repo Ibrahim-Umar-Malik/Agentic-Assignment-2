@@ -5,7 +5,7 @@ and never sends anything without your approval.**
 
 ![GigBid demo: inbox to approved proposal](docs/images/demo.gif)
 
-**Live app:** [gigbid-m8kt.onrender.com](https://gigbid-m8kt.onrender.com) (reviewer login shared privately in GCR; the free instance can take about a minute to wake) · **Demo video (3 min):** see the GCR submission ·
+**Live app:** [gigbid-m8kt.onrender.com](https://gigbid-m8kt.onrender.com) (reviewer login shared privately in GCR; the free instance can take about a minute to wake) · **Demo video:** [captioned walkthrough, 2:41](https://drive.google.com/file/d/1bShXS-Lz9a5c9RUfxCAHotdKSJfyrz0s/view) ·
 **Portfolio MCP server:** [`mcp_servers/portfolio`](mcp_servers/portfolio/README.md) (`uvx --from "git+https://github.com/Ibrahim-Umar-Malik/Agentic-Assignment-2#subdirectory=mcp_servers/portfolio" gigbid-portfolio-mcp`) · **R&D report:** [`docs/report/GigBid_RnD_Report.pdf`](docs/report/GigBid_RnD_Report.pdf) ·
 **Write-up:** [`docs/writeup.md`](docs/writeup.md)
 
