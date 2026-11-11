@@ -106,7 +106,30 @@ class Simulator:
         self._load()
 
     # ---------- persistence ----------
+    def _db(self):
+        """Optional database backing (GIGSIM_STATE_DB, a SQLAlchemy URL) so simulator state survives container
+        restarts on hosts without a persistent disk, such as Render's free tier. Off by default."""
+        url = os.environ.get("GIGSIM_STATE_DB")
+        if not url:
+            return None
+        if getattr(self, "_engine", None) is None:
+            from sqlalchemy import create_engine, text
+
+            self._engine = create_engine(url, pool_pre_ping=True)
+            with self._engine.begin() as c:
+                c.execute(text("CREATE TABLE IF NOT EXISTS gigsim_state (id VARCHAR(32) PRIMARY KEY, body TEXT NOT NULL)"))
+        return self._engine
+
     def _load(self) -> None:
+        eng = self._db()
+        if eng is not None:
+            from sqlalchemy import text
+
+            with eng.begin() as c:
+                row = c.execute(text("SELECT body FROM gigsim_state WHERE id = 'main'")).first()
+            if row:
+                self.state.update(json.loads(row[0]))
+            return
         if self.state_path.exists():
             try:
                 self.state.update(json.loads(self.state_path.read_text()))
@@ -114,6 +137,15 @@ class Simulator:
                 pass
 
     def _save(self) -> None:
+        eng = self._db()
+        if eng is not None:
+            from sqlalchemy import text
+
+            body = json.dumps(self.state)
+            with eng.begin() as c:
+                if c.execute(text("UPDATE gigsim_state SET body = :b WHERE id = 'main'"), {"b": body}).rowcount == 0:
+                    c.execute(text("INSERT INTO gigsim_state (id, body) VALUES ('main', :b)"), {"b": body})
+            return
         self.state_path.parent.mkdir(parents=True, exist_ok=True)
         tmp = self.state_path.with_suffix(".tmp")
         tmp.write_text(json.dumps(self.state))

@@ -10,6 +10,8 @@ GIGSIM_PORT="${GIGSIM_PORT:-8001}"
 mkdir -p var
 export GIGSIM_URL="${GIGSIM_URL:-http://127.0.0.1:${GIGSIM_PORT}}"
 export GIGBID_MCP_INPROCESS="${GIGBID_MCP_INPROCESS:-1}"
+# Keep simulator state in the same database as the app, so a restart does not desynchronise them.
+if [ -n "${DATABASE_URL:-}" ]; then export GIGSIM_STATE_DB="${GIGSIM_STATE_DB:-$DATABASE_URL}"; fi
 PY="${PYTHON:-python}"
 [ -x .venv/bin/python ] && PY=.venv/bin/python
 
